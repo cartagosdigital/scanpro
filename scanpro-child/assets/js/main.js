@@ -143,8 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // ---------------------------------------------------------------
-  // Animação de entrada: colunas do footer + seções genéricas
-  // Usa IntersectionObserver; fallback: exibe imediatamente se não suportado
+  // Animação de entrada leve — só footer e .reveal-fade explícitos
   // ---------------------------------------------------------------
   if ('IntersectionObserver' in window) {
     var revealObserver = new IntersectionObserver(function (entries) {
@@ -154,29 +153,21 @@ document.addEventListener('DOMContentLoaded', function () {
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.12 });
 
     // Colunas do footer
     document.querySelectorAll('.footer-col').forEach(function (el) {
       revealObserver.observe(el);
     });
 
-    // Cards de diferenciais (features-section)
-    document.querySelectorAll('.feature-card').forEach(function (el, i) {
-      el.style.transitionDelay = (i * 0.1) + 's';
-      el.classList.add('reveal-item');
-      revealObserver.observe(el);
-    });
-
-    // Cards de produto na home
-    document.querySelectorAll('.product-card').forEach(function (el, i) {
-      el.style.transitionDelay = (i * 0.07) + 's';
-      el.classList.add('reveal-item');
+    // Elementos marcados explicitamente com reveal-fade nos templates
+    document.querySelectorAll('.reveal-fade').forEach(function (el, i) {
+      el.style.transitionDelay = (i * 0.08) + 's';
       revealObserver.observe(el);
     });
   } else {
-    // Fallback: tudo visível sem animação
-    document.querySelectorAll('.footer-col, .feature-card, .product-card').forEach(function (el) {
+    // Fallback: exibe tudo sem animação
+    document.querySelectorAll('.footer-col, .reveal-fade').forEach(function (el) {
       el.classList.add('is-visible');
     });
   }

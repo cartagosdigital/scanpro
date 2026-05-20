@@ -6,28 +6,41 @@
 get_header();
 ?>
 
-<main class="site-main page-main" id="main" role="main">
-  <div class="container">
+<main class="site-main" id="main" role="main">
 
-    <?php while ( have_posts() ) : the_post(); ?>
+  <!-- Banner claro com título e breadcrumb -->
+  <section class="page-banner page-banner--light">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="<?php _e( 'Brotkrümelnavigation', 'scanpro-child' ); ?>">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+          <?php _e( 'Startseite', 'scanpro-child' ); ?>
+        </a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span aria-current="page"><?php the_title(); ?></span>
+      </nav>
+      <h1><?php the_title(); ?></h1>
+    </div>
+  </section>
 
-      <article id="post-<?php the_ID(); ?>" <?php post_class( 'page-article' ); ?>>
+  <!-- Conteúdo -->
+  <div class="page-body">
+    <div class="container">
 
-        <!-- Cabeçalho da página -->
-        <header class="page-header">
-          <h1 class="page-title"><?php the_title(); ?></h1>
-        </header>
+      <?php while ( have_posts() ) : the_post(); ?>
 
-        <!-- Conteúdo da página (gerenciado pelo Elementor ou editor do WP) -->
-        <div class="page-content">
-          <?php the_content(); ?>
-        </div>
+        <article id="post-<?php the_ID(); ?>" <?php post_class( 'page-article' ); ?>>
+          <div class="page-article-inner">
+            <div class="page-content">
+              <?php the_content(); ?>
+            </div>
+          </div>
+        </article>
 
-      </article>
+      <?php endwhile; ?>
 
-    <?php endwhile; ?>
-
+    </div>
   </div>
+
 </main>
 
 <?php get_footer(); ?>
