@@ -41,6 +41,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: nowrap; /* garante que o CTA nunca escape para linha abaixo */
   height: 72px;
   max-width: 1280px;
   margin: 0 auto;

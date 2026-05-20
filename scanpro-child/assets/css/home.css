@@ -31,7 +31,7 @@
   flex: 1;
   display: grid;
   grid-template-columns: 55% 45%;
-  min-height: 0;
+  grid-template-rows: 1fr; /* força a linha a preencher toda a altura do flex parent */
 }
 
 /* Coluna de texto — fundo branco, conteúdo centralizado verticalmente */
