@@ -16,9 +16,9 @@
     <!-- Logo -->
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-logo" aria-label="<?php bloginfo( 'name' ); ?>">
       <img
-        src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/logo-scanpro.svg' ); ?>"
+        src="https://lp.scanpro.ch/wp-content/uploads/2025/10/logo-Scan-Pro-1.png"
         alt="Scan Pro"
-        height="40"
+        height="44"
         width="auto"
       >
     </a>

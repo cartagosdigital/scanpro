@@ -49,8 +49,11 @@ get_header();
         </div>
 
         <div class="split-image">
-          <!-- Substituir por imagem real da empresa -->
-          <div class="split-img-placeholder" aria-hidden="true"></div>
+          <img
+            src="https://lp.scanpro.ch/wp-content/uploads/2025/10/Design-sem-nome-2025-10-07T172817.842.png"
+            alt="<?php _e( 'Scan Pro — Team und Technik', 'scanpro-child' ); ?>"
+            loading="lazy"
+          >
         </div>
 
       </div>

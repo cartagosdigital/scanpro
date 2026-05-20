@@ -79,8 +79,11 @@ get_header();
 
       <!-- Imagem -->
       <div class="split-image">
-        <!-- Substituir por imagem real da empresa ou instalação -->
-        <div class="split-img-placeholder" aria-hidden="true"></div>
+        <img
+          src="https://lp.scanpro.ch/wp-content/uploads/2025/10/Design-sem-nome-2025-10-07T172817.842.png"
+          alt="<?php _e( 'Scan Pro — Lüftungstechnik Schweiz', 'scanpro-child' ); ?>"
+          loading="lazy"
+        >
       </div>
 
       <!-- Texto -->
@@ -212,12 +215,19 @@ get_header();
   <div class="container">
     <h2 class="partners-title"><?php _e( 'Offizielle Partner', 'scanpro-child' ); ?></h2>
     <div class="partners-grid" aria-label="<?php _e( 'Partnermarken', 'scanpro-child' ); ?>">
-      <!-- Substituir os placeholders de texto pelos logos SVG/PNG reais dos parceiros -->
       <div class="partner-logo-item">
-        <div class="partner-logo-placeholder">Exhausto</div>
+        <img
+          src="https://lp.scanpro.ch/wp-content/uploads/2025/11/exhausto_logo-scaled.png"
+          alt="Exhausto"
+          loading="lazy"
+        >
       </div>
       <div class="partner-logo-item">
-        <div class="partner-logo-placeholder">exodraft</div>
+        <img
+          src="https://lp.scanpro.ch/wp-content/uploads/2025/11/exodraft-logo-blue_wb.png"
+          alt="exodraft"
+          loading="lazy"
+        >
       </div>
       <div class="partner-logo-item">
         <div class="partner-logo-placeholder">Aldes</div>

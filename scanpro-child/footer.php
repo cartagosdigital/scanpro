@@ -17,9 +17,9 @@
       <div class="footer-col footer-brand">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer-logo">
           <img
-            src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/logo-scanpro.svg' ); ?>"
+            src="https://lp.scanpro.ch/wp-content/uploads/2025/10/logo-Scan-Pro-1.png"
             alt="Scan Pro"
-            height="36"
+            height="38"
             width="auto"
           >
         </a>

@@ -16,28 +16,26 @@
   padding-top: 70px; /* offset do header fixo */
 }
 
-/* Substituir pelo background-image real do ambiente industrial */
 .hero-bg {
   position: absolute;
   inset: 0;
-  /* background-image: url('../img/hero-background.jpg'); */
-  background-color: #1a2535;
+  background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/03/ChatGPT-Image-7-de-mar.-de-2026-14_52_55.png');
   background-size: cover;
-  background-position: center;
-  opacity: 0.5;
+  background-position: center top;
+  opacity: 1;
   z-index: 0;
 }
 
-/* Overlay gradiente sobre a imagem de fundo */
+/* Overlay gradiente — escurece à esquerda para legibilidade do texto */
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(15, 25, 35, 0.95) 0%,
-    rgba(15, 25, 35, 0.6) 60%,
-    rgba(15, 25, 35, 0.2) 100%
+    rgba(10, 18, 28, 0.88) 0%,
+    rgba(10, 18, 28, 0.55) 55%,
+    rgba(10, 18, 28, 0.12) 100%
   );
   z-index: 1;
 }
