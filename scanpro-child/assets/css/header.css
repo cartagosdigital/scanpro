@@ -8,7 +8,7 @@
 }
 
 /* ---------------------------------------------------------------
-   Wrapper
+   Wrapper — frosted glass no topo, sólido ao rolar
    --------------------------------------------------------------- */
 .site-header {
   position: fixed;
@@ -19,29 +19,30 @@
   max-width: 100% !important;
   z-index: 1000;
   height: 72px;
-  background: #ffffff;
-  /* sem border-bottom — apenas sombra ao rolar */
+  background: rgba(255, 255, 255, 0.80);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   box-shadow: none;
   box-sizing: border-box;
   animation: headerReveal 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
-  transition: box-shadow 0.3s ease, background 0.3s ease;
+  transition: background 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
 }
 
 .site-header.scrolled {
   background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 1px 0 rgba(0,0,0,0.07), 0 4px 24px rgba(0,0,0,0.07);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06), 0 4px 24px rgba(0,0,0,0.06);
 }
 
 /* ---------------------------------------------------------------
-   Inner
+   Inner — padding simétrico garante igual espaçamento cima/baixo
    --------------------------------------------------------------- */
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap; /* garante que o CTA nunca escape para linha abaixo */
+  flex-wrap: nowrap;
   height: 72px;
   max-width: 1280px;
   margin: 0 auto;
@@ -118,7 +119,7 @@
 .header-nav > ul > li > a:hover,
 .header-nav li.current-menu-item > a {
   color: var(--color-primary);
-  background: rgba(25,131,147,0.05);
+  background: rgba(25,131,147,0.06);
 }
 
 .header-nav > ul > li > a:hover::after,
@@ -246,13 +247,14 @@
 .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ---------------------------------------------------------------
-   Offset do conteúdo
+   Offset — removido: cada seção gerencia o próprio espaçamento
+   O header é transparente e sobrepõe o conteúdo intencionalmente.
    --------------------------------------------------------------- */
 .site-content-wrapper {
-  padding-top: 72px;
+  padding-top: 0;
 }
 
-/* Neutraliza espaçamento extra do Hello Elementor após o header */
+/* Neutraliza espaçamento extra do Hello Elementor */
 #content,
 .site-content,
 #primary,
@@ -274,7 +276,9 @@
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
-    background: #fff;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 8px 20px 24px;
     border-top: 1px solid rgba(0,0,0,0.06);
     box-shadow: 0 12px 32px rgba(0,0,0,0.1);
