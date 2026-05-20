@@ -19,38 +19,41 @@ get_header();
      SEÇÃO 1: HERO + STATS INTEGRADOS
      ============================================= -->
 <section class="hero" id="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
 
-  <div class="hero-body">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-eyebrow">
-          <span class="hero-eyebrow-text">
-            <?php _e( 'Energieeffizienz mit europäischer Technologie', 'scanpro-child' ); ?>
-          </span>
-        </div>
-        <h1>
-          <?php _e( 'Intelligente', 'scanpro-child' ); ?>
-          <em><?php _e( 'Lüftungslösungen', 'scanpro-child' ); ?></em>
-          <?php _e( 'und Wärmerückgewinnung', 'scanpro-child' ); ?>
-        </h1>
-        <div class="hero-divider" aria-hidden="true"></div>
-        <p>
-          <?php _e( 'Offizieller Vertriebspartner von Exhausto, exodraft und Aldes. Zertifizierte Systeme für Wohn-, Gewerbe- und Industriegebäude.', 'scanpro-child' ); ?>
-        </p>
-        <div class="hero-actions">
-          <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>" class="btn btn-primary">
-            <?php _e( 'Produkte ansehen', 'scanpro-child' ); ?>
-          </a>
-          <a href="<?php echo esc_url( home_url( '/kontakt' ) ); ?>" class="btn btn-outline">
-            <?php _e( 'Experten kontaktieren', 'scanpro-child' ); ?>
-          </a>
-        </div>
+  <div class="hero-split">
+
+    <!-- Coluna esquerda: conteúdo sobre fundo branco -->
+    <div class="hero-text">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-text">
+          <?php _e( 'Energieeffizienz mit europäischer Technologie', 'scanpro-child' ); ?>
+        </span>
+      </div>
+      <h1>
+        <?php _e( 'Intelligente', 'scanpro-child' ); ?>
+        <em><?php _e( 'Lüftungslösungen', 'scanpro-child' ); ?></em>
+        <?php _e( 'und Wärmerückgewinnung', 'scanpro-child' ); ?>
+      </h1>
+      <div class="hero-divider" aria-hidden="true"></div>
+      <p>
+        <?php _e( 'Offizieller Vertriebspartner von Exhausto, exodraft und Aldes. Zertifizierte Systeme für Wohn-, Gewerbe- und Industriegebäude.', 'scanpro-child' ); ?>
+      </p>
+      <div class="hero-actions">
+        <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>" class="btn btn-primary">
+          <?php _e( 'Produkte ansehen', 'scanpro-child' ); ?>
+        </a>
+        <a href="<?php echo esc_url( home_url( '/kontakt' ) ); ?>" class="btn btn-outline-dark">
+          <?php _e( 'Experten kontaktieren', 'scanpro-child' ); ?>
+        </a>
       </div>
     </div>
+
+    <!-- Coluna direita: foto full-bleed -->
+    <div class="hero-photo" role="img" aria-label="<?php _e( 'Lüftungstechnik Scan Pro', 'scanpro-child' ); ?>"></div>
+
   </div>
 
-  <!-- Barra de estatísticas integrada na base do hero -->
+  <!-- Barra de estatísticas — fundo cinza claro -->
   <div class="hero-stats" aria-label="<?php _e( 'Kennzahlen', 'scanpro-child' ); ?>">
     <div class="container">
       <div class="stats-grid">
