@@ -24,14 +24,17 @@ get_header();
   <div class="hero-body">
     <div class="container">
       <div class="hero-content">
-        <span class="hero-label">
-          <?php _e( 'Energieeffizienz mit europäischer Technologie', 'scanpro-child' ); ?>
-        </span>
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-text">
+            <?php _e( 'Energieeffizienz mit europäischer Technologie', 'scanpro-child' ); ?>
+          </span>
+        </div>
         <h1>
           <?php _e( 'Intelligente', 'scanpro-child' ); ?>
           <em><?php _e( 'Lüftungslösungen', 'scanpro-child' ); ?></em>
           <?php _e( 'und Wärmerückgewinnung', 'scanpro-child' ); ?>
         </h1>
+        <div class="hero-divider" aria-hidden="true"></div>
         <p>
           <?php _e( 'Offizieller Vertriebspartner von Exhausto, exodraft und Aldes. Zertifizierte Systeme für Wohn-, Gewerbe- und Industriegebäude.', 'scanpro-child' ); ?>
         </p>
