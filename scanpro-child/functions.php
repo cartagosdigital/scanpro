@@ -64,13 +64,13 @@ add_action( 'wp_enqueue_scripts', function () {
         );
     }
 
-    // CSS do WooCommerce
+    // CSS do WooCommerce — carrega após os estilos do WooCommerce para garantir precedência
     if ( class_exists( 'WooCommerce' ) ) {
         wp_enqueue_style(
             'scanpro-woocommerce',
             get_stylesheet_directory_uri() . '/assets/css/woocommerce.css',
-            [ 'scanpro-main' ],
-            '1.0.0'
+            [ 'scanpro-main', 'woocommerce-general', 'woocommerce-layout', 'woocommerce-smallscreen' ],
+            '1.0.2'
         );
     }
 
@@ -123,6 +123,14 @@ add_action( 'after_setup_theme', function () {
 // Remover o prefixo "Categoria:" dos títulos de arquivo WooCommerce
 add_filter( 'woocommerce_page_title', function ( $title ) {
     return $title;
+} );
+
+// Fixar 3 colunas no loop de produtos
+add_filter( 'loop_shop_columns', function () { return 3; } );
+
+// Remover o breadcrumb padrão do WooCommerce (o template usa o nosso próprio)
+add_action( 'init', function () {
+    remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 } );
 
 // Função helper para gerar URLs de categorias de produto de forma consistente
