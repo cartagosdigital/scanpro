@@ -5,6 +5,46 @@
    ============================================================= */
 
 /* ---------------------------------------------------------------
+   Cores dos links — sobrescreve o bordô/roxo padrão do WooCommerce
+   --------------------------------------------------------------- */
+.woocommerce a,
+.woocommerce-page a,
+.woocommerce a:link,
+.woocommerce-page a:link {
+  color: var(--color-primary);
+}
+
+.woocommerce a:hover,
+.woocommerce-page a:hover,
+.woocommerce a:focus,
+.woocommerce-page a:focus {
+  color: var(--color-accent);
+}
+
+/* Links específicos dentro de produtos, breadcrumbs e metadados */
+.woocommerce .woocommerce-breadcrumb a,
+.woocommerce .product_meta a,
+.woocommerce .woocommerce-loop-product__link,
+.woocommerce .woocommerce-loop-product__link:hover,
+.woocommerce nav.woocommerce-MyAccount-navigation a,
+.woocommerce .order-again .button,
+.woocommerce-cart .wc-proceed-to-checkout a,
+.woocommerce .widget_shopping_cart a {
+  color: var(--color-primary);
+}
+
+.woocommerce .woocommerce-breadcrumb a:hover,
+.woocommerce .product_meta a:hover {
+  color: var(--color-accent);
+}
+
+/* Remove sublinhado desnecessário em links WooCommerce */
+.woocommerce a,
+.woocommerce-page a {
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------------
    RESET WooCommerce float layout
    WooCommerce usa float:left + width:% nos produtos por padrão.
    Forçamos display:grid com !important nos seletores críticos.
