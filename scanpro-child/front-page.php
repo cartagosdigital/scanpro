@@ -16,62 +16,61 @@ get_header();
 ?>
 
 <!-- =============================================
-     SEÇÃO 1: HERO
+     SEÇÃO 1: HERO + STATS INTEGRADOS
      ============================================= -->
 <section class="hero" id="hero">
-  <!-- Substituir por imagem real de ambiente industrial via CSS background-image -->
   <div class="hero-bg" aria-hidden="true"></div>
-  <div class="container hero-content">
-    <span class="hero-label">
-      <?php _e( 'Energieeffizienz mit europäischer Technologie', 'scanpro-child' ); ?>
-    </span>
-    <h1>
-      <?php _e( 'Intelligente', 'scanpro-child' ); ?>
-      <em><?php _e( 'Lüftungslösungen', 'scanpro-child' ); ?></em>
-      <?php _e( 'und Wärmerückgewinnung', 'scanpro-child' ); ?>
-    </h1>
-    <p>
-      <?php _e( 'Offizieller Vertriebspartner von Exhausto, exodraft und Aldes. Zertifizierte Systeme für Wohn-, Gewerbe- und Industriegebäude.', 'scanpro-child' ); ?>
-    </p>
-    <div class="hero-actions">
-      <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>" class="btn btn-primary">
-        <?php _e( 'Produkte ansehen', 'scanpro-child' ); ?>
-      </a>
-      <a href="<?php echo esc_url( home_url( '/kontakt' ) ); ?>" class="btn btn-outline">
-        <?php _e( 'Experten kontaktieren', 'scanpro-child' ); ?>
-      </a>
+
+  <div class="hero-body">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-label">
+          <?php _e( 'Energieeffizienz mit europäischer Technologie', 'scanpro-child' ); ?>
+        </span>
+        <h1>
+          <?php _e( 'Intelligente', 'scanpro-child' ); ?>
+          <em><?php _e( 'Lüftungslösungen', 'scanpro-child' ); ?></em>
+          <?php _e( 'und Wärmerückgewinnung', 'scanpro-child' ); ?>
+        </h1>
+        <p>
+          <?php _e( 'Offizieller Vertriebspartner von Exhausto, exodraft und Aldes. Zertifizierte Systeme für Wohn-, Gewerbe- und Industriegebäude.', 'scanpro-child' ); ?>
+        </p>
+        <div class="hero-actions">
+          <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>" class="btn btn-primary">
+            <?php _e( 'Produkte ansehen', 'scanpro-child' ); ?>
+          </a>
+          <a href="<?php echo esc_url( home_url( '/kontakt' ) ); ?>" class="btn btn-outline">
+            <?php _e( 'Experten kontaktieren', 'scanpro-child' ); ?>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
+
+  <!-- Barra de estatísticas integrada na base do hero -->
+  <div class="hero-stats" aria-label="<?php _e( 'Kennzahlen', 'scanpro-child' ); ?>">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">+50</div>
+          <div class="stat-label"><?php _e( 'Jahre Erfahrung', 'scanpro-child' ); ?></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">95%</div>
+          <div class="stat-label"><?php _e( 'Wärmerückgewinnung möglich', 'scanpro-child' ); ?></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">99,5%</div>
+          <div class="stat-label"><?php _e( 'Reduktion schädlicher Partikel', 'scanpro-child' ); ?></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- =============================================
-     SEÇÃO 2: ESTATÍSTICAS
-     ============================================= -->
-<section class="stats-strip" aria-label="<?php _e( 'Kennzahlen', 'scanpro-child' ); ?>">
-  <div class="container">
-    <div class="stats-grid">
-
-      <div class="stat-item">
-        <div class="stat-number">+50</div>
-        <div class="stat-label"><?php _e( 'Jahre Erfahrung', 'scanpro-child' ); ?></div>
-      </div>
-
-      <div class="stat-item">
-        <div class="stat-number">95%</div>
-        <div class="stat-label"><?php _e( 'Wärmerückgewinnung möglich', 'scanpro-child' ); ?></div>
-      </div>
-
-      <div class="stat-item">
-        <div class="stat-number">99,5%</div>
-        <div class="stat-label"><?php _e( 'Reduktion schädlicher Partikel', 'scanpro-child' ); ?></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- =============================================
-     SEÇÃO 3: ÜBER SCAN PRO (split layout)
+     SEÇÃO 2: ÜBER SCAN PRO (split layout)
      ============================================= -->
 <section class="about-section">
   <div class="container">
@@ -108,7 +107,7 @@ get_header();
 </section>
 
 <!-- =============================================
-     SEÇÃO 4: GRID DE PRODUTOS COM FILTROS
+     SEÇÃO 3: GRID DE PRODUTOS COM FILTROS
      ============================================= -->
 <section class="products-section" id="produkte">
   <div class="container">
@@ -209,7 +208,7 @@ get_header();
 </section>
 
 <!-- =============================================
-     SEÇÃO 5: PARCEIROS OFICIAIS
+     SEÇÃO 4: PARCEIROS OFICIAIS
      ============================================= -->
 <section class="partners-section">
   <div class="container">
@@ -240,7 +239,7 @@ get_header();
 </section>
 
 <!-- =============================================
-     SEÇÃO 6: DIFERENCIAIS (3 colunas)
+     SEÇÃO 5: DIFERENCIAIS (3 colunas)
      ============================================= -->
 <section class="features-section">
   <div class="container">
@@ -298,7 +297,7 @@ get_header();
 </section>
 
 <!-- =============================================
-     SEÇÃO 7: CTA FINAL
+     SEÇÃO 6: CTA FINAL
      ============================================= -->
 <section class="cta-section" aria-label="<?php _e( 'Kontaktaufforderung', 'scanpro-child' ); ?>">
   <div class="container cta-content">

@@ -49,7 +49,7 @@ get_header();
   </section>
 
   <!-- Layout loja: sidebar + grid -->
-  <div class="container shop-layout">
+  <div class="shop-layout">
 
     <!-- Sidebar / Filtros -->
     <aside class="shop-sidebar" aria-label="<?php _e( 'Produktfilter', 'scanpro-child' ); ?>">
