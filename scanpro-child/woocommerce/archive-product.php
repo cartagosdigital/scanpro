@@ -48,6 +48,45 @@ get_header();
     </div>
   </section>
 
+  <!-- Visão geral de categorias — só na página principal da loja -->
+  <?php
+  if ( ! is_product_category() ) :
+    $produkte_term = get_term_by( 'slug', 'produkte', 'product_cat' );
+    $main_cats     = $produkte_term
+      ? get_terms( [ 'taxonomy' => 'product_cat', 'parent' => $produkte_term->term_id, 'hide_empty' => true, 'orderby' => 'name' ] )
+      : [];
+  ?>
+  <?php if ( ! empty( $main_cats ) && ! is_wp_error( $main_cats ) ) : ?>
+  <section class="shop-cats-section">
+    <div class="shop-cats-inner">
+      <div class="shop-cats-grid">
+        <?php foreach ( $main_cats as $cat ) :
+          $cat_link = get_term_link( $cat );
+          $sub_cats = get_terms( [ 'taxonomy' => 'product_cat', 'parent' => $cat->term_id, 'hide_empty' => true, 'number' => 4 ] );
+        ?>
+        <a class="shop-cat-card" href="<?php echo esc_url( $cat_link ); ?>">
+          <div class="shop-cat-card-body">
+            <div class="shop-cat-card-top">
+              <h3 class="shop-cat-card-name"><?php echo esc_html( $cat->name ); ?></h3>
+              <span class="shop-cat-card-count"><?php echo esc_html( $cat->count ); ?></span>
+            </div>
+            <?php if ( ! empty( $sub_cats ) && ! is_wp_error( $sub_cats ) ) : ?>
+            <ul class="shop-cat-card-subs">
+              <?php foreach ( $sub_cats as $sub ) : ?>
+              <li><?php echo esc_html( $sub->name ); ?></li>
+              <?php endforeach; ?>
+            </ul>
+            <?php endif; ?>
+          </div>
+          <span class="shop-cat-card-arrow" aria-hidden="true">→</span>
+        </a>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
+  <?php endif; ?>
+
   <!-- Layout loja: sidebar + grid -->
   <div class="shop-layout">
 
@@ -59,11 +98,13 @@ get_header();
           <?php _e( 'Kategorien', 'scanpro-child' ); ?>
         </h3>
         <?php
+        $root = get_term_by( 'slug', 'produkte', 'product_cat' );
         wp_list_categories( [
             'taxonomy'     => 'product_cat',
             'hide_empty'   => true,
             'title_li'     => '',
             'hierarchical' => true,
+            'parent'       => $root ? $root->term_id : 0,
         ] );
         ?>
       </div>

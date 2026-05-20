@@ -32,38 +32,91 @@
           </a>
         </li>
 
-        <li class="has-dropdown">
+        <li class="has-dropdown has-megamenu">
           <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>">
             <?php _e( 'Produkte', 'scanpro-child' ); ?>
             <span class="dropdown-arrow" aria-hidden="true">&#9660;</span>
           </a>
-          <ul class="dropdown">
-            <li>
-              <a href="<?php echo esc_url( home_url( '/produktkategorie/lueftung' ) ); ?>">
-                <?php _e( 'Lüftung', 'scanpro-child' ); ?>
+          <div class="dropdown mega-dropdown">
+            <div class="mega-dropdown-inner">
+
+              <!-- Spalte 1 -->
+              <div class="mega-col">
+                <div class="mega-group">
+                  <a class="mega-group-title" href="<?php echo esc_url( home_url( '/produktkategorie/lueftungsgeraete' ) ); ?>">
+                    <?php _e( 'Lüftungsgeräte', 'scanpro-child' ); ?>
+                  </a>
+                  <ul>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/kompakte-lueftungsgeraete' ) ); ?>"><?php _e( 'Kompakte Lüftungsgeräte', 'scanpro-child' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/dezentrale-lueftungsgeraete' ) ); ?>"><?php _e( 'Dezentrale Lüftungsgeräte', 'scanpro-child' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/modulare-lueftungsgeraete' ) ); ?>"><?php _e( 'Modulare Lüftungsgeräte', 'scanpro-child' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/automatik-fuer-lueftungsgeraete' ) ); ?>"><?php _e( 'Automatik', 'scanpro-child' ); ?></a></li>
+                  </ul>
+                </div>
+                <div class="mega-group">
+                  <a class="mega-group-title" href="<?php echo esc_url( home_url( '/produktkategorie/ventilatoren' ) ); ?>">
+                    <?php _e( 'Ventilatoren', 'scanpro-child' ); ?>
+                  </a>
+                  <ul>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/boxventilatoren' ) ); ?>"><?php _e( 'Boxventilatoren', 'scanpro-child' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/dach-und-wandventilatoren' ) ); ?>"><?php _e( 'Dach- &amp; Wandventilatoren', 'scanpro-child' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/dachdurchfuehrungen' ) ); ?>"><?php _e( 'Dachdurchführungen', 'scanpro-child' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/regelung-fuer-ventilatoren' ) ); ?>"><?php _e( 'Regelung', 'scanpro-child' ); ?></a></li>
+                  </ul>
+                </div>
+                <div class="mega-group">
+                  <a class="mega-group-title" href="<?php echo esc_url( home_url( '/produktkategorie/kuehl-und-heizregister' ) ); ?>">
+                    <?php _e( 'Kühl- &amp; Heizregister', 'scanpro-child' ); ?>
+                  </a>
+                  <ul>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/dx-register' ) ); ?>"><?php _e( 'DX-Register', 'scanpro-child' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/elektroregister' ) ); ?>"><?php _e( 'Elektroregister', 'scanpro-child' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/wasserregister' ) ); ?>"><?php _e( 'Wasserregister', 'scanpro-child' ); ?></a></li>
+                  </ul>
+                </div>
+              </div><!-- .mega-col -->
+
+              <!-- Spalte 2 -->
+              <div class="mega-col">
+                <div class="mega-group">
+                  <a class="mega-group-title" href="<?php echo esc_url( home_url( '/produktkategorie/luftdurchlaesse-gitter-und-dachhauben' ) ); ?>">
+                    <?php _e( 'Luftdurchlässe &amp; Gitter', 'scanpro-child' ); ?>
+                  </a>
+                  <ul>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/luftdurchlaesse' ) ); ?>"><?php _e( 'Luftdurchlässe', 'scanpro-child' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/dachhauben' ) ); ?>"><?php _e( 'Dachhauben', 'scanpro-child' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/wetterschutzgitter' ) ); ?>"><?php _e( 'Wetterschutzgitter', 'scanpro-child' ); ?></a></li>
+                  </ul>
+                </div>
+                <div class="mega-group">
+                  <a class="mega-group-title" href="<?php echo esc_url( home_url( '/produktkategorie/volumenstromregler-und-stellklappen' ) ); ?>">
+                    <?php _e( 'Volumenstromregler', 'scanpro-child' ); ?>
+                  </a>
+                  <ul>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/konstante-volumenstromregler' ) ); ?>"><?php _e( 'Konstante Volumenstromregler', 'scanpro-child' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/variable-volumenstromregler' ) ); ?>"><?php _e( 'Variable Volumenstromregler', 'scanpro-child' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/stellklappen' ) ); ?>"><?php _e( 'Stellklappen', 'scanpro-child' ); ?></a></li>
+                  </ul>
+                </div>
+                <div class="mega-group">
+                  <a class="mega-group-title" href="<?php echo esc_url( home_url( '/produktkategorie/brandschutzkomponenten' ) ); ?>">
+                    <?php _e( 'Brandschutzkomponenten', 'scanpro-child' ); ?>
+                  </a>
+                  <ul>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/kompaktsteuerung' ) ); ?>"><?php _e( 'Kompaktsteuerung', 'scanpro-child' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/produktkategorie/rauchmelder' ) ); ?>"><?php _e( 'Rauchmelder', 'scanpro-child' ); ?></a></li>
+                  </ul>
+                </div>
+              </div><!-- .mega-col -->
+
+            </div><!-- .mega-dropdown-inner -->
+
+            <div class="mega-dropdown-footer">
+              <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>">
+                <?php _e( 'Alle Produkte ansehen', 'scanpro-child' ); ?> →
               </a>
-            </li>
-            <li>
-              <a href="<?php echo esc_url( home_url( '/produktkategorie/waermerueckgewinnung' ) ); ?>">
-                <?php _e( 'Wärmerückgewinnung', 'scanpro-child' ); ?>
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo esc_url( home_url( '/produktkategorie/rauchsauger' ) ); ?>">
-                <?php _e( 'Rauchsauger', 'scanpro-child' ); ?>
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo esc_url( home_url( '/produktkategorie/filter' ) ); ?>">
-                <?php _e( 'Filter', 'scanpro-child' ); ?>
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo esc_url( home_url( '/produktkategorie/zubehoer' ) ); ?>">
-                <?php _e( 'Zubehör', 'scanpro-child' ); ?>
-              </a>
-            </li>
-          </ul>
+            </div>
+          </div><!-- .mega-dropdown -->
         </li>
 
         <li>
