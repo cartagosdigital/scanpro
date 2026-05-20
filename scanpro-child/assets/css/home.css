@@ -1,0 +1,199 @@
+/* =============================================================
+   Scan Pro Child — home.css
+   Estilos exclusivos da página inicial (front-page.php).
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   SEÇÃO 1: Hero
+   --------------------------------------------------------------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--color-dark);
+  position: relative;
+  overflow: hidden;
+  padding-top: 70px; /* offset do header fixo */
+}
+
+/* Substituir pelo background-image real do ambiente industrial */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  /* background-image: url('../img/hero-background.jpg'); */
+  background-color: #1a2535;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+/* Overlay gradiente sobre a imagem de fundo */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(15, 25, 35, 0.95) 0%,
+    rgba(15, 25, 35, 0.6) 60%,
+    rgba(15, 25, 35, 0.2) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.hero-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 20px;
+  padding: 6px 14px;
+  border: 1px solid rgba(0, 164, 141, 0.4);
+  border-radius: 100px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 5vw, 64px);
+  color: var(--color-white);
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+.hero p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 40px;
+  line-height: 1.75;
+  max-width: 560px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ---------------------------------------------------------------
+   SEÇÃO 2: Estatísticas
+   --------------------------------------------------------------- */
+.stats-strip {
+  background: #111d29;
+  padding: 64px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.stat-item {
+  padding: 0 20px;
+  position: relative;
+}
+
+.stat-item + .stat-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 50%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(40px, 5vw, 60px);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+/* ---------------------------------------------------------------
+   SEÇÃO 3: Sobre a empresa
+   --------------------------------------------------------------- */
+.about-section {
+  background: var(--color-white);
+}
+
+/* ---------------------------------------------------------------
+   SEÇÃO 4: Produtos
+   --------------------------------------------------------------- */
+.products-section {
+  background: var(--color-secondary);
+}
+
+/* ---------------------------------------------------------------
+   SEÇÃO 5 / Sobre: Parceiros — já em main.css (.partners-section)
+   --------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------
+   SEÇÃO 6: Diferenciais — já em main.css (.features-section)
+   --------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------
+   SEÇÃO 7: CTA — já em main.css (.cta-section)
+   --------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------
+   Responsivo
+   --------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 130px 0 80px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    text-align: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .stat-item + .stat-item::before {
+    display: none;
+  }
+}

@@ -1,0 +1,213 @@
+/* =============================================================
+   Scan Pro Child — footer.css
+   Footer escuro, 3 colunas, rodapé com copyright.
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   Footer principal
+   --------------------------------------------------------------- */
+.site-footer {
+  background: var(--color-dark);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 15px;
+}
+
+/* ---------------------------------------------------------------
+   Footer topo: 3 colunas
+   --------------------------------------------------------------- */
+.footer-top {
+  padding: 64px 0 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ---------------------------------------------------------------
+   Coluna 1: Marca
+   --------------------------------------------------------------- */
+.footer-brand .footer-logo {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.footer-brand .footer-logo img {
+  height: 36px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.footer-tagline {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 24px;
+  max-width: 280px;
+}
+
+.footer-partners-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 12px;
+}
+
+.footer-partners-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.partner-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.5px;
+}
+
+/* ---------------------------------------------------------------
+   Colunas 2 e 3: Links e Contato
+   --------------------------------------------------------------- */
+.footer-heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 20px;
+}
+
+/* Links rápidos */
+.footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-accent);
+}
+
+/* Dados de contato */
+.footer-contact address {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.footer-contact p {
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-contact a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-contact a:hover {
+  color: var(--color-accent);
+}
+
+.footer-icon {
+  margin-right: 8px;
+  color: var(--color-primary);
+  font-size: 12px;
+}
+
+.footer-cta-btn {
+  margin-top: 20px;
+  font-size: 14px;
+  padding: 10px 20px;
+}
+
+/* ---------------------------------------------------------------
+   Footer rodapé
+   --------------------------------------------------------------- */
+.footer-bottom {
+  padding: 20px 0;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+}
+
+.footer-legal-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-legal-nav a {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-legal-nav a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------------------------------------------------------------
+   Responsivo
+   --------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-tagline {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-top {
+    padding: 48px 0 32px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .footer-legal-nav {
+    gap: 16px;
+  }
+}

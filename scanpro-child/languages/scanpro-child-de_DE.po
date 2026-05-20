@@ -1,0 +1,362 @@
+# Scan Pro Child Theme — German (DE) Translation
+# Copyright (C) 2024 Scan Pro AG
+# This file is distributed under the same license as the Scan Pro Child package.
+#
+# INSTRUÇÕES:
+# - Este arquivo é a base de tradução para DE (alemão, idioma padrão do site)
+# - Para adicionar francês (FR), copiar este arquivo para scanpro-child-fr_FR.po,
+#   alterar o cabeçalho (Language: fr_FR) e preencher os msgstr com os textos em FR.
+# - Compilar cada .po para .mo com: msgfmt scanpro-child-de_DE.po -o scanpro-child-de_DE.mo
+#   (ou usar o plugin Loco Translate no WP Admin)
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Scan Pro Child 1.0.0\n"
+"Report-Msgid-Bugs-To: info@scanpro.ch\n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: Scan Pro AG <info@scanpro.ch>\n"
+"Language-Team: German <info@scanpro.ch>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Manual\n"
+"X-Domain: scanpro-child\n"
+
+#: header.php
+msgid "Hauptnavigation"
+msgstr "Hauptnavigation"
+
+#: header.php
+msgid "Startseite"
+msgstr "Startseite"
+
+#: header.php
+msgid "Produkte"
+msgstr "Produkte"
+
+#: header.php
+msgid "Lüftung"
+msgstr "Lüftung"
+
+#: header.php
+msgid "Wärmerückgewinnung"
+msgstr "Wärmerückgewinnung"
+
+#: header.php
+msgid "Rauchsauger"
+msgstr "Rauchsauger"
+
+#: header.php
+msgid "Filter"
+msgstr "Filter"
+
+#: header.php
+msgid "Zubehör"
+msgstr "Zubehör"
+
+#: header.php
+msgid "Über uns"
+msgstr "Über uns"
+
+#: header.php
+msgid "Referenzen"
+msgstr "Referenzen"
+
+#: header.php
+msgid "Kontakt"
+msgstr "Kontakt"
+
+#: header.php
+msgid "Offerte anfragen"
+msgstr "Offerte anfragen"
+
+#: header.php
+msgid "Menü öffnen"
+msgstr "Menü öffnen"
+
+#: front-page.php
+msgid "Energieeffizienz mit europäischer Technologie"
+msgstr "Energieeffizienz mit europäischer Technologie"
+
+#: front-page.php
+msgid "Intelligente"
+msgstr "Intelligente"
+
+#: front-page.php
+msgid "Lüftungslösungen"
+msgstr "Lüftungslösungen"
+
+#: front-page.php
+msgid "und Wärmerückgewinnung"
+msgstr "und Wärmerückgewinnung"
+
+#: front-page.php
+msgid "Offizieller Vertriebspartner von Exhausto, exodraft und Aldes. Zertifizierte Systeme für Wohn-, Gewerbe- und Industriegebäude."
+msgstr "Offizieller Vertriebspartner von Exhausto, exodraft und Aldes. Zertifizierte Systeme für Wohn-, Gewerbe- und Industriegebäude."
+
+#: front-page.php
+msgid "Produkte ansehen"
+msgstr "Produkte ansehen"
+
+#: front-page.php
+msgid "Experten kontaktieren"
+msgstr "Experten kontaktieren"
+
+#: front-page.php
+msgid "Kennzahlen"
+msgstr "Kennzahlen"
+
+#: front-page.php
+msgid "Jahre Erfahrung"
+msgstr "Jahre Erfahrung"
+
+#: front-page.php
+msgid "Wärmerückgewinnung möglich"
+msgstr "Wärmerückgewinnung möglich"
+
+#: front-page.php
+msgid "Reduktion schädlicher Partikel"
+msgstr "Reduktion schädlicher Partikel"
+
+#: front-page.php
+msgid "ÜBER SCAN PRO"
+msgstr "ÜBER SCAN PRO"
+
+#: front-page.php
+msgid "Schweizer Spezialisten für Lüftungssysteme seit 1970"
+msgstr "Schweizer Spezialisten für Lüftungssysteme seit 1970"
+
+#: front-page.php
+msgid "Mehr erfahren →"
+msgstr "Mehr erfahren →"
+
+#: front-page.php
+msgid "PRODUKTE"
+msgstr "PRODUKTE"
+
+#: front-page.php
+msgid "Unsere Produkte"
+msgstr "Unsere Produkte"
+
+#: front-page.php
+msgid "Produktfilter"
+msgstr "Produktfilter"
+
+#: front-page.php
+msgid "Alle"
+msgstr "Alle"
+
+#: front-page.php
+msgid "Produkt ansehen"
+msgstr "Produkt ansehen"
+
+#: front-page.php
+msgid "Keine Produkte gefunden."
+msgstr "Keine Produkte gefunden."
+
+#: front-page.php
+msgid "Alle Produkte anzeigen →"
+msgstr "Alle Produkte anzeigen →"
+
+#: front-page.php
+msgid "Offizielle Partner"
+msgstr "Offizielle Partner"
+
+#: front-page.php
+msgid "Partnermarken"
+msgstr "Partnermarken"
+
+#: front-page.php
+msgid "WARUM SCAN PRO?"
+msgstr "WARUM SCAN PRO?"
+
+#: front-page.php
+msgid "Spezialisten für Lüftungstechnik"
+msgstr "Spezialisten für Lüftungstechnik"
+
+#: front-page.php
+msgid "Technischer Support"
+msgstr "Technischer Support"
+
+#: front-page.php
+msgid "Zertifizierte Produkte"
+msgstr "Zertifizierte Produkte"
+
+#: front-page.php
+msgid "Schnelle Lieferung"
+msgstr "Schnelle Lieferung"
+
+#: front-page.php
+msgid "Bereit, Ihre Lüftung zu optimieren?"
+msgstr "Bereit, Ihre Lüftung zu optimieren?"
+
+#: front-page.php
+msgid "Kontaktieren Sie uns und erhalten Sie ein massgeschneidertes Angebot für Ihr Projekt."
+msgstr "Kontaktieren Sie uns und erhalten Sie ein massgeschneidertes Angebot für Ihr Projekt."
+
+#: front-page.php
+msgid "Kostenlose Offerte anfragen"
+msgstr "Kostenlose Offerte anfragen"
+
+#: front-page.php
+msgid "Kontaktaufforderung"
+msgstr "Kontaktaufforderung"
+
+#: page-ueber-uns.php
+msgid "Brotkrümelnavigation"
+msgstr "Brotkrümelnavigation"
+
+#: page-ueber-uns.php
+msgid "Ihr Schweizer Spezialist für Lüftungstechnik seit 1970"
+msgstr "Ihr Schweizer Spezialist für Lüftungstechnik seit 1970"
+
+#: page-ueber-uns.php
+msgid "UNSERE GESCHICHTE"
+msgstr "UNSERE GESCHICHTE"
+
+#: page-ueber-uns.php
+msgid "Über 50 Jahre Kompetenz in der Lüftungstechnik"
+msgstr "Über 50 Jahre Kompetenz in der Lüftungstechnik"
+
+#: page-ueber-uns.php
+msgid "UNSERE WERTE"
+msgstr "UNSERE WERTE"
+
+#: page-ueber-uns.php
+msgid "Was uns antreibt"
+msgstr "Was uns antreibt"
+
+#: page-ueber-uns.php
+msgid "Qualität"
+msgstr "Qualität"
+
+#: page-ueber-uns.php
+msgid "Fachkompetenz"
+msgstr "Fachkompetenz"
+
+#: page-ueber-uns.php
+msgid "Zuverlässigkeit"
+msgstr "Zuverlässigkeit"
+
+#: page-ueber-uns.php
+msgid "PARTNER"
+msgstr "PARTNER"
+
+#: page-ueber-uns.php
+msgid "Lernen Sie uns persönlich kennen"
+msgstr "Lernen Sie uns persönlich kennen"
+
+#: page-ueber-uns.php
+msgid "Kontakt aufnehmen"
+msgstr "Kontakt aufnehmen"
+
+#: page-kontakt.php
+msgid "Wir freuen uns auf Ihre Anfrage"
+msgstr "Wir freuen uns auf Ihre Anfrage"
+
+#: page-kontakt.php
+msgid "So erreichen Sie uns"
+msgstr "So erreichen Sie uns"
+
+#: page-kontakt.php
+msgid "Öffnungszeiten"
+msgstr "Öffnungszeiten"
+
+#: page-kontakt.php
+msgid "Montag – Freitag"
+msgstr "Montag – Freitag"
+
+#: page-kontakt.php
+msgid "Anfrage senden"
+msgstr "Anfrage senden"
+
+#: page-kontakt.php
+msgid "Pflichtfelder"
+msgstr "Pflichtfelder"
+
+#: footer.php
+msgid "Seit über 50 Jahren Ihr Schweizer Spezialist für effiziente Lüftungssysteme."
+msgstr "Seit über 50 Jahren Ihr Schweizer Spezialist für effiziente Lüftungssysteme."
+
+#: footer.php
+msgid "Offizielle Partner:"
+msgstr "Offizielle Partner:"
+
+#: footer.php
+msgid "Schnellzugriff"
+msgstr "Schnellzugriff"
+
+#: footer.php
+msgid "Hauptmenü"
+msgstr "Hauptmenü"
+
+#: footer.php
+msgid "Fusszeile"
+msgstr "Fusszeile"
+
+#: footer.php
+msgid "Scan Pro AG. Alle Rechte vorbehalten."
+msgstr "Scan Pro AG. Alle Rechte vorbehalten."
+
+#: footer.php
+msgid "Rechtliche Links"
+msgstr "Rechtliche Links"
+
+#: footer.php
+msgid "Datenschutz"
+msgstr "Datenschutz"
+
+#: footer.php
+msgid "Impressum"
+msgstr "Impressum"
+
+#: woocommerce/archive-product.php
+msgid "Produkte"
+msgstr "Produkte"
+
+#: woocommerce/archive-product.php
+msgid "Unsere Produkte"
+msgstr "Unsere Produkte"
+
+#: woocommerce/archive-product.php
+msgid "Kategorien"
+msgstr "Kategorien"
+
+#: woocommerce/archive-product.php
+msgid "Preis"
+msgstr "Preis"
+
+#: woocommerce/single-product.php
+msgid "Beschreibung"
+msgstr "Beschreibung"
+
+#: woocommerce/single-product.php
+msgid "Technische Daten"
+msgstr "Technische Daten"
+
+#: woocommerce/single-product.php
+msgid "Downloads"
+msgstr "Downloads"
+
+#: woocommerce/single-product.php
+msgid "Ähnliche Produkte"
+msgstr "Ähnliche Produkte"
+
+#: woocommerce/single-product.php
+msgid "Artikelnr.:"
+msgstr "Artikelnr.:"
+
+#: woocommerce/single-product.php
+msgid "Keine technischen Daten verfügbar."
+msgstr "Keine technischen Daten verfügbar."
+
+#: woocommerce/single-product.php
+msgid "Keine Downloads verfügbar."
+msgstr "Keine Downloads verfügbar."
+
+#: woocommerce/single-product.php
+msgid "Produktinformationen"
+msgstr "Produktinformationen"

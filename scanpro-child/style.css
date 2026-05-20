@@ -1,0 +1,17 @@
+/*
+ * Theme Name:   Scan Pro Child
+ * Theme URI:    https://scanpro.ch
+ * Description:  Kindthema von Hello Elementor für Scan Pro AG
+ * Author:       Scan Pro AG
+ * Author URI:   https://scanpro.ch
+ * Template:     hello-elementor
+ * Version:      1.0.0
+ * Text Domain:  scanpro-child
+ * Domain Path:  /languages
+ */
+
+/*
+ * Importa os estilos do tema pai Hello Elementor.
+ * Os estilos personalizados estão em assets/css/main.css (carregado via functions.php).
+ */
+@import url('../hello-elementor/style.css');
