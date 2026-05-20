@@ -16,50 +16,55 @@
 }
 
 /* ---------------------------------------------------------------
-   HERO — imagem full-width como background
-   A foto já possui área clara à esquerda (sem elementos) para
-   servir de fundo ao texto. Nenhum overlay pesado necessário.
+   HERO — container flex sem imagem própria.
+   A imagem fica em .hero-body para que os stats apareçam
+   APÓS o final da foto, sem sobreposição.
    --------------------------------------------------------------- */
 .hero {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-top: 72px;
-  background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/03/ChatGPT-Image-7-de-mar.-de-2026-14_52_55.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: relative;
 }
 
-/* Gradiente horizontal — "cria" a coluna de texto clara à esquerda
-   sem sobrepor a foto do lado direito */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.82) 0%,
-    rgba(255, 255, 255, 0.55) 35%,
-    rgba(255, 255, 255, 0.10) 60%,
-    rgba(255, 255, 255, 0) 80%
-  );
-  pointer-events: none;
-}
-
-/* Corpo do hero — ocupa o espaço disponível */
+/* ---------------------------------------------------------------
+   Corpo do hero — contém a imagem de fundo.
+   Ocupa todo o espaço restante acima dos stats.
+   --------------------------------------------------------------- */
 .hero-body {
   flex: 1;
   display: flex;
   align-items: center;
   position: relative;
-  z-index: 1;
-  padding: 72px 0 56px;
+  padding: 96px 0 72px;
+  background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/03/ChatGPT-Image-7-de-mar.-de-2026-14_52_55.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
-/* Bloco de texto — ancorado à esquerda, limitado a ~50% do viewport
-   para não invadir a área da foto à direita */
+/* Gradiente horizontal — coluna de texto clara à esquerda */
+.hero-body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.86) 0%,
+    rgba(255, 255, 255, 0.58) 36%,
+    rgba(255, 255, 255, 0.12) 62%,
+    rgba(255, 255, 255, 0) 82%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Conteúdo acima do overlay */
+.hero-body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Bloco de texto — ancorado à esquerda */
 .hero-text {
   max-width: min(600px, 50vw);
 }
@@ -96,7 +101,7 @@
   color: var(--color-primary);
 }
 
-/* Título principal — escuro sobre fundo claro */
+/* Título principal */
 .hero h1 {
   font-family: var(--font-heading);
   font-size: clamp(32px, 3.4vw, 52px);
@@ -108,7 +113,6 @@
   animation: heroFadeUp 0.72s cubic-bezier(0.22, 1, 0.36, 1) 0.16s both;
 }
 
-/* Palavra-chave em teal — destaque sobre área clara */
 .hero h1 em {
   font-style: normal;
   color: var(--color-primary);
@@ -146,14 +150,9 @@
 }
 
 /* ---------------------------------------------------------------
-   Barra de estatísticas
-   Fica na base do hero (ainda sobre a imagem) — fundo
-   semi-transparente branco para legibilidade.
+   Barra de estatísticas — aparece APÓS o final da imagem
    --------------------------------------------------------------- */
-/* Stats: fundo opaco — a imagem "termina" visualmente aqui */
 .hero-stats {
-  position: relative;
-  z-index: 1;
   background: var(--color-secondary);
   border-top: 1px solid var(--color-border);
   animation: heroFadeUp 0.6s ease 0.68s both;
@@ -208,7 +207,7 @@
    Responsivo — 768px
    --------------------------------------------------------------- */
 @media (max-width: 768px) {
-  .hero-body { padding: 48px 0 40px; }
+  .hero-body { padding: 88px 0 48px; }
 
   .hero h1 { font-size: clamp(28px, 8vw, 42px); }
 
@@ -216,6 +215,8 @@
 
   .hero-actions { flex-direction: column; gap: 12px; }
   .hero-actions .btn { text-align: center; }
+
+  .hero-text { max-width: 90vw; }
 }
 
 /* ---------------------------------------------------------------
