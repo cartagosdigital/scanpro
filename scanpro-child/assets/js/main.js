@@ -1,6 +1,6 @@
 /**
  * Scan Pro Child — main.js
- * Header sticky, menu mobile hamburger, tabs do produto.
+ * Header sticky, menu mobile hamburger, tabs do produto, animações de entrada.
  */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -135,11 +135,50 @@ document.addEventListener('DOMContentLoaded', function () {
       var target = document.querySelector(this.getAttribute('href'));
       if (target) {
         e.preventDefault();
-        var offset = 80; // altura do header fixo
+        var offset = 80;
         var top = target.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top: top, behavior: 'smooth' });
       }
     });
   });
+
+  // ---------------------------------------------------------------
+  // Animação de entrada: colunas do footer + seções genéricas
+  // Usa IntersectionObserver; fallback: exibe imediatamente se não suportado
+  // ---------------------------------------------------------------
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    // Colunas do footer
+    document.querySelectorAll('.footer-col').forEach(function (el) {
+      revealObserver.observe(el);
+    });
+
+    // Cards de diferenciais (features-section)
+    document.querySelectorAll('.feature-card').forEach(function (el, i) {
+      el.style.transitionDelay = (i * 0.1) + 's';
+      el.classList.add('reveal-item');
+      revealObserver.observe(el);
+    });
+
+    // Cards de produto na home
+    document.querySelectorAll('.product-card').forEach(function (el, i) {
+      el.style.transitionDelay = (i * 0.07) + 's';
+      el.classList.add('reveal-item');
+      revealObserver.observe(el);
+    });
+  } else {
+    // Fallback: tudo visível sem animação
+    document.querySelectorAll('.footer-col, .feature-card, .product-card').forEach(function (el) {
+      el.classList.add('is-visible');
+    });
+  }
 
 });

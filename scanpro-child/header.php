@@ -11,7 +11,7 @@
 <?php wp_body_open(); ?>
 
 <header class="site-header" id="site-header" role="banner">
-  <div class="header-inner container">
+  <div class="header-inner">
 
     <!-- Logo -->
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-logo" aria-label="<?php bloginfo( 'name' ); ?>">

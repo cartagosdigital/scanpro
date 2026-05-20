@@ -2,7 +2,8 @@
 /**
  * Footer do tema Scan Pro Child
  *
- * Fundo escuro (#0f1923), 3 colunas: logo+descrição, links rápidos, contato.
+ * Fundo claro (#f4f6f8), 3 colunas: logo+descrição, links rápidos, contato.
+ * Animação de entrada das colunas via IntersectionObserver (main.js).
  */
 ?>
 

@@ -683,6 +683,20 @@ section {
 }
 
 /* ---------------------------------------------------------------
+   Animação de entrada genérica (acionada pelo IntersectionObserver)
+   --------------------------------------------------------------- */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------------------------------------------------------
    Utilitários
    --------------------------------------------------------------- */
 .visually-hidden {

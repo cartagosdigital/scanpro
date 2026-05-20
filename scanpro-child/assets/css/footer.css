@@ -1,146 +1,240 @@
 /* =============================================================
-   Scan Pro Child — footer.css
-   Footer escuro, 3 colunas, rodapé com copyright.
+   Scan Pro Child — footer.css  (light, full-width, animated)
    ============================================================= */
 
 /* ---------------------------------------------------------------
-   Footer principal
+   Animações de entrada (colunas revelam ao entrar na viewport)
    --------------------------------------------------------------- */
-.site-footer {
-  background: var(--color-dark);
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 15px;
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ---------------------------------------------------------------
-   Footer topo: 3 colunas
+   Footer wrapper — full-width garantido
    --------------------------------------------------------------- */
-.footer-top {
-  padding: 64px 0 48px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+.site-footer {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+  background: #f4f6f8;
+  color: #444;
+  font-size: 15px;
+  border-top: 3px solid var(--color-primary);
 }
 
+/* ---------------------------------------------------------------
+   Topo: 3 colunas
+   --------------------------------------------------------------- */
+.footer-top {
+  padding: 64px 0 52px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+/* Inner sem .container para garantir largura total no fundo */
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 52px;
   align-items: start;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
+
+/* Animação das colunas via JS (IntersectionObserver em main.js) */
+.footer-col {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.footer-col.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay em cascata para cada coluna */
+.footer-col:nth-child(1) { transition-delay: 0s;    }
+.footer-col:nth-child(2) { transition-delay: 0.1s;  }
+.footer-col:nth-child(3) { transition-delay: 0.2s;  }
 
 /* ---------------------------------------------------------------
    Coluna 1: Marca
    --------------------------------------------------------------- */
 .footer-brand .footer-logo {
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  transition: opacity 0.2s ease, transform 0.3s ease;
+}
+
+.footer-brand .footer-logo:hover {
+  opacity: 0.8;
+  transform: scale(1.02);
 }
 
 .footer-brand .footer-logo img {
   height: 36px;
   width: auto;
-  filter: brightness(0) invert(1);
-  opacity: 0.9;
+  /* Logo colorido — sem filtro de inversão */
 }
 
 .footer-tagline {
   font-size: 14px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.75;
+  color: #666;
   margin-bottom: 24px;
   max-width: 280px;
 }
 
 .footer-partners-label {
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 1.5px;
+  color: #999;
   margin-bottom: 12px;
+  font-weight: 600;
 }
 
 .footer-partners-logos {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
 }
 
+/* Badges dos parceiros */
 .partner-name {
+  display: inline-block;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.5px;
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  color: var(--color-primary);
+  border: 1px solid rgba(25, 131, 147, 0.3);
+  border-radius: 4px;
+  padding: 3px 10px;
+  background: rgba(25, 131, 147, 0.05);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.partner-name:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
 }
 
 /* ---------------------------------------------------------------
-   Colunas 2 e 3: Links e Contato
+   Colunas 2 e 3
    --------------------------------------------------------------- */
 .footer-heading {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 1.2px;
+  color: var(--color-dark);
   margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 /* Links rápidos */
 .footer-links ul {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0;
+  list-style: none;
+}
+
+.footer-links li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .footer-links a {
-  color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 9px 0;
+  color: #555;
   font-size: 14px;
   text-decoration: none;
-  transition: color var(--transition-fast);
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+/* Seta animada */
+.footer-links a::before {
+  content: '→';
+  font-size: 12px;
+  color: var(--color-primary);
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: width 0.2s ease, opacity 0.2s ease, margin-right 0.2s ease;
+  margin-right: 0;
 }
 
 .footer-links a:hover {
-  color: var(--color-accent);
+  color: var(--color-primary);
+  gap: 8px;
 }
 
-/* Dados de contato */
+.footer-links a:hover::before {
+  width: 14px;
+  opacity: 1;
+  margin-right: 4px;
+}
+
+/* Contato */
 .footer-contact address {
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .footer-contact p {
-  margin-bottom: 10px;
-  color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: #555;
 }
 
 .footer-contact a {
-  color: rgba(255, 255, 255, 0.75);
+  color: #555;
   text-decoration: none;
-  transition: color var(--transition-fast);
+  transition: color 0.2s ease;
 }
 
 .footer-contact a:hover {
-  color: var(--color-accent);
+  color: var(--color-primary);
 }
 
 .footer-icon {
-  margin-right: 8px;
-  color: var(--color-primary);
-  font-size: 12px;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  margin-top: 2px;
 }
 
 .footer-cta-btn {
   margin-top: 20px;
   font-size: 14px;
-  padding: 10px 20px;
+  padding: 10px 22px;
+  border-radius: 8px;
 }
 
 /* ---------------------------------------------------------------
-   Footer rodapé
+   Rodapé — barra inferior
    --------------------------------------------------------------- */
 .footer-bottom {
-  padding: 20px 0;
+  background: #eaedf0;
+  padding: 18px 0;
 }
 
 .footer-bottom-inner {
@@ -149,11 +243,14 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 .footer-bottom p {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.4);
+  color: #888;
   margin: 0;
 }
 
@@ -164,37 +261,55 @@
 
 .footer-legal-nav a {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.4);
+  color: #888;
   text-decoration: none;
-  transition: color var(--transition-fast);
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.footer-legal-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
 }
 
 .footer-legal-nav a:hover {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-primary);
+}
+
+.footer-legal-nav a:hover::after {
+  transform: scaleX(1);
 }
 
 /* ---------------------------------------------------------------
    Responsivo
    --------------------------------------------------------------- */
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+    padding: 0 24px;
+  }
+
+  .footer-bottom-inner {
+    padding: 0 24px;
   }
 
   .footer-brand {
     grid-column: 1 / -1;
   }
 
-  .footer-tagline {
-    max-width: 100%;
-  }
+  .footer-tagline { max-width: 100%; }
 }
 
 @media (max-width: 600px) {
-  .footer-top {
-    padding: 48px 0 32px;
-  }
+  .footer-top { padding: 48px 0 36px; }
 
   .footer-grid {
     grid-template-columns: 1fr;
@@ -207,7 +322,5 @@
     gap: 8px;
   }
 
-  .footer-legal-nav {
-    gap: 16px;
-  }
+  .footer-legal-nav { gap: 16px; }
 }
