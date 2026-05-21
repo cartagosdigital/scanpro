@@ -39,19 +39,17 @@
 
 /* ---------------------------------------------------------------
    Home page — header totalmente transparente no topo.
-   A imagem do hero cobre a área do menu.
-   Ao rolar, .scrolled restaura o fundo branco (regra acima).
+   A classe .header-transparent é adicionada via is_front_page()
+   no header.php. Ao rolar, .scrolled restaura o fundo branco.
    --------------------------------------------------------------- */
-body.home .site-header,
-body.front-page .site-header {
+.site-header.header-transparent {
   background: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   box-shadow: none !important;
 }
 
-body.home .site-header.scrolled,
-body.front-page .site-header.scrolled {
+.site-header.header-transparent.scrolled {
   background: rgba(255, 255, 255, 0.97) !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;

@@ -10,7 +10,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<header class="site-header" id="site-header" role="banner">
+<header class="site-header<?php echo is_front_page() ? ' header-transparent' : ''; ?>" id="site-header" role="banner">
   <div class="header-inner">
 
     <!-- Logo -->
