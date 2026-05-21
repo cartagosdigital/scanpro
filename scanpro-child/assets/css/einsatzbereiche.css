@@ -1,0 +1,420 @@
+/* =============================================================
+   Scan Pro Child — einsatzbereiche.css
+   Estilos das páginas de áreas de aplicação (Einsatzbereiche)
+   e da seção correspondente na home.
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   Page Hero — hero escuro para páginas Einsatzbereiche
+   --------------------------------------------------------------- */
+.page-hero {
+  background: var(--color-dark);
+  padding: 120px 0 64px;
+  color: var(--color-white);
+}
+
+.page-hero .section-label {
+  color: var(--color-accent);
+}
+
+.page-hero h1 {
+  font-size: clamp(32px, 5vw, 56px);
+  color: var(--color-white);
+  margin-top: 12px;
+  letter-spacing: -0.5px;
+  line-height: 1.08;
+}
+
+.page-hero p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 620px;
+  margin-top: 18px;
+  line-height: 1.75;
+}
+
+/* ---------------------------------------------------------------
+   Breadcrumb — versão sobre fundo escuro
+   --------------------------------------------------------------- */
+.einsatz-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 20px;
+  list-style: none;
+}
+
+.einsatz-breadcrumb a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.einsatz-breadcrumb a:hover { color: var(--color-white); }
+
+.einsatz-breadcrumb span { color: rgba(255, 255, 255, 0.35); }
+
+/* ---------------------------------------------------------------
+   Grid principal — página Einsatzbereiche
+   --------------------------------------------------------------- */
+.einsatz-grid-section {
+  padding: 72px 0 96px;
+  background: var(--color-white);
+}
+
+.einsatz-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Última linha: 2 cards centrados quando 5 itens em 3 colunas */
+.einsatz-grid > .einsatz-card:nth-child(4) {
+  grid-column: 1 / 2;
+}
+.einsatz-grid > .einsatz-card:nth-child(5) {
+  grid-column: 2 / 3;
+}
+
+.einsatz-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid transparent;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-top-color 0.25s ease;
+}
+
+.einsatz-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.09);
+  border-top-color: var(--color-primary);
+}
+
+/* Área de ícone / imagem de cada card */
+.einsatz-card-icon {
+  background: var(--color-secondary);
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* Quando houver imagem real, usar background-image aqui */
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.25s;
+}
+
+.einsatz-card:hover .einsatz-card-icon { opacity: 0.92; }
+
+.einsatz-icon-placeholder {
+  width: 56px;
+  height: 56px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  opacity: 0.18;
+}
+
+.einsatz-card-body {
+  padding: 26px 28px 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.einsatz-card-body h3 {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+
+.einsatz-card-body p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.einsatz-card-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 13.5px;
+  letter-spacing: 0.1px;
+  transition: color 0.18s;
+}
+
+.einsatz-card:hover .einsatz-card-link { color: var(--color-accent); }
+
+/* ---------------------------------------------------------------
+   Template Single — layout de conteúdo com sidebar
+   --------------------------------------------------------------- */
+.einsatz-content-section {
+  padding: 72px 0 80px;
+  background: var(--color-white);
+}
+
+.einsatz-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 64px;
+  align-items: start;
+}
+
+.einsatz-text {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #333;
+}
+
+.einsatz-text h2 {
+  font-size: clamp(22px, 3vw, 32px);
+  margin: 36px 0 16px;
+  letter-spacing: -0.3px;
+}
+
+.einsatz-text h3 {
+  font-size: 20px;
+  margin: 28px 0 12px;
+}
+
+.einsatz-text p { margin-bottom: 18px; }
+
+.einsatz-text ul,
+.einsatz-text ol {
+  list-style: disc;
+  padding-left: 22px;
+  margin-bottom: 18px;
+}
+
+/* Sidebar de navegação */
+.einsatz-sidebar {
+  background: var(--color-secondary);
+  border-radius: var(--radius-lg);
+  padding: 26px 24px;
+  position: sticky;
+  top: 92px;
+  border-left: 3px solid var(--color-primary);
+}
+
+.einsatz-sidebar h4 {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-muted);
+  margin-bottom: 16px;
+}
+
+.einsatz-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.einsatz-nav li a {
+  display: block;
+  padding: 9px 12px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.18s, color 0.18s;
+}
+
+.einsatz-nav li a:hover { background: rgba(25, 131, 147, 0.07); color: var(--color-primary); }
+
+.einsatz-nav li.active a {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ---------------------------------------------------------------
+   Galeria de imagens
+   --------------------------------------------------------------- */
+.einsatz-gallery-section {
+  background: var(--color-secondary);
+  padding: 72px 0 80px;
+}
+
+.einsatz-gallery-section h2 { margin-bottom: 32px; }
+
+.einsatz-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.einsatz-gallery-item {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.einsatz-gallery-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.einsatz-gallery-item:hover .einsatz-gallery-img { transform: scale(1.04); }
+
+/* Placeholder quando não há imagens */
+.einsatz-gallery-placeholder {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.einsatz-gallery-placeholder-item {
+  height: 240px;
+  background: var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+/* ---------------------------------------------------------------
+   Seção de produtos relacionados na single
+   --------------------------------------------------------------- */
+.einsatz-products-section {
+  padding: 72px 0 88px;
+  background: var(--color-white);
+}
+
+/* ---------------------------------------------------------------
+   Seção Home — Einsatzbereiche (inserida na front-page)
+   --------------------------------------------------------------- */
+.home-einsatz-section {
+  padding: 80px 0 96px;
+  background: var(--color-white);
+}
+
+.home-einsatz-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-top: 44px;
+}
+
+.home-einsatz-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  height: 280px;
+  display: block;
+  background: var(--color-dark);
+}
+
+/* Cor de fallback por área — substituir por background-image real */
+.home-einsatz-wohnen              { background-color: #2a5f6e; }
+.home-einsatz-gewerbe             { background-color: #1d4f5c; }
+.home-einsatz-industrie           { background-color: #163e49; }
+.home-einsatz-bildungseinrichtungen { background-color: #0f2e38; }
+.home-einsatz-gastronomie         { background-color: #082028; }
+
+.home-einsatz-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s;
+}
+
+.home-einsatz-card:hover .home-einsatz-card-bg {
+  transform: scale(1.04);
+  opacity: 0.9;
+}
+
+.home-einsatz-card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 22px 20px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.15) 50%,
+    transparent 100%
+  );
+}
+
+.home-einsatz-card-overlay span {
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.25;
+  letter-spacing: 0.1px;
+}
+
+/* ---------------------------------------------------------------
+   Responsivo — 1200px
+   --------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  /* Centra os 2 cards da segunda linha ao usar grid de 3 colunas */
+  .einsatz-grid > .einsatz-card:nth-child(4),
+  .einsatz-grid > .einsatz-card:nth-child(5) {
+    grid-column: auto;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Responsivo — 1024px
+   --------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .home-einsatz-grid { grid-template-columns: repeat(3, 1fr); }
+  .home-einsatz-card:nth-child(4),
+  .home-einsatz-card:nth-child(5) { grid-column: auto; }
+
+  .einsatz-grid { grid-template-columns: repeat(2, 1fr); }
+  .einsatz-grid > .einsatz-card:nth-child(4),
+  .einsatz-grid > .einsatz-card:nth-child(5) { grid-column: auto; }
+
+  .einsatz-content-grid { grid-template-columns: 1fr 240px; gap: 44px; }
+}
+
+/* ---------------------------------------------------------------
+   Responsivo — 768px
+   --------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .page-hero { padding: 100px 0 48px; }
+
+  .einsatz-grid { grid-template-columns: 1fr; }
+  .einsatz-card-icon { height: 160px; }
+
+  .einsatz-content-grid { grid-template-columns: 1fr; gap: 32px; }
+  .einsatz-sidebar { position: static; }
+
+  .einsatz-gallery-grid,
+  .einsatz-gallery-placeholder { grid-template-columns: repeat(2, 1fr); }
+
+  .home-einsatz-grid { grid-template-columns: repeat(2, 1fr); }
+  .home-einsatz-card { height: 220px; }
+}
+
+/* ---------------------------------------------------------------
+   Responsivo — 480px
+   --------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .home-einsatz-grid { grid-template-columns: 1fr; gap: 10px; }
+  .home-einsatz-card { height: 180px; }
+
+  .einsatz-gallery-grid,
+  .einsatz-gallery-placeholder { grid-template-columns: 1fr; }
+
+  .einsatz-grid { grid-template-columns: 1fr; }
+}

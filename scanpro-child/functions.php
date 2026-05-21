@@ -64,6 +64,14 @@ add_action( 'wp_enqueue_scripts', function () {
         );
     }
 
+    // CSS Einsatzbereiche — páginas de áreas de aplicação e seção da home
+    wp_enqueue_style(
+        'scanpro-einsatzbereiche',
+        get_stylesheet_directory_uri() . '/assets/css/einsatzbereiche.css',
+        [ 'scanpro-main' ],
+        '1.0.0'
+    );
+
     // CSS do WooCommerce — carrega após os estilos do WooCommerce para garantir precedência
     if ( class_exists( 'WooCommerce' ) ) {
         wp_enqueue_style(

@@ -242,7 +242,54 @@ get_header();
 </section>
 
 <!-- =============================================
-     SEÇÃO 5: DIFERENCIAIS (3 colunas)
+     SEÇÃO 5: EINSATZBEREICHE
+     ============================================= -->
+<section class="home-einsatz-section">
+  <div class="container">
+    <span class="section-label"><?php _e( 'ANWENDUNGEN', 'scanpro-child' ); ?></span>
+    <h2 class="section-title">
+      <?php _e( 'Unsere', 'scanpro-child' ); ?>
+      <em><?php _e( 'Einsatzbereiche', 'scanpro-child' ); ?></em>
+    </h2>
+    <p class="section-intro">
+      <?php _e( 'Von der Wohnanlage bis zur Industriehalle — unsere Systeme werden in den unterschiedlichsten Bereichen eingesetzt.', 'scanpro-child' ); ?>
+    </p>
+
+    <div class="home-einsatz-grid">
+      <?php
+      $areas_home = [
+          [ 'title' => __( 'Wohnen', 'scanpro-child' ),                 'slug' => 'wohnen' ],
+          [ 'title' => __( 'Gewerbe', 'scanpro-child' ),                'slug' => 'gewerbe' ],
+          [ 'title' => __( 'Industrie', 'scanpro-child' ),              'slug' => 'industrie' ],
+          [ 'title' => __( 'Bildungseinrichtungen', 'scanpro-child' ),  'slug' => 'bildungseinrichtungen' ],
+          [ 'title' => __( 'Gastronomie', 'scanpro-child' ),            'slug' => 'gastronomie' ],
+      ];
+      foreach ( $areas_home as $a ) :
+          $page = get_page_by_path( 'einsatzbereiche/' . $a['slug'] );
+          $url  = $page ? get_permalink( $page->ID ) : esc_url( home_url( '/einsatzbereiche' ) );
+      ?>
+      <a href="<?php echo esc_url( $url ); ?>"
+         class="home-einsatz-card"
+         aria-label="<?php echo esc_attr( $a['title'] ); ?>">
+        <div class="home-einsatz-card-bg home-einsatz-<?php echo esc_attr( $a['slug'] ); ?>"></div>
+        <div class="home-einsatz-card-overlay">
+          <span><?php echo esc_html( $a['title'] ); ?></span>
+        </div>
+      </a>
+      <?php endforeach; ?>
+    </div>
+
+    <div class="text-center" style="margin-top: 44px;">
+      <a href="<?php echo esc_url( home_url( '/einsatzbereiche' ) ); ?>" class="btn btn-outline-dark">
+        <?php _e( 'Alle Einsatzbereiche ansehen →', 'scanpro-child' ); ?>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- /einsatzbereiche -->
+
+<!-- =============================================
+     SEÇÃO 6: DIFERENCIAIS (3 colunas)
      ============================================= -->
 <section class="features-section">
   <div class="container">
