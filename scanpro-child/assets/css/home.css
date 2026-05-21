@@ -64,9 +64,11 @@
   z-index: 1;
 }
 
-/* Bloco de texto — ancorado à esquerda */
+/* Bloco de texto — alinhado com o conteúdo do primeiro card numérico.
+   padding-left: 44px = mesmo valor do padding-left do .stat-item */
 .hero-text {
   max-width: min(600px, 50vw);
+  padding-left: 44px;
 }
 
 /* ---------------------------------------------------------------
@@ -216,7 +218,7 @@
   .hero-actions { flex-direction: column; gap: 12px; }
   .hero-actions .btn { text-align: center; }
 
-  .hero-text { max-width: 90vw; }
+  .hero-text { max-width: 90vw; padding-left: 0; }
 }
 
 /* ---------------------------------------------------------------
