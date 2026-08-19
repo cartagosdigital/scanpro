@@ -1,5 +1,6 @@
 /* =============================================================
-   Scan Pro Child — header.css
+   Scan Pro Child — header.css  (v2.0 — dois andares)
+   Topbar 36px + Main bar 64px = 100px total
    ============================================================= */
 
 @keyframes headerReveal {
@@ -8,67 +9,165 @@
 }
 
 /* ---------------------------------------------------------------
-   Wrapper — frosted glass no topo, sólido ao rolar
+   Header wrapper — fixo, z-index alto para cobrir tudo
    --------------------------------------------------------------- */
 .site-header {
+  display: block !important;   /* override Hello Elementor flex layout */
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
   width: 100% !important;
   max-width: 100% !important;
-  z-index: 1000;
-  height: 72px;
+  z-index: 9000;
+  height: 120px;
   padding: 0 !important;
   margin: 0 !important;
-  background: rgba(255, 255, 255, 0.80);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow: none;
-  box-sizing: border-box;
-  animation: headerReveal 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
-  transition: background 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
-}
-
-.site-header.scrolled {
   background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 1px 0 rgba(0,0,0,0.06), 0 4px 24px rgba(0,0,0,0.06);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06), 0 4px 24px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+  animation: headerReveal 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* ---------------------------------------------------------------
-   Home page — header totalmente transparente no topo.
-   A classe .header-transparent é adicionada via is_front_page()
-   no header.php. Ao rolar, .scrolled restaura o fundo branco.
+   TOPBAR — 36px
    --------------------------------------------------------------- */
-.site-header.header-transparent {
-  background: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+.header-topbar {
+  height: 36px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* Topbar sempre com fundo cinza claro */
+.header-topbar {
+  background: var(--color-secondary);
+  border-bottom-color: var(--color-border);
+}
+
+.header-topbar-inner {
+  height: 36px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+/* Links do topbar */
+.header-topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-topbar-nav a {
+  font-size: 12px;
+  font-weight: 500;
+  color: #555;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  transition: color 0.18s;
+}
+
+.header-topbar-nav a:hover { color: var(--color-primary); }
+
+/* ---------------------------------------------------------------
+   Seletor de idioma (topbar)
+   --------------------------------------------------------------- */
+.header-lang-selector {
+  position: relative;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  padding: 3px 7px;
+  border-radius: 4px;
+  outline: none;
+  color: #555;
+  transition: background 0.18s, border-color 0.18s;
+}
+
+.lang-toggle:hover { background: rgba(0,0,0,0.05); }
+
+.lang-toggle:focus,
+.lang-toggle:focus-visible,
+.lang-toggle:active {
+  outline: none !important;
   box-shadow: none !important;
+  border-color: rgba(0, 0, 0, 0.18) !important;
 }
 
-.site-header.header-transparent.scrolled {
-  background: rgba(255, 255, 255, 0.97) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.06), 0 4px 24px rgba(0,0,0,0.06) !important;
+.lang-code {
+  font-size: 12px;
+  font-weight: 700;
+  color: #555;
+  letter-spacing: 0.8px;
+}
+
+.lang-arrow {
+  font-size: 7px;
+  color: #888;
+  transition: transform 0.2s;
+}
+
+.header-lang-selector:hover .lang-arrow { transform: rotate(180deg); }
+
+/* Dropdown do idioma */
+.lang-dropdown {
+  min-width: 130px !important;
+  left: auto !important;
+  right: 0 !important;
+  transform: translateX(0) translateY(-4px) !important;
+  top: calc(100% + 4px) !important;
+  padding: 6px 0 !important;
+}
+
+.header-lang-selector:hover .lang-dropdown,
+.header-lang-selector:focus-within .lang-dropdown {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateX(0) translateY(0) !important;
+}
+
+.lang-dropdown li a {
+  font-size: 13px !important;
+  padding: 9px 16px !important;
+  font-weight: 500 !important;
+}
+
+.lang-dropdown .lang-active {
+  color: var(--color-primary) !important;
+  font-weight: 700 !important;
 }
 
 /* ---------------------------------------------------------------
-   Inner — padding simétrico garante igual espaçamento cima/baixo
+   MAIN BAR — 64px
    --------------------------------------------------------------- */
+.header-main {
+  height: 84px;
+}
+
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap;
-  height: 72px;
+  height: 84px;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 40px;
-  gap: 32px;
+  gap: 24px;
 }
 
 /* ---------------------------------------------------------------
@@ -84,12 +183,12 @@
 .header-logo:hover { opacity: 0.8; }
 
 .header-logo img {
-  height: 44px;
+  height: 40px;
   width: auto;
 }
 
 /* ---------------------------------------------------------------
-   Navegação
+   Navegação principal
    --------------------------------------------------------------- */
 .header-nav {
   flex: 1;
@@ -99,21 +198,28 @@
 
 .header-nav > ul {
   display: flex;
-  align-items: center;
+  align-items: stretch;
+  height: 100%;
   gap: 2px;
   list-style: none;
 }
 
-.header-nav > ul > li { position: relative; }
+.header-nav > ul > li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
 
+/* Links de nível 1 */
 .header-nav > ul > li > a {
   position: relative;
   display: inline-flex;
   align-items: center;
-  padding: 10px 14px;
+  gap: 3px;
+  padding: 8px 12px;
   color: #333;
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 500;
   text-decoration: none;
   border-radius: 6px;
@@ -122,13 +228,12 @@
   line-height: 1;
 }
 
-/* Underline animado */
 .header-nav > ul > li > a::after {
   content: '';
   position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: 6px;
+  left: 12px;
+  right: 12px;
+  bottom: 4px;
   height: 2px;
   background: var(--color-primary);
   border-radius: 2px;
@@ -140,7 +245,7 @@
 .header-nav > ul > li > a:hover,
 .header-nav li.current-menu-item > a {
   color: var(--color-primary);
-  background: rgba(25,131,147,0.06);
+  background: rgba(25, 131, 147, 0.06);
 }
 
 .header-nav > ul > li > a:hover::after,
@@ -150,35 +255,42 @@
 
 /* Seta dropdown */
 .dropdown-arrow {
-  font-size: 8px;
-  margin-left: 4px;
-  opacity: 0.4;
-  transition: transform 0.2s ease;
+  font-size: 7px;
+  opacity: 0.45;
+  transition: transform 0.2s ease, opacity 0.2s;
+  margin-left: 1px;
 }
 
-.has-dropdown:hover .dropdown-arrow { transform: rotate(180deg); opacity: 0.7; }
+.has-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+  opacity: 0.7;
+}
+
+/* Ocultar itens mobile-only no desktop */
+.nav-mobile-only { display: none !important; }
 
 /* ---------------------------------------------------------------
-   Dropdown
+   Dropdown padrão
    --------------------------------------------------------------- */
 .has-dropdown { position: relative; }
 
 .dropdown {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 6px);
   left: 50%;
   transform: translateX(-50%) translateY(-6px);
   background: #fff;
   min-width: 220px;
   border-radius: 10px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.13), 0 1px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.14), 0 1px 4px rgba(0,0,0,0.05);
   border-top: 3px solid var(--color-primary);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s cubic-bezier(0.22,1,0.36,1);
+  transition: opacity 0.2s ease, visibility 0s linear 0.18s, transform 0.2s cubic-bezier(0.22,1,0.36,1);
   padding: 8px 0;
-  z-index: 200;
+  z-index: 9999;  /* acima de qualquer elemento da página */
+  list-style: none;
 }
 
 .has-dropdown:hover .dropdown,
@@ -187,6 +299,7 @@
   visibility: visible;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
+  transition: opacity 0.2s ease, visibility 0s linear 0s, transform 0.2s cubic-bezier(0.22,1,0.36,1);
 }
 
 .dropdown li { display: block; }
@@ -214,7 +327,7 @@
 }
 
 .dropdown a:hover {
-  background: rgba(25,131,147,0.05);
+  background: rgba(25, 131, 147, 0.05);
   color: var(--color-primary);
   gap: 6px;
 }
@@ -226,8 +339,8 @@
    --------------------------------------------------------------- */
 .header-cta {
   flex-shrink: 0;
-  padding: 10px 22px;
-  font-size: 13.5px;
+  padding: 9px 20px;
+  font-size: 13px;
   white-space: nowrap;
   border-radius: 8px;
 }
@@ -262,39 +375,37 @@
 .hamburger span:nth-child(2) { width: 15px; }
 .hamburger:hover span { background: var(--color-primary); }
 .hamburger:hover span:nth-child(2) { width: 22px; }
-
 .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); width: 22px; }
 .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ---------------------------------------------------------------
-   Mega-menu dropdown — 2 colunas, ancorado abaixo do header
+   Mega-menu — full-width, âncora no topo do header
    --------------------------------------------------------------- */
+.has-megamenu { position: static; }
 
-/* Reposiciona o li pai para que absolute seja relativo ao site-header */
-.has-megamenu {
-  position: static;
-}
-
-/* Painel full-width abaixo do header */
 .has-megamenu .dropdown {
+  position: fixed;         /* ancoragem no viewport, independente de ancestral */
   left: 0;
   right: 0;
-  top: 72px;
-  width: auto;
+  top: 120px;              /* altura total do header */
+  width: 100%;
   min-width: 0;
-  transform: translateX(0) translateY(-6px);
+  transform: translateY(-6px);
   border-top: 3px solid var(--color-primary);
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   padding: 0;
 }
 
-.has-megamenu:hover .dropdown,
-.has-megamenu:focus-within .dropdown {
-  transform: translateX(0) translateY(0);
+.has-megamenu:focus-within .dropdown,
+.has-megamenu.mega-open .dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition: opacity 0.2s ease, visibility 0s linear 0s, transform 0.2s cubic-bezier(0.22,1,0.36,1);
 }
 
-/* Inner grid — max-width constrito para não esticar em telas grandes */
 .mega-dropdown-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -315,7 +426,6 @@
   padding-left: 48px;
 }
 
-/* Título de grupo (nome da categoria principal) */
 .mega-group-title {
   display: block;
   font-size: 10.5px !important;
@@ -332,14 +442,8 @@
 }
 
 .mega-group-title::before { display: none !important; }
+.mega-group-title:hover { color: var(--color-accent) !important; background: transparent !important; }
 
-.mega-group-title:hover {
-  color: var(--color-accent) !important;
-  background: transparent !important;
-  gap: 0 !important;
-}
-
-/* Links dos sub-itens */
 .mega-group > ul {
   display: flex;
   flex-direction: column;
@@ -382,12 +486,8 @@
   gap: 0 !important;
 }
 
-.mega-group > ul > li > a:hover::before {
-  background: var(--color-primary) !important;
-  width: 3px !important;
-}
+.mega-group > ul > li > a:hover::before { background: var(--color-primary) !important; }
 
-/* Rodapé do mega-menu */
 .mega-dropdown-footer {
   border-top: 1px solid var(--color-border);
   padding: 12px 40px;
@@ -407,22 +507,15 @@
 }
 
 .mega-dropdown-footer a::before { display: none !important; }
-
-.mega-dropdown-footer a:hover {
-  color: var(--color-accent) !important;
-  background: transparent !important;
-  gap: 6px !important;
-}
+.mega-dropdown-footer a:hover { color: var(--color-accent) !important; }
 
 /* ---------------------------------------------------------------
-   Offset — removido: cada seção gerencia o próprio espaçamento
-   O header é transparente e sobrepõe o conteúdo intencionalmente.
+   Offset de conteúdo — empurra a página para baixo do header fixo
    --------------------------------------------------------------- */
 .site-content-wrapper {
-  padding-top: 0;
+  padding-top: 120px !important;
 }
 
-/* Neutraliza espaçamento extra do Hello Elementor */
 #content,
 .site-content,
 #primary,
@@ -432,26 +525,35 @@
 }
 
 /* ---------------------------------------------------------------
-   Mobile
+   Mobile (≤ 960px)
    --------------------------------------------------------------- */
 @media (max-width: 960px) {
-  .header-inner { padding: 0 20px; }
 
+  /* Topbar oculta no mobile */
+  .header-topbar { display: none; }
+
+  /* Header fica com a altura só do main bar */
+  .site-header { height: 64px; }
+  .site-content-wrapper { padding-top: 64px !important; }
+
+  .header-inner { padding: 0 20px; height: 64px; }
+
+  /* Menu mobile — desliza de baixo do main bar */
   .header-nav {
     display: none;
     position: fixed;
-    top: 72px;
+    top: 64px;
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
-    background: rgba(255,255,255,0.97);
+    background: rgba(255, 255, 255, 0.97);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    padding: 8px 20px 24px;
+    padding: 8px 20px 28px;
     border-top: 1px solid rgba(0,0,0,0.06);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
-    z-index: 999;
-    max-height: calc(100vh - 72px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.10);
+    z-index: 9998;
+    max-height: calc(100vh - 64px);
     overflow-y: auto;
   }
 
@@ -471,10 +573,7 @@
     gap: 0;
   }
 
-  .header-nav > ul > li {
-    border-bottom: 1px solid #f0f0f0;
-  }
-
+  .header-nav > ul > li { border-bottom: 1px solid #f0f0f0; }
   .header-nav > ul > li:last-child { border-bottom: none; }
 
   .header-nav > ul > li > a {
@@ -486,6 +585,11 @@
 
   .header-nav > ul > li > a::after { display: none; }
 
+  /* Mostrar itens mobile-only (Über uns, Referenzen) */
+  .nav-mobile-only { display: block !important; }
+  .nav-mobile-only > a { color: #777 !important; font-size: 14px !important; }
+
+  /* Dropdown mobile — estático */
   .dropdown {
     position: static;
     transform: none !important;
@@ -499,6 +603,7 @@
     margin: 0 0 8px 8px;
     border-radius: 0;
     display: none;
+    z-index: auto;
   }
 
   .has-dropdown.open .dropdown { display: block; }
@@ -510,7 +615,7 @@
   .hamburger { display: flex; }
   .header-cta { display: none; }
 
-  /* Mega-menu em mobile — layout em coluna simples */
+  /* Mega-menu mobile */
   .has-megamenu { position: relative; }
 
   .has-megamenu .dropdown {
@@ -534,10 +639,7 @@
   .mega-col { gap: 12px; }
   .mega-col + .mega-col { border-left: none; padding-left: 0; margin-top: 4px; }
 
-  .mega-group-title {
-    padding: 5px 4px !important;
-    font-size: 11px !important;
-  }
+  .mega-group-title { padding: 5px 4px !important; font-size: 11px !important; }
 
   .mega-group > ul > li > a {
     padding: 4px 0 4px 14px !important;
@@ -546,13 +648,9 @@
     color: #555 !important;
   }
 
-  .mega-dropdown-footer {
-    background: transparent;
-    border-radius: 0;
-    padding: 8px 4px;
-  }
+  .mega-dropdown-footer { background: transparent; border-radius: 0; padding: 8px 4px; }
 }
 
 @media (max-width: 480px) {
-  .header-logo img { height: 36px; }
+  .header-logo img { height: 34px; }
 }

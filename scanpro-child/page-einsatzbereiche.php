@@ -42,12 +42,7 @@ $areas = [
        ============================================= -->
   <section class="page-hero">
     <div class="container">
-      <nav class="einsatz-breadcrumb" aria-label="<?php _e( 'Brotkrümelnavigation', 'scanpro-child' ); ?>">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Startseite', 'scanpro-child' ); ?></a>
-        <span aria-hidden="true">/</span>
-        <span aria-current="page"><?php _e( 'Einsatzbereiche', 'scanpro-child' ); ?></span>
-      </nav>
-      <span class="section-label"><?php _e( 'ANWENDUNGEN', 'scanpro-child' ); ?></span>
+<span class="section-label"><?php _e( 'ANWENDUNGEN', 'scanpro-child' ); ?></span>
       <h1><?php _e( 'Einsatzbereiche', 'scanpro-child' ); ?></h1>
       <p>
         <?php _e( 'Unsere Lüftungs- und Wärmerückgewinnungssysteme sind für eine Vielzahl von Anwendungsbereichen geeignet — vom Wohngebäude bis zur Industrieanlage.', 'scanpro-child' ); ?>
@@ -67,10 +62,7 @@ $areas = [
             $url  = $page ? get_permalink( $page->ID ) : esc_url( home_url( '/einsatzbereiche' ) );
         ?>
         <a href="<?php echo esc_url( $url ); ?>" class="einsatz-card">
-          <div class="einsatz-card-icon einsatz-icon-<?php echo esc_attr( $area['slug'] ); ?>">
-            <!-- Substituir por imagem ou ícone real de cada área -->
-            <div class="einsatz-icon-placeholder" aria-hidden="true"></div>
-          </div>
+          <div class="einsatz-card-icon einsatz-icon-<?php echo esc_attr( $area['slug'] ); ?>"></div>
           <div class="einsatz-card-body">
             <h3><?php echo esc_html( $area['title'] ); ?></h3>
             <p><?php echo esc_html( $area['desc'] ); ?></p>

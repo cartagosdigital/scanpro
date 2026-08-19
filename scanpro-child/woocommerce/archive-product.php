@@ -13,24 +13,10 @@ get_header();
 
 <main class="site-main woocommerce-main" id="main" role="main">
 
-  <!-- Banner da loja -->
-  <section class="page-banner page-banner--dark">
+  <!-- Hero da loja -->
+  <section class="page-hero">
     <div class="container">
-      <nav class="breadcrumb" aria-label="<?php _e( 'Brotkrümelnavigation', 'scanpro-child' ); ?>">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-          <?php _e( 'Startseite', 'scanpro-child' ); ?>
-        </a>
-        <span aria-hidden="true"> / </span>
-        <span aria-current="page">
-          <?php
-          if ( is_product_category() ) {
-              single_cat_title();
-          } else {
-              _e( 'Produkte', 'scanpro-child' );
-          }
-          ?>
-        </span>
-      </nav>
+      <span class="section-label"><?php _e( 'PRODUKTE', 'scanpro-child' ); ?></span>
       <h1>
         <?php
         if ( is_product_category() ) {
@@ -41,9 +27,7 @@ get_header();
         ?>
       </h1>
       <?php if ( is_product_category() && 0 < woocommerce_get_loop_display_mode() ) : ?>
-        <div class="shop-category-description">
-          <?php the_archive_description( '<p>', '</p>' ); ?>
-        </div>
+        <p><?php the_archive_description(); ?></p>
       <?php endif; ?>
     </div>
   </section>

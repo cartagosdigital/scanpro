@@ -6,10 +6,18 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   // ---------------------------------------------------------------
-  // Header sticky com sombra no scroll
+  // Header: transparente em páginas com hero, branco nas demais
   // ---------------------------------------------------------------
   var header = document.getElementById('site-header');
   if (header) {
+    var hasHero = !!document.querySelector('section.hero');
+
+    if (!hasHero) {
+      // Páginas sem hero (internas): marca o body para o CSS
+      // aplicar header branco via body.no-hero #site-header
+      document.body.classList.add('no-hero');
+    }
+
     window.addEventListener('scroll', function () {
       header.classList.toggle('scrolled', window.scrollY > 50);
     }, { passive: true });
@@ -143,6 +151,38 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // ---------------------------------------------------------------
+  // Filtro de categorias — página Referenzen
+  // ---------------------------------------------------------------
+  var refFilterBtns = document.querySelectorAll('.ref-filter-btn');
+  var refKategorien = document.querySelectorAll('.ref-kategorie');
+
+  if (refFilterBtns.length && refKategorien.length) {
+    refFilterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        refFilterBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        var filter = btn.dataset.filter;
+        refKategorien.forEach(function (kat) {
+          if (filter === 'all' || kat.dataset.category === filter) {
+            kat.classList.remove('hidden');
+          } else {
+            kat.classList.add('hidden');
+          }
+        });
+
+        // Scroll suave até a primeira categoria visível
+        var first = document.querySelector('.ref-kategorie:not(.hidden)');
+        if (first && filter !== 'all') {
+          var offset = 72 + 64; // header + filter bar
+          var top = first.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      });
+    });
+  }
+
+  // ---------------------------------------------------------------
   // Animação de entrada leve — só footer e .reveal-fade explícitos
   // ---------------------------------------------------------------
   if ('IntersectionObserver' in window) {
@@ -170,6 +210,52 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.footer-col, .reveal-fade').forEach(function (el) {
       el.classList.add('is-visible');
     });
+  }
+
+  // ---------------------------------------------------------------
+  // FAQ Accordion — Wissen
+  // ---------------------------------------------------------------
+  document.querySelectorAll('.faq-question').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      // Fechar todos
+      document.querySelectorAll('.faq-question').forEach(function (b) {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.classList.remove('open');
+      });
+
+      // Abrir o clicado (se estava fechado)
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        btn.nextElementSibling.classList.add('open');
+      }
+    });
+  });
+
+  // ---------------------------------------------------------------
+  // Mega-menu Produkte — hover com delay para não fechar ao mover o cursor
+  // (position:fixed no dropdown sai dos bounds do li, CSS :hover não é suficiente)
+  // ---------------------------------------------------------------
+  var megaLi   = document.querySelector('.has-megamenu');
+  var megaDrop = megaLi ? megaLi.querySelector(':scope > .dropdown') : null;
+  var megaTimer = null;
+
+  if (megaLi && megaDrop && window.innerWidth > 960) {
+    function openMega() {
+      clearTimeout(megaTimer);
+      megaLi.classList.add('mega-open');
+    }
+    function closeMega() {
+      megaTimer = setTimeout(function () {
+        megaLi.classList.remove('mega-open');
+      }, 320);
+    }
+
+    megaLi.addEventListener('mouseenter', openMega);
+    megaLi.addEventListener('mouseleave', closeMega);
+    megaDrop.addEventListener('mouseenter', openMega);
+    megaDrop.addEventListener('mouseleave', closeMega);
   }
 
 });

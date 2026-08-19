@@ -1,0 +1,505 @@
+/* =============================================================
+   Scan Pro Child — wissen.css
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   Layout principal
+   --------------------------------------------------------------- */
+.wissen-content-section { padding: 80px 0; }
+
+.wissen-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 60px;
+  align-items: start;
+}
+
+.wissen-text h2 {
+  font-size: clamp(20px, 2.6vw, 28px);
+  margin: 40px 0 16px;
+  color: var(--color-text);
+}
+
+.wissen-text h2:first-child { margin-top: 0; }
+
+.wissen-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+.wissen-intro-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 24px;
+  max-width: 720px;
+}
+
+/* ---------------------------------------------------------------
+   Sidebar de navegação
+   --------------------------------------------------------------- */
+.wissen-sidebar {
+  background: var(--color-secondary);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  position: sticky;
+  top: 128px;
+  border-left: 3px solid var(--color-primary);
+}
+
+.wissen-sidebar h4 {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-muted);
+  margin-bottom: 16px;
+}
+
+.wissen-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wissen-nav a {
+  display: block;
+  padding: 9px 12px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.18s, color 0.18s;
+}
+
+.wissen-nav a:hover { background: rgba(25, 131, 147, 0.07); color: var(--color-primary); }
+
+.wissen-nav li.active a {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ---------------------------------------------------------------
+   Hub de entrada (página Wissen pai)
+   --------------------------------------------------------------- */
+.wissen-hub-section { padding: 80px 0 96px; }
+
+.wissen-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.wissen-hub-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid transparent;
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  text-decoration: none;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-top-color 0.22s ease;
+}
+
+.wissen-hub-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  border-top-color: var(--color-primary);
+}
+
+.wissen-hub-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--color-text);
+}
+
+.wissen-hub-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.wissen-hub-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 13.5px;
+}
+
+/* ---------------------------------------------------------------
+   CO₂ — escala visual
+   --------------------------------------------------------------- */
+.wissen-info-box {
+  background: var(--color-secondary);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  margin: 32px 0;
+}
+
+.wissen-info-box h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--color-text);
+}
+
+.co2-scale { display: flex; flex-direction: column; gap: 10px; }
+
+.co2-level {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border-radius: 4px;
+}
+
+.co2-good  { background: #e8f5e9; border-left: 4px solid #43a047; }
+.co2-ok    { background: #fff8e1; border-left: 4px solid #fdd835; }
+.co2-warn  { background: #fff3e0; border-left: 4px solid #fb8c00; }
+.co2-bad   { background: #fce4ec; border-left: 4px solid #e53935; }
+
+.co2-value {
+  font-weight: 700;
+  font-size: 15px;
+  min-width: 160px;
+  font-family: var(--font-heading);
+}
+
+.co2-label { font-size: 14px; color: #444; }
+
+/* ---------------------------------------------------------------
+   Fórmula box — fundo claro, acento teal
+   --------------------------------------------------------------- */
+.wissen-formula-box {
+  background: var(--color-secondary);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  padding: 24px 28px;
+  margin: 24px 0;
+}
+
+.formula {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.formula-note {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+/* ---------------------------------------------------------------
+   FAQ Accordion
+   --------------------------------------------------------------- */
+.faq-gruppe { margin-bottom: 48px; }
+
+.faq-gruppe h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.faq-accordion { display: flex; flex-direction: column; gap: 8px; }
+
+.faq-item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  background: var(--color-white);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 15px;
+  text-align: left;
+  gap: 16px;
+  color: var(--color-text);
+  transition: background 0.18s, color 0.18s;
+}
+
+.faq-question:hover { background: var(--color-secondary); }
+
+.faq-question[aria-expanded="true"] {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.faq-icon {
+  font-size: 20px;
+  font-weight: 300;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+  line-height: 1;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+
+.faq-answer {
+  display: none;
+  padding: 20px;
+  background: var(--color-secondary);
+}
+
+.faq-answer.open { display: block; }
+
+.faq-answer p { font-size: 15px; line-height: 1.75; color: #444; margin: 0; }
+
+/* ---------------------------------------------------------------
+   Normen cards
+   --------------------------------------------------------------- */
+.norm-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.2s;
+}
+
+.norm-card:hover { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07); }
+
+.norm-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.norm-code {
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.norm-card h3 { font-size: 18px; color: var(--color-text); }
+
+.norm-card > p { font-size: 15px; line-height: 1.7; color: #444; }
+
+.norm-card-footer {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.norm-gilt-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.norm-gilt { font-size: 13px; color: var(--color-primary); font-weight: 600; }
+
+/* ---------------------------------------------------------------
+   Regelung cards
+   --------------------------------------------------------------- */
+.regelung-card {
+  border-left: 4px solid var(--color-primary);
+  padding: 28px 28px 28px 32px;
+  margin-bottom: 32px;
+  background: var(--color-secondary);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.regelung-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.regelung-kuerzel {
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.regelung-card h3 { font-size: 20px; color: var(--color-text); }
+
+.regelung-card > p { font-size: 15px; line-height: 1.7; color: #444; margin-bottom: 12px; }
+
+.regelung-empfehlung { font-style: italic; }
+
+.regelung-pros-cons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.regelung-pros h4 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #388e3c;
+  margin-bottom: 10px;
+}
+
+.regelung-cons h4 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #c62828;
+  margin-bottom: 10px;
+}
+
+.regelung-pros ul,
+.regelung-cons ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.regelung-pros li,
+.regelung-cons li { font-size: 14px; color: #444; padding-left: 18px; position: relative; }
+
+.regelung-pros li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #388e3c;
+  font-weight: 700;
+}
+
+.regelung-cons li::before {
+  content: '✗';
+  position: absolute;
+  left: 0;
+  color: #c62828;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------
+   Blog grid
+   --------------------------------------------------------------- */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.blog-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.blog-card-img img { width: 100%; height: 200px; object-fit: cover; display: block; }
+.blog-card-img-placeholder { height: 200px; background: var(--color-secondary); }
+
+.blog-card-body { padding: 20px; }
+
+.blog-card-date { font-size: 12px; color: var(--color-muted); }
+
+.blog-card h3 { font-size: 18px; margin: 8px 0; }
+.blog-card h3 a { text-decoration: none; color: var(--color-text); transition: color 0.18s; }
+.blog-card h3 a:hover { color: var(--color-primary); }
+
+.blog-card > .blog-card-body > p { font-size: 14px; color: #555; line-height: 1.6; }
+
+.blog-card-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.blog-pagination { margin-top: 40px; display: flex; gap: 8px; flex-wrap: wrap; }
+
+.blog-pagination .page-numbers {
+  padding: 8px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+.blog-pagination .page-numbers.current {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.blog-empty { color: var(--color-muted); font-style: italic; }
+
+/* ---------------------------------------------------------------
+   CTA inline
+   --------------------------------------------------------------- */
+.wissen-cta-inline {
+  background: var(--color-secondary);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.wissen-cta-inline p { font-size: 16px; font-weight: 600; margin: 0; color: var(--color-text); }
+
+/* ---------------------------------------------------------------
+   Responsivo — 1024px
+   --------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .wissen-hub-grid { grid-template-columns: repeat(2, 1fr); }
+  .regelung-pros-cons { grid-template-columns: 1fr; }
+}
+
+/* ---------------------------------------------------------------
+   Responsivo — 768px
+   --------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .wissen-content-grid { grid-template-columns: 1fr; }
+  .wissen-sidebar { position: static; }
+  .wissen-hub-grid { grid-template-columns: 1fr; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .co2-level { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .co2-value { min-width: unset; }
+  .wissen-cta-inline { flex-direction: column; align-items: flex-start; }
+}

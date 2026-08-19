@@ -18,27 +18,6 @@ get_header();
 
   <div class="container single-product-container">
 
-    <!-- Breadcrumb -->
-    <nav class="breadcrumb" aria-label="<?php _e( 'Brotkrümelnavigation', 'scanpro-child' ); ?>">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-        <?php _e( 'Startseite', 'scanpro-child' ); ?>
-      </a>
-      <span aria-hidden="true"> / </span>
-      <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>">
-        <?php _e( 'Produkte', 'scanpro-child' ); ?>
-      </a>
-      <?php
-      $terms = get_the_terms( get_the_ID(), 'product_cat' );
-      if ( $terms && ! is_wp_error( $terms ) ) :
-      ?>
-        <span aria-hidden="true"> / </span>
-        <a href="<?php echo esc_url( get_term_link( $terms[0] ) ); ?>">
-          <?php echo esc_html( $terms[0]->name ); ?>
-        </a>
-      <?php endif; ?>
-      <span aria-hidden="true"> / </span>
-      <span aria-current="page"><?php the_title(); ?></span>
-    </nav>
 
     <!-- Grid: galeria + resumo -->
     <div class="single-product-layout">

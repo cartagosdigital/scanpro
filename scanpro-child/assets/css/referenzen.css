@@ -1,0 +1,183 @@
+/* =============================================================
+   Scan Pro Child — referenzen.css
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   Barra de filtros
+   --------------------------------------------------------------- */
+.referenzen-filter-bar {
+  background: var(--color-secondary);
+  padding: 24px 0;
+  position: sticky;
+  top: 120px;
+  z-index: 100;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ref-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.ref-filter-btn {
+  padding: 8px 18px;
+  border: 2px solid var(--color-border);
+  border-radius: 30px;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.ref-filter-btn:hover,
+.ref-filter-btn.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ---------------------------------------------------------------
+   Seções de categorias
+   --------------------------------------------------------------- */
+.referenzen-sections {
+  padding: 80px 0;
+}
+
+.ref-kategorie {
+  margin-bottom: 80px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ref-kategorie:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Header da categoria: placeholder + descrição */
+.ref-kategorie-header {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 56px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.ref-img-placeholder {
+  width: 100%;
+  height: 220px;
+  background: var(--color-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.ref-kategorie-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-lg);
+}
+
+.ref-kategorie-text h2 {
+  font-size: clamp(20px, 2.6vw, 28px);
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--color-text);
+  line-height: 1.25;
+}
+
+.ref-kategorie-text p {
+  font-size: 15px;
+  line-height: 1.78;
+  color: #555;
+}
+
+/* ---------------------------------------------------------------
+   Lista de referências
+   --------------------------------------------------------------- */
+.ref-list-wrapper {
+  background: var(--color-secondary);
+  border-radius: var(--radius-lg);
+  padding: 32px 40px;
+  border-left: 3px solid var(--color-primary);
+}
+
+.ref-list-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+}
+
+.ref-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 32px;
+}
+
+.ref-list li {
+  font-size: 13.5px;
+  color: var(--color-text);
+  padding: 7px 0;
+  border-bottom: 1px solid var(--color-border);
+  line-height: 1.4;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.ref-list li::before {
+  content: '—';
+  color: var(--color-primary);
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 11px;
+}
+
+/* Estado oculto para filtro JS */
+.ref-kategorie.hidden {
+  display: none;
+}
+
+/* ---------------------------------------------------------------
+   Responsivo — 1024px
+   --------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .ref-list { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------------------------------------------------------------
+   Responsivo — 768px
+   --------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .referenzen-filter-bar { position: static; }
+
+  .ref-kategorie-header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .ref-img-placeholder { height: 160px; }
+
+  .ref-list { grid-template-columns: 1fr; }
+
+  .ref-list-wrapper { padding: 24px 20px; }
+
+  .ref-kategorie {
+    margin-bottom: 56px;
+    padding-bottom: 56px;
+  }
+}

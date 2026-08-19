@@ -9,18 +9,12 @@ get_header();
 
 <main class="site-main" id="main" role="main">
 
-  <!-- Banner -->
-  <section class="page-banner page-banner--dark">
+  <!-- Hero -->
+  <section class="page-hero">
     <div class="container">
-      <nav class="breadcrumb" aria-label="<?php _e( 'Brotkrümelnavigation', 'scanpro-child' ); ?>">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Startseite', 'scanpro-child' ); ?></a>
-        <span class="breadcrumb-sep" aria-hidden="true">›</span>
-        <span aria-current="page"><?php _e( 'Über uns', 'scanpro-child' ); ?></span>
-      </nav>
+<span class="section-label"><?php _e( 'ÜBER UNS', 'scanpro-child' ); ?></span>
       <h1><?php _e( 'Über uns', 'scanpro-child' ); ?></h1>
-      <p class="page-banner-subtitle">
-        <?php _e( 'Ihr Schweizer Spezialist für Lüftungstechnik seit 1970', 'scanpro-child' ); ?>
-      </p>
+      <p><?php _e( 'Ihr Schweizer Spezialist für Lüftungstechnik seit 1970', 'scanpro-child' ); ?></p>
     </div>
   </section>
 
@@ -98,11 +92,18 @@ get_header();
       <span class="section-label text-center" style="text-align:center"><?php _e( 'PARTNER', 'scanpro-child' ); ?></span>
       <h2 class="partners-title"><?php _e( 'Offizielle Partner', 'scanpro-child' ); ?></h2>
       <div class="partners-grid">
-        <!-- Substituir pelos logos reais -->
-        <div class="partner-logo-item"><div class="partner-logo-placeholder">Exhausto</div></div>
-        <div class="partner-logo-item"><div class="partner-logo-placeholder">exodraft</div></div>
-        <div class="partner-logo-item"><div class="partner-logo-placeholder">Aldes</div></div>
-        <div class="partner-logo-item"><div class="partner-logo-placeholder">Aereco</div></div>
+        <div class="partner-logo-item">
+          <img src="https://lp.scanpro.ch/wp-content/uploads/2025/11/exhausto_logo-scaled.png" alt="Exhausto" loading="lazy">
+        </div>
+        <div class="partner-logo-item">
+          <img src="https://lp.scanpro.ch/wp-content/uploads/2025/11/exodraft-logo-blue_wb.png" alt="exodraft" loading="lazy">
+        </div>
+        <div class="partner-logo-item">
+          <img src="https://lp.scanpro.ch/wp-content/uploads/2026/05/logo_aldes.png" alt="Aldes" loading="lazy">
+        </div>
+        <div class="partner-logo-item">
+          <img src="https://lp.scanpro.ch/wp-content/uploads/2026/05/aereco.png" alt="Aereco" loading="lazy">
+        </div>
       </div>
     </div>
   </section>

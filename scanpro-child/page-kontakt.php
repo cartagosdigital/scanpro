@@ -64,20 +64,12 @@ if ( isset( $_POST['scanpro_contact_nonce'] ) &&
 
 <main class="site-main" id="main" role="main">
 
-  <!-- Banner -->
-  <section class="page-banner page-banner--dark">
+  <!-- Hero -->
+  <section class="page-hero">
     <div class="container">
-      <nav class="breadcrumb" aria-label="<?php _e( 'Brotkrümelnavigation', 'scanpro-child' ); ?>">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-          <?php _e( 'Startseite', 'scanpro-child' ); ?>
-        </a>
-        <span aria-hidden="true"> / </span>
-        <span aria-current="page"><?php _e( 'Kontakt', 'scanpro-child' ); ?></span>
-      </nav>
+<span class="section-label"><?php _e( 'KONTAKT', 'scanpro-child' ); ?></span>
       <h1><?php _e( 'Kontakt', 'scanpro-child' ); ?></h1>
-      <p class="page-banner-subtitle">
-        <?php _e( 'Wir freuen uns auf Ihre Anfrage', 'scanpro-child' ); ?>
-      </p>
+      <p><?php _e( 'Wir freuen uns auf Ihre Anfrage', 'scanpro-child' ); ?></p>
     </div>
   </section>
 

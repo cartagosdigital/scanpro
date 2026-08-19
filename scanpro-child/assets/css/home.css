@@ -15,10 +15,15 @@
   to   { transform: scaleX(1); opacity: 1; }
 }
 
+/* Remove o offset do header fixo na home — o hero começa em y=0
+   e o header branco (z-index 9000) cobre os primeiros 120px */
+body.home .site-content-wrapper,
+body.front-page .site-content-wrapper {
+  padding-top: 0 !important;
+}
+
 /* ---------------------------------------------------------------
    HERO — container flex sem imagem própria.
-   A imagem fica em .hero-body para que os stats apareçam
-   APÓS o final da foto, sem sobreposição.
    --------------------------------------------------------------- */
 .hero {
   display: flex;
@@ -28,40 +33,67 @@
 
 /* ---------------------------------------------------------------
    Corpo do hero — contém a imagem de fundo.
-   Ocupa todo o espaço restante acima dos stats.
+   padding-top: 140px afasta o texto do header (120px) + margem.
    --------------------------------------------------------------- */
 .hero-body {
   flex: 1;
   display: flex;
   align-items: center;
   position: relative;
-  padding: 96px 0 72px;
-  background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/03/ChatGPT-Image-7-de-mar.-de-2026-14_52_55.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  padding: 140px 0 64px;
+  background-color: #eef4f5;
+  overflow: hidden;
 }
 
-/* Gradiente horizontal — coluna de texto clara à esquerda */
+/* Overlay duplo:
+   1. Tint suave do topo — profundidade atrás do header transparente
+   2. Fade branco da esquerda — área legível para o texto */
 .hero-body::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.86) 0%,
-    rgba(255, 255, 255, 0.58) 36%,
-    rgba(255, 255, 255, 0.12) 62%,
-    rgba(255, 255, 255, 0) 82%
-  );
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(200, 232, 236, 0.50) 0%,
+      rgba(200, 232, 236, 0.12) 18%,
+      transparent 38%
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.94) 0%,
+      rgba(255, 255, 255, 0.80) 30%,
+      rgba(255, 255, 255, 0.28) 56%,
+      rgba(255, 255, 255, 0.00) 76%
+    );
   pointer-events: none;
+  z-index: 1;
+}
+
+/* Conteúdo acima do overlay — exclui a imagem */
+.hero-body > *:not(.hero-img) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Imagem do hero — camada base, atrás do overlay e do conteúdo */
+.hero-img {
+  position: absolute !important;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% center;
+  pointer-events: none;
+  user-select: none;
   z-index: 0;
 }
 
-/* Conteúdo acima do overlay */
-.hero-body > * {
-  position: relative;
-  z-index: 1;
+/* Garante que o container ocupe toda a largura do flex pai,
+   permitindo que max-width + margin: auto funcione como em
+   contexto de bloco — necessário para alinhar com os stats */
+.hero-body > .container {
+  width: 100%;
 }
 
 /* Bloco de texto — alinhado com o conteúdo do primeiro card numérico.
@@ -206,19 +238,36 @@
 .products-section { background: var(--color-secondary); }
 
 /* ---------------------------------------------------------------
+   Responsivo — 960px
+   --------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .hero-text { max-width: 60vw; }
+}
+
+/* ---------------------------------------------------------------
    Responsivo — 768px
    --------------------------------------------------------------- */
 @media (max-width: 768px) {
-  .hero-body { padding: 88px 0 48px; }
+  .hero-body {
+    padding: 84px 0 44px;
+    background-position: right 35%;
+  }
+
+  /* Overlay mais sólido no mobile: texto sempre legível */
+  .hero-body::before {
+    background: rgba(255, 255, 255, 0.88);
+  }
 
   .hero h1 { font-size: clamp(28px, 8vw, 42px); }
-
-  .hero p { font-size: 15px; }
+  .hero p  { font-size: 15px; }
 
   .hero-actions { flex-direction: column; gap: 12px; }
   .hero-actions .btn { text-align: center; }
 
-  .hero-text { max-width: 90vw; padding-left: 0; }
+  .hero-text {
+    max-width: 100%;
+    padding-left: 0;
+  }
 }
 
 /* ---------------------------------------------------------------

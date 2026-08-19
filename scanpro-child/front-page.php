@@ -22,6 +22,14 @@ get_header();
 
   <!-- Conteúdo do hero sobre a imagem de fundo full-width -->
   <div class="hero-body">
+
+    <img
+      class="hero-img"
+      src="https://lp.scanpro.ch/wp-content/uploads/2026/07/ChatGPT-Image-17-de-jul.-de-2026-07_21_57.png"
+      alt=""
+      aria-hidden="true"
+    >
+
     <div class="container">
       <div class="hero-text">
         <div class="hero-eyebrow">
@@ -36,7 +44,7 @@ get_header();
         </h1>
         <div class="hero-divider" aria-hidden="true"></div>
         <p>
-          <?php _e( 'Offizieller Vertriebspartner von Exhausto, exodraft und Aldes. Zertifizierte Systeme für Wohn-, Gewerbe- und Industriegebäude.', 'scanpro-child' ); ?>
+          <?php _e( 'Offizieller Vertriebspartner von Exhausto, exodraft und Thermomatic. Zertifizierte Systeme für Wohn-, Gewerbe- und Industriegebäude.', 'scanpro-child' ); ?>
         </p>
         <div class="hero-actions">
           <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>" class="btn btn-primary">
@@ -98,7 +106,7 @@ get_header();
           <?php _e( 'Seit über 50 Jahren steht die Scan-Pro AG für innovative Lüftungslösungen und höchste Fachkompetenz in der Gebäudetechnik. Als Schweizer Spezialist beliefern wir Fachpartner und Planer mit energieeffizienten, hochwertigen Produkten.', 'scanpro-child' ); ?>
         </p>
         <p>
-          <?php _e( 'Wir sind offizieller Vertriebspartner von Exhausto, Aereco, Aldes und exodraft.', 'scanpro-child' ); ?>
+          <?php _e( 'Wir sind offizieller Vertriebspartner von Exhausto, exodraft und Thermomatic.', 'scanpro-child' ); ?>
         </p>
         <a href="<?php echo esc_url( home_url( '/ueber-uns' ) ); ?>" class="btn btn-outline-dark">
           <?php _e( 'Mehr erfahren →', 'scanpro-child' ); ?>
@@ -232,10 +240,11 @@ get_header();
         >
       </div>
       <div class="partner-logo-item">
-        <div class="partner-logo-placeholder">Aldes</div>
-      </div>
-      <div class="partner-logo-item">
-        <div class="partner-logo-placeholder">Aereco</div>
+        <img
+          src="https://lp.scanpro.ch/wp-content/uploads/2026/07/Logo_Thermomatic-scaled.png"
+          alt="Thermomatic"
+          loading="lazy"
+        >
       </div>
     </div>
   </div>

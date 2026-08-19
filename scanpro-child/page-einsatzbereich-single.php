@@ -31,15 +31,6 @@ $cat_slug     = $slug_to_cat[ $current_slug ] ?? '';
        ============================================= -->
   <section class="page-hero page-hero--single">
     <div class="container">
-      <nav class="einsatz-breadcrumb" aria-label="<?php _e( 'Brotkrümelnavigation', 'scanpro-child' ); ?>">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Startseite', 'scanpro-child' ); ?></a>
-        <span aria-hidden="true">/</span>
-        <?php if ( $parent_id ) : ?>
-          <a href="<?php echo esc_url( get_permalink( $parent_id ) ); ?>"><?php _e( 'Einsatzbereiche', 'scanpro-child' ); ?></a>
-          <span aria-hidden="true">/</span>
-        <?php endif; ?>
-        <span aria-current="page"><?php the_title(); ?></span>
-      </nav>
       <span class="section-label"><?php _e( 'EINSATZBEREICHE', 'scanpro-child' ); ?></span>
       <h1><?php the_title(); ?></h1>
     </div>
@@ -52,15 +43,12 @@ $cat_slug     = $slug_to_cat[ $current_slug ] ?? '';
     <div class="container">
       <div class="einsatz-content-grid">
 
-        <!-- Texto do editor WordPress -->
+        <!-- Conteúdo por slug — injectado por scanpro_get_einsatzbereich_content() -->
         <div class="einsatz-text">
-          <?php the_content(); ?>
-
-          <?php if ( ! get_the_content() && current_user_can( 'edit_posts' ) ) : ?>
-            <p style="color: var(--color-muted); font-style: italic; font-size: 14px;">
-              <?php _e( 'Seite bearbeiten und Inhalt hinzufügen.', 'scanpro-child' ); ?>
-            </p>
-          <?php endif; ?>
+          <?php
+          $slug = get_post_field( 'post_name', get_the_ID() );
+          echo scanpro_get_einsatzbereich_content( $slug );
+          ?>
         </div>
 
         <!-- Sidebar: navegação entre áreas -->
