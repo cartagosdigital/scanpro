@@ -27,7 +27,7 @@ get_header();
         <article class="team-card reveal-fade">
           <div class="team-card-photo">
             <img
-              src="https://lp.scanpro.ch/wp-content/uploads/2026/07/CroppedImage300200-Photo-Mark-Studio-copy-2.jpeg"
+              src="https://lp.scanpro.ch/wp-content/uploads/2026/08/F8860D54-D133-4841-856E-3334FF59B837.png"
               alt="Mark von Borries"
               loading="lazy"
             >
@@ -45,7 +45,7 @@ get_header();
         <article class="team-card reveal-fade">
           <div class="team-card-photo">
             <img
-              src="https://lp.scanpro.ch/wp-content/uploads/2026/07/images-5.jpeg"
+              src="https://lp.scanpro.ch/wp-content/uploads/2026/08/BE9D06BD-D963-4C0B-8665-8A807F8BDE33.png"
               alt="Andreas Lehmann"
               loading="lazy"
             >
@@ -63,7 +63,7 @@ get_header();
         <article class="team-card reveal-fade">
           <div class="team-card-photo">
             <img
-              src="https://lp.scanpro.ch/wp-content/uploads/2026/07/CroppedImage300200-buehler.jpg"
+              src="https://lp.scanpro.ch/wp-content/uploads/2026/08/04634001-1F03-44B6-BC0C-B978E68C6941.png"
               alt="Sonja Bühler"
               loading="lazy"
             >
@@ -81,7 +81,7 @@ get_header();
         <article class="team-card reveal-fade">
           <div class="team-card-photo">
             <img
-              src="https://lp.scanpro.ch/wp-content/uploads/2026/07/CroppedImage300200-WhatsApp-Image-2025-09-16-at-12.57.41.jpeg"
+              src="https://lp.scanpro.ch/wp-content/uploads/2026/08/FullSizeRender.jpeg"
               alt="Priscila Kirsner"
               loading="lazy"
             >
