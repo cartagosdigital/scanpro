@@ -94,7 +94,7 @@ add_action( 'wp_enqueue_scripts', function () {
             'scanpro-woocommerce',
             get_stylesheet_directory_uri() . '/assets/css/woocommerce.css',
             [ 'scanpro-main', 'woocommerce-general', 'woocommerce-layout', 'woocommerce-smallscreen' ],
-            '1.1.0'
+            '1.2.0'
         );
     }
 
@@ -103,7 +103,7 @@ add_action( 'wp_enqueue_scripts', function () {
         'scanpro-main',
         get_stylesheet_directory_uri() . '/assets/js/main.js',
         [ 'jquery' ],
-        '1.2.0',
+        '1.3.0',
         true
     );
 

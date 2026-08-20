@@ -80,62 +80,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ---------------------------------------------------------------
-  // Abas do produto (single-product.php)
-  // ---------------------------------------------------------------
-  var tabBtns = document.querySelectorAll('.product-tab-btn');
-  var tabPanels = document.querySelectorAll('.product-tab-panel');
-
-  if (tabBtns.length) {
-    tabBtns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var targetId = 'tab-panel-' + this.dataset.tab;
-
-        // Desativar todos
-        tabBtns.forEach(function (b) {
-          b.classList.remove('active');
-          b.setAttribute('aria-selected', 'false');
-          b.setAttribute('tabindex', '-1');
-        });
-        tabPanels.forEach(function (p) {
-          p.classList.remove('active');
-          p.hidden = true;
-        });
-
-        // Ativar alvo
-        this.classList.add('active');
-        this.setAttribute('aria-selected', 'true');
-        this.removeAttribute('tabindex');
-
-        var panel = document.getElementById(targetId);
-        if (panel) {
-          panel.classList.add('active');
-          panel.hidden = false;
-        }
-      });
-
-      // Navegação por teclado nas abas (→ ← Home End)
-      btn.addEventListener('keydown', function (e) {
-        var idx = Array.prototype.indexOf.call(tabBtns, this);
-        var next;
-        if (e.key === 'ArrowRight') {
-          next = tabBtns[(idx + 1) % tabBtns.length];
-        } else if (e.key === 'ArrowLeft') {
-          next = tabBtns[(idx - 1 + tabBtns.length) % tabBtns.length];
-        } else if (e.key === 'Home') {
-          next = tabBtns[0];
-        } else if (e.key === 'End') {
-          next = tabBtns[tabBtns.length - 1];
-        }
-        if (next) {
-          e.preventDefault();
-          next.click();
-          next.focus();
-        }
-      });
-    });
-  }
-
-  // ---------------------------------------------------------------
   // Smooth scroll para âncoras internas
   // ---------------------------------------------------------------
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {

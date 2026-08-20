@@ -3,7 +3,7 @@
  * Template: Produto individual — Scan Pro Child
  * Override de woocommerce/single-product.php
  *
- * Seções: galeria | dados | abas (Beschreibung / Technische Daten / Downloads)
+ * Seções: galeria | dados | descrição única (conteúdo colado via WooCommerce)
  * Seção inferior: Ähnliche Produkte
  */
 
@@ -80,119 +80,12 @@ get_header();
       </div><!-- .single-product-summary -->
     </div><!-- .single-product-layout -->
 
-    <!-- Abas: Descrição | Dados Técnicos | Downloads -->
-    <div class="product-tabs-section" id="product-tabs">
-
-      <div class="product-tabs-nav" role="tablist" aria-label="<?php _e( 'Produktinformationen', 'scanpro-child' ); ?>">
-        <button
-          class="product-tab-btn active"
-          role="tab"
-          aria-selected="true"
-          aria-controls="tab-panel-beschreibung"
-          id="tab-btn-beschreibung"
-          data-tab="beschreibung"
-        >
-          <?php _e( 'Beschreibung', 'scanpro-child' ); ?>
-        </button>
-        <button
-          class="product-tab-btn"
-          role="tab"
-          aria-selected="false"
-          aria-controls="tab-panel-technisch"
-          id="tab-btn-technisch"
-          data-tab="technisch"
-          tabindex="-1"
-        >
-          <?php _e( 'Technische Daten', 'scanpro-child' ); ?>
-        </button>
-        <button
-          class="product-tab-btn"
-          role="tab"
-          aria-selected="false"
-          aria-controls="tab-panel-downloads"
-          id="tab-btn-downloads"
-          data-tab="downloads"
-          tabindex="-1"
-        >
-          <?php _e( 'Downloads', 'scanpro-child' ); ?>
-        </button>
+    <!-- Descrição — campo único, conteúdo colado diretamente no editor WooCommerce -->
+    <div class="product-description-section">
+      <div class="product-description">
+        <?php the_content(); ?>
       </div>
-
-      <!-- Painel: Descrição completa -->
-      <div
-        class="product-tab-panel active"
-        role="tabpanel"
-        id="tab-panel-beschreibung"
-        aria-labelledby="tab-btn-beschreibung"
-      >
-        <div class="product-description">
-          <?php the_content(); ?>
-        </div>
-      </div>
-
-      <!-- Painel: Dados técnicos (atributos WooCommerce) -->
-      <div
-        class="product-tab-panel"
-        role="tabpanel"
-        id="tab-panel-technisch"
-        aria-labelledby="tab-btn-technisch"
-        hidden
-      >
-        <?php
-        // Atributos do produto (especificações técnicas)
-        $attributes = $product->get_attributes();
-        if ( $attributes ) :
-        ?>
-        <table class="product-specs-table">
-          <tbody>
-            <?php foreach ( $attributes as $attribute ) :
-              $label  = wc_attribute_label( $attribute->get_name() );
-              $values = $attribute->is_taxonomy()
-                ? wc_get_product_terms( $product->get_id(), $attribute->get_name(), [ 'fields' => 'names' ] )
-                : $attribute->get_options();
-              if ( empty( $values ) ) continue;
-            ?>
-            <tr>
-              <th><?php echo esc_html( $label ); ?></th>
-              <td><?php echo esc_html( implode( ', ', $values ) ); ?></td>
-            </tr>
-            <?php endforeach; ?>
-          </tbody>
-        </table>
-        <?php else : ?>
-          <p><?php _e( 'Keine technischen Daten verfügbar.', 'scanpro-child' ); ?></p>
-        <?php endif; ?>
-      </div>
-
-      <!-- Painel: Downloads -->
-      <div
-        class="product-tab-panel"
-        role="tabpanel"
-        id="tab-panel-downloads"
-        aria-labelledby="tab-btn-downloads"
-        hidden
-      >
-        <?php
-        // Downloads do produto (se WooCommerce downloadable)
-        if ( $product->is_downloadable() && $product->get_downloads() ) :
-            $downloads = $product->get_downloads();
-        ?>
-        <ul class="product-downloads-list">
-          <?php foreach ( $downloads as $download ) : ?>
-          <li class="download-item">
-            <a href="<?php echo esc_url( $download->get_file() ); ?>" class="download-link" download>
-              <span class="download-icon" aria-hidden="true">&#8659;</span>
-              <?php echo esc_html( $download->get_name() ); ?>
-            </a>
-          </li>
-          <?php endforeach; ?>
-        </ul>
-        <?php else : ?>
-          <p><?php _e( 'Keine Downloads verfügbar.', 'scanpro-child' ); ?></p>
-        <?php endif; ?>
-      </div>
-
-    </div><!-- .product-tabs-section -->
+    </div><!-- .product-description-section -->
 
   </div><!-- .single-product-container -->
 
