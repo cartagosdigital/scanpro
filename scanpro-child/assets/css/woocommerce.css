@@ -240,89 +240,141 @@ body.woocommerce #site-header .btn {
 .sidebar-widget ul,
 .sidebar-widget ul li {
   list-style: none !important;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
   padding: 0 !important;
   margin: 0 !important;
 }
 
-/* Nível 1 — categorias principais */
-.sidebar-widget > ul > li > a {
-  position: relative;
-  display: block;
-  padding: 9px 0 9px 0;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--color-text);
-  border-bottom: 1px solid #efefef;
-  transition: color 0.15s, padding-left 0.18s;
+.sidebar-widget > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
-.sidebar-widget > ul > li > a::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: var(--color-primary);
-  opacity: 0;
-  transition: opacity 0.15s;
+/* Nível 1 — categorias principais */
+.sidebar-widget > ul > li > a {
+  display: block;
+  padding: 9px 12px;
+  border-radius: var(--radius);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
 }
 
 .sidebar-widget > ul > li > a:hover {
+  background: rgba(25, 131, 147, 0.08);
   color: var(--color-primary);
-  padding-left: 18px;
 }
-
-.sidebar-widget > ul > li > a:hover::before { opacity: 1; }
-
-.sidebar-widget > ul > li:last-child > a { border-bottom: none; }
 
 .sidebar-widget > ul > li.current-cat > a,
 .sidebar-widget > ul > li.current-cat-parent > a {
-  color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-white);
 }
 
 /* Sub-categorias (.children) */
 .sidebar-widget ul.children {
-  margin: 2px 0 8px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 2px 0 6px 12px !important;
   padding-left: 10px !important;
-  border-left: 2px solid rgba(25,131,147,0.18);
+  border-left: 2px solid var(--color-border);
 }
 
 .sidebar-widget ul.children li a {
-  position: relative;
   display: block;
-  padding: 5px 0 5px 0;
+  padding: 6px 10px;
+  border-radius: var(--radius);
   font-size: 12.5px;
-  font-weight: 400;
+  font-weight: 500;
   color: #777;
-  border-bottom: 1px solid #f8f8f8;
-  transition: color 0.15s, padding-left 0.15s;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
 }
-
-.sidebar-widget ul.children li a::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  font-size: 11px;
-  color: var(--color-primary);
-  opacity: 0;
-  transition: opacity 0.15s;
-}
-
-.sidebar-widget ul.children li:last-child a { border-bottom: none; }
 
 .sidebar-widget ul.children li a:hover {
+  background: rgba(25, 131, 147, 0.06);
   color: var(--color-primary);
-  padding-left: 16px;
 }
-
-.sidebar-widget ul.children li a:hover::before { opacity: 1; }
 
 .sidebar-widget ul.children li.current-cat > a {
+  background: rgba(25, 131, 147, 0.09);
   color: var(--color-primary);
-  font-weight: 600;
+  font-weight: 700;
 }
+
+/* ---------------------------------------------------------------
+   Filtro de preço — campos Von/Bis em vez do slider nativo
+   (o slider jQuery-UI do WooCommerce depende de scripts que nem
+   sempre carregam corretamente; inputs simples são sempre visíveis
+   e funcionam com a mesma query var min_price/max_price do WooCommerce)
+   --------------------------------------------------------------- */
+.price-filter-form { display: flex; flex-direction: column; gap: 14px; }
+
+.price-filter-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.price-filter-field {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.price-filter-field label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.price-filter-field input {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--color-text);
+  background: var(--color-white);
+  transition: border-color var(--transition-fast);
+}
+
+.price-filter-field input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(25,131,147,0.1);
+}
+
+.price-filter-sep {
+  padding-bottom: 9px;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.price-filter-submit {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 13.5px;
+}
+
+.price-filter-reset {
+  display: inline-block;
+  font-size: 12.5px;
+  color: var(--color-muted);
+  text-align: center;
+  text-decoration: underline;
+  transition: color 0.15s;
+}
+
+.price-filter-reset:hover { color: var(--color-primary); }
 
 /* ---------------------------------------------------------------
    Barra de ferramentas (resultado + ordenação)

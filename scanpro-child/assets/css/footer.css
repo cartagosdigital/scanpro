@@ -24,7 +24,7 @@
 }
 
 /* ---------------------------------------------------------------
-   Topo: 3 colunas
+   Topo: 4 colunas
    --------------------------------------------------------------- */
 .footer-top {
   padding: 64px 0 52px;
@@ -34,8 +34,8 @@
 /* Inner sem .container para garantir largura total no fundo */
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr;
-  gap: 52px;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 44px;
   align-items: start;
   max-width: 1280px;
   margin: 0 auto;
@@ -58,6 +58,7 @@
 .footer-col:nth-child(1) { transition-delay: 0s;    }
 .footer-col:nth-child(2) { transition-delay: 0.1s;  }
 .footer-col:nth-child(3) { transition-delay: 0.2s;  }
+.footer-col:nth-child(4) { transition-delay: 0.3s;  }
 
 /* ---------------------------------------------------------------
    Coluna 1: Marca
@@ -229,6 +230,14 @@
   border-radius: 8px;
 }
 
+/* .footer-contact a define color:#555 para os links de contato — mais
+   específico que .btn-primary sozinho, então o CTA precisa de um
+   seletor mais específico para manter o texto branco em qualquer estado */
+.footer-contact .footer-cta-btn,
+.footer-contact .footer-cta-btn:hover {
+  color: var(--color-white);
+}
+
 /* ---------------------------------------------------------------
    Rodapé — barra inferior
    --------------------------------------------------------------- */
@@ -292,8 +301,8 @@
    --------------------------------------------------------------- */
 @media (max-width: 960px) {
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 40px;
     padding: 0 24px;
   }
 
@@ -306,6 +315,12 @@
   }
 
   .footer-tagline { max-width: 100%; }
+}
+
+@media (max-width: 700px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 600px) {

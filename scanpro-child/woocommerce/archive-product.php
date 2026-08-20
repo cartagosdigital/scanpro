@@ -88,17 +88,42 @@ get_header();
             'hide_empty'   => true,
             'title_li'     => '',
             'hierarchical' => true,
+            'show_count'   => true,
             'parent'       => $root ? $root->term_id : 0,
         ] );
         ?>
       </div>
 
-      <?php if ( class_exists( 'WooCommerce' ) ) : ?>
+      <?php if ( class_exists( 'WooCommerce' ) ) :
+        $price_min = isset( $_GET['min_price'] ) && '' !== $_GET['min_price'] ? floatval( wp_unslash( $_GET['min_price'] ) ) : '';
+        $price_max = isset( $_GET['max_price'] ) && '' !== $_GET['max_price'] ? floatval( wp_unslash( $_GET['max_price'] ) ) : '';
+      ?>
         <div class="sidebar-widget">
           <h3 class="sidebar-widget-title">
             <?php _e( 'Preis', 'scanpro-child' ); ?>
           </h3>
-          <?php the_widget( 'WC_Widget_Price_Filter' ); ?>
+          <form class="price-filter-form" method="get">
+            <?php foreach ( $_GET as $key => $value ) :
+              if ( in_array( $key, [ 'min_price', 'max_price', 'paged' ], true ) || is_array( $value ) ) continue;
+            ?>
+              <input type="hidden" name="<?php echo esc_attr( $key ); ?>" value="<?php echo esc_attr( wp_unslash( $value ) ); ?>">
+            <?php endforeach; ?>
+            <div class="price-filter-row">
+              <div class="price-filter-field">
+                <label for="price-filter-min"><?php _e( 'Von (CHF)', 'scanpro-child' ); ?></label>
+                <input type="number" min="0" step="1" inputmode="numeric" id="price-filter-min" name="min_price" placeholder="0" value="<?php echo esc_attr( $price_min ); ?>">
+              </div>
+              <span class="price-filter-sep" aria-hidden="true">–</span>
+              <div class="price-filter-field">
+                <label for="price-filter-max"><?php _e( 'Bis (CHF)', 'scanpro-child' ); ?></label>
+                <input type="number" min="0" step="1" inputmode="numeric" id="price-filter-max" name="max_price" placeholder="999" value="<?php echo esc_attr( $price_max ); ?>">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary price-filter-submit"><?php _e( 'Filtern', 'scanpro-child' ); ?></button>
+            <?php if ( '' !== $price_min || '' !== $price_max ) : ?>
+              <a href="<?php echo esc_url( remove_query_arg( [ 'min_price', 'max_price' ] ) ); ?>" class="price-filter-reset"><?php _e( 'Filter zurücksetzen', 'scanpro-child' ); ?></a>
+            <?php endif; ?>
+          </form>
         </div>
       <?php endif; ?>
 

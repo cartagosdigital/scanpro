@@ -51,7 +51,7 @@ add_action( 'wp_enqueue_scripts', function () {
         'scanpro-footer',
         get_stylesheet_directory_uri() . '/assets/css/footer.css',
         [ 'scanpro-main' ],
-        '1.0.0'
+        '1.1.0'
     );
 
     // CSS da home
@@ -94,7 +94,7 @@ add_action( 'wp_enqueue_scripts', function () {
             'scanpro-woocommerce',
             get_stylesheet_directory_uri() . '/assets/css/woocommerce.css',
             [ 'scanpro-main', 'woocommerce-general', 'woocommerce-layout', 'woocommerce-smallscreen' ],
-            '1.2.0'
+            '1.3.0'
         );
     }
 

@@ -2,7 +2,7 @@
 /**
  * Footer do tema Scan Pro Child
  *
- * Fundo claro (#f4f6f8), 3 colunas: logo+descrição, links rápidos, contato.
+ * Fundo claro (#f4f6f8), 4 colunas: logo+descrição, páginas, categorias de produtos, contato.
  * Animação de entrada das colunas via IntersectionObserver (main.js).
  */
 ?>
@@ -33,38 +33,37 @@
           <!-- Substituir por logos reais dos parceiros -->
           <span class="partner-name">Exhausto</span>
           <span class="partner-name">exodraft</span>
-          <span class="partner-name">Aldes</span>
-          <span class="partner-name">Aereco</span>
+          <span class="partner-name">Thermomatic</span>
         </div>
       </div>
 
-      <!-- Coluna 2: Links rápidos -->
+      <!-- Coluna 2: Páginas do site -->
       <div class="footer-col footer-links">
-        <h4 class="footer-heading"><?php _e( 'Schnellzugriff', 'scanpro-child' ); ?></h4>
+        <h4 class="footer-heading"><?php _e( 'Seiten', 'scanpro-child' ); ?></h4>
         <ul>
           <li>
-            <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>">
-              <?php _e( 'Produkte', 'scanpro-child' ); ?>
-            </a>
-          </li>
-          <li>
-            <a href="<?php echo esc_url( home_url( '/produktkategorie/lueftung' ) ); ?>">
-              <?php _e( 'Lüftung', 'scanpro-child' ); ?>
-            </a>
-          </li>
-          <li>
-            <a href="<?php echo esc_url( home_url( '/produktkategorie/waermerueckgewinnung' ) ); ?>">
-              <?php _e( 'Wärmerückgewinnung', 'scanpro-child' ); ?>
-            </a>
-          </li>
-          <li>
-            <a href="<?php echo esc_url( home_url( '/produktkategorie/rauchsauger' ) ); ?>">
-              <?php _e( 'Rauchsauger', 'scanpro-child' ); ?>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+              <?php _e( 'Startseite', 'scanpro-child' ); ?>
             </a>
           </li>
           <li>
             <a href="<?php echo esc_url( home_url( '/ueber-uns' ) ); ?>">
               <?php _e( 'Über uns', 'scanpro-child' ); ?>
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo esc_url( home_url( '/team' ) ); ?>">
+              <?php _e( 'Team', 'scanpro-child' ); ?>
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo esc_url( home_url( '/einsatzbereiche' ) ); ?>">
+              <?php _e( 'Einsatzbereiche', 'scanpro-child' ); ?>
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo esc_url( home_url( '/wissen' ) ); ?>">
+              <?php _e( 'Wissen', 'scanpro-child' ); ?>
             </a>
           </li>
           <li>
@@ -80,7 +79,39 @@
         </ul>
       </div>
 
-      <!-- Coluna 3: Contato -->
+      <!-- Coluna 3: Kategorias de produtos -->
+      <div class="footer-col footer-links">
+        <h4 class="footer-heading"><?php _e( 'Produktkategorien', 'scanpro-child' ); ?></h4>
+        <ul>
+          <li>
+            <a href="<?php echo esc_url( home_url( '/produktkategorie/lueftungsgeraete' ) ); ?>">
+              <?php _e( 'Lüftungsgeräte', 'scanpro-child' ); ?>
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo esc_url( home_url( '/produktkategorie/ventilatoren' ) ); ?>">
+              <?php _e( 'Ventilatoren', 'scanpro-child' ); ?>
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo esc_url( home_url( '/produktkategorie/kuehl-und-heizregister' ) ); ?>">
+              <?php _e( 'Kühl- & Heizregister', 'scanpro-child' ); ?>
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo esc_url( home_url( '/produktkategorie/volumenstromregler-und-stellklappen' ) ); ?>">
+              <?php _e( 'Volumenstromregler', 'scanpro-child' ); ?>
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>">
+              <?php _e( 'Alle Produkte', 'scanpro-child' ); ?>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coluna 4: Contato -->
       <div class="footer-col footer-contact">
         <h4 class="footer-heading"><?php _e( 'Kontakt', 'scanpro-child' ); ?></h4>
         <address>
