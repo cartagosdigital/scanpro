@@ -47,7 +47,7 @@ get_header();
           <?php _e( 'Offizieller Vertriebspartner von Exhausto, exodraft und Thermomatic. Zertifizierte Systeme für Wohn-, Gewerbe- und Industriegebäude.', 'scanpro-child' ); ?>
         </p>
         <div class="hero-actions">
-          <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>" class="btn btn-primary">
+          <a href="<?php echo esc_url( home_url( '/produkte' ) ); ?>" class="btn btn-primary">
             <?php _e( 'Produkte ansehen', 'scanpro-child' ); ?>
           </a>
           <a href="<?php echo esc_url( home_url( '/kontakt' ) ); ?>" class="btn btn-outline-dark">
@@ -210,7 +210,7 @@ get_header();
     </div><!-- .products-grid -->
 
     <div class="products-more">
-      <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>" class="btn btn-outline-dark">
+      <a href="<?php echo esc_url( home_url( '/produkte' ) ); ?>" class="btn btn-outline-dark">
         <?php _e( 'Alle Produkte anzeigen →', 'scanpro-child' ); ?>
       </a>
     </div>

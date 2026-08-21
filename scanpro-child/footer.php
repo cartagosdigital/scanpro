@@ -79,32 +79,35 @@
         </ul>
       </div>
 
-      <!-- Coluna 3: Kategorias de produtos -->
+      <!-- Coluna 3: Kategorias de produtos — busca dinâmica no WooCommerce,
+           para nunca ficar desatualizada quando categorias forem criadas/removidas -->
       <div class="footer-col footer-links">
         <h4 class="footer-heading"><?php _e( 'Produktkategorien', 'scanpro-child' ); ?></h4>
         <ul>
+          <?php
+          $footer_cats_parent = get_term_by( 'slug', 'produkte', 'product_cat' );
+          $footer_cats        = $footer_cats_parent
+            ? get_terms( [
+                'taxonomy'   => 'product_cat',
+                'parent'     => $footer_cats_parent->term_id,
+                'hide_empty' => true,
+                'orderby'    => 'name',
+              ] )
+            : [];
+          if ( ! empty( $footer_cats ) && ! is_wp_error( $footer_cats ) ) :
+              foreach ( $footer_cats as $footer_cat ) :
+          ?>
           <li>
-            <a href="<?php echo esc_url( home_url( '/produktkategorie/lueftungsgeraete' ) ); ?>">
-              <?php _e( 'Lüftungsgeräte', 'scanpro-child' ); ?>
+            <a href="<?php echo esc_url( get_term_link( $footer_cat ) ); ?>">
+              <?php echo esc_html( $footer_cat->name ); ?>
             </a>
           </li>
+          <?php
+              endforeach;
+          endif;
+          ?>
           <li>
-            <a href="<?php echo esc_url( home_url( '/produktkategorie/ventilatoren' ) ); ?>">
-              <?php _e( 'Ventilatoren', 'scanpro-child' ); ?>
-            </a>
-          </li>
-          <li>
-            <a href="<?php echo esc_url( home_url( '/produktkategorie/kuehl-und-heizregister' ) ); ?>">
-              <?php _e( 'Kühl- & Heizregister', 'scanpro-child' ); ?>
-            </a>
-          </li>
-          <li>
-            <a href="<?php echo esc_url( home_url( '/produktkategorie/volumenstromregler-und-stellklappen' ) ); ?>">
-              <?php _e( 'Volumenstromregler', 'scanpro-child' ); ?>
-            </a>
-          </li>
-          <li>
-            <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>">
+            <a href="<?php echo esc_url( home_url( '/produkte' ) ); ?>">
               <?php _e( 'Alle Produkte', 'scanpro-child' ); ?>
             </a>
           </li>

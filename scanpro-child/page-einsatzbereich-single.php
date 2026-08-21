@@ -161,7 +161,7 @@ $cat_slug     = $slug_to_cat[ $current_slug ] ?? '';
           wp_reset_postdata(); ?>
         </div>
         <div style="text-align: center; margin-top: 36px;">
-          <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>" class="btn btn-outline-dark">
+          <a href="<?php echo esc_url( home_url( '/produkte' ) ); ?>" class="btn btn-outline-dark">
             <?php _e( 'Alle Produkte ansehen →', 'scanpro-child' ); ?>
           </a>
         </div>
