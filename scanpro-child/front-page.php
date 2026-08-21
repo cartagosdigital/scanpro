@@ -125,26 +125,27 @@ get_header();
     <span class="section-label"><?php _e( 'PRODUKTE', 'scanpro-child' ); ?></span>
     <h2 class="section-title"><?php _e( 'Unsere Produkte', 'scanpro-child' ); ?></h2>
 
-    <!-- Filtros de categoria -->
+    <!-- Filtros de categoria — busca dinâmica no WooCommerce para nunca
+         ficar desatualizado quando categorias forem criadas/removidas -->
     <div class="product-filters" role="group" aria-label="<?php _e( 'Produktfilter', 'scanpro-child' ); ?>">
       <button class="filter-btn active" data-filter="all" aria-pressed="true">
         <?php _e( 'Alle', 'scanpro-child' ); ?>
       </button>
-      <button class="filter-btn" data-filter="lueftung" aria-pressed="false">
-        <?php _e( 'Lüftung', 'scanpro-child' ); ?>
+      <?php
+      $home_filter_parent = get_term_by( 'slug', 'produkte', 'product_cat' );
+      $home_filter_cats    = $home_filter_parent
+        ? get_terms( [ 'taxonomy' => 'product_cat', 'parent' => $home_filter_parent->term_id, 'hide_empty' => true, 'orderby' => 'name' ] )
+        : [];
+      if ( ! empty( $home_filter_cats ) && ! is_wp_error( $home_filter_cats ) ) :
+          foreach ( $home_filter_cats as $home_filter_cat ) :
+      ?>
+      <button class="filter-btn" data-filter="<?php echo esc_attr( $home_filter_cat->slug ); ?>" aria-pressed="false">
+        <?php echo esc_html( $home_filter_cat->name ); ?>
       </button>
-      <button class="filter-btn" data-filter="waermerueckgewinnung" aria-pressed="false">
-        <?php _e( 'Wärmerückgewinnung', 'scanpro-child' ); ?>
-      </button>
-      <button class="filter-btn" data-filter="rauchsauger" aria-pressed="false">
-        <?php _e( 'Rauchsauger', 'scanpro-child' ); ?>
-      </button>
-      <button class="filter-btn" data-filter="filter" aria-pressed="false">
-        <?php _e( 'Filter', 'scanpro-child' ); ?>
-      </button>
-      <button class="filter-btn" data-filter="zubehoer" aria-pressed="false">
-        <?php _e( 'Zubehör', 'scanpro-child' ); ?>
-      </button>
+      <?php
+          endforeach;
+      endif;
+      ?>
     </div>
 
     <!-- Grid de produtos via WooCommerce -->
@@ -163,11 +164,26 @@ get_header();
           if ( $products->have_posts() ) :
               while ( $products->have_posts() ) :
                   $products->the_post();
-                  $cats     = get_the_terms( get_the_ID(), 'product_cat' );
-                  $cat_slug = $cats && ! is_wp_error( $cats ) ? $cats[0]->slug : '';
-                  $cat_name = $cats && ! is_wp_error( $cats ) ? $cats[0]->name : '';
+                  $cats      = get_the_terms( get_the_ID(), 'product_cat' );
+                  $cat_name  = $cats && ! is_wp_error( $cats ) ? $cats[0]->name : '';
+                  // Junta o slug de cada categoria atribuída + o de todas as
+                  // categorias-mãe, para o filtro casar tanto com botões de
+                  // categoria principal quanto de subcategoria
+                  $cat_slugs = [];
+                  if ( $cats && ! is_wp_error( $cats ) ) {
+                      foreach ( $cats as $cat ) {
+                          $cat_slugs[] = $cat->slug;
+                          foreach ( get_ancestors( $cat->term_id, 'product_cat' ) as $ancestor_id ) {
+                              $ancestor = get_term( $ancestor_id, 'product_cat' );
+                              if ( $ancestor && ! is_wp_error( $ancestor ) ) {
+                                  $cat_slugs[] = $ancestor->slug;
+                              }
+                          }
+                      }
+                      $cat_slugs = array_unique( $cat_slugs );
+                  }
               ?>
-              <div class="product-card" data-category="<?php echo esc_attr( $cat_slug ); ?>">
+              <div class="product-card" data-category="<?php echo esc_attr( implode( ' ', $cat_slugs ) ); ?>">
                 <a href="<?php the_permalink(); ?>" class="product-card-img-link" tabindex="-1" aria-hidden="true">
                   <div class="product-card-img">
                     <?php if ( has_post_thumbnail() ) : ?>

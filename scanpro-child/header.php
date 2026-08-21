@@ -68,55 +68,39 @@
             </a>
             <div class="dropdown mega-dropdown">
               <div class="mega-dropdown-inner">
+                <?php
+                // Categorias principais buscadas dinamicamente no WooCommerce
+                // (produtos filhos de "produkte"), divididas em 2 colunas
+                $mega_parent = get_term_by( 'slug', 'produkte', 'product_cat' );
+                $mega_cats   = $mega_parent
+                  ? get_terms( [ 'taxonomy' => 'product_cat', 'parent' => $mega_parent->term_id, 'hide_empty' => true, 'orderby' => 'name' ] )
+                  : [];
+                $mega_cats   = ( ! empty( $mega_cats ) && ! is_wp_error( $mega_cats ) ) ? $mega_cats : [];
+                $mega_split  = (int) ceil( count( $mega_cats ) / 2 );
+                $mega_cols   = [ array_slice( $mega_cats, 0, $mega_split ), array_slice( $mega_cats, $mega_split ) ];
 
+                foreach ( $mega_cols as $mega_col ) :
+                    if ( empty( $mega_col ) ) continue;
+                ?>
                 <div class="mega-col">
+                  <?php foreach ( $mega_col as $mega_cat ) :
+                      $mega_subs = get_terms( [ 'taxonomy' => 'product_cat', 'parent' => $mega_cat->term_id, 'hide_empty' => true, 'orderby' => 'name' ] );
+                  ?>
                   <div class="mega-group">
-                    <a class="mega-group-title" href="<?php echo esc_url( home_url( '/produktkategorie/lueftungsgeraete' ) ); ?>">
-                      <?php _e( 'Lüftungsgeräte', 'scanpro-child' ); ?>
+                    <a class="mega-group-title" href="<?php echo esc_url( get_term_link( $mega_cat ) ); ?>">
+                      <?php echo esc_html( $mega_cat->name ); ?>
                     </a>
+                    <?php if ( ! empty( $mega_subs ) && ! is_wp_error( $mega_subs ) ) : ?>
                     <ul>
-                      <li><a href="<?php echo esc_url( home_url( '/produktkategorie/kompakte-lueftungsgeraete' ) ); ?>"><?php _e( 'Kompakte Lüftungsgeräte', 'scanpro-child' ); ?></a></li>
-                      <li><a href="<?php echo esc_url( home_url( '/produktkategorie/dezentrale-lueftungsgeraete' ) ); ?>"><?php _e( 'Dezentrale Lüftungsgeräte', 'scanpro-child' ); ?></a></li>
-                      <li><a href="<?php echo esc_url( home_url( '/produktkategorie/modulare-lueftungsgeraete' ) ); ?>"><?php _e( 'Modulare Lüftungsgeräte', 'scanpro-child' ); ?></a></li>
-                      <li><a href="<?php echo esc_url( home_url( '/produktkategorie/automatik-fuer-lueftungsgeraete' ) ); ?>"><?php _e( 'Automatik', 'scanpro-child' ); ?></a></li>
+                      <?php foreach ( $mega_subs as $mega_sub ) : ?>
+                      <li><a href="<?php echo esc_url( get_term_link( $mega_sub ) ); ?>"><?php echo esc_html( $mega_sub->name ); ?></a></li>
+                      <?php endforeach; ?>
                     </ul>
+                    <?php endif; ?>
                   </div>
-                  <div class="mega-group">
-                    <a class="mega-group-title" href="<?php echo esc_url( home_url( '/produktkategorie/ventilatoren' ) ); ?>">
-                      <?php _e( 'Ventilatoren', 'scanpro-child' ); ?>
-                    </a>
-                    <ul>
-                      <li><a href="<?php echo esc_url( home_url( '/produktkategorie/boxventilatoren' ) ); ?>"><?php _e( 'Boxventilatoren', 'scanpro-child' ); ?></a></li>
-                      <li><a href="<?php echo esc_url( home_url( '/produktkategorie/dach-und-wandventilatoren' ) ); ?>"><?php _e( 'Dach- &amp; Wandventilatoren', 'scanpro-child' ); ?></a></li>
-                      <li><a href="<?php echo esc_url( home_url( '/produktkategorie/dachdurchfuehrungen' ) ); ?>"><?php _e( 'Dachdurchführungen', 'scanpro-child' ); ?></a></li>
-                      <li><a href="<?php echo esc_url( home_url( '/produktkategorie/regelung-fuer-ventilatoren' ) ); ?>"><?php _e( 'Regelung', 'scanpro-child' ); ?></a></li>
-                    </ul>
-                  </div>
-                  <div class="mega-group">
-                    <a class="mega-group-title" href="<?php echo esc_url( home_url( '/produktkategorie/kuehl-und-heizregister' ) ); ?>">
-                      <?php _e( 'Kühl- &amp; Heizregister', 'scanpro-child' ); ?>
-                    </a>
-                    <ul>
-                      <li><a href="<?php echo esc_url( home_url( '/produktkategorie/dx-register' ) ); ?>"><?php _e( 'DX-Register', 'scanpro-child' ); ?></a></li>
-                      <li><a href="<?php echo esc_url( home_url( '/produktkategorie/elektroregister' ) ); ?>"><?php _e( 'Elektroregister', 'scanpro-child' ); ?></a></li>
-                      <li><a href="<?php echo esc_url( home_url( '/produktkategorie/wasserregister' ) ); ?>"><?php _e( 'Wasserregister', 'scanpro-child' ); ?></a></li>
-                    </ul>
-                  </div>
+                  <?php endforeach; ?>
                 </div><!-- .mega-col -->
-
-                <div class="mega-col">
-                  <div class="mega-group">
-                    <a class="mega-group-title" href="<?php echo esc_url( home_url( '/produktkategorie/volumenstromregler-und-stellklappen' ) ); ?>">
-                      <?php _e( 'Volumenstromregler', 'scanpro-child' ); ?>
-                    </a>
-                    <ul>
-                      <li><a href="<?php echo esc_url( home_url( '/produktkategorie/konstante-volumenstromregler' ) ); ?>"><?php _e( 'Konstante Volumenstromregler', 'scanpro-child' ); ?></a></li>
-                      <li><a href="<?php echo esc_url( home_url( '/produktkategorie/variable-volumenstromregler' ) ); ?>"><?php _e( 'Variable Volumenstromregler', 'scanpro-child' ); ?></a></li>
-                      <li><a href="<?php echo esc_url( home_url( '/produktkategorie/stellklappen' ) ); ?>"><?php _e( 'Stellklappen', 'scanpro-child' ); ?></a></li>
-                    </ul>
-                  </div>
-                </div><!-- .mega-col -->
-
+                <?php endforeach; ?>
               </div><!-- .mega-dropdown-inner -->
               <div class="mega-dropdown-footer">
                 <a href="<?php echo esc_url( home_url( '/produkte' ) ); ?>">

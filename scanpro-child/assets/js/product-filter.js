@@ -23,10 +23,12 @@ document.addEventListener('DOMContentLoaded', function () {
       this.classList.add('active');
       this.setAttribute('aria-pressed', 'true');
 
-      // Filtrar cards
+      // Filtrar cards — data-category traz uma lista de slugs (categoria +
+      // categorias-mãe) separada por espaço, então checamos se o filtro
+      // está contido nela em vez de exigir igualdade exata
       productCards.forEach(function (card) {
-        var category = card.dataset.category || '';
-        var show = filter === 'all' || category === filter;
+        var categories = (card.dataset.category || '').split(' ');
+        var show = filter === 'all' || categories.indexOf(filter) !== -1;
 
         if (show) {
           card.style.display = '';

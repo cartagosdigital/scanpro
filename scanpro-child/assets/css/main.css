@@ -563,26 +563,31 @@ section { padding: var(--section-pad) 0; }
   letter-spacing: 0.8px;
 }
 
+/* !important nos campos abaixo: o Elementor (ativo como plugin no site,
+   mesmo em páginas que não usam o editor dele) aplica estilos globais de
+   formulário/botão via Site Settings que, sendo genéricos (input, button),
+   sobrepõem regras normais do tema */
 .form-group input,
 .form-group textarea,
 .form-group select {
-  padding: 11px 15px;
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius);
-  font-family: var(--font-body);
-  font-size: 15px;
-  color: var(--color-text);
-  background: var(--color-white);
+  padding: 11px 15px !important;
+  border: 1.5px solid var(--color-border) !important;
+  border-radius: var(--radius) !important;
+  font-family: var(--font-body) !important;
+  font-size: 15px !important;
+  color: var(--color-text) !important;
+  background: var(--color-white) !important;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   width: 100%;
+  box-shadow: none !important;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
   outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(25,131,147,0.1);
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 3px rgba(25,131,147,0.1) !important;
 }
 
 .form-group textarea { resize: vertical; min-height: 140px; }
@@ -596,6 +601,20 @@ section { padding: var(--section-pad) 0; }
 }
 
 .form-submit { padding: 15px 40px; font-size: 15.5px; border-radius: var(--radius); }
+
+.contact-form .form-submit,
+.contact-form .form-submit:visited {
+  background: var(--color-primary) !important;
+  color: var(--color-white) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.contact-form .form-submit:hover,
+.contact-form .form-submit:focus {
+  background: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+  color: var(--color-white) !important;
+}
 
 .form-notice {
   padding: 14px 18px;
@@ -622,17 +641,19 @@ section { padding: var(--section-pad) 0; }
 .contact-info-block a { color: #444; }
 .contact-info-block a:hover { color: var(--color-primary); }
 
-.contact-map-placeholder {
-  background: var(--color-secondary);
-  border: 2px dashed var(--color-border);
+.contact-map {
   border-radius: var(--radius-lg);
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-muted);
-  font-size: 13.5px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
   margin-top: 24px;
+  height: 260px;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 
 /* ---------------------------------------------------------------

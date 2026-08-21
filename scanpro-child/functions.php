@@ -35,7 +35,7 @@ add_action( 'wp_enqueue_scripts', function () {
         'scanpro-main',
         get_stylesheet_directory_uri() . '/assets/css/main.css',
         [ 'scanpro-fonts' ],
-        '1.5.0'
+        '1.6.0'
     );
 
     // CSS do header
@@ -113,7 +113,7 @@ add_action( 'wp_enqueue_scripts', function () {
             'scanpro-product-filter',
             get_stylesheet_directory_uri() . '/assets/js/product-filter.js',
             [ 'scanpro-main' ],
-            '1.0.0',
+            '1.1.0',
             true
         );
     }

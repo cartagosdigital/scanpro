@@ -228,10 +228,15 @@ if ( isset( $_POST['scanpro_contact_nonce'] ) &&
             </p>
           </div>
 
-          <!-- Placeholder mapa — substituir por iframe do Google Maps ou OpenStreetMap -->
-          <div class="contact-map-placeholder" aria-label="<?php _e( 'Kartenplatzhalter', 'scanpro-child' ); ?>">
-            <!-- Substituir por iframe do mapa real -->
-            <p><?php _e( 'Karte: Bahnhofstrasse 1, 8852 Altendorf', 'scanpro-child' ); ?></p>
+          <!-- Mapa: Bahnhofstrasse 1, CH-8852 Altendorf -->
+          <div class="contact-map">
+            <iframe
+              src="https://maps.google.com/maps?q=Bahnhofstrasse+1,+8852+Altendorf,+Schweiz&z=15&output=embed"
+              title="<?php esc_attr_e( 'Standort Scan Pro AG auf der Karte', 'scanpro-child' ); ?>"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
           </div>
 
         </div><!-- .contact-info-col -->
