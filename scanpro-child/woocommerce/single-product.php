@@ -54,11 +54,6 @@ get_header();
           </p>
         <?php endif; ?>
 
-        <!-- Preço -->
-        <div class="product-price-wrapper">
-          <?php woocommerce_template_single_price(); ?>
-        </div>
-
         <!-- Trecho da descrição -->
         <div class="product-short-description">
           <?php woocommerce_template_single_excerpt(); ?>
@@ -106,8 +101,7 @@ get_header();
       ?>
       <div class="products-grid products-grid--related">
         <?php while ( $related_query->have_posts() ) : $related_query->the_post();
-          $rel_product = wc_get_product( get_the_ID() );
-          $rel_cats    = get_the_terms( get_the_ID(), 'product_cat' );
+          $rel_cats = get_the_terms( get_the_ID(), 'product_cat' );
         ?>
         <div class="product-card">
           <a href="<?php the_permalink(); ?>" class="product-card-img-link" tabindex="-1" aria-hidden="true">
@@ -126,7 +120,6 @@ get_header();
             <h3 class="product-card-title">
               <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </h3>
-            <div class="product-card-price"><?php echo wp_kses_post( $rel_product->get_price_html() ); ?></div>
             <a href="<?php the_permalink(); ?>" class="btn btn-primary product-card-btn">
               <?php _e( 'Produkt ansehen', 'scanpro-child' ); ?>
             </a>

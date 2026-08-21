@@ -35,7 +35,7 @@ add_action( 'wp_enqueue_scripts', function () {
         'scanpro-main',
         get_stylesheet_directory_uri() . '/assets/css/main.css',
         [ 'scanpro-fonts' ],
-        '1.4.0'
+        '1.5.0'
     );
 
     // CSS do header
@@ -94,7 +94,7 @@ add_action( 'wp_enqueue_scripts', function () {
             'scanpro-woocommerce',
             get_stylesheet_directory_uri() . '/assets/css/woocommerce.css',
             [ 'scanpro-main', 'woocommerce-general', 'woocommerce-layout', 'woocommerce-smallscreen' ],
-            '1.3.0'
+            '1.4.0'
         );
     }
 
@@ -155,6 +155,25 @@ add_filter( 'loop_shop_columns', function () { return 3; } );
 // Remover o breadcrumb padrão do WooCommerce (o template usa o nosso próprio)
 add_action( 'init', function () {
     remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+} );
+
+// Produtos não são precificados no site — remover exibição de preço
+// e do badge "em oferta" (percentual de desconto) no loop e no produto individual
+add_action( 'init', function () {
+    remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+    remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
+    remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+} );
+
+// Remover opções de ordenação por preço no dropdown da loja, já que não há preços
+add_filter( 'woocommerce_catalog_orderby', function ( $options ) {
+    unset( $options['price'], $options['price-desc'] );
+    return $options;
+} );
+add_filter( 'woocommerce_default_catalog_orderby_options', function ( $options ) {
+    unset( $options['price'], $options['price-desc'] );
+    return $options;
 } );
 
 // Sidebar de navegação da seção Wissen

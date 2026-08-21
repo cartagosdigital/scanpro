@@ -372,13 +372,6 @@ section { padding: var(--section-pad) 0; }
 .product-card-title a  { color: var(--color-text); }
 .product-card-title a:hover { color: var(--color-primary); }
 
-.product-card-price {
-  color: var(--color-primary);
-  font-weight: 600;
-  font-size: 15px;
-  margin-bottom: 16px;
-}
-
 .product-card-btn { width: 100%; text-align: center; }
 
 /* Filtros */

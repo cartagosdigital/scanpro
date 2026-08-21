@@ -163,7 +163,6 @@ get_header();
           if ( $products->have_posts() ) :
               while ( $products->have_posts() ) :
                   $products->the_post();
-                  global $product;
                   $cats     = get_the_terms( get_the_ID(), 'product_cat' );
                   $cat_slug = $cats && ! is_wp_error( $cats ) ? $cats[0]->slug : '';
                   $cat_name = $cats && ! is_wp_error( $cats ) ? $cats[0]->name : '';
@@ -186,9 +185,6 @@ get_header();
                   <h3 class="product-card-title">
                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                   </h3>
-                  <?php if ( $product->get_price() ) : ?>
-                    <div class="product-card-price"><?php echo wp_kses_post( $product->get_price_html() ); ?></div>
-                  <?php endif; ?>
                   <a href="<?php the_permalink(); ?>" class="btn btn-primary product-card-btn">
                     <?php _e( 'Produkt ansehen', 'scanpro-child' ); ?>
                   </a>

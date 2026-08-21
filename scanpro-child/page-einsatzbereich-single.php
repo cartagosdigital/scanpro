@@ -133,8 +133,7 @@ $cat_slug     = $slug_to_cat[ $current_slug ] ?? '';
 
       <?php if ( $related->have_posts() ) : ?>
         <div class="products-grid">
-          <?php while ( $related->have_posts() ) : $related->the_post();
-            global $product; ?>
+          <?php while ( $related->have_posts() ) : $related->the_post(); ?>
             <div class="product-card">
               <a href="<?php the_permalink(); ?>" class="product-card-img-link" tabindex="-1" aria-hidden="true">
                 <div class="product-card-img">
@@ -149,9 +148,6 @@ $cat_slug     = $slug_to_cat[ $current_slug ] ?? '';
                 <h3 class="product-card-title">
                   <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </h3>
-                <?php if ( $product->get_price() ) : ?>
-                  <div class="product-card-price"><?php echo wp_kses_post( $product->get_price_html() ); ?></div>
-                <?php endif; ?>
                 <a href="<?php the_permalink(); ?>" class="btn btn-primary product-card-btn">
                   <?php _e( 'Produkt ansehen', 'scanpro-child' ); ?>
                 </a>
