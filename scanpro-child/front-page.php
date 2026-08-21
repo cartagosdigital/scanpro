@@ -152,12 +152,15 @@ get_header();
     <div class="products-grid" id="products-grid">
       <?php
       if ( class_exists( 'WooCommerce' ) ) :
-          // Busca alguns produtos de CADA categoria (não só os 6 mais recentes
-          // no geral), senão a maioria dos filtros fica sem nenhum resultado
-          // visível quando os produtos exibidos por acaso são todos da mesma categoria
-          $home_products    = [];
-          $home_product_ids = [];
-          $home_per_cat     = 3;
+          // Busca alguns produtos de CADA categoria (não só os mais recentes no
+          // geral), senão a maioria dos filtros fica sem nenhum resultado visível
+          // quando os produtos exibidos por acaso são todos da mesma categoria.
+          // No JS (product-filter.js), a visualização mostra só os 3 primeiros
+          // resultados do filtro ativo por vez — isto aqui é só o "estoque" de
+          // onde esses 3 são escolhidos, por isso buscamos mais que 3 ao todo.
+          $home_products_by_cat = [];
+          $home_product_ids     = [];
+          $home_per_cat         = 3;
 
           if ( ! empty( $home_filter_cats ) ) {
               foreach ( $home_filter_cats as $home_filter_cat ) {
@@ -174,9 +177,23 @@ get_header();
                           'terms'    => $home_filter_cat->term_id,
                       ] ],
                   ] );
-                  foreach ( $cat_query->posts as $cat_product ) {
-                      $home_product_ids[] = $cat_product->ID;
-                      $home_products[]    = $cat_product;
+                  if ( $cat_query->posts ) {
+                      $home_products_by_cat[ $home_filter_cat->term_id ] = $cat_query->posts;
+                      foreach ( $cat_query->posts as $cat_product ) {
+                          $home_product_ids[] = $cat_product->ID;
+                      }
+                  }
+              }
+          }
+
+          // Intercala os produtos entre categorias (1º de cada categoria, depois
+          // o 2º de cada, etc.) para que os 3 primeiros já mostrem variedade
+          $home_products = [];
+          $home_max_len  = $home_products_by_cat ? max( array_map( 'count', $home_products_by_cat ) ) : 0;
+          for ( $i = 0; $i < $home_max_len; $i++ ) {
+              foreach ( $home_products_by_cat as $cat_products ) {
+                  if ( isset( $cat_products[ $i ] ) ) {
+                      $home_products[] = $cat_products[ $i ];
                   }
               }
           }

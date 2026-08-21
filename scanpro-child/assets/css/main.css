@@ -314,6 +314,13 @@ section { padding: var(--section-pad) 0; }
   gap: 24px;
 }
 
+/* Preview da home: só 3 produtos por vez. product-filter.js já garante
+   isso via JS, mas isto evita um flash com todos os cards visíveis
+   antes do JS carregar (o filtro "Alle" vem ativo por padrão) */
+#products-grid.products-grid .product-card:nth-child(n+4) {
+  display: none;
+}
+
 .product-card {
   background: var(--color-white);
   border: 1px solid var(--color-border);
