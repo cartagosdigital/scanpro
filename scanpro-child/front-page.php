@@ -152,18 +152,52 @@ get_header();
     <div class="products-grid" id="products-grid">
       <?php
       if ( class_exists( 'WooCommerce' ) ) :
-          $args = [
-              'post_type'      => 'product',
-              'posts_per_page' => 6,
-              'orderby'        => 'menu_order',
-              'order'          => 'ASC',
-              'post_status'    => 'publish',
-          ];
-          $products = new WP_Query( $args );
+          // Busca alguns produtos de CADA categoria (não só os 6 mais recentes
+          // no geral), senão a maioria dos filtros fica sem nenhum resultado
+          // visível quando os produtos exibidos por acaso são todos da mesma categoria
+          $home_products    = [];
+          $home_product_ids = [];
+          $home_per_cat     = 3;
 
-          if ( $products->have_posts() ) :
-              while ( $products->have_posts() ) :
-                  $products->the_post();
+          if ( ! empty( $home_filter_cats ) ) {
+              foreach ( $home_filter_cats as $home_filter_cat ) {
+                  $cat_query = new WP_Query( [
+                      'post_type'      => 'product',
+                      'posts_per_page' => $home_per_cat,
+                      'orderby'        => 'menu_order',
+                      'order'          => 'ASC',
+                      'post_status'    => 'publish',
+                      'post__not_in'   => ! empty( $home_product_ids ) ? $home_product_ids : [ 0 ],
+                      'tax_query'      => [ [
+                          'taxonomy' => 'product_cat',
+                          'field'    => 'term_id',
+                          'terms'    => $home_filter_cat->term_id,
+                      ] ],
+                  ] );
+                  foreach ( $cat_query->posts as $cat_product ) {
+                      $home_product_ids[] = $cat_product->ID;
+                      $home_products[]    = $cat_product;
+                  }
+              }
+          }
+
+          // Sem categorias configuradas (ou nenhum produto categorizado): mostra os mais recentes
+          if ( empty( $home_products ) ) {
+              $fallback_query = new WP_Query( [
+                  'post_type'      => 'product',
+                  'posts_per_page' => 6,
+                  'orderby'        => 'menu_order',
+                  'order'          => 'ASC',
+                  'post_status'    => 'publish',
+              ] );
+              $home_products = $fallback_query->posts;
+          }
+
+          if ( ! empty( $home_products ) ) :
+              global $post;
+              foreach ( $home_products as $home_product_post ) :
+                  $post = $home_product_post;
+                  setup_postdata( $post );
                   $cats      = get_the_terms( get_the_ID(), 'product_cat' );
                   $cat_name  = $cats && ! is_wp_error( $cats ) ? $cats[0]->name : '';
                   // Junta o slug de cada categoria atribuída + o de todas as
@@ -207,10 +241,9 @@ get_header();
                 </div>
               </div>
               <?php
-              endwhile;
+              endforeach;
               wp_reset_postdata();
           else :
-              // Fallback: WooCommerce ativo mas sem produtos cadastrados
           ?>
           <p class="no-products-notice">
             <?php _e( 'Keine Produkte gefunden.', 'scanpro-child' ); ?>

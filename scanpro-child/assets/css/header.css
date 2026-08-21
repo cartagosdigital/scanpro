@@ -83,21 +83,24 @@
   position: relative;
 }
 
+/* !important: o Elementor (plugin ativo) aplica um kit de botão genérico
+   a todo <button> do site, inclusive fora do editor dele — sem isso o
+   toggle de idioma herda fundo/cor vermelho-bordô padrão do Elementor */
 .lang-toggle {
   display: flex;
   align-items: center;
   gap: 4px;
-  background: none;
-  border: 1px solid rgba(0, 0, 0, 0.18);
+  background: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.18) !important;
   cursor: pointer;
-  padding: 3px 7px;
-  border-radius: 4px;
+  padding: 3px 7px !important;
+  border-radius: 4px !important;
   outline: none;
-  color: #555;
+  color: #555 !important;
   transition: background 0.18s, border-color 0.18s;
 }
 
-.lang-toggle:hover { background: rgba(0,0,0,0.05); }
+.lang-toggle:hover { background: rgba(0,0,0,0.05) !important; }
 
 .lang-toggle:focus,
 .lang-toggle:focus-visible,
@@ -110,7 +113,7 @@
 .lang-code {
   font-size: 12px;
   font-weight: 700;
-  color: #555;
+  color: #555 !important;
   letter-spacing: 0.8px;
 }
 

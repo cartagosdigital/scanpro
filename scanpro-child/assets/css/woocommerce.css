@@ -19,6 +19,24 @@
   color: var(--color-accent);
 }
 
+/* .btn dentro de .woocommerce-main (ex.: "Produkte relacionados") herdava a
+   cor teal acima por cima da cor própria do botão — com .btn-primary isso
+   deixava texto e fundo na mesma cor (ilegível) */
+.woocommerce-main a.btn-primary,
+.woocommerce-main a.btn-primary:hover,
+.woocommerce-main a.btn-primary:focus {
+  color: var(--color-white) !important;
+}
+
+.woocommerce-main a.btn-outline-dark {
+  color: var(--color-primary) !important;
+}
+
+.woocommerce-main a.btn-outline-dark:hover,
+.woocommerce-main a.btn-outline-dark:focus {
+  color: var(--color-white) !important;
+}
+
 /* Links específicos dentro de produtos e metadados */
 .woocommerce .product_meta a,
 .woocommerce nav.woocommerce-MyAccount-navigation a,
@@ -444,7 +462,13 @@ body.woocommerce #site-header .btn {
   font-size: 14px;
   font-weight: 600;
   color: var(--color-text);
+  outline: none;
   transition: all 0.15s;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .woocommerce nav.woocommerce-pagination ul li a:hover,

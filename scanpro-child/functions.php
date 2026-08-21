@@ -43,7 +43,7 @@ add_action( 'wp_enqueue_scripts', function () {
         'scanpro-header',
         get_stylesheet_directory_uri() . '/assets/css/header.css',
         [ 'scanpro-main' ],
-        '2.6.0'
+        '2.7.0'
     );
 
     // CSS do footer
@@ -94,7 +94,7 @@ add_action( 'wp_enqueue_scripts', function () {
             'scanpro-woocommerce',
             get_stylesheet_directory_uri() . '/assets/css/woocommerce.css',
             [ 'scanpro-main', 'woocommerce-general', 'woocommerce-layout', 'woocommerce-smallscreen' ],
-            '1.4.0'
+            '1.5.0'
         );
     }
 
