@@ -35,7 +35,7 @@ add_action( 'wp_enqueue_scripts', function () {
         'scanpro-main',
         get_stylesheet_directory_uri() . '/assets/css/main.css',
         [ 'scanpro-fonts' ],
-        '1.9.0'
+        '2.0.0'
     );
 
     // CSS do header
@@ -60,7 +60,7 @@ add_action( 'wp_enqueue_scripts', function () {
             'scanpro-home',
             get_stylesheet_directory_uri() . '/assets/css/home.css',
             [ 'scanpro-main' ],
-            '2.9.0'
+            '3.0.0'
         );
     }
 
@@ -69,7 +69,7 @@ add_action( 'wp_enqueue_scripts', function () {
         'scanpro-einsatzbereiche',
         get_stylesheet_directory_uri() . '/assets/css/einsatzbereiche.css',
         [ 'scanpro-main' ],
-        '1.9.0'
+        '2.0.0'
     );
 
     // CSS Wissen
@@ -107,16 +107,6 @@ add_action( 'wp_enqueue_scripts', function () {
         true
     );
 
-    // Script de filtro de produtos (só na home)
-    if ( is_front_page() ) {
-        wp_enqueue_script(
-            'scanpro-product-filter',
-            get_stylesheet_directory_uri() . '/assets/js/product-filter.js',
-            [ 'scanpro-main' ],
-            '1.2.0',
-            true
-        );
-    }
 } );
 
 // Configurações do tema e suporte a features
@@ -484,30 +474,27 @@ if ( ! function_exists( 'scanpro_get_einsatzbereich_content' ) ) {
 }
 
 // Lista curada de produtos por Einsatzbereich — cada item é resolvido no
-// template (page-einsatzbereich-single.php) por nome de produto (busca no
-// WooCommerce) ou, quando marcado como 'category', por uma categoria inteira
+// template (page-einsatzbereich-single.php) por nome de produto (busca no WooCommerce)
 if ( ! function_exists( 'scanpro_get_einsatzbereich_products' ) ) {
     function scanpro_get_einsatzbereich_products( string $slug ): array {
 
         $products = [];
 
         $products['wohnen'] = [
-            [ 'type' => 'product',  'name' => 'CX3000' ],
-            [ 'type' => 'product',  'name' => 'VEX100 CF' ],
-            [ 'type' => 'product',  'name' => 'VEX300' ],
-            [ 'type' => 'product',  'name' => 'InspirAIR Top' ],
-            [ 'type' => 'category', 'name' => 'Rauchsauger' ],
+            [ 'type' => 'product', 'name' => 'CX3000' ],
+            [ 'type' => 'product', 'name' => 'VEX100 CF' ],
+            [ 'type' => 'product', 'name' => 'VEX300' ],
+            [ 'type' => 'product', 'name' => 'InspirAIR Top' ],
         ];
 
         $products['gewerbe'] = [
-            [ 'type' => 'product',  'name' => 'CX3000' ],
-            [ 'type' => 'product',  'name' => 'VEX4000' ],
-            [ 'type' => 'product',  'name' => 'VEX1000RS' ],
-            [ 'type' => 'product',  'name' => 'VEX1000RT' ],
-            [ 'type' => 'product',  'name' => 'VEX100' ],
-            [ 'type' => 'product',  'name' => 'VEX300' ],
-            [ 'type' => 'product',  'name' => 'InspirAIR Top' ],
-            [ 'type' => 'category', 'name' => 'Volumenstromregler' ],
+            [ 'type' => 'product', 'name' => 'CX3000' ],
+            [ 'type' => 'product', 'name' => 'VEX4000' ],
+            [ 'type' => 'product', 'name' => 'VEX1000RS' ],
+            [ 'type' => 'product', 'name' => 'VEX1000RT' ],
+            [ 'type' => 'product', 'name' => 'VEX100' ],
+            [ 'type' => 'product', 'name' => 'VEX300' ],
+            [ 'type' => 'product', 'name' => 'InspirAIR Top' ],
         ];
 
         $products['industrie'] = [
@@ -524,11 +511,10 @@ if ( ! function_exists( 'scanpro_get_einsatzbereich_products' ) ) {
         ];
 
         $products['bildungseinrichtungen'] = [
-            [ 'type' => 'product',  'name' => 'DEX3000' ],
-            [ 'type' => 'product',  'name' => 'CX3000' ],
-            [ 'type' => 'product',  'name' => 'VEX1000RS' ],
-            [ 'type' => 'product',  'name' => 'VEX4000' ],
-            [ 'type' => 'category', 'name' => 'Volumenstromregler' ],
+            [ 'type' => 'product', 'name' => 'DEX3000' ],
+            [ 'type' => 'product', 'name' => 'CX3000' ],
+            [ 'type' => 'product', 'name' => 'VEX1000RS' ],
+            [ 'type' => 'product', 'name' => 'VEX4000' ],
         ];
 
         $products['gastronomie'] = [

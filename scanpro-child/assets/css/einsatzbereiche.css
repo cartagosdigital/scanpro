@@ -258,14 +258,17 @@
   scroll-snap-align: start;
 }
 
+/* !important: o Elementor (plugin ativo) aplica um kit de botão genérico
+   a todo <button> do site — sem isso as setas herdam fundo/cor
+   vermelho-bordô padrão do Elementor em vez do teal da marca */
 .einsatz-carousel-arrow {
   flex-shrink: 0;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
-  border: 1.5px solid var(--color-border);
-  background: var(--color-white);
-  color: var(--color-primary);
+  border-radius: 50% !important;
+  border: 1.5px solid var(--color-border) !important;
+  background: var(--color-white) !important;
+  color: var(--color-primary) !important;
   font-size: 22px;
   line-height: 1;
   cursor: pointer;
@@ -276,9 +279,9 @@
 }
 
 .einsatz-carousel-arrow:hover {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: var(--color-white);
+  background: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: var(--color-white) !important;
 }
 
 .einsatz-carousel-arrow:disabled {

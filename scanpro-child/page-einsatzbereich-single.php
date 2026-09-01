@@ -63,21 +63,13 @@ $current_slug = get_post_field( 'post_name', get_the_ID() );
 
   <!-- =============================================
        PRODUTOS RELACIONADOS — lista curada por segmento (functions.php),
-       resolvida aqui por nome de produto ou por categoria inteira
+       resolvida aqui por nome de produto
        ============================================= -->
   <?php if ( class_exists( 'WooCommerce' ) ) :
     $einsatz_specs    = scanpro_get_einsatzbereich_products( $current_slug );
     $einsatz_products = [];
 
     foreach ( $einsatz_specs as $spec ) {
-        if ( 'category' === $spec['type'] ) {
-            $term = get_term_by( 'name', $spec['name'], 'product_cat' );
-            if ( $term && ! is_wp_error( $term ) ) {
-                $einsatz_products[] = [ 'type' => 'category', 'term' => $term ];
-            }
-            continue;
-        }
-
         $spec_query = new WP_Query( [
             'post_type'      => 'product',
             'posts_per_page' => 1,
@@ -85,7 +77,7 @@ $current_slug = get_post_field( 'post_name', get_the_ID() );
             's'              => $spec['name'],
         ] );
         if ( $spec_query->have_posts() ) {
-            $einsatz_products[] = [ 'type' => 'product', 'post' => $spec_query->posts[0] ];
+            $einsatz_products[] = $spec_query->posts[0];
         }
     }
   ?>
@@ -99,30 +91,8 @@ $current_slug = get_post_field( 'post_name', get_the_ID() );
           <button type="button" class="einsatz-carousel-arrow einsatz-carousel-prev" aria-label="<?php esc_attr_e( 'Zurück', 'scanpro-child' ); ?>">&#8249;</button>
 
           <div class="einsatz-products-track" role="list">
-            <?php foreach ( $einsatz_products as $item ) :
-                if ( 'category' === $item['type'] ) :
-                    $term      = $item['term'];
-                    $term_link = get_term_link( $term );
-            ?>
-              <div class="product-card einsatz-carousel-item" role="listitem">
-                <a href="<?php echo esc_url( $term_link ); ?>" class="product-card-img-link" tabindex="-1" aria-hidden="true">
-                  <div class="product-card-img">
-                    <div class="product-img-placeholder"></div>
-                  </div>
-                </a>
-                <div class="product-card-body">
-                  <span class="product-card-category"><?php _e( 'Kategorie', 'scanpro-child' ); ?></span>
-                  <h3 class="product-card-title">
-                    <a href="<?php echo esc_url( $term_link ); ?>"><?php echo esc_html( $term->name ); ?></a>
-                  </h3>
-                  <a href="<?php echo esc_url( $term_link ); ?>" class="btn btn-primary product-card-btn">
-                    <?php _e( 'Kategorie ansehen', 'scanpro-child' ); ?>
-                  </a>
-                </div>
-              </div>
-            <?php
-                else :
-                    $p_id = $item['post']->ID;
+            <?php foreach ( $einsatz_products as $einsatz_product ) :
+                $p_id = $einsatz_product->ID;
             ?>
               <div class="product-card einsatz-carousel-item" role="listitem">
                 <a href="<?php echo esc_url( get_permalink( $p_id ) ); ?>" class="product-card-img-link" tabindex="-1" aria-hidden="true">
@@ -143,7 +113,7 @@ $current_slug = get_post_field( 'post_name', get_the_ID() );
                   </a>
                 </div>
               </div>
-            <?php endif; endforeach; ?>
+            <?php endforeach; ?>
           </div>
 
           <button type="button" class="einsatz-carousel-arrow einsatz-carousel-next" aria-label="<?php esc_attr_e( 'Weiter', 'scanpro-child' ); ?>">&#8250;</button>

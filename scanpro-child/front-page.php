@@ -100,7 +100,7 @@ get_header();
       <div class="split-text">
         <span class="section-label"><?php _e( 'ÜBER SCAN PRO', 'scanpro-child' ); ?></span>
         <h2 class="section-title">
-          <?php _e( 'Schweizer Spezialisten für Lüftungssysteme seit 1970', 'scanpro-child' ); ?>
+          <?php _e( 'Schweizer Spezialisten für Lüftungssysteme seit 1975', 'scanpro-child' ); ?>
         </h2>
         <p>
           <?php _e( 'Seit über 50 Jahren steht die Scan-Pro AG für innovative Lüftungslösungen und höchste Fachkompetenz in der Gebäudetechnik. Als Schweizer Spezialist beliefern wir Fachpartner und Planer mit energieeffizienten, hochwertigen Produkten.', 'scanpro-child' ); ?>
@@ -118,53 +118,19 @@ get_header();
 </section>
 
 <!-- =============================================
-     SEÇÃO 3: GRID DE PRODUTOS COM FILTROS
+     SEÇÃO 3: GRID DE PRODUTOS EM DESTAQUE
      ============================================= -->
 <section class="products-section" id="produkte">
   <div class="container">
     <span class="section-label"><?php _e( 'PRODUKTE', 'scanpro-child' ); ?></span>
     <h2 class="section-title"><?php _e( 'Unsere Produkte', 'scanpro-child' ); ?></h2>
 
-    <!-- Filtros de categoria — busca dinâmica no WooCommerce para nunca
-         ficar desatualizado quando categorias forem criadas/removidas -->
-    <div class="product-filters" role="group" aria-label="<?php _e( 'Produktfilter', 'scanpro-child' ); ?>">
-      <button class="filter-btn active" data-filter="all" aria-pressed="true">
-        <?php _e( 'Alle', 'scanpro-child' ); ?>
-      </button>
-      <?php
-      $home_filter_parent = get_term_by( 'slug', 'produkte', 'product_cat' );
-      $home_filter_cats    = $home_filter_parent
-        ? get_terms( [ 'taxonomy' => 'product_cat', 'parent' => $home_filter_parent->term_id, 'hide_empty' => true, 'orderby' => 'menu_order', 'order' => 'ASC' ] )
-        : [];
-      if ( ! empty( $home_filter_cats ) && ! is_wp_error( $home_filter_cats ) ) :
-          foreach ( $home_filter_cats as $home_filter_cat ) :
-      ?>
-      <button class="filter-btn" data-filter="<?php echo esc_attr( $home_filter_cat->slug ); ?>" aria-pressed="false">
-        <?php echo esc_html( $home_filter_cat->name ); ?>
-      </button>
-      <?php
-          endforeach;
-      endif;
-      ?>
-    </div>
-
-    <!-- Grid de produtos via WooCommerce -->
+    <!-- Grid de produtos via WooCommerce — sem filtros, sempre estes 3
+         produtos fixos, buscados pelo nome/título -->
     <div class="products-grid" id="products-grid">
       <?php
       if ( class_exists( 'WooCommerce' ) ) :
-          // Busca alguns produtos de CADA categoria (não só os mais recentes no
-          // geral), senão a maioria dos filtros fica sem nenhum resultado visível
-          // quando os produtos exibidos por acaso são todos da mesma categoria.
-          // No JS (product-filter.js), a visualização mostra só os 3 primeiros
-          // resultados do filtro ativo por vez — isto aqui é só o "estoque" de
-          // onde esses 3 são escolhidos, por isso buscamos mais que 3 ao todo.
-          $home_products_by_cat = [];
-          $home_product_ids     = [];
-          $home_per_cat         = 3;
-
-          // Produtos fixos em primeiro lugar no preview "Alle" (pedido do
-          // cliente): VEX1000RS, VEX4000 e um Rauchsauger (RSHT), nessa ordem
-          $home_featured_products = [];
+          $home_products = [];
           foreach ( [ 'VEX1000RS', 'VEX4000', 'RSHT' ] as $home_featured_name ) {
               $featured_query = new WP_Query( [
                   'post_type'      => 'product',
@@ -173,52 +139,15 @@ get_header();
                   's'              => $home_featured_name,
               ] );
               if ( $featured_query->have_posts() ) {
-                  $home_featured_products[] = $featured_query->posts[0];
-                  $home_product_ids[]       = $featured_query->posts[0]->ID;
+                  $home_products[] = $featured_query->posts[0];
               }
           }
 
-          if ( ! empty( $home_filter_cats ) ) {
-              foreach ( $home_filter_cats as $home_filter_cat ) {
-                  $cat_query = new WP_Query( [
-                      'post_type'      => 'product',
-                      'posts_per_page' => $home_per_cat,
-                      'orderby'        => 'menu_order',
-                      'order'          => 'ASC',
-                      'post_status'    => 'publish',
-                      'post__not_in'   => ! empty( $home_product_ids ) ? $home_product_ids : [ 0 ],
-                      'tax_query'      => [ [
-                          'taxonomy' => 'product_cat',
-                          'field'    => 'term_id',
-                          'terms'    => $home_filter_cat->term_id,
-                      ] ],
-                  ] );
-                  if ( $cat_query->posts ) {
-                      $home_products_by_cat[ $home_filter_cat->term_id ] = $cat_query->posts;
-                      foreach ( $cat_query->posts as $cat_product ) {
-                          $home_product_ids[] = $cat_product->ID;
-                      }
-                  }
-              }
-          }
-
-          // Intercala os produtos entre categorias (1º de cada categoria, depois
-          // o 2º de cada, etc.) para que os 3 primeiros já mostrem variedade
-          $home_products = $home_featured_products;
-          $home_max_len  = $home_products_by_cat ? max( array_map( 'count', $home_products_by_cat ) ) : 0;
-          for ( $i = 0; $i < $home_max_len; $i++ ) {
-              foreach ( $home_products_by_cat as $cat_products ) {
-                  if ( isset( $cat_products[ $i ] ) ) {
-                      $home_products[] = $cat_products[ $i ];
-                  }
-              }
-          }
-
-          // Sem categorias configuradas (ou nenhum produto categorizado): mostra os mais recentes
+          // Nenhum dos 3 produtos nomeados foi encontrado: mostra os mais recentes
           if ( empty( $home_products ) ) {
               $fallback_query = new WP_Query( [
                   'post_type'      => 'product',
-                  'posts_per_page' => 6,
+                  'posts_per_page' => 3,
                   'orderby'        => 'menu_order',
                   'order'          => 'ASC',
                   'post_status'    => 'publish',
@@ -231,26 +160,10 @@ get_header();
               foreach ( $home_products as $home_product_post ) :
                   $post = $home_product_post;
                   setup_postdata( $post );
-                  $cats      = get_the_terms( get_the_ID(), 'product_cat' );
-                  $cat_name  = $cats && ! is_wp_error( $cats ) ? $cats[0]->name : '';
-                  // Junta o slug de cada categoria atribuída + o de todas as
-                  // categorias-mãe, para o filtro casar tanto com botões de
-                  // categoria principal quanto de subcategoria
-                  $cat_slugs = [];
-                  if ( $cats && ! is_wp_error( $cats ) ) {
-                      foreach ( $cats as $cat ) {
-                          $cat_slugs[] = $cat->slug;
-                          foreach ( get_ancestors( $cat->term_id, 'product_cat' ) as $ancestor_id ) {
-                              $ancestor = get_term( $ancestor_id, 'product_cat' );
-                              if ( $ancestor && ! is_wp_error( $ancestor ) ) {
-                                  $cat_slugs[] = $ancestor->slug;
-                              }
-                          }
-                      }
-                      $cat_slugs = array_unique( $cat_slugs );
-                  }
+                  $cats     = get_the_terms( get_the_ID(), 'product_cat' );
+                  $cat_name = $cats && ! is_wp_error( $cats ) ? $cats[0]->name : '';
               ?>
-              <div class="product-card" data-category="<?php echo esc_attr( implode( ' ', $cat_slugs ) ); ?>">
+              <div class="product-card">
                 <a href="<?php the_permalink(); ?>" class="product-card-img-link" tabindex="-1" aria-hidden="true">
                   <div class="product-card-img">
                     <?php if ( has_post_thumbnail() ) : ?>

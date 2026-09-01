@@ -76,14 +76,20 @@ body.front-page .site-content-wrapper {
   z-index: 2;
 }
 
-/* Imagem do hero — camada base, atrás do overlay e do conteúdo */
+/* Imagem do hero — camada base, atrás do overlay e do conteúdo.
+   object-position: 100% mostra o lado direito da foto (em vez do centro);
+   scale(1.1) com transform-origin na direita amplia mantendo os produtos
+   "colados" na margem direita — o excesso à esquerda é cortado pelo
+   overflow:hidden do .hero-body */
 .hero-img {
   position: absolute !important;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 55% center;
+  object-position: 100% center;
+  transform: scale(1.1);
+  transform-origin: 100% 50%;
   pointer-events: none;
   user-select: none;
   z-index: 0;
