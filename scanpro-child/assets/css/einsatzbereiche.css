@@ -95,11 +95,11 @@
 
 .einsatz-card:hover .einsatz-card-icon { transform: scale(1.04); }
 
-.einsatz-icon-wohnen           { background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/05/3.png'); }
-.einsatz-icon-gewerbe          { background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/05/4.png'); }
-.einsatz-icon-industrie        { background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/05/1.png'); }
-.einsatz-icon-bildungseinrichtungen { background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/05/2.png'); }
-.einsatz-icon-gastronomie      { background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/05/5.png'); }
+.einsatz-icon-wohnen           { background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/09/Foto-Wohnen.jpg'); }
+.einsatz-icon-gewerbe          { background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/09/Foto-Gewerbe.jpg'); }
+.einsatz-icon-industrie        { background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/09/Foto-Industrie.jpg'); }
+.einsatz-icon-bildungseinrichtungen { background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/09/Foto-Bildungseinrichtungen.jpg'); }
+.einsatz-icon-gastronomie      { background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/09/Foto-Gastronomie.png'); }
 
 .einsatz-card-body {
   padding: 26px 28px 28px;
@@ -369,23 +369,23 @@
 
 .home-einsatz-wohnen {
   background-color: #2a5f6e;
-  background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/05/3.png');
+  background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/09/Foto-Wohnen.jpg');
 }
 .home-einsatz-gewerbe {
   background-color: #1d4f5c;
-  background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/05/4.png');
+  background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/09/Foto-Gewerbe.jpg');
 }
 .home-einsatz-industrie {
   background-color: #163e49;
-  background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/05/1.png');
+  background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/09/Foto-Industrie.jpg');
 }
 .home-einsatz-bildungseinrichtungen {
   background-color: #0f2e38;
-  background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/05/2.png');
+  background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/09/Foto-Bildungseinrichtungen.jpg');
 }
 .home-einsatz-gastronomie {
   background-color: #082028;
-  background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/05/5.png');
+  background-image: url('https://lp.scanpro.ch/wp-content/uploads/2026/09/Foto-Gastronomie.png');
 }
 
 .home-einsatz-card-bg {

@@ -90,7 +90,7 @@ get_header();
       <!-- Imagem -->
       <div class="split-image">
         <img
-          src="https://lp.scanpro.ch/wp-content/uploads/2025/10/Design-sem-nome-2025-10-07T172817.842.png"
+          src="https://lp.scanpro.ch/wp-content/uploads/2026/09/VEX4000-Baustelle.png"
           alt="<?php _e( 'Scan Pro — Lüftungstechnik Schweiz', 'scanpro-child' ); ?>"
           loading="lazy"
         >
