@@ -29,13 +29,13 @@ get_header();
             <?php _e( 'Über 50 Jahre Kompetenz in der Lüftungstechnik', 'scanpro-child' ); ?>
           </h2>
           <p>
-            <?php _e( 'Seit über 50 Jahren steht die Scan-Pro AG für innovative Lüftungslösungen und höchste Fachkompetenz in der Gebäudetechnik. Als Schweizer Spezialist beliefern wir Fachpartner und Planer mit energieeffizienten, hochwertigen Produkten.', 'scanpro-child' ); ?>
+            <?php _e( 'Die Scan-Pro AG wurde 1975 gegründet, um dem steigenden Bedarf an Rauchsaugern für Cheminées gerecht zu werden. Die Ölkrise der 1970er Jahre führte zu einem erheblichen Boom im Kamin- und Cheminéebau, da die Menschen aufgrund der stark steigenden Öl- und Heizkosten nach alternativen Heizmethoden suchten. Durch den Vertrieb von Rauchsaugern des dänischen Pioniers Exhausto entstand die Scan-Pro AG (<strong>Scan</strong>dinavian <strong>Pro</strong>ducts).', 'scanpro-child' ); ?>
           </p>
           <p>
-            <?php _e( 'Als offizieller Vertriebspartner von Exhausto, exodraft und Thermomatic verfügen wir über ein umfassendes Sortiment an Lüftungssystemen für Wohn-, Gewerbe- und Industriegebäude.', 'scanpro-child' ); ?>
+            <?php _e( 'Angesichts der sich verschärfenden Energiekrise in Europa entwickelte Exhausto die erste Generation des VEX, ein Wärmerückgewinnungsgerät, das ein energieeffizienteres Raumklima schuf als bisher mit einfachen Abluftanlagen möglich war. Die Scan-Pro AG positionierte sich im Schweizer Markt erfolgreich im Bereich Energieeffizienz und gesundes Raumklima.', 'scanpro-child' ); ?>
           </p>
           <p>
-            <?php _e( 'Unsere Experten begleiten Sie von der Planung über die Lieferung bis hin zur technischen Unterstützung nach dem Kauf — kompetent und zuverlässig.', 'scanpro-child' ); ?>
+            <?php _e( 'Im Jahr 2007 wurde Exhausto aufgeteilt, und die Rauchsauger wurden unter der Marke Exodraft weitergeführt. Nach über 50 Jahren bleibt unsere Kernmission für Energieeffizienz und gesunde Raumluft unverändert. Mit neuen Produkten und Technologien bieten wir unseren Kunden Innovation und Flexibilität.', 'scanpro-child' ); ?>
           </p>
           <a href="<?php echo esc_url( home_url( '/kontakt' ) ); ?>" class="btn btn-outline-dark">
             <?php _e( 'Kontakt aufnehmen', 'scanpro-child' ); ?>
@@ -51,6 +51,29 @@ get_header();
         </div>
 
       </div>
+
+      <!-- Zeitleiste — Meilensteine der Firmengeschichte.
+           TODO: Platzhalter durch die realen Fotos aus dem PDF ersetzen,
+           sobald sie in der WP-Mediathek hochgeladen sind. -->
+      <div class="geschichte-timeline">
+        <?php
+        $geschichte_milestones = [
+          [ 'year' => '1957', 'caption' => __( 'Erste Rauchsauger', 'scanpro-child' ) ],
+          [ 'year' => '1978', 'caption' => __( 'Erster VEX (Serie VEX 1 – 5)', 'scanpro-child' ) ],
+          [ 'year' => '1993', 'caption' => __( 'Nachfolge Serie VEX1.5 – 5.5', 'scanpro-child' ) ],
+          [ 'year' => '2000', 'caption' => __( 'Neue Generation VEX100', 'scanpro-child' ) ],
+          [ 'year' => '2017', 'caption' => __( 'VEX100 mit effizienterem Gegenstromwärmetauscher', 'scanpro-child' ) ],
+        ];
+        foreach ( $geschichte_milestones as $milestone ) :
+        ?>
+        <div class="geschichte-timeline-item">
+          <div class="geschichte-timeline-img" aria-hidden="true"></div>
+          <span class="geschichte-timeline-year"><?php echo esc_html( $milestone['year'] ); ?></span>
+          <p class="geschichte-timeline-caption"><?php echo esc_html( $milestone['caption'] ); ?></p>
+        </div>
+        <?php endforeach; ?>
+      </div>
+
     </div>
   </section>
 
