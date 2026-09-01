@@ -221,50 +221,6 @@
 }
 
 /* ---------------------------------------------------------------
-   Galeria de imagens
-   --------------------------------------------------------------- */
-.einsatz-gallery-section {
-  background: var(--color-secondary);
-  padding: 72px 0 80px;
-}
-
-.einsatz-gallery-section h2 { margin-bottom: 32px; }
-
-.einsatz-gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.einsatz-gallery-item {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
-.einsatz-gallery-img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.35s ease;
-}
-
-.einsatz-gallery-item:hover .einsatz-gallery-img { transform: scale(1.04); }
-
-/* Placeholder quando não há imagens */
-.einsatz-gallery-placeholder {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.einsatz-gallery-placeholder-item {
-  height: 240px;
-  background: var(--color-border);
-  border-radius: var(--radius-lg);
-}
-
-/* ---------------------------------------------------------------
    Seção de produtos relacionados na single
    --------------------------------------------------------------- */
 .einsatz-products-section {
@@ -427,7 +383,10 @@
 /* ---------------------------------------------------------------
    Conteúdo das subpáginas (eb-content)
    --------------------------------------------------------------- */
-.eb-content { padding: 0; }
+/* overflow-wrap é herdado pelos filhos — protege textos com palavras
+   compostas alemãs muito longas (ex: "Wärmerückgewinnungsgrade") de
+   estourar a largura das colunas estreitas no mobile */
+.eb-content { padding: 0; overflow-wrap: break-word; }
 
 .eb-intro,
 .eb-anforderungen,
@@ -509,12 +468,14 @@
   margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 0.8px;
+  overflow-wrap: break-word;
 }
 
 .eb-spec-card p {
   font-size: 14px;
   color: #444;
   line-height: 1.6;
+  overflow-wrap: break-word;
 }
 
 /* ---------------------------------------------------------------
@@ -557,8 +518,7 @@
   .einsatz-content-grid { grid-template-columns: 1fr; gap: 32px; }
   .einsatz-sidebar { position: static; }
 
-  .einsatz-gallery-grid,
-  .einsatz-gallery-placeholder { grid-template-columns: repeat(2, 1fr); }
+  .eb-specs-grid { grid-template-columns: repeat(2, 1fr); }
 
   .home-einsatz-grid { grid-template-columns: repeat(2, 1fr); }
   .home-einsatz-card { height: 220px; }
@@ -573,9 +533,6 @@
 
   .home-einsatz-grid { grid-template-columns: 1fr; gap: 10px; }
   .home-einsatz-card { height: 180px; }
-
-  .einsatz-gallery-grid,
-  .einsatz-gallery-placeholder { grid-template-columns: 1fr; }
 
   .einsatz-grid { grid-template-columns: 1fr; }
 }

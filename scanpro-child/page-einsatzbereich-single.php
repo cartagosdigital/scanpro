@@ -62,41 +62,6 @@ $current_slug = get_post_field( 'post_name', get_the_ID() );
   </section>
 
   <!-- =============================================
-       GALERIA DE IMAGENS
-       Adicionar via bloco Galeria no editor ou ACF
-       ============================================= -->
-  <?php
-  $images = get_attached_media( 'image', get_the_ID() );
-  ?>
-  <section class="einsatz-gallery-section">
-    <div class="container">
-      <h2><?php _e( 'Referenzbilder', 'scanpro-child' ); ?></h2>
-
-      <?php if ( ! empty( $images ) ) : ?>
-        <div class="einsatz-gallery-grid">
-          <?php foreach ( $images as $img ) : ?>
-          <div class="einsatz-gallery-item">
-            <?php echo wp_get_attachment_image( $img->ID, 'medium_large', false, [ 'class' => 'einsatz-gallery-img', 'loading' => 'lazy' ] ); ?>
-          </div>
-          <?php endforeach; ?>
-        </div>
-      <?php else : ?>
-        <!-- Placeholder — substituir adicionando imagens à página no admin -->
-        <div class="einsatz-gallery-placeholder">
-          <?php for ( $i = 0; $i < 3; $i++ ) : ?>
-          <div class="einsatz-gallery-placeholder-item" aria-hidden="true"></div>
-          <?php endfor; ?>
-        </div>
-        <?php if ( current_user_can( 'edit_posts' ) ) : ?>
-          <p style="color: var(--color-muted); font-size: 13px; margin-top: 16px; font-style: italic;">
-            <?php _e( 'Bilder über den WordPress-Editor hinzufügen (Galerie-Block) oder per ACF-Galerie-Feld.', 'scanpro-child' ); ?>
-          </p>
-        <?php endif; ?>
-      <?php endif; ?>
-    </div>
-  </section>
-
-  <!-- =============================================
        PRODUTOS RELACIONADOS — lista curada por segmento (functions.php),
        resolvida aqui por nome de produto ou por categoria inteira
        ============================================= -->

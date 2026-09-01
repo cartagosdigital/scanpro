@@ -69,7 +69,7 @@ add_action( 'wp_enqueue_scripts', function () {
         'scanpro-einsatzbereiche',
         get_stylesheet_directory_uri() . '/assets/css/einsatzbereiche.css',
         [ 'scanpro-main' ],
-        '1.8.0'
+        '1.9.0'
     );
 
     // CSS Wissen
