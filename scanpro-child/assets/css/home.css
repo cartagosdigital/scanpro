@@ -47,7 +47,8 @@ body.front-page .site-content-wrapper {
 
 /* Overlay duplo:
    1. Tint suave do topo — profundidade atrás do header transparente
-   2. Fade branco da esquerda — área legível para o texto */
+   2. Fade branco cobrindo os 30% da esquerda (onde não há foto) e se
+      dissolvendo suavemente sobre a borda esquerda da imagem */
 .hero-body::before {
   content: '';
   position: absolute;
@@ -61,10 +62,9 @@ body.front-page .site-content-wrapper {
     ),
     linear-gradient(
       to right,
-      rgba(255, 255, 255, 0.94) 0%,
-      rgba(255, 255, 255, 0.80) 30%,
-      rgba(255, 255, 255, 0.28) 56%,
-      rgba(255, 255, 255, 0.00) 76%
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 28%,
+      rgba(255, 255, 255, 0) 42%
     );
   pointer-events: none;
   z-index: 1;
@@ -76,15 +76,18 @@ body.front-page .site-content-wrapper {
   z-index: 2;
 }
 
-/* Imagem do hero — camada base, atrás do overlay e do conteúdo.
-   object-position: 100% mostra o lado direito da foto (em vez do centro);
-   scale(1.1) com transform-origin na direita amplia mantendo os produtos
-   "colados" na margem direita — o excesso à esquerda é cortado pelo
-   overflow:hidden do .hero-body */
+/* Imagem do hero — ocupa só os 70% direitos do .hero-body; os 30% da
+   esquerda ficam livres para o degradê branco acima. object-position:100%
+   mostra o lado direito da foto; scale(1.1) com transform-origin na
+   direita amplia mantendo os produtos "colados" na margem direita — o
+   excesso é cortado pelo overflow:hidden do .hero-body */
 .hero-img {
   position: absolute !important;
-  inset: 0;
-  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 30%;
+  width: 70%;
   height: 100%;
   object-fit: cover;
   object-position: 100% center;

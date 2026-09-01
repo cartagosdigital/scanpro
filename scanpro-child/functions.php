@@ -60,7 +60,7 @@ add_action( 'wp_enqueue_scripts', function () {
             'scanpro-home',
             get_stylesheet_directory_uri() . '/assets/css/home.css',
             [ 'scanpro-main' ],
-            '3.0.0'
+            '3.1.0'
         );
     }
 
