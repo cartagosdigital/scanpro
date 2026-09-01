@@ -12,16 +12,7 @@ $siblings  = $parent_id
     ? get_pages( [ 'parent' => $parent_id, 'sort_column' => 'menu_order' ] )
     : [];
 
-// Mapear slug da subpágina para categoria de produto WooCommerce
-$slug_to_cat = [
-    'wohnen'                => 'wohnen',
-    'gewerbe'               => 'gewerbe',
-    'industrie'             => 'industrie',
-    'bildungseinrichtungen' => 'bildungseinrichtungen',
-    'gastronomie'           => 'gastronomie',
-];
 $current_slug = get_post_field( 'post_name', get_the_ID() );
-$cat_slug     = $slug_to_cat[ $current_slug ] ?? '';
 ?>
 
 <main class="einsatz-single-main" id="main" role="main">
@@ -46,8 +37,7 @@ $cat_slug     = $slug_to_cat[ $current_slug ] ?? '';
         <!-- Conteúdo por slug — injectado por scanpro_get_einsatzbereich_content() -->
         <div class="einsatz-text">
           <?php
-          $slug = get_post_field( 'post_name', get_the_ID() );
-          echo scanpro_get_einsatzbereich_content( $slug );
+          echo scanpro_get_einsatzbereich_content( $current_slug );
           ?>
         </div>
 
@@ -107,55 +97,93 @@ $cat_slug     = $slug_to_cat[ $current_slug ] ?? '';
   </section>
 
   <!-- =============================================
-       PRODUTOS RELACIONADOS (WooCommerce)
+       PRODUTOS RELACIONADOS — lista curada por segmento (functions.php),
+       resolvida aqui por nome de produto ou por categoria inteira
        ============================================= -->
   <?php if ( class_exists( 'WooCommerce' ) ) :
-    $query_args = [
-        'post_type'      => 'product',
-        'posts_per_page' => 3,
-        'post_status'    => 'publish',
-        'orderby'        => 'menu_order',
-        'order'          => 'ASC',
-    ];
-    if ( $cat_slug ) {
-        $query_args['tax_query'] = [ [
-            'taxonomy' => 'product_cat',
-            'field'    => 'slug',
-            'terms'    => $cat_slug,
-        ] ];
+    $einsatz_specs    = scanpro_get_einsatzbereich_products( $current_slug );
+    $einsatz_products = [];
+
+    foreach ( $einsatz_specs as $spec ) {
+        if ( 'category' === $spec['type'] ) {
+            $term = get_term_by( 'name', $spec['name'], 'product_cat' );
+            if ( $term && ! is_wp_error( $term ) ) {
+                $einsatz_products[] = [ 'type' => 'category', 'term' => $term ];
+            }
+            continue;
+        }
+
+        $spec_query = new WP_Query( [
+            'post_type'      => 'product',
+            'posts_per_page' => 1,
+            'post_status'    => 'publish',
+            's'              => $spec['name'],
+        ] );
+        if ( $spec_query->have_posts() ) {
+            $einsatz_products[] = [ 'type' => 'product', 'post' => $spec_query->posts[0] ];
+        }
     }
-    $related = new WP_Query( $query_args );
   ?>
   <section class="einsatz-products-section">
     <div class="container">
       <span class="section-label"><?php _e( 'PASSENDE PRODUKTE', 'scanpro-child' ); ?></span>
       <h2 class="section-title"><?php _e( 'Empfohlene Produkte', 'scanpro-child' ); ?></h2>
 
-      <?php if ( $related->have_posts() ) : ?>
-        <div class="products-grid">
-          <?php while ( $related->have_posts() ) : $related->the_post(); ?>
-            <div class="product-card">
-              <a href="<?php the_permalink(); ?>" class="product-card-img-link" tabindex="-1" aria-hidden="true">
-                <div class="product-card-img">
-                  <?php if ( has_post_thumbnail() ) :
-                    the_post_thumbnail( 'medium', [ 'loading' => 'lazy' ] );
-                  else : ?>
+      <?php if ( ! empty( $einsatz_products ) ) : ?>
+        <div class="einsatz-products-carousel">
+          <button type="button" class="einsatz-carousel-arrow einsatz-carousel-prev" aria-label="<?php esc_attr_e( 'Zurück', 'scanpro-child' ); ?>">&#8249;</button>
+
+          <div class="einsatz-products-track" role="list">
+            <?php foreach ( $einsatz_products as $item ) :
+                if ( 'category' === $item['type'] ) :
+                    $term      = $item['term'];
+                    $term_link = get_term_link( $term );
+            ?>
+              <div class="product-card einsatz-carousel-item" role="listitem">
+                <a href="<?php echo esc_url( $term_link ); ?>" class="product-card-img-link" tabindex="-1" aria-hidden="true">
+                  <div class="product-card-img">
                     <div class="product-img-placeholder"></div>
-                  <?php endif; ?>
-                </div>
-              </a>
-              <div class="product-card-body">
-                <h3 class="product-card-title">
-                  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                </h3>
-                <a href="<?php the_permalink(); ?>" class="btn btn-primary product-card-btn">
-                  <?php _e( 'Produkt ansehen', 'scanpro-child' ); ?>
+                  </div>
                 </a>
+                <div class="product-card-body">
+                  <span class="product-card-category"><?php _e( 'Kategorie', 'scanpro-child' ); ?></span>
+                  <h3 class="product-card-title">
+                    <a href="<?php echo esc_url( $term_link ); ?>"><?php echo esc_html( $term->name ); ?></a>
+                  </h3>
+                  <a href="<?php echo esc_url( $term_link ); ?>" class="btn btn-primary product-card-btn">
+                    <?php _e( 'Kategorie ansehen', 'scanpro-child' ); ?>
+                  </a>
+                </div>
               </div>
-            </div>
-          <?php endwhile;
-          wp_reset_postdata(); ?>
+            <?php
+                else :
+                    $p_id = $item['post']->ID;
+            ?>
+              <div class="product-card einsatz-carousel-item" role="listitem">
+                <a href="<?php echo esc_url( get_permalink( $p_id ) ); ?>" class="product-card-img-link" tabindex="-1" aria-hidden="true">
+                  <div class="product-card-img">
+                    <?php if ( has_post_thumbnail( $p_id ) ) :
+                      echo get_the_post_thumbnail( $p_id, 'medium', [ 'loading' => 'lazy' ] );
+                    else : ?>
+                      <div class="product-img-placeholder"></div>
+                    <?php endif; ?>
+                  </div>
+                </a>
+                <div class="product-card-body">
+                  <h3 class="product-card-title">
+                    <a href="<?php echo esc_url( get_permalink( $p_id ) ); ?>"><?php echo esc_html( get_the_title( $p_id ) ); ?></a>
+                  </h3>
+                  <a href="<?php echo esc_url( get_permalink( $p_id ) ); ?>" class="btn btn-primary product-card-btn">
+                    <?php _e( 'Produkt ansehen', 'scanpro-child' ); ?>
+                  </a>
+                </div>
+              </div>
+            <?php endif; endforeach; ?>
+          </div>
+
+          <button type="button" class="einsatz-carousel-arrow einsatz-carousel-next" aria-label="<?php esc_attr_e( 'Weiter', 'scanpro-child' ); ?>">&#8250;</button>
         </div>
+
         <div style="text-align: center; margin-top: 36px;">
           <a href="<?php echo esc_url( home_url( '/produkte' ) ); ?>" class="btn btn-outline-dark">
             <?php _e( 'Alle Produkte ansehen →', 'scanpro-child' ); ?>

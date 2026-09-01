@@ -202,4 +202,36 @@ document.addEventListener('DOMContentLoaded', function () {
     megaDrop.addEventListener('mouseleave', closeMega);
   }
 
+  // ---------------------------------------------------------------
+  // Carrossel de produtos relacionados — Einsatzbereiche
+  // Scroll nativo (swipe funciona de graça no mobile) + setas que
+  // avançam uma "página" (o quanto estiver visível no momento)
+  // ---------------------------------------------------------------
+  document.querySelectorAll('.einsatz-products-carousel').forEach(function (carousel) {
+    var track = carousel.querySelector('.einsatz-products-track');
+    var prevBtn = carousel.querySelector('.einsatz-carousel-prev');
+    var nextBtn = carousel.querySelector('.einsatz-carousel-next');
+    if (!track || !prevBtn || !nextBtn) return;
+
+    function updateArrows() {
+      var maxScroll = track.scrollWidth - track.clientWidth;
+      var hasOverflow = maxScroll > 4;
+      prevBtn.hidden = !hasOverflow;
+      nextBtn.hidden = !hasOverflow;
+      prevBtn.disabled = track.scrollLeft <= 4;
+      nextBtn.disabled = track.scrollLeft >= maxScroll - 4;
+    }
+
+    prevBtn.addEventListener('click', function () {
+      track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' });
+    });
+    nextBtn.addEventListener('click', function () {
+      track.scrollBy({ left: track.clientWidth, behavior: 'smooth' });
+    });
+
+    track.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+    updateArrows();
+  });
+
 });

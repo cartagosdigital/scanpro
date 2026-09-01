@@ -69,7 +69,7 @@ add_action( 'wp_enqueue_scripts', function () {
         'scanpro-einsatzbereiche',
         get_stylesheet_directory_uri() . '/assets/css/einsatzbereiche.css',
         [ 'scanpro-main' ],
-        '1.6.1'
+        '1.7.0'
     );
 
     // CSS Wissen
@@ -103,7 +103,7 @@ add_action( 'wp_enqueue_scripts', function () {
         'scanpro-main',
         get_stylesheet_directory_uri() . '/assets/js/main.js',
         [ 'jquery' ],
-        '1.3.0',
+        '1.4.0',
         true
     );
 
@@ -480,5 +480,66 @@ if ( ! function_exists( 'scanpro_get_einsatzbereich_content' ) ) {
         $html = isset( $contents[ $slug ] ) ? $contents[ $slug ] : '<p>' . __( 'Inhalt folgt in Kürze.', 'scanpro-child' ) . '</p>';
 
         return '<div class="eb-content">' . $html . '</div>';
+    }
+}
+
+// Lista curada de produtos por Einsatzbereich — cada item é resolvido no
+// template (page-einsatzbereich-single.php) por nome de produto (busca no
+// WooCommerce) ou, quando marcado como 'category', por uma categoria inteira
+if ( ! function_exists( 'scanpro_get_einsatzbereich_products' ) ) {
+    function scanpro_get_einsatzbereich_products( string $slug ): array {
+
+        $products = [];
+
+        $products['wohnen'] = [
+            [ 'type' => 'product',  'name' => 'CX3000' ],
+            [ 'type' => 'product',  'name' => 'VEX100 CF' ],
+            [ 'type' => 'product',  'name' => 'VEX300' ],
+            [ 'type' => 'product',  'name' => 'InspirAIR Top' ],
+            [ 'type' => 'category', 'name' => 'Rauchsauger' ],
+        ];
+
+        $products['gewerbe'] = [
+            [ 'type' => 'product',  'name' => 'CX3000' ],
+            [ 'type' => 'product',  'name' => 'VEX4000' ],
+            [ 'type' => 'product',  'name' => 'VEX1000RS' ],
+            [ 'type' => 'product',  'name' => 'VEX1000RT' ],
+            [ 'type' => 'product',  'name' => 'VEX100' ],
+            [ 'type' => 'product',  'name' => 'VEX300' ],
+            [ 'type' => 'product',  'name' => 'InspirAIR Top' ],
+            [ 'type' => 'category', 'name' => 'Volumenstromregler' ],
+        ];
+
+        $products['industrie'] = [
+            [ 'type' => 'product', 'name' => 'VEX4000' ],
+            [ 'type' => 'product', 'name' => 'VEX1000RS' ],
+            [ 'type' => 'product', 'name' => 'VEX1000RT' ],
+            [ 'type' => 'product', 'name' => 'Inline-Ventilator' ],
+            [ 'type' => 'product', 'name' => 'Safe Plate' ],
+            [ 'type' => 'product', 'name' => 'Basic Plate' ],
+            [ 'type' => 'product', 'name' => 'Bypassklappe' ],
+            [ 'type' => 'product', 'name' => 'BESB' ],
+            [ 'type' => 'product', 'name' => 'BESF' ],
+            [ 'type' => 'product', 'name' => 'DTH' ],
+        ];
+
+        $products['bildungseinrichtungen'] = [
+            [ 'type' => 'product',  'name' => 'DEX3000' ],
+            [ 'type' => 'product',  'name' => 'CX3000' ],
+            [ 'type' => 'product',  'name' => 'VEX1000RS' ],
+            [ 'type' => 'product',  'name' => 'VEX4000' ],
+            [ 'type' => 'category', 'name' => 'Volumenstromregler' ],
+        ];
+
+        $products['gastronomie'] = [
+            [ 'type' => 'product', 'name' => 'VEX100' ],
+            [ 'type' => 'product', 'name' => 'CX3000' ],
+            [ 'type' => 'product', 'name' => 'VEX300' ],
+            [ 'type' => 'product', 'name' => 'RSHT' ],
+            [ 'type' => 'product', 'name' => 'RSV' ],
+            [ 'type' => 'product', 'name' => 'BESB' ],
+        ];
+
+        return $products[ $slug ] ?? [];
     }
 }

@@ -273,6 +273,76 @@
 }
 
 /* ---------------------------------------------------------------
+   Carrossel de produtos relacionados (Einsatzbereiche) — 3 visíveis
+   no desktop, 1 no mobile, com scroll nativo + setas
+   --------------------------------------------------------------- */
+.einsatz-products-carousel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.einsatz-products-track {
+  flex: 1;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.einsatz-products-track::-webkit-scrollbar { display: none; }
+
+.einsatz-carousel-item {
+  flex: 0 0 calc((100% - 48px) / 3);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.einsatz-carousel-arrow {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-primary);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.einsatz-carousel-arrow:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.einsatz-carousel-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+.einsatz-carousel-arrow[hidden] { display: none; }
+
+@media (max-width: 1024px) {
+  .einsatz-carousel-item { flex: 0 0 calc((100% - 24px) / 2); }
+}
+
+@media (max-width: 768px) {
+  .einsatz-carousel-item { flex: 0 0 100%; }
+  .einsatz-carousel-arrow { width: 38px; height: 38px; font-size: 18px; }
+}
+
+/* ---------------------------------------------------------------
    Seção Home — Einsatzbereiche (inserida na front-page)
    --------------------------------------------------------------- */
 .home-einsatz-section {
