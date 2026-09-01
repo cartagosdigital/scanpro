@@ -136,7 +136,8 @@
 }
 
 .header-lang-selector:hover .lang-dropdown,
-.header-lang-selector:focus-within .lang-dropdown {
+.header-lang-selector:focus-within .lang-dropdown,
+.header-lang-selector.dropdown-open .lang-dropdown {
   opacity: 1 !important;
   visibility: visible !important;
   pointer-events: auto !important;
@@ -297,7 +298,8 @@
 }
 
 .has-dropdown:hover .dropdown,
-.has-dropdown:focus-within .dropdown {
+.has-dropdown:focus-within .dropdown,
+.has-dropdown.dropdown-open .dropdown {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -401,7 +403,7 @@
 }
 
 .has-megamenu:focus-within .dropdown,
-.has-megamenu.mega-open .dropdown {
+.has-megamenu.dropdown-open .dropdown {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;

@@ -134,7 +134,7 @@ get_header();
       <?php
       $home_filter_parent = get_term_by( 'slug', 'produkte', 'product_cat' );
       $home_filter_cats    = $home_filter_parent
-        ? get_terms( [ 'taxonomy' => 'product_cat', 'parent' => $home_filter_parent->term_id, 'hide_empty' => true, 'orderby' => 'name' ] )
+        ? get_terms( [ 'taxonomy' => 'product_cat', 'parent' => $home_filter_parent->term_id, 'hide_empty' => true, 'orderby' => 'menu_order', 'order' => 'ASC' ] )
         : [];
       if ( ! empty( $home_filter_cats ) && ! is_wp_error( $home_filter_cats ) ) :
           foreach ( $home_filter_cats as $home_filter_cat ) :
@@ -162,6 +162,22 @@ get_header();
           $home_product_ids     = [];
           $home_per_cat         = 3;
 
+          // Produtos fixos em primeiro lugar no preview "Alle" (pedido do
+          // cliente): VEX1000RS, VEX4000 e um Rauchsauger (RSHT), nessa ordem
+          $home_featured_products = [];
+          foreach ( [ 'VEX1000RS', 'VEX4000', 'RSHT' ] as $home_featured_name ) {
+              $featured_query = new WP_Query( [
+                  'post_type'      => 'product',
+                  'posts_per_page' => 1,
+                  'post_status'    => 'publish',
+                  's'              => $home_featured_name,
+              ] );
+              if ( $featured_query->have_posts() ) {
+                  $home_featured_products[] = $featured_query->posts[0];
+                  $home_product_ids[]       = $featured_query->posts[0]->ID;
+              }
+          }
+
           if ( ! empty( $home_filter_cats ) ) {
               foreach ( $home_filter_cats as $home_filter_cat ) {
                   $cat_query = new WP_Query( [
@@ -188,7 +204,7 @@ get_header();
 
           // Intercala os produtos entre categorias (1º de cada categoria, depois
           // o 2º de cada, etc.) para que os 3 primeiros já mostrem variedade
-          $home_products = [];
+          $home_products = $home_featured_products;
           $home_max_len  = $home_products_by_cat ? max( array_map( 'count', $home_products_by_cat ) ) : 0;
           for ( $i = 0; $i < $home_max_len; $i++ ) {
               foreach ( $home_products_by_cat as $cat_products ) {

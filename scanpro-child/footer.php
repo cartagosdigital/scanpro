@@ -91,7 +91,8 @@
                 'taxonomy'   => 'product_cat',
                 'parent'     => $footer_cats_parent->term_id,
                 'hide_empty' => true,
-                'orderby'    => 'name',
+                'orderby'    => 'menu_order',
+                'order'      => 'ASC',
               ] )
             : [];
           if ( ! empty( $footer_cats ) && ! is_wp_error( $footer_cats ) ) :

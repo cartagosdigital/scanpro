@@ -178,28 +178,33 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // ---------------------------------------------------------------
-  // Mega-menu Produkte — hover com delay para não fechar ao mover o cursor
-  // (position:fixed no dropdown sai dos bounds do li, CSS :hover não é suficiente)
+  // Dropdowns do header (Produkte, Einsatzbereiche, Wissen, idioma) —
+  // abrir/fechar com pequeno atraso no mouseleave. O :hover puro em CSS
+  // perde o estado quando o mouse desce devagar e passa pelo "vão" entre
+  // o link e o painel (e o mega-menu usa position:fixed, que sai dos
+  // bounds do <li> — :hover sozinho nunca funcionaria para ele)
   // ---------------------------------------------------------------
-  var megaLi   = document.querySelector('.has-megamenu');
-  var megaDrop = megaLi ? megaLi.querySelector(':scope > .dropdown') : null;
-  var megaTimer = null;
+  if (window.innerWidth > 960) {
+    document.querySelectorAll('#site-header .has-dropdown').forEach(function (item) {
+      var panel = item.querySelector(':scope > .dropdown');
+      if (!panel) return;
+      var closeTimer = null;
 
-  if (megaLi && megaDrop && window.innerWidth > 960) {
-    function openMega() {
-      clearTimeout(megaTimer);
-      megaLi.classList.add('mega-open');
-    }
-    function closeMega() {
-      megaTimer = setTimeout(function () {
-        megaLi.classList.remove('mega-open');
-      }, 320);
-    }
+      function open() {
+        clearTimeout(closeTimer);
+        item.classList.add('dropdown-open');
+      }
+      function close() {
+        closeTimer = setTimeout(function () {
+          item.classList.remove('dropdown-open');
+        }, 320);
+      }
 
-    megaLi.addEventListener('mouseenter', openMega);
-    megaLi.addEventListener('mouseleave', closeMega);
-    megaDrop.addEventListener('mouseenter', openMega);
-    megaDrop.addEventListener('mouseleave', closeMega);
+      item.addEventListener('mouseenter', open);
+      item.addEventListener('mouseleave', close);
+      panel.addEventListener('mouseenter', open);
+      panel.addEventListener('mouseleave', close);
+    });
   }
 
   // ---------------------------------------------------------------

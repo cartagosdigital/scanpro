@@ -59,17 +59,17 @@ get_header();
           </div>
         </article>
 
-        <!-- Sonja Bühler -->
+        <!-- Iliane Kühne -->
         <article class="team-card reveal-fade">
           <div class="team-card-photo">
             <img
               src="https://lp.scanpro.ch/wp-content/uploads/2026/08/04634001-1F03-44B6-BC0C-B978E68C6941.png"
-              alt="Sonja Bühler"
+              alt="Iliane Kühne"
               loading="lazy"
             >
           </div>
           <div class="team-card-body">
-            <h2 class="team-card-name">Sonja Bühler</h2>
+            <h2 class="team-card-name">Iliane Kühne</h2>
             <span class="team-card-role"><?php _e( 'Administration', 'scanpro-child' ); ?></span>
             <a href="mailto:info@scanpro.ch" class="team-card-contact">
               <?php _e( 'Kontakt aufnehmen', 'scanpro-child' ); ?> →

@@ -73,7 +73,7 @@
                 // (produtos filhos de "produkte"), divididas em 2 colunas
                 $mega_parent = get_term_by( 'slug', 'produkte', 'product_cat' );
                 $mega_cats   = $mega_parent
-                  ? get_terms( [ 'taxonomy' => 'product_cat', 'parent' => $mega_parent->term_id, 'hide_empty' => true, 'orderby' => 'name' ] )
+                  ? get_terms( [ 'taxonomy' => 'product_cat', 'parent' => $mega_parent->term_id, 'hide_empty' => true, 'orderby' => 'menu_order', 'order' => 'ASC' ] )
                   : [];
                 $mega_cats   = ( ! empty( $mega_cats ) && ! is_wp_error( $mega_cats ) ) ? $mega_cats : [];
                 $mega_split  = (int) ceil( count( $mega_cats ) / 2 );
@@ -84,7 +84,7 @@
                 ?>
                 <div class="mega-col">
                   <?php foreach ( $mega_col as $mega_cat ) :
-                      $mega_subs = get_terms( [ 'taxonomy' => 'product_cat', 'parent' => $mega_cat->term_id, 'hide_empty' => true, 'orderby' => 'name' ] );
+                      $mega_subs = get_terms( [ 'taxonomy' => 'product_cat', 'parent' => $mega_cat->term_id, 'hide_empty' => true, 'orderby' => 'menu_order', 'order' => 'ASC' ] );
                   ?>
                   <div class="mega-group">
                     <a class="mega-group-title" href="<?php echo esc_url( get_term_link( $mega_cat ) ); ?>">

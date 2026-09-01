@@ -60,11 +60,26 @@ get_header();
         </div>
 
         <!-- Botões de ação -->
+        <?php
+        // Exact2, Excom e Excon+ são componentes de outros equipamentos —
+        // não podem ser adquiridos/orçados individualmente
+        $no_quote_products = [ 'exact2', 'excom', 'excon+' ];
+        $hide_quote_btn    = false;
+        $current_title_lc  = strtolower( get_the_title() );
+        foreach ( $no_quote_products as $no_quote_name ) {
+            if ( false !== strpos( $current_title_lc, $no_quote_name ) ) {
+                $hide_quote_btn = true;
+                break;
+            }
+        }
+        ?>
         <div class="product-actions">
           <?php woocommerce_template_single_add_to_cart(); ?>
+          <?php if ( ! $hide_quote_btn ) : ?>
           <a href="<?php echo esc_url( add_query_arg( 'produkt', get_the_ID(), home_url( '/kontakt' ) ) ); ?>" class="btn btn-outline-dark product-quote-btn">
             <?php _e( 'Offerte anfragen', 'scanpro-child' ); ?>
           </a>
+          <?php endif; ?>
         </div>
 
         <!-- Meta: categorias e marcas -->

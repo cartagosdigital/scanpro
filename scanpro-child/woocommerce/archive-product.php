@@ -37,7 +37,7 @@ get_header();
   if ( ! is_product_category() ) :
     $produkte_term = get_term_by( 'slug', 'produkte', 'product_cat' );
     $main_cats     = $produkte_term
-      ? get_terms( [ 'taxonomy' => 'product_cat', 'parent' => $produkte_term->term_id, 'hide_empty' => true, 'orderby' => 'name' ] )
+      ? get_terms( [ 'taxonomy' => 'product_cat', 'parent' => $produkte_term->term_id, 'hide_empty' => true, 'orderby' => 'menu_order', 'order' => 'ASC' ] )
       : [];
   ?>
   <?php if ( ! empty( $main_cats ) && ! is_wp_error( $main_cats ) ) : ?>
@@ -46,7 +46,7 @@ get_header();
       <div class="shop-cats-grid">
         <?php foreach ( $main_cats as $cat ) :
           $cat_link = get_term_link( $cat );
-          $sub_cats = get_terms( [ 'taxonomy' => 'product_cat', 'parent' => $cat->term_id, 'hide_empty' => true, 'number' => 4 ] );
+          $sub_cats = get_terms( [ 'taxonomy' => 'product_cat', 'parent' => $cat->term_id, 'hide_empty' => true, 'number' => 4, 'orderby' => 'menu_order', 'order' => 'ASC' ] );
         ?>
         <a class="shop-cat-card" href="<?php echo esc_url( $cat_link ); ?>">
           <div class="shop-cat-card-body">
@@ -89,6 +89,8 @@ get_header();
             'title_li'     => '',
             'hierarchical' => true,
             'show_count'   => true,
+            'orderby'      => 'menu_order',
+            'order'        => 'ASC',
             'parent'       => $root ? $root->term_id : 0,
         ] );
         ?>
