@@ -35,7 +35,7 @@ add_action( 'wp_enqueue_scripts', function () {
         'scanpro-main',
         get_stylesheet_directory_uri() . '/assets/css/main.css',
         [ 'scanpro-fonts' ],
-        '2.1.0'
+        '2.2.0'
     );
 
     // CSS do header

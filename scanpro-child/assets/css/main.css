@@ -883,62 +883,91 @@ section { padding: var(--section-pad) 0; }
 /* ---------------------------------------------------------------
    Zeitleiste — Unsere Geschichte (Über uns)
    --------------------------------------------------------------- */
+/* Durchgehende Zeitachse: Fotoband oben, Achse mit Punkten, darunter
+   Jahr und Text. Nicht jeder Meilenstein hat ein Foto — die drei Zeilen
+   (Bild / Jahr / Text) liegen deshalb als Subgrid im Elterngitter, damit
+   die Achse über alle Spalten hinweg auf einer Linie bleibt und das
+   Fotoband dort ganz verschwindet, wo keine Spalte der Zeile ein Bild hat. */
 .geschichte-timeline {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  column-gap: 0;
+  row-gap: 0;
   margin-top: 64px;
   padding-top: 48px;
   border-top: 1px solid var(--color-border);
 }
 
 .geschichte-timeline-item {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
 }
 
 .geschichte-timeline-img {
-  height: 120px;
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  margin-bottom: 14px;
-  padding: 8px;
-  overflow: hidden;
+  grid-row: 1;
+  align-self: end;
+  margin: 0 24px 18px 0;
 }
 
 .geschichte-timeline-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
   display: block;
+  width: 100%;
+  height: 118px;
+  object-fit: contain;
+  object-position: left bottom;
 }
 
-/* Meilensteine ohne Foto: Höhe der Bildfläche reservieren,
-   damit die Jahreszahlen aller Einträge auf einer Linie bleiben. */
-.geschichte-timeline-item--no-img { padding-top: 134px; }
-
+/* Die Achse selbst — die Oberkante des Jahres, Spalte an Spalte
+   aneinandergesetzt (daher column-gap: 0 am Gitter). */
 .geschichte-timeline-year {
+  grid-row: 2;
+  position: relative;
   font-family: var(--font-slab);
   font-weight: 700;
   font-size: 20px;
   color: var(--color-primary);
+  border-top: 2px solid var(--color-border);
+  padding-top: 20px;
   margin-bottom: 4px;
 }
 
+.geschichte-timeline-year::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-white);
+}
+
 .geschichte-timeline-caption {
+  grid-row: 3;
   font-size: 13px;
   color: var(--color-muted);
   line-height: 1.5;
+  padding-right: 24px;
+}
+
+/* Ohne Subgrid: Bildhöhe bei fotolosen Meilensteinen reservieren,
+   damit die Achse trotzdem durchläuft. */
+@supports not (grid-template-rows: subgrid) {
+  .geschichte-timeline-item { display: flex; flex-direction: column; }
+  .geschichte-timeline-item--no-img { padding-top: 136px; }
 }
 
 @media (max-width: 1024px) {
-  .geschichte-timeline { grid-template-columns: repeat(3, 1fr); gap: 28px 20px; }
-  /* Ab hier stehen die fotolosen Meilensteine in eigenen Zeilen —
-     die reservierte Bildhöhe würde nur eine Lücke erzeugen. */
-  .geschichte-timeline-item--no-img { padding-top: 0; }
+  .geschichte-timeline { grid-template-columns: repeat(3, 1fr); }
+  /* Beim Umbruch brauchen die Zeilen Luft zueinander. */
+  .geschichte-timeline-caption { padding-bottom: 40px; }
 }
 
 @media (max-width: 600px) {
   .geschichte-timeline { grid-template-columns: repeat(2, 1fr); }
+  .geschichte-timeline-img { margin-right: 16px; }
+  .geschichte-timeline-img img { height: 96px; }
+  .geschichte-timeline-caption { padding-right: 16px; }
 }
