@@ -35,7 +35,7 @@ add_action( 'wp_enqueue_scripts', function () {
         'scanpro-main',
         get_stylesheet_directory_uri() . '/assets/css/main.css',
         [ 'scanpro-fonts' ],
-        '2.0.0'
+        '2.1.0'
     );
 
     // CSS do header
@@ -85,7 +85,7 @@ add_action( 'wp_enqueue_scripts', function () {
         'scanpro-referenzen',
         get_stylesheet_directory_uri() . '/assets/css/referenzen.css',
         [ 'scanpro-main' ],
-        '1.0.1'
+        '1.1.0'
     );
 
     // CSS do WooCommerce — carrega após os estilos do WooCommerce para garantir precedência

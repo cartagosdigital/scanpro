@@ -53,21 +53,47 @@ get_header();
       </div>
 
       <!-- Zeitleiste — Meilensteine der Firmengeschichte.
-           TODO: Platzhalter durch die realen Fotos aus dem PDF ersetzen,
-           sobald sie in der WP-Mediathek hochgeladen sind. -->
+           Meilensteine ohne 'img' werden ohne Bildfläche ausgegeben. -->
       <div class="geschichte-timeline">
         <?php
         $geschichte_milestones = [
-          [ 'year' => '1957', 'caption' => __( 'Erste Rauchsauger', 'scanpro-child' ) ],
-          [ 'year' => '1978', 'caption' => __( 'Erster VEX (Serie VEX 1 – 5)', 'scanpro-child' ) ],
-          [ 'year' => '1993', 'caption' => __( 'Nachfolge Serie VEX1.5 – 5.5', 'scanpro-child' ) ],
-          [ 'year' => '2000', 'caption' => __( 'Neue Generation VEX100', 'scanpro-child' ) ],
-          [ 'year' => '2017', 'caption' => __( 'VEX100 mit effizienterem Gegenstromwärmetauscher', 'scanpro-child' ) ],
+          [
+            'year'    => '1957',
+            'caption' => __( 'Erste Rauchsauger', 'scanpro-child' ),
+            'img'     => 'https://azure-skunk-391096.hostingersite.com/wp-content/uploads/2026/09/Rauchsauger-alt.png',
+          ],
+          [
+            'year'    => '1978',
+            'caption' => __( 'Erster VEX (Serie VEX 1 – 5)', 'scanpro-child' ),
+            'img'     => 'https://azure-skunk-391096.hostingersite.com/wp-content/uploads/2026/09/VEX1-5-alt.png',
+          ],
+          [
+            'year'    => '1993',
+            'caption' => __( 'Nachfolge Serie VEX1.5 – 5.5', 'scanpro-child' ),
+            'img'     => 'https://azure-skunk-391096.hostingersite.com/wp-content/uploads/2026/09/VEX-.5.jpg',
+          ],
+          [
+            'year'    => '2000',
+            'caption' => __( 'Neue Generation VEX100', 'scanpro-child' ),
+          ],
+          [
+            'year'    => '2017',
+            'caption' => __( 'VEX100 mit effizienterem Gegenstromwärmetauscher', 'scanpro-child' ),
+          ],
         ];
         foreach ( $geschichte_milestones as $milestone ) :
+          $has_img = ! empty( $milestone['img'] );
         ?>
-        <div class="geschichte-timeline-item">
-          <div class="geschichte-timeline-img" aria-hidden="true"></div>
+        <div class="geschichte-timeline-item<?php echo $has_img ? '' : ' geschichte-timeline-item--no-img'; ?>">
+          <?php if ( $has_img ) : ?>
+          <div class="geschichte-timeline-img">
+            <img
+              src="<?php echo esc_url( $milestone['img'] ); ?>"
+              alt="<?php echo esc_attr( sprintf( '%s — %s', $milestone['year'], $milestone['caption'] ) ); ?>"
+              loading="lazy"
+            >
+          </div>
+          <?php endif; ?>
           <span class="geschichte-timeline-year"><?php echo esc_html( $milestone['year'] ); ?></span>
           <p class="geschichte-timeline-caption"><?php echo esc_html( $milestone['caption'] ); ?></p>
         </div>

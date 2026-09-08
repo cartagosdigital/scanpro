@@ -55,6 +55,7 @@ get_header(); ?>
         // ————————————————————————————————————————————
         'hotel' => [
           'title' => __( 'Hotel, Restaurants, Bars, Camping etc.', 'scanpro-child' ),
+          'img'   => 'https://azure-skunk-391096.hostingersite.com/wp-content/uploads/2026/09/scan-pro-lueftung-hotel-restaurant-gastronomie-schweiz.jpg.png',
           'desc'  => __( 'Küchendüfte gehören nicht in die Gaststube. Gesunde, frische Luft mit angenehmer Luftfeuchtigkeit und ohne störende Gerüche lassen den Gast länger verweilen und schaffen damit mehr Umsatz. Einen Vorschlag für den Weg zur angepassten Be- und Entlüftung Ihres Lokales unterbreiten wir Ihnen gerne kostenfrei.', 'scanpro-child' ),
           'refs'  => [
             'Hotel Donatz, Samedan',
@@ -105,6 +106,7 @@ get_header(); ?>
         // ————————————————————————————————————————————
         'spital' => [
           'title' => __( 'Spital, Heim, Praxis, Tierheim etc.', 'scanpro-child' ),
+          'img'   => 'https://azure-skunk-391096.hostingersite.com/wp-content/uploads/2026/09/scan-pro-lueftung-spital-praxis-pflegeheim-gesundheit-schweiz.jpg.jpg',
           'desc'  => __( 'Eine gute Belüftung ist im Operationssaal genau so wichtig wie in der Arztpraxis, im Pflegeheim, im Spital, auf der Unfallstation oder im Tiergehege. Gefilterte Luft, praktisch geräuschlos in den Raum geführt, lässt alle aufatmen. Wir zeigen Ihnen gerne wie.', 'scanpro-child' ),
           'refs'  => [
             'Aeskulap Klinik, Brunnen',
@@ -144,6 +146,7 @@ get_header(); ?>
         // ————————————————————————————————————————————
         'wohnen' => [
           'title' => __( 'Wohnung, EFH, MFH, Mehrzweckraum etc.', 'scanpro-child' ),
+          'img'   => 'https://azure-skunk-391096.hostingersite.com/wp-content/uploads/2026/09/scan-pro-lueftung-wohnung-efh-mfh-wohnraum-schweiz.jpg-scaled.jpg',
           'desc'  => __( 'Im Ein- oder Mehrfamilienhaus, überall wo Menschen wohnen, arbeiten, spielen und schlafen, ist der regelmässige Luftaustausch für das Wohlbefinden und die Leistungsfähigkeit von besonderer Bedeutung. Der richtige Luftwechsel hilft Krankheiten durch Bakterienübertragung zu vermeiden. Auch bleiben Bauschäden durch Feuchtigkeit aus. Wir haben die Lösung, individuell auf Ihr Objekt abgestimmt.', 'scanpro-child' ),
           'refs'  => [
             'Überbauung Wyden, Winterthur',
@@ -167,6 +170,7 @@ get_header(); ?>
         // ————————————————————————————————————————————
         'oeffentlich' => [
           'title' => __( 'Öffentliche Gebäude, Schule, Universität etc.', 'scanpro-child' ),
+          'img'   => 'https://azure-skunk-391096.hostingersite.com/wp-content/uploads/2026/09/scan-pro-lueftung-schule-universitaet-oeffentliche-gebaeude-schweiz.jpg-scaled.jpg',
           'desc'  => __( 'Nur mit genügend Sauerstoff in frischer Luft lässt sich gut studieren, regieren und trainieren. Das Be- und Entlüftungssystem Exhausto, auf jeden Bedarf individuell zugeschnitten, stellt dies sicher. Wir machen gerne einen Vorschlag für die Schritte zu Ihrer massgeschneiderten Lösung.', 'scanpro-child' ),
           'refs'  => [
             'Milizfeuerwehr Haggenstrasse, St. Gallen',
@@ -249,6 +253,7 @@ get_header(); ?>
         // ————————————————————————————————————————————
         'sport' => [
           'title' => __( 'Sportzentrum, Fitnessraum, Wellness, Yoga etc.', 'scanpro-child' ),
+          'img'   => 'https://azure-skunk-391096.hostingersite.com/wp-content/uploads/2026/09/scan-pro-lueftung-sportzentrum-fitness-wellness-schweiz.jpg-scaled.jpg',
           'desc'  => __( 'Ob beim Training oder beim Ausspannen, beim Intensivsport oder beim Freizeitspass — die zweckdienliche Versorgung mit frischer Luft ist überall imperativ. Unsere Geräte mit den objektbezogenen Steuerungen sorgen dafür. Wir geben gerne nähere Auskunft.', 'scanpro-child' ),
           'refs'  => [
             'Sanapurna Ayurveda & Yoga, Zürich',
@@ -294,6 +299,7 @@ get_header(); ?>
         // ————————————————————————————————————————————
         'industrie' => [
           'title' => __( 'Industrie/Gewerbe, Werkstatt, Büro etc.', 'scanpro-child' ),
+          'img'   => 'https://azure-skunk-391096.hostingersite.com/wp-content/uploads/2026/09/scan-pro-lueftung-industrie-gewerbe-werkstatt-buero-schweiz.jpg.png',
           'desc'  => __( 'Computer und andere Maschinen in Büro und Werkstatt geben Wärme ab und sorgen, nicht nur im Sommer, für ein zu warmes Arbeitsklima. Unsere Be- und Entlüftungsgeräte mit Wärmerückgewinnung schaffen Abhilfe, helfen Energie sparen und machen das Werken zur Freude. Fragen Sie uns.', 'scanpro-child' ),
           'refs'  => [
             'Bäckerei Steiner, Wallisellen',
@@ -368,8 +374,16 @@ get_header(); ?>
         <div class="ref-kategorie" data-category="<?php echo esc_attr( $key ); ?>">
 
           <!-- Split: descrição à esquerda, lista à direita -->
-          <div class="ref-kategorie-header">
-            <div class="ref-img-placeholder" aria-hidden="true"></div>
+          <div class="ref-kategorie-header<?php echo empty( $kat['img'] ) ? ' ref-kategorie-header--no-img' : ''; ?>">
+            <?php if ( ! empty( $kat['img'] ) ) : ?>
+            <div class="ref-kategorie-img">
+              <img
+                src="<?php echo esc_url( $kat['img'] ); ?>"
+                alt="<?php echo esc_attr( $kat['title'] ); ?>"
+                loading="lazy"
+              >
+            </div>
+            <?php endif; ?>
             <div class="ref-kategorie-text">
               <h2><?php echo esc_html( $kat['title'] ); ?></h2>
               <p><?php echo esc_html( $kat['desc'] ); ?></p>
