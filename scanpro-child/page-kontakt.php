@@ -31,9 +31,15 @@ if ( isset( $_POST['scanpro_contact_nonce'] ) &&
         $form_error = __( 'Bitte geben Sie eine gültige E-Mail-Adresse ein.', 'scanpro-child' );
     } else {
         $to      = 'info@scanpro.ch';
+
+        // Nome do remetente limpo de caracteres que invalidariam o cabeçalho
+        $reply_name = trim( preg_replace( '/[^\p{L}\p{N} .\-]/u', '', $name ) );
+
         $headers = [
             'Content-Type: text/html; charset=UTF-8',
-            'Reply-To: ' . esc_html( $name ) . ' <' . esc_html( $email ) . '>',
+            $reply_name
+                ? 'Reply-To: ' . $reply_name . ' <' . $email . '>'
+                : 'Reply-To: ' . $email,
         ];
         $mail_subject = sprintf(
             /* translators: %s: betreff da mensagem */

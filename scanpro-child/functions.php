@@ -794,3 +794,28 @@ if ( ! function_exists( 'scanpro_build_llms_txt' ) ) {
         return $out;
     }
 }
+
+/* =========================================================
+ * E-Mail-Versand (Kontaktformular)
+ *
+ * Ohne From-Header verschickt WordPress als wordpress@<domain>.
+ * Diese Adresse existiert als Postfach nicht und wird von vielen
+ * Mailservern (u. a. Hostinger) abgewiesen — wp_mail() gibt dann
+ * false zurück und das Formular zeigt eine Fehlermeldung.
+ * ========================================================= */
+
+add_filter( 'wp_mail_from', function ( $from ) {
+    // Apenas substitui o remetente padrão; não mexe no que plugins definirem.
+    return ( 0 === strpos( (string) $from, 'wordpress@' ) ) ? 'info@scanpro.ch' : $from;
+} );
+
+add_filter( 'wp_mail_from_name', function ( $from_name ) {
+    return ( 'WordPress' === $from_name ) ? 'Scan Pro Website' : $from_name;
+} );
+
+// Regista o motivo real da falha no error_log do servidor.
+add_action( 'wp_mail_failed', function ( $error ) {
+    if ( is_wp_error( $error ) ) {
+        error_log( '[Scan Pro] wp_mail fehlgeschlagen: ' . $error->get_error_message() );
+    }
+} );
