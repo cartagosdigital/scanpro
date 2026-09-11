@@ -845,5 +845,5 @@ add_action( 'wp_mail_failed', function ( $error ) {
  * ========================================================= */
 
 if ( ! defined( 'SCANPRO_WEB3FORMS_KEY' ) ) {
-    define( 'SCANPRO_WEB3FORMS_KEY', '' ); // <-- Access Key hier einfügen
+    define( 'SCANPRO_WEB3FORMS_KEY', '10c92099-14a6-40d2-b3ce-060491a4f2a0' );
 }
