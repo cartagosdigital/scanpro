@@ -107,6 +107,23 @@ add_action( 'wp_enqueue_scripts', function () {
         true
     );
 
+    // Formulário de contacto (Web3Forms) — apenas na página Kontakt
+    if ( is_page_template( 'page-kontakt.php' ) || is_page( 'kontakt' ) ) {
+        wp_enqueue_script(
+            'scanpro-kontakt',
+            get_stylesheet_directory_uri() . '/assets/js/kontakt.js',
+            [],
+            '1.0.0',
+            true
+        );
+
+        wp_localize_script( 'scanpro-kontakt', 'scanproKontakt', [
+            'sending' => __( 'Wird gesendet…', 'scanpro-child' ),
+            'success' => __( 'Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns so bald wie möglich.', 'scanpro-child' ),
+            'error'   => __( 'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns per Telefon.', 'scanpro-child' ),
+        ] );
+    }
+
 } );
 
 // Configurações do tema e suporte a features
@@ -819,3 +836,14 @@ add_action( 'wp_mail_failed', function ( $error ) {
         error_log( '[Scan Pro] wp_mail fehlgeschlagen: ' . $error->get_error_message() );
     }
 } );
+
+/* =========================================================
+ * Web3Forms — Kontaktformular
+ *
+ * Access Key aus dem Web3Forms-Dashboard hier eintragen.
+ * Alternativ per Filter 'scanpro_web3forms_key' setzen.
+ * ========================================================= */
+
+if ( ! defined( 'SCANPRO_WEB3FORMS_KEY' ) ) {
+    define( 'SCANPRO_WEB3FORMS_KEY', '' ); // <-- Access Key hier einfügen
+}

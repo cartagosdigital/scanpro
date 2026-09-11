@@ -3,82 +3,21 @@
  * Template: Kontakt — Scan Pro Child
  * Slug da página: kontakt
  *
- * Formulário nativo HTML5 + PHP mailer via wp_mail().
- * Para usar um plugin de formulários (Contact Form 7, WPForms, etc.),
- * substituir o bloco do formulário pelo shortcode correspondente.
+ * O formulário é enviado por AJAX para o Web3Forms (api.web3forms.com),
+ * que trata do envio do e-mail para info@scanpro.ch. Não usa wp_mail().
+ *
+ * A Access Key define-se em functions.php (SCANPRO_WEB3FORMS_KEY) ou
+ * através do filtro 'scanpro_web3forms_key'.
  */
+
+// Access Key do Web3Forms
+$w3f_key = apply_filters(
+    'scanpro_web3forms_key',
+    defined( 'SCANPRO_WEB3FORMS_KEY' ) ? SCANPRO_WEB3FORMS_KEY : ''
+);
 
 get_header();
 
-// Processamento do formulário de contato
-$form_sent    = false;
-$form_error   = '';
-$form_success = '';
-
-if ( isset( $_POST['scanpro_contact_nonce'] ) &&
-     wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['scanpro_contact_nonce'] ) ), 'scanpro_contact_form' ) ) {
-
-    $name    = sanitize_text_field( wp_unslash( $_POST['contact_name'] ?? '' ) );
-    $company = sanitize_text_field( wp_unslash( $_POST['contact_company'] ?? '' ) );
-    $email   = sanitize_email( wp_unslash( $_POST['contact_email'] ?? '' ) );
-    $phone   = sanitize_text_field( wp_unslash( $_POST['contact_phone'] ?? '' ) );
-    $subject = sanitize_text_field( wp_unslash( $_POST['contact_subject'] ?? '' ) );
-    $message = sanitize_textarea_field( wp_unslash( $_POST['contact_message'] ?? '' ) );
-
-    if ( empty( $name ) || empty( $email ) || empty( $message ) ) {
-        $form_error = __( 'Bitte füllen Sie alle Pflichtfelder aus.', 'scanpro-child' );
-    } elseif ( ! is_email( $email ) ) {
-        $form_error = __( 'Bitte geben Sie eine gültige E-Mail-Adresse ein.', 'scanpro-child' );
-    } else {
-        $to      = 'info@scanpro.ch';
-
-        // Nome do remetente limpo de caracteres que invalidariam o cabeçalho
-        $reply_name = trim( preg_replace( '/[^\p{L}\p{N} .\-]/u', '', $name ) );
-
-        $headers = [
-            'Content-Type: text/html; charset=UTF-8',
-            $reply_name
-                ? 'Reply-To: ' . $reply_name . ' <' . $email . '>'
-                : 'Reply-To: ' . $email,
-        ];
-        $mail_subject = sprintf(
-            /* translators: %s: betreff da mensagem */
-            __( '[Scan Pro] Neue Anfrage: %s', 'scanpro-child' ),
-            $subject ?: __( 'Kontaktformular', 'scanpro-child' )
-        );
-        $mail_body = sprintf(
-            '<p><strong>%s:</strong> %s</p><p><strong>%s:</strong> %s</p><p><strong>%s:</strong> %s</p><p><strong>%s:</strong> %s</p><p><strong>%s:</strong></p><p>%s</p>',
-            __( 'Name', 'scanpro-child' ),    esc_html( $name ),
-            __( 'Firma', 'scanpro-child' ),   esc_html( $company ),
-            __( 'E-Mail', 'scanpro-child' ),  esc_html( $email ),
-            __( 'Telefon', 'scanpro-child' ), esc_html( $phone ),
-            __( 'Nachricht', 'scanpro-child' ),
-            nl2br( esc_html( $message ) )
-        );
-
-        // Captura o motivo real da falha (visível apenas para administradores)
-        $mail_error = '';
-        add_action( 'wp_mail_failed', function ( $wp_error ) use ( &$mail_error ) {
-            if ( is_wp_error( $wp_error ) ) {
-                $mail_error = $wp_error->get_error_message();
-            }
-        } );
-
-        $sent = wp_mail( $to, $mail_subject, $mail_body, $headers );
-
-        if ( $sent ) {
-            $form_sent    = true;
-            $form_success = __( 'Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns so bald wie möglich.', 'scanpro-child' );
-        } else {
-            $form_error = __( 'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns per Telefon.', 'scanpro-child' );
-
-            // Diagnóstico temporário: só aparece para utilizadores com permissões de admin
-            if ( $mail_error && current_user_can( 'manage_options' ) ) {
-                $form_error .= ' — [Admin-Diagnose] ' . $mail_error;
-            }
-        }
-    }
-}
 ?>
 
 <main class="site-main" id="main" role="main">
@@ -104,19 +43,27 @@ if ( isset( $_POST['scanpro_contact_nonce'] ) &&
             <?php _e( 'Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden bei Ihnen.', 'scanpro-child' ); ?>
           </p>
 
-          <?php if ( $form_success ) : ?>
-            <div class="form-notice form-notice--success" role="alert">
-              <?php echo esc_html( $form_success ); ?>
-            </div>
-          <?php elseif ( $form_error ) : ?>
+          <?php if ( ! $w3f_key && current_user_can( 'manage_options' ) ) : ?>
             <div class="form-notice form-notice--error" role="alert">
-              <?php echo esc_html( $form_error ); ?>
+              [Admin] <?php _e( 'Web3Forms Access Key fehlt — bitte SCANPRO_WEB3FORMS_KEY in functions.php setzen.', 'scanpro-child' ); ?>
             </div>
           <?php endif; ?>
 
-          <?php if ( ! $form_sent ) : ?>
-          <form class="contact-form" method="post" action="<?php echo esc_url( get_permalink() ); ?>" novalidate>
-            <?php wp_nonce_field( 'scanpro_contact_form', 'scanpro_contact_nonce' ); ?>
+          <div class="form-notice" id="contact-form-notice" role="alert" hidden></div>
+
+          <form
+            class="contact-form"
+            id="contact-form"
+            method="post"
+            action="https://api.web3forms.com/submit"
+            novalidate
+          >
+            <input type="hidden" name="access_key" value="<?php echo esc_attr( $w3f_key ); ?>">
+            <input type="hidden" name="subject" value="<?php esc_attr_e( '[Scan Pro] Neue Anfrage über das Kontaktformular', 'scanpro-child' ); ?>">
+            <input type="hidden" name="from_name" value="Scan Pro Website">
+
+            <!-- Honeypot: invisível para pessoas, preenchido por bots -->
+            <input type="checkbox" name="botcheck" class="form-botcheck" tabindex="-1" autocomplete="off" style="display:none !important;">
 
             <div class="form-row form-row--2col">
               <div class="form-group">
@@ -127,10 +74,9 @@ if ( isset( $_POST['scanpro_contact_nonce'] ) &&
                 <input
                   type="text"
                   id="contact_name"
-                  name="contact_name"
+                  name="name"
                   required
                   placeholder="<?php _e( 'Max Mustermann', 'scanpro-child' ); ?>"
-                  value="<?php echo isset( $_POST['contact_name'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_POST['contact_name'] ) ) ) : ''; ?>"
                 >
               </div>
               <div class="form-group">
@@ -140,9 +86,8 @@ if ( isset( $_POST['scanpro_contact_nonce'] ) &&
                 <input
                   type="text"
                   id="contact_company"
-                  name="contact_company"
+                  name="Firma"
                   placeholder="<?php _e( 'Mustermann GmbH', 'scanpro-child' ); ?>"
-                  value="<?php echo isset( $_POST['contact_company'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_POST['contact_company'] ) ) ) : ''; ?>"
                 >
               </div>
             </div>
@@ -156,10 +101,9 @@ if ( isset( $_POST['scanpro_contact_nonce'] ) &&
                 <input
                   type="email"
                   id="contact_email"
-                  name="contact_email"
+                  name="email"
                   required
                   placeholder="beispiel@firma.ch"
-                  value="<?php echo isset( $_POST['contact_email'] ) ? esc_attr( sanitize_email( wp_unslash( $_POST['contact_email'] ) ) ) : ''; ?>"
                 >
               </div>
               <div class="form-group">
@@ -169,9 +113,8 @@ if ( isset( $_POST['scanpro_contact_nonce'] ) &&
                 <input
                   type="tel"
                   id="contact_phone"
-                  name="contact_phone"
+                  name="Telefon"
                   placeholder="+41 43 355 34 00"
-                  value="<?php echo isset( $_POST['contact_phone'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_POST['contact_phone'] ) ) ) : ''; ?>"
                 >
               </div>
             </div>
@@ -180,13 +123,13 @@ if ( isset( $_POST['scanpro_contact_nonce'] ) &&
               <label for="contact_subject">
                 <?php _e( 'Betreff', 'scanpro-child' ); ?>
               </label>
-              <select id="contact_subject" name="contact_subject">
+              <select id="contact_subject" name="Betreff">
                 <option value=""><?php _e( 'Bitte wählen…', 'scanpro-child' ); ?></option>
-                <option value="offerte"><?php _e( 'Offerte anfragen', 'scanpro-child' ); ?></option>
-                <option value="technisch"><?php _e( 'Technische Frage', 'scanpro-child' ); ?></option>
-                <option value="bestellung"><?php _e( 'Bestellung / Lieferung', 'scanpro-child' ); ?></option>
-                <option value="support"><?php _e( 'Support / Service', 'scanpro-child' ); ?></option>
-                <option value="sonstiges"><?php _e( 'Sonstiges', 'scanpro-child' ); ?></option>
+                <option value="<?php esc_attr_e( 'Offerte anfragen', 'scanpro-child' ); ?>"><?php _e( 'Offerte anfragen', 'scanpro-child' ); ?></option>
+                <option value="<?php esc_attr_e( 'Technische Frage', 'scanpro-child' ); ?>"><?php _e( 'Technische Frage', 'scanpro-child' ); ?></option>
+                <option value="<?php esc_attr_e( 'Bestellung / Lieferung', 'scanpro-child' ); ?>"><?php _e( 'Bestellung / Lieferung', 'scanpro-child' ); ?></option>
+                <option value="<?php esc_attr_e( 'Support / Service', 'scanpro-child' ); ?>"><?php _e( 'Support / Service', 'scanpro-child' ); ?></option>
+                <option value="<?php esc_attr_e( 'Sonstiges', 'scanpro-child' ); ?>"><?php _e( 'Sonstiges', 'scanpro-child' ); ?></option>
               </select>
             </div>
 
@@ -197,11 +140,11 @@ if ( isset( $_POST['scanpro_contact_nonce'] ) &&
               </label>
               <textarea
                 id="contact_message"
-                name="contact_message"
+                name="message"
                 rows="6"
                 required
                 placeholder="<?php _e( 'Beschreiben Sie Ihr Projekt oder Ihre Anfrage…', 'scanpro-child' ); ?>"
-              ><?php echo isset( $_POST['contact_message'] ) ? esc_textarea( sanitize_textarea_field( wp_unslash( $_POST['contact_message'] ) ) ) : ''; ?></textarea>
+              ></textarea>
             </div>
 
             <p class="form-required-note">
@@ -213,7 +156,6 @@ if ( isset( $_POST['scanpro_contact_nonce'] ) &&
               <?php _e( 'Anfrage senden', 'scanpro-child' ); ?>
             </button>
           </form>
-          <?php endif; ?>
         </div><!-- .contact-form-col -->
 
         <!-- Dados de contato -->

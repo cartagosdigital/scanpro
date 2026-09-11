@@ -604,6 +604,10 @@ section { padding: var(--section-pad) 0; }
 .form-notice--success { background: #edf9f5; border: 1px solid #00A48D; color: #00573c; }
 .form-notice--error   { background: #fdf1f1; border: 1px solid #e05050; color: #7a2020; }
 
+/* Estado oculto do formulário/aviso controlado por JS */
+.contact-form[hidden],
+.form-notice[hidden] { display: none !important; }
+
 /* Dados de contato */
 .contact-info-block { margin-bottom: 28px; }
 
