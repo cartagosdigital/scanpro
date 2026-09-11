@@ -56,6 +56,14 @@ if ( isset( $_POST['scanpro_contact_nonce'] ) &&
             nl2br( esc_html( $message ) )
         );
 
+        // Captura o motivo real da falha (visível apenas para administradores)
+        $mail_error = '';
+        add_action( 'wp_mail_failed', function ( $wp_error ) use ( &$mail_error ) {
+            if ( is_wp_error( $wp_error ) ) {
+                $mail_error = $wp_error->get_error_message();
+            }
+        } );
+
         $sent = wp_mail( $to, $mail_subject, $mail_body, $headers );
 
         if ( $sent ) {
@@ -63,6 +71,11 @@ if ( isset( $_POST['scanpro_contact_nonce'] ) &&
             $form_success = __( 'Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns so bald wie möglich.', 'scanpro-child' );
         } else {
             $form_error = __( 'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns per Telefon.', 'scanpro-child' );
+
+            // Diagnóstico temporário: só aparece para utilizadores com permissões de admin
+            if ( $mail_error && current_user_can( 'manage_options' ) ) {
+                $form_error .= ' — [Admin-Diagnose] ' . $mail_error;
+            }
         }
     }
 }
