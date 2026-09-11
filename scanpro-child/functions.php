@@ -529,3 +529,268 @@ if ( ! function_exists( 'scanpro_get_einsatzbereich_products' ) ) {
         return $products[ $slug ] ?? [];
     }
 }
+
+/* =========================================================
+ * GEO / AEO — robots.txt e llms.txt virtuais
+ *
+ * Ambos são gerados pelo WordPress (não são ficheiros físicos).
+ * Se existir um robots.txt real na raiz do site, ele tem prioridade
+ * e as regras abaixo deixam de ser servidas.
+ * ========================================================= */
+
+// Agentes de IA/busca generativa que devem poder indexar o site.
+if ( ! function_exists( 'scanpro_ai_user_agents' ) ) {
+    function scanpro_ai_user_agents() {
+        return [
+            'GPTBot', 'OAI-SearchBot', 'ChatGPT-User',
+            'ClaudeBot', 'Claude-User', 'Claude-SearchBot',
+            'PerplexityBot', 'Perplexity-User',
+            'Google-Extended', 'Applebot-Extended',
+            'Amazonbot', 'meta-externalagent', 'Bytespider', 'CCBot',
+        ];
+    }
+}
+
+// Caminhos transacionais/privados que nenhum crawler deve rastrear.
+if ( ! function_exists( 'scanpro_robots_disallow_paths' ) ) {
+    function scanpro_robots_disallow_paths() {
+        $paths = [ '/wp-admin/' ];
+
+        // Carrinho, checkout e conta do cliente (slugs reais do WooCommerce)
+        if ( function_exists( 'wc_get_page_id' ) ) {
+            foreach ( [ 'cart', 'checkout', 'myaccount' ] as $wc_page ) {
+                $page_id = wc_get_page_id( $wc_page );
+                if ( $page_id > 0 ) {
+                    $path = wp_make_link_relative( get_permalink( $page_id ) );
+                    if ( $path && '/' !== $path ) {
+                        $paths[] = trailingslashit( $path );
+                    }
+                }
+            }
+        }
+
+        return array_unique( $paths );
+    }
+}
+
+add_filter( 'robots_txt', function ( $output, $public ) {
+
+    // Site marcado como não público: manter o bloqueio do WordPress.
+    if ( ! $public ) {
+        return $output;
+    }
+
+    $disallow = scanpro_robots_disallow_paths();
+
+    $rules  = "\n# --- Scan Pro ---\n";
+    $rules .= "User-agent: *\n";
+    $rules .= "Allow: /wp-admin/admin-ajax.php\n";
+    foreach ( $disallow as $path ) {
+        $rules .= 'Disallow: ' . $path . "\n";
+    }
+    $rules .= "Disallow: /*?s=\n";
+    $rules .= "Disallow: /*?add-to-cart=\n";
+    $rules .= "Disallow: /*?orderby=\n";
+    $rules .= "Allow: /wp-content/uploads/\n";
+
+    // Crawlers de IA: grupo próprio, senão herdariam apenas o grupo "*".
+    $rules .= "\n# Generative engines\n";
+    foreach ( scanpro_ai_user_agents() as $agent ) {
+        $rules .= 'User-agent: ' . $agent . "\n";
+    }
+    $rules .= "Allow: /\n";
+    foreach ( $disallow as $path ) {
+        $rules .= 'Disallow: ' . $path . "\n";
+    }
+
+    $rules .= "\n# LLM-freundliche Übersicht\n";
+    $rules .= '# ' . esc_url_raw( home_url( '/llms.txt' ) ) . "\n";
+
+    return $output . $rules;
+}, 10, 2 );
+
+// Rota virtual para /llms.txt
+add_action( 'init', function () {
+    add_rewrite_rule( '^llms\.txt$', 'index.php?scanpro_llms=1', 'top' );
+
+    // Regrava as rewrite rules uma única vez após alterar o tema.
+    if ( get_option( 'scanpro_rewrite_version' ) !== '1' ) {
+        flush_rewrite_rules( false );
+        update_option( 'scanpro_rewrite_version', '1' );
+    }
+} );
+
+add_filter( 'query_vars', function ( $vars ) {
+    $vars[] = 'scanpro_llms';
+    return $vars;
+} );
+
+add_action( 'template_redirect', function () {
+    if ( ! get_query_var( 'scanpro_llms' ) ) {
+        return;
+    }
+
+    $content = get_transient( 'scanpro_llms_txt' );
+    if ( false === $content ) {
+        $content = scanpro_build_llms_txt();
+        set_transient( 'scanpro_llms_txt', $content, DAY_IN_SECONDS );
+    }
+
+    header( 'Content-Type: text/plain; charset=utf-8' );
+    header( 'X-Robots-Tag: all' );
+    echo $content; // phpcs:ignore WordPress.Security.EscapeOutput — texto puro já montado
+    exit;
+} );
+
+// Invalida o cache do llms.txt quando o conteúdo muda.
+add_action( 'save_post', function () { delete_transient( 'scanpro_llms_txt' ); } );
+add_action( 'edited_term', function () { delete_transient( 'scanpro_llms_txt' ); } );
+
+// Normaliza um texto para uma linha curta de descrição.
+if ( ! function_exists( 'scanpro_llms_summary' ) ) {
+    function scanpro_llms_summary( $text ) {
+        $text = wp_strip_all_tags( strip_shortcodes( (string) $text ), true );
+        $text = trim( preg_replace( '/\s+/u', ' ', $text ) );
+        return $text ? wp_trim_words( $text, 30, '…' ) : '';
+    }
+}
+
+// Monta o conteúdo do /llms.txt a partir do conteúdo real do site.
+if ( ! function_exists( 'scanpro_build_llms_txt' ) ) {
+    function scanpro_build_llms_txt() {
+
+        $name = get_bloginfo( 'name' ) ?: 'Scan Pro AG';
+        $out  = '# ' . $name . "\n\n";
+
+        $out .= '> ' . __( 'Scan Pro AG ist der Schweizer Spezialist für Lüftungstechnik und Wärmerückgewinnung: Planung, Lieferung, Montage und Service von Lüftungsanlagen für Wohnen, Gewerbe, Industrie, Bildungseinrichtungen und Gastronomie.', 'scanpro-child' ) . "\n\n";
+
+        $out .= __( 'Über 50 Jahre Erfahrung (seit 1975). Standort: Bahnhofstrasse 1, CH-8852 Altendorf, Schweiz. Telefon: +41 43 355 34 00. E-Mail: info@scanpro.ch. Inhaltssprache: Deutsch.', 'scanpro-child' ) . "\n";
+
+        // --- Hauptseiten ---
+        $pages = [
+            'ueber-uns'      => __( 'Unternehmen, Geschichte und Kompetenzen seit 1975', 'scanpro-child' ),
+            'team'           => __( 'Ansprechpartner und Fachpersonal', 'scanpro-child' ),
+            'einsatzbereiche'=> __( 'Übersicht der Anwendungsbereiche für Lüftungslösungen', 'scanpro-child' ),
+            'referenzen'     => __( 'Realisierte Projekte und Referenzanlagen', 'scanpro-child' ),
+            'wissen'         => __( 'Fachwissen zu Lüftung, CO₂, Normen und Regelungstechnik', 'scanpro-child' ),
+            'kontakt'        => __( 'Kontaktformular, Adresse und Anfahrt', 'scanpro-child' ),
+        ];
+
+        $out .= "\n## " . __( 'Hauptseiten', 'scanpro-child' ) . "\n\n";
+        $out .= '- [' . __( 'Startseite', 'scanpro-child' ) . '](' . home_url( '/' ) . '): '
+              . __( 'Intelligente Lüftungslösungen und Wärmerückgewinnung', 'scanpro-child' ) . "\n";
+
+        foreach ( $pages as $slug => $desc ) {
+            $page  = get_page_by_path( $slug );
+            $title = $page ? get_the_title( $page ) : ucfirst( $slug );
+            $out  .= '- [' . $title . '](' . home_url( '/' . $slug ) . '): ' . $desc . "\n";
+        }
+
+        // --- Einsatzbereiche ---
+        $areas = [
+            'wohnen'                => __( 'Komfortlüftung und Wärmerückgewinnung für Wohnbauten', 'scanpro-child' ),
+            'gewerbe'               => __( 'Lüftungslösungen für Büro-, Verkaufs- und Gewerbeflächen', 'scanpro-child' ),
+            'industrie'             => __( 'Prozess- und Hallenlüftung für industrielle Anwendungen', 'scanpro-child' ),
+            'bildungseinrichtungen' => __( 'Schul- und Klassenzimmerlüftung mit CO₂-Regelung', 'scanpro-child' ),
+            'gastronomie'           => __( 'Küchen- und Gastronomielüftung', 'scanpro-child' ),
+        ];
+
+        $out .= "\n## " . __( 'Einsatzbereiche', 'scanpro-child' ) . "\n\n";
+        foreach ( $areas as $slug => $desc ) {
+            $out .= '- [' . ucfirst( str_replace( '-', ' ', $slug ) ) . '](' . home_url( '/einsatzbereiche/' . $slug ) . '): ' . $desc . "\n";
+        }
+
+        // --- Produktkategorien (WooCommerce) ---
+        if ( taxonomy_exists( 'product_cat' ) ) {
+            $parent = get_term_by( 'slug', 'produkte', 'product_cat' );
+            $cats   = $parent
+                ? get_terms( [ 'taxonomy' => 'product_cat', 'parent' => $parent->term_id, 'hide_empty' => true, 'orderby' => 'menu_order', 'order' => 'ASC' ] )
+                : [];
+
+            if ( ! empty( $cats ) && ! is_wp_error( $cats ) ) {
+                $out .= "\n## " . __( 'Produktkategorien', 'scanpro-child' ) . "\n\n";
+                foreach ( $cats as $cat ) {
+                    $link = get_term_link( $cat );
+                    if ( is_wp_error( $link ) ) {
+                        continue;
+                    }
+                    $desc = scanpro_llms_summary( $cat->description );
+                    $out .= '- [' . $cat->name . '](' . $link . ')' . ( $desc ? ': ' . $desc : '' ) . "\n";
+
+                    $subs = get_terms( [ 'taxonomy' => 'product_cat', 'parent' => $cat->term_id, 'hide_empty' => true, 'orderby' => 'menu_order', 'order' => 'ASC' ] );
+                    if ( ! empty( $subs ) && ! is_wp_error( $subs ) ) {
+                        foreach ( $subs as $sub ) {
+                            $sub_link = get_term_link( $sub );
+                            if ( is_wp_error( $sub_link ) ) {
+                                continue;
+                            }
+                            $out .= '  - [' . $sub->name . '](' . $sub_link . ")\n";
+                        }
+                    }
+                }
+            }
+        }
+
+        // --- Produkte ---
+        if ( post_type_exists( 'product' ) ) {
+            $products = get_posts( [
+                'post_type'        => 'product',
+                'post_status'      => 'publish',
+                'numberposts'      => 300,
+                'orderby'          => 'title',
+                'order'            => 'ASC',
+                'suppress_filters' => false,
+            ] );
+
+            if ( $products ) {
+                $out .= "\n## " . __( 'Produkte', 'scanpro-child' ) . "\n\n";
+                foreach ( $products as $product ) {
+                    $desc = scanpro_llms_summary( $product->post_excerpt ?: $product->post_content );
+                    $out .= '- [' . get_the_title( $product ) . '](' . get_permalink( $product ) . ')'
+                          . ( $desc ? ': ' . $desc : '' ) . "\n";
+                }
+            }
+        }
+
+        // --- Wissen ---
+        $knowledge = [
+            'wissen/co2'                     => __( 'CO₂-Konzentration, Luftqualität und Grenzwerte', 'scanpro-child' ),
+            'wissen/faq'                     => __( 'Häufige Fragen zu Lüftung und Wärmerückgewinnung', 'scanpro-child' ),
+            'wissen/blog'                    => __( 'Fachbeiträge und Neuigkeiten', 'scanpro-child' ),
+            'wissen/regulierungen'           => __( 'Normen und Vorschriften für Lüftungsanlagen in der Schweiz', 'scanpro-child' ),
+            'wissen/regelung-von-luftmengen' => __( 'Regelung von Luftmengen und Volumenstromregelung', 'scanpro-child' ),
+        ];
+
+        $out .= "\n## " . __( 'Wissen', 'scanpro-child' ) . "\n\n";
+        foreach ( $knowledge as $path => $desc ) {
+            $label = ucfirst( str_replace( [ 'wissen/', '-' ], [ '', ' ' ], $path ) );
+            $out  .= '- [' . $label . '](' . home_url( '/' . $path ) . '): ' . $desc . "\n";
+        }
+
+        // --- Blogbeiträge recentes ---
+        $posts = get_posts( [ 'numberposts' => 20, 'post_status' => 'publish' ] );
+        if ( $posts ) {
+            $out .= "\n## " . __( 'Aktuelle Beiträge', 'scanpro-child' ) . "\n\n";
+            foreach ( $posts as $post ) {
+                $desc = scanpro_llms_summary( $post->post_excerpt ?: $post->post_content );
+                $out .= '- [' . get_the_title( $post ) . '](' . get_permalink( $post ) . ')'
+                      . ( $desc ? ': ' . $desc : '' ) . "\n";
+            }
+        }
+
+        // --- Kontakt ---
+        $out .= "\n## " . __( 'Kontakt', 'scanpro-child' ) . "\n\n";
+        $out .= '- ' . __( 'Adresse', 'scanpro-child' ) . ": Scan Pro AG, Bahnhofstrasse 1, CH-8852 Altendorf, Schweiz\n";
+        $out .= '- ' . __( 'Telefon', 'scanpro-child' ) . ": +41 43 355 34 00\n";
+        $out .= "- E-Mail: info@scanpro.ch\n";
+        $out .= '- ' . __( 'Kontaktformular', 'scanpro-child' ) . ': ' . home_url( '/kontakt' ) . "\n";
+
+        // --- Optional ---
+        $out .= "\n## Optional\n\n";
+        $out .= '- [Impressum](' . home_url( '/impressum' ) . ")\n";
+        $out .= '- [' . __( 'Datenschutz', 'scanpro-child' ) . '](' . home_url( '/datenschutz' ) . ")\n";
+        $out .= '- [Sitemap](' . home_url( '/wp-sitemap.xml' ) . ")\n";
+
+        return $out;
+    }
+}
