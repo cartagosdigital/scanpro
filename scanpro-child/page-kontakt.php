@@ -30,7 +30,7 @@ if ( isset( $_POST['scanpro_contact_nonce'] ) &&
     } elseif ( ! is_email( $email ) ) {
         $form_error = __( 'Bitte geben Sie eine gültige E-Mail-Adresse ein.', 'scanpro-child' );
     } else {
-        $to      = get_option( 'admin_email' );
+        $to      = 'info@scanpro.ch';
         $headers = [
             'Content-Type: text/html; charset=UTF-8',
             'Reply-To: ' . esc_html( $name ) . ' <' . esc_html( $email ) . '>',
