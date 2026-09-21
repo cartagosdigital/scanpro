@@ -94,7 +94,7 @@ add_action( 'wp_enqueue_scripts', function () {
             'scanpro-woocommerce',
             get_stylesheet_directory_uri() . '/assets/css/woocommerce.css',
             [ 'scanpro-main', 'woocommerce-general', 'woocommerce-layout', 'woocommerce-smallscreen' ],
-            '1.5.0'
+            '1.6.0'
         );
     }
 
