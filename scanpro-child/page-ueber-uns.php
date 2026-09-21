@@ -60,17 +60,17 @@ get_header();
           [
             'year'    => '1957',
             'caption' => __( 'Erste Rauchsauger', 'scanpro-child' ),
-            'img'     => 'https://azure-skunk-391096.hostingersite.com/wp-content/uploads/2026/09/Rauchsauger-alt.png',
+            'img'     => '/wp-content/uploads/2026/09/Rauchsauger-alt.png',
           ],
           [
             'year'    => '1978',
             'caption' => __( 'Erster VEX (Serie VEX 1 – 5)', 'scanpro-child' ),
-            'img'     => 'https://azure-skunk-391096.hostingersite.com/wp-content/uploads/2026/09/VEX1-5-alt.png',
+            'img'     => '/wp-content/uploads/2026/09/VEX1-5-alt.png',
           ],
           [
             'year'    => '1993',
             'caption' => __( 'Nachfolge Serie VEX1.5 – 5.5', 'scanpro-child' ),
-            'img'     => 'https://azure-skunk-391096.hostingersite.com/wp-content/uploads/2026/09/VEX-.5.jpg',
+            'img'     => '/wp-content/uploads/2026/09/VEX-.5.jpg',
           ],
           [
             'year'    => '2000',
@@ -88,7 +88,7 @@ get_header();
           <?php if ( $has_img ) : ?>
           <div class="geschichte-timeline-img">
             <img
-              src="<?php echo esc_url( $milestone['img'] ); ?>"
+              src="<?php echo esc_url( 0 === strpos( $milestone['img'], 'http' ) ? $milestone['img'] : home_url( $milestone['img'] ) ); ?>"
               alt="<?php echo esc_attr( sprintf( '%s — %s', $milestone['year'], $milestone['caption'] ) ); ?>"
               loading="lazy"
             >
