@@ -127,13 +127,12 @@ add_action( 'wp_enqueue_scripts', function () {
 } );
 
 // Configurações do tema e suporte a features
+//
+// NOTA (WordPress 6.7+): nada aqui pode chamar __() ou carregar o textdomain.
+// Este gancho corre antes do 'init', e desde a versão 6.7 o WordPress descarta
+// traduções pedidas nessa fase — o texto fica no idioma original, em silêncio.
+// Tudo o que envolva tradução foi movido para o 'init', mais abaixo.
 add_action( 'after_setup_theme', function () {
-
-    // Carregar traduções do tema filho
-    load_child_theme_textdomain(
-        'scanpro-child',
-        get_stylesheet_directory() . '/languages'
-    );
 
     // Suporte a WooCommerce
     add_theme_support( 'woocommerce' );
@@ -143,6 +142,17 @@ add_action( 'after_setup_theme', function () {
 
     // Suporte a imagens em destaque
     add_theme_support( 'post-thumbnails' );
+} );
+
+// Traduções e menus — no 'init', nunca antes.
+add_action( 'init', function () {
+
+    // O WordPress carrega as traduções do tema automaticamente desde a 4.6.
+    // A chamada explícita fica como reforço, agora no momento correto.
+    load_child_theme_textdomain(
+        'scanpro-child',
+        get_stylesheet_directory() . '/languages'
+    );
 
     // Suporte a menus de navegação
     register_nav_menus( [
