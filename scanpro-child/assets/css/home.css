@@ -29,6 +29,9 @@ body.front-page .site-content-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  /* Anula o padding inferior da regra global `section`, que deixava uma
+     faixa branca entre a barra de estatísticas e a secção seguinte. */
+  padding-bottom: 0;
 }
 
 /* ---------------------------------------------------------------
@@ -244,7 +247,7 @@ body.front-page .site-content-wrapper {
    Seções seguintes
    --------------------------------------------------------------- */
 .about-section    { background: var(--color-white); }
-.products-section { background: var(--color-secondary); }
+.products-section { background: var(--color-white); }
 
 /* ---------------------------------------------------------------
    Responsivo — 960px
