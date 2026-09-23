@@ -46,7 +46,7 @@
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-logo" aria-label="<?php bloginfo( 'name' ); ?>">
         <img
           src="https://lp.scanpro.ch/wp-content/uploads/2025/10/logo-Scan-Pro-1.png"
-          alt="Scan Pro"
+          alt="Scan-Pro"
           height="40"
           width="auto"
         >

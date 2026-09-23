@@ -319,8 +319,8 @@ get_header();
       <!-- Imagem -->
       <div class="split-image">
         <img
-          src="https://lp.scanpro.ch/wp-content/uploads/2026/09/VEX4000-Baustelle.png"
-          alt="<?php _e( 'Scan Pro — Lüftungstechnik Schweiz', 'scanpro-child' ); ?>"
+          src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/09/VEX4000-auf-Baustelle.jpg' ) ); ?>"
+          alt="<?php _e( 'Scan-Pro — Lüftungstechnik Schweiz', 'scanpro-child' ); ?>"
           loading="lazy"
         >
       </div>

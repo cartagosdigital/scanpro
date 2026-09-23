@@ -65,7 +65,7 @@ get_header();
             [
               'code'  => 'EU Ecodesign (ErP)',
               'titel' => __( 'Ökodesign-Anforderungen an Lüftungsgeräte', 'scanpro-child' ),
-              'desc'  => __( 'EU-Verordnung, die Mindestanforderungen an die Energieeffizienz von Wohnungslüftungsgeräten und gewerblichen RLT-Anlagen definiert. Vorschreibt u.a. Mindest-Wärmerückgewinnungsgrade und maximale spezifische Leistungsaufnahmen (SFP). Alle Scan Pro Produkte erfüllen diese Anforderungen.', 'scanpro-child' ),
+              'desc'  => __( 'EU-Verordnung, die Mindestanforderungen an die Energieeffizienz von Wohnungslüftungsgeräten und gewerblichen RLT-Anlagen definiert. Vorschreibt u.a. Mindest-Wärmerückgewinnungsgrade und maximale spezifische Leistungsaufnahmen (SFP). Alle Scan-Pro Produkte erfüllen diese Anforderungen.', 'scanpro-child' ),
               'gilt'  => __( 'Alle Lüftungsgeräte für den EU-/CH-Markt', 'scanpro-child' ),
             ],
           ];

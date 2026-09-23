@@ -45,7 +45,7 @@ get_header();
         <div class="split-image">
           <img
             src="https://lp.scanpro.ch/wp-content/uploads/2026/09/VEX4000-Baustelle.png"
-            alt="<?php _e( 'Scan Pro — Team und Technik', 'scanpro-child' ); ?>"
+            alt="<?php _e( 'Scan-Pro — Team und Technik', 'scanpro-child' ); ?>"
             loading="lazy"
           >
         </div>
@@ -75,10 +75,12 @@ get_header();
           [
             'year'    => '2000',
             'caption' => __( 'Neue Generation VEX100', 'scanpro-child' ),
+            'img'     => '/wp-content/uploads/2026/09/VEX100.avif',
           ],
           [
             'year'    => '2017',
             'caption' => __( 'VEX100 mit effizienterem Gegenstromwärmetauscher', 'scanpro-child' ),
+            'img'     => '/wp-content/uploads/2026/09/VEX100CF-site2.png',
           ],
         ];
         foreach ( $geschichte_milestones as $milestone ) :

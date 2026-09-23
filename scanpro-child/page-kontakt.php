@@ -59,8 +59,8 @@ get_header();
             novalidate
           >
             <input type="hidden" name="access_key" value="<?php echo esc_attr( $w3f_key ); ?>">
-            <input type="hidden" name="subject" value="<?php esc_attr_e( '[Scan Pro] Neue Anfrage über das Kontaktformular', 'scanpro-child' ); ?>">
-            <input type="hidden" name="from_name" value="Scan Pro Website">
+            <input type="hidden" name="subject" value="<?php esc_attr_e( '[Scan-Pro] Neue Anfrage über das Kontaktformular', 'scanpro-child' ); ?>">
+            <input type="hidden" name="from_name" value="Scan-Pro Website">
 
             <!-- Honeypot: invisível para pessoas, preenchido por bots -->
             <input type="checkbox" name="botcheck" class="form-botcheck" tabindex="-1" autocomplete="off" style="display:none !important;">

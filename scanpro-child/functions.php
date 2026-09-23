@@ -248,7 +248,7 @@ if ( ! function_exists( 'scanpro_get_einsatzbereich_content' ) ) {
 </div>
 
 <div class="eb-loesung">
-  <h3>' . __( 'Die Scan Pro Lösung für Wohngebäude', 'scanpro-child' ) . '</h3>
+  <h3>' . __( 'Die Scan-Pro Lösung für Wohngebäude', 'scanpro-child' ) . '</h3>
   <p>' . __( 'Mit unserem Sortiment an zentralen und dezentralen Lüftungsgeräten — unter anderem aus dem Hause EXHAUSTO und Aldes — decken wir alle Anforderungen moderner Wohnraumlüftung ab. Unsere Geräte mit Gegenstrom- oder Rotationstauscher erreichen Wärmerückgewinnungsgrade von bis zu 95 % und arbeiten dabei ausgesprochen leise.', 'scanpro-child' ) . '</p>
   <p>' . __( 'Ob Neubau oder Sanierung, Einfamilienhaus oder grössere Überbauung — wir beraten Sie bei der Wahl des richtigen Systems und unterstützen Planer und Installateure mit technischen Unterlagen, Auslegungshilfen und direktem Fachsupport.', 'scanpro-child' ) . '</p>
 </div>
@@ -297,7 +297,7 @@ if ( ! function_exists( 'scanpro_get_einsatzbereich_content' ) ) {
 </div>
 
 <div class="eb-loesung">
-  <h3>' . __( 'Die Scan Pro Lösung für Gewerbe und Büros', 'scanpro-child' ) . '</h3>
+  <h3>' . __( 'Die Scan-Pro Lösung für Gewerbe und Büros', 'scanpro-child' ) . '</h3>
   <p>' . __( 'Unser breites Sortiment an zentralen und semi-zentralen Lüftungsgeräten ermöglicht massgeschneiderte Lösungen für Bürogebäude jeder Grösse — vom Kleinbüro bis zum mehrgeschossigen Verwaltungsbau. Wärmerückgewinnung ist dabei selbstverständlich: Mit Wirkungsgraden von bis zu 95 % senken unsere Geräte die Betriebskosten spürbar.', 'scanpro-child' ) . '</p>
   <p>' . __( 'Fachplaner und Installateure unterstützen wir mit technischen Unterlagen, Auslegungsprogrammen und persönlicher Beratung — von der Konzeption bis zur Inbetriebnahme.', 'scanpro-child' ) . '</p>
 </div>
@@ -347,7 +347,7 @@ if ( ! function_exists( 'scanpro_get_einsatzbereich_content' ) ) {
 </div>
 
 <div class="eb-loesung">
-  <h3>' . __( 'Die Scan Pro Lösung für Industrie und Gewerbe', 'scanpro-child' ) . '</h3>
+  <h3>' . __( 'Die Scan-Pro Lösung für Industrie und Gewerbe', 'scanpro-child' ) . '</h3>
   <p>' . __( 'Wir liefern leistungsstarke Ventilatoren, Dachventilatoren, Abluftsysteme und komplette raumlufttechnische Anlagen, die auch unter industriellen Bedingungen zuverlässig funktionieren. Unser Sortiment umfasst Geräte für die direkte Prozessabluft ebenso wie bedarfsgeregelte Gesamtlösungen für grosse Hallenflächen.', 'scanpro-child' ) . '</p>
   <p>' . __( 'Dank unserer langjährigen Erfahrung in der Schweizer Industrie kennen wir die besonderen Anforderungen verschiedener Branchen — von der Lebensmittelverarbeitung über den Maschinenbau bis zur Werkstatt. Wir entwickeln individuelle Lösungsansätze und stehen Planern sowie Betreibern als technischer Partner zur Seite.', 'scanpro-child' ) . '</p>
 </div>
@@ -397,7 +397,7 @@ if ( ! function_exists( 'scanpro_get_einsatzbereich_content' ) ) {
 </div>
 
 <div class="eb-loesung">
-  <h3>' . __( 'Die Scan Pro Lösung für Schulen und Bildungsbauten', 'scanpro-child' ) . '</h3>
+  <h3>' . __( 'Die Scan-Pro Lösung für Schulen und Bildungsbauten', 'scanpro-child' ) . '</h3>
   <p>' . __( 'Wir bieten zentrale, semi-zentrale und dezentrale Lüftungslösungen für alle Bereiche einer Bildungseinrichtung — vom Klassenraum über die Mensa bis zur Sporthalle und den Sanitärbereichen. Unsere Geräte mit hocheffizienter Wärmerückgewinnung arbeiten leise, zuverlässig und lassen sich bedarfsgerecht nach CO₂, Belegung oder Zeitprogramm steuern.', 'scanpro-child' ) . '</p>
   <p>' . __( 'Für Neubauten wie für Sanierungen stehen verschiedene Systemvarianten zur Verfügung. Planern stellen wir technische Unterlagen, Auslegungshilfen und Produktdatenblätter zur Verfügung — und beraten Sie gerne direkt bei der Systemwahl.', 'scanpro-child' ) . '</p>
 </div>
@@ -456,7 +456,7 @@ if ( ! function_exists( 'scanpro_get_einsatzbereich_content' ) ) {
 </div>
 
 <div class="eb-loesung">
-  <h3>' . __( 'Die Scan Pro Lösung für die Gastronomie', 'scanpro-child' ) . '</h3>
+  <h3>' . __( 'Die Scan-Pro Lösung für die Gastronomie', 'scanpro-child' ) . '</h3>
   <p>' . __( 'Mit unserem Sortiment aus leistungsstarken Küchenabluftgeräten, zentralen Lüftungsanlagen und bedarfsgeregelten Systemen für den Gastraum bieten wir Ihnen aufeinander abgestimmte Gesamtlösungen. Wärmerückgewinnung ist dabei auch in der Gastronomie wirtschaftlich sinnvoll — besonders bei langen Betriebszeiten.', 'scanpro-child' ) . '</p>
   <p>' . __( 'Unsere Fachkompetenz und die Produkttiefe unserer Partner EXHAUSTO, exodraft und Aldes ermöglichen es uns, individuelle Konzepte für Restaurant, Bar, Betriebskantine oder Hotelküche zu entwickeln. Wir unterstützen Sie von der Planung bis zur Inbetriebnahme.', 'scanpro-child' ) . '</p>
 </div>
@@ -599,7 +599,7 @@ add_filter( 'robots_txt', function ( $output, $public ) {
 
     $disallow = scanpro_robots_disallow_paths();
 
-    $rules  = "\n# --- Scan Pro ---\n";
+    $rules  = "\n# --- Scan-Pro ---\n";
     $rules .= "User-agent: *\n";
     $rules .= "Allow: /wp-admin/admin-ajax.php\n";
     foreach ( $disallow as $path ) {
@@ -827,7 +827,7 @@ add_filter( 'wp_mail_from', function ( $from ) {
 } );
 
 add_filter( 'wp_mail_from_name', function ( $from_name ) {
-    return ( 'WordPress' === $from_name ) ? 'Scan Pro Website' : $from_name;
+    return ( 'WordPress' === $from_name ) ? 'Scan-Pro Website' : $from_name;
 } );
 
 // Regista o motivo real da falha no error_log do servidor.
