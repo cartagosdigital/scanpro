@@ -1,0 +1,2258 @@
+# Scan Pro Child — French.
+# Copyright (C) 2026 Scan-Pro AG
+#
+# MASCHINELL VORÜBERSETZT, NOCH NICHT FREIGEGEBEN.
+# Diese Datei wurde aus dem deutschen Original übersetzt und ist vor der
+# Veröffentlichung von einer muttersprachlichen Person zu prüfen.
+# Markennamen, Normbezeichnungen, Adresse und Telefonnummern bleiben bewusst
+# unverändert.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Scan Pro Child 1.0.0\n"
+"Report-Msgid-Bugs-To: info@scanpro.ch\n"
+"PO-Revision-Date: 2026-09-23 00:00+0000\n"
+"Last-Translator: Scan-Pro AG <info@scanpro.ch>\n"
+"Language-Team: French <info@scanpro.ch>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: scanpro-child\n"
+
+
+
+#: footer.php:27
+msgid ""
+"Seit über 50 Jahren Ihr Schweizer Spezialist für effiziente Lüftungssysteme."
+msgstr "Depuis plus de 50 ans, votre spécialiste suisse des systèmes de ventilation efficaces."
+
+#: footer.php:30
+msgid "Offizielle Partner:"
+msgstr "Partenaires officiels :"
+
+#. translators: Markenname des Partners — nur bei Schreibweise-Änderung anpassen
+#: footer.php:35
+msgid "EXHAUSTO"
+msgstr "EXHAUSTO"
+
+#: footer.php:36
+msgid "exodraft"
+msgstr "exodraft"
+
+#: footer.php:37
+msgid "Thermomatic"
+msgstr "Thermomatic"
+
+#: footer.php:43
+msgid "Seiten"
+msgstr "Pages"
+
+#: footer.php:47 functions.php:697 header.php:60 page.php:16
+msgid "Startseite"
+msgstr "Accueil"
+
+#: footer.php:52 header.php:20 header.php:149 page-ueber-uns.php:16
+msgid "Über uns"
+msgstr "À propos"
+
+#: footer.php:57 header.php:21
+msgid "Team"
+msgstr "Équipe"
+
+#: footer.php:62 front-page.php:218 functions.php:715 header.php:116
+#: page-einsatzbereiche.php:46
+msgid "Einsatzbereiche"
+msgstr "Domaines d'application"
+
+#: footer.php:67 functions.php:199 functions.php:781 header.php:131
+msgid "Wissen"
+msgstr "Expertise"
+
+#: footer.php:72 header.php:22 header.php:152
+msgid "Referenzen"
+msgstr "Références"
+
+#: footer.php:77 footer.php:121 functions.php:799 header.php:144
+#: page-kontakt.php:29
+msgid "Kontakt"
+msgstr "Contact"
+
+#: footer.php:86 functions.php:728
+msgid "Produktkategorien"
+msgstr "Catégories de produits"
+
+#: footer.php:113
+msgid "Alle Produkte"
+msgstr "Tous les produits"
+
+#. translators: Telefonnummer wie angezeigt — erscheint in Fusszeile und auf der Kontaktseite
+#: footer.php:124 page-kontakt.php:168
+msgid "043 355 34 00"
+msgstr "043 355 34 00"
+
+#. translators: dieselbe Telefonnummer für den Anruf-Link, international und ohne Leerzeichen
+#: footer.php:126 page-kontakt.php:170
+msgid "+41433553400"
+msgstr "+41433553400"
+
+#. translators: E-Mail-Adresse — wird als Text und als Link verwendet
+#: footer.php:128 page-kontakt.php:172
+msgid "info@scanpro.ch"
+msgstr "info@scanpro.ch"
+
+#. translators: Firmenname in der Adresse
+#: footer.php:134 page-kontakt.php:179
+msgid "Scan-Pro AG"
+msgstr "Scan-Pro AG"
+
+#. translators: Strasse und Hausnummer
+#: footer.php:136 page-kontakt.php:181
+msgid "Bahnhofstrasse 1"
+msgstr "Bahnhofstrasse 1"
+
+#. translators: Postleitzahl und Ort
+#: footer.php:138 page-kontakt.php:183
+msgid "CH-8852 Altendorf"
+msgstr "CH-8852 Altendorf"
+
+#: footer.php:150 header.php:160 page-kontakt.php:41 page-kontakt.php:128
+#: woocommerce/single-product.php:80
+msgid "Offerte anfragen"
+msgstr "Demander une offre"
+
+#: footer.php:161
+msgid "Scan-Pro AG. Alle Rechte vorbehalten."
+msgstr "Scan-Pro AG. Tous droits réservés."
+
+#: footer.php:163
+msgid "Rechtliche Links"
+msgstr "Liens juridiques"
+
+#: footer.php:165 functions.php:808
+msgid "Datenschutz"
+msgstr "Protection des données"
+
+#: footer.php:168
+msgid "Impressum"
+msgstr "Mentions légales"
+
+#: front-page.php:37
+msgid "Energieeffizienz mit europäischer Technologie"
+msgstr "Efficacité énergétique et technologie européenne"
+
+#: front-page.php:41
+msgid "Intelligente"
+msgstr "Ventilation"
+
+#: front-page.php:42
+msgid "Lüftungslösungen"
+msgstr "intelligente"
+
+#: front-page.php:43
+msgid "und Wärmerückgewinnung"
+msgstr "et récupération de chaleur"
+
+#: front-page.php:47
+msgid ""
+"Offizieller Vertriebspartner von EXHAUSTO, exodraft und Thermomatic. "
+"Zertifizierte Systeme für Wohn-, Gewerbe- und Industriegebäude."
+msgstr "Distributeur officiel d'EXHAUSTO, exodraft et Thermomatic. Systèmes certifiés pour bâtiments résidentiels, commerciaux et industriels."
+
+#: front-page.php:51
+msgid "Produkte ansehen"
+msgstr "Voir les produits"
+
+#: front-page.php:54
+msgid "Experten kontaktieren"
+msgstr "Contacter nos experts"
+
+#: front-page.php:62
+msgid "Kennzahlen"
+msgstr "Chiffres clés"
+
+#. translators: Kennzahl Startseite — Jahre Erfahrung
+#: front-page.php:67
+msgid "+50"
+msgstr "+50"
+
+#: front-page.php:68
+msgid "Jahre Erfahrung"
+msgstr "ans d'expérience"
+
+#. translators: Kennzahl Startseite — möglicher Wärmerückgewinnungsgrad
+#: front-page.php:72
+msgid "90%"
+msgstr "90%"
+
+#: front-page.php:73
+msgid "Wärmerückgewinnung möglich"
+msgstr "de récupération de chaleur possible"
+
+#. translators: Kennzahl Startseite — Reduktion schädlicher Partikel
+#: front-page.php:77
+msgid "99,5%"
+msgstr "99,5%"
+
+#: front-page.php:78
+msgid "Reduktion schädlicher Partikel"
+msgstr "de réduction des particules nocives"
+
+#: front-page.php:91 woocommerce/archive-product.php:19
+msgid "PRODUKTE"
+msgstr "PRODUITS"
+
+#: front-page.php:92 woocommerce/archive-product.php:25
+msgid "Unsere Produkte"
+msgstr "Nos produits"
+
+#: front-page.php:151 page-einsatzbereich-single.php:112
+#: woocommerce/single-product.php:139
+msgid "Produkt ansehen"
+msgstr "Voir le produit"
+
+#: front-page.php:161
+msgid "Keine Produkte gefunden."
+msgstr "Aucun produit trouvé."
+
+#: front-page.php:171
+msgid "Alle Produkte anzeigen →"
+msgstr "Afficher tous les produits →"
+
+#: front-page.php:183 page-ueber-uns.php:176
+msgid "Offizielle Partner"
+msgstr "Partenaires officiels"
+
+#: front-page.php:184
+msgid "Partnermarken"
+msgstr "Marques partenaires"
+
+#: front-page.php:215 page-einsatzbereiche.php:45
+msgid "ANWENDUNGEN"
+msgstr "APPLICATIONS"
+
+#: front-page.php:217
+msgid "Unsere"
+msgstr "Nos"
+
+#: front-page.php:221
+msgid ""
+"Von der Wohnanlage bis zur Industriehalle — unsere Systeme werden in den "
+"unterschiedlichsten Bereichen eingesetzt."
+msgstr "De l'immeuble d'habitation à la halle industrielle — nos systèmes sont utilisés dans les domaines les plus variés."
+
+#: front-page.php:227 header.php:120 page-einsatzbereiche.php:11
+#: page-referenzen.php:33
+msgid "Wohnen"
+msgstr "Habitat"
+
+#: front-page.php:228 header.php:121 page-einsatzbereiche.php:16
+msgid "Gewerbe"
+msgstr "Commerce"
+
+#: front-page.php:229 header.php:122 page-einsatzbereiche.php:21
+msgid "Industrie"
+msgstr "Industrie"
+
+#: front-page.php:230 header.php:123 page-einsatzbereiche.php:26
+msgid "Bildungseinrichtungen"
+msgstr "Établissements scolaires"
+
+#: front-page.php:231 header.php:124 page-einsatzbereiche.php:31
+msgid "Gastronomie"
+msgstr "Restauration"
+
+#: front-page.php:250
+msgid "Alle Einsatzbereiche ansehen →"
+msgstr "Voir tous les domaines d'application →"
+
+#: front-page.php:262
+msgid "WARUM SCAN PRO?"
+msgstr "POURQUOI SCAN-PRO ?"
+
+#: front-page.php:263
+msgid "Spezialisten für Lüftungstechnik"
+msgstr "Spécialistes en technique de ventilation"
+
+#: front-page.php:275
+msgid "Technischer Support"
+msgstr "Support technique"
+
+#: front-page.php:277
+msgid ""
+"Unser Team verfügt über jahrzehntelange Erfahrung in der Lüftungstechnik und "
+"steht Ihnen mit kompetentem Fachwissen zur Seite."
+msgstr "Notre équipe possède des décennies d'expérience en technique de ventilation et met à votre disposition un savoir-faire spécialisé."
+
+#: front-page.php:289
+msgid "Zertifizierte Produkte"
+msgstr "Produits certifiés"
+
+#: front-page.php:291
+msgid ""
+"Alle Produkte entsprechen europäischen Normen für Energieeffizienz und "
+"Luftqualität und sind nach höchsten Standards zertifiziert."
+msgstr "Tous nos produits répondent aux normes européennes d'efficacité énergétique et de qualité de l'air et sont certifiés selon les standards les plus exigeants."
+
+#: front-page.php:305
+msgid "Schnelle Lieferung"
+msgstr "Livraison rapide"
+
+#: front-page.php:307
+msgid ""
+"Lokales Lager in der Schweiz für eine zuverlässige und schnelle "
+"Auftragsabwicklung direkt an Ihren Standort."
+msgstr "Stock local en Suisse pour un traitement des commandes fiable et rapide, directement sur votre site."
+
+#: front-page.php:326
+msgid "Scan-Pro — Lüftungstechnik Schweiz"
+msgstr "Scan-Pro — technique de ventilation, Suisse"
+
+#: front-page.php:333
+msgid "ÜBER SCAN PRO"
+msgstr "À PROPOS DE SCAN-PRO"
+
+#: front-page.php:335
+msgid "Schweizer Spezialisten für Lüftungssysteme seit 1975"
+msgstr "Spécialistes suisses des systèmes de ventilation depuis 1975"
+
+#: front-page.php:338
+msgid ""
+"Seit über 50 Jahren steht die Scan-Pro AG für innovative Lüftungslösungen "
+"und höchste Fachkompetenz in der Gebäudetechnik. Als Schweizer Spezialist "
+"beliefern wir Fachpartner und Planer mit energieeffizienten, hochwertigen "
+"Produkten."
+msgstr "Depuis plus de 50 ans, Scan-Pro AG est synonyme de solutions de ventilation innovantes et d'une compétence technique de premier plan dans le génie du bâtiment. Spécialiste suisse, nous fournissons aux partenaires spécialisés et aux bureaux d'études des produits de haute qualité et à haute efficacité énergétique."
+
+#: front-page.php:341
+msgid ""
+"Wir sind offizieller Vertriebspartner von EXHAUSTO, exodraft und Thermomatic."
+msgstr "Nous sommes distributeur officiel d'EXHAUSTO, exodraft et Thermomatic."
+
+#: front-page.php:344 page-einsatzbereiche.php:69 page-wissen.php:56
+msgid "Mehr erfahren →"
+msgstr "En savoir plus →"
+
+#: front-page.php:355 page-einsatzbereich-single.php:137
+#: page-einsatzbereiche.php:81 page-team.php:107
+msgid "Kontaktaufforderung"
+msgstr "Invitation à nous contacter"
+
+#: front-page.php:357 page-einsatzbereiche.php:83
+msgid "Bereit, Ihre Lüftung zu optimieren?"
+msgstr "Prêt à optimiser votre ventilation ?"
+
+#: front-page.php:359 page-einsatzbereiche.php:84
+msgid ""
+"Kontaktieren Sie uns und erhalten Sie ein massgeschneidertes Angebot für Ihr "
+"Projekt."
+msgstr "Contactez-nous et recevez une offre sur mesure pour votre projet."
+
+#: front-page.php:362 page-einsatzbereich-single.php:142
+#: page-einsatzbereiche.php:86 page-referenzen.php:418
+msgid "Kostenlose Offerte anfragen"
+msgstr "Demander une offre gratuite"
+
+#: functions.php:121
+msgid "Wird gesendet…"
+msgstr "Envoi en cours…"
+
+#: functions.php:122
+msgid ""
+"Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns so bald "
+"wie möglich."
+msgstr "Merci ! Votre demande a bien été envoyée. Nous vous répondrons dans les plus brefs délais."
+
+#: functions.php:123
+msgid ""
+"Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut oder "
+"kontaktieren Sie uns per Telefon."
+msgstr "Une erreur s'est produite. Veuillez réessayer plus tard ou nous contacter par téléphone."
+
+#: functions.php:149
+msgid "Hauptmenü"
+msgstr "Menu principal"
+
+#: functions.php:150
+msgid "Fusszeile"
+msgstr "Pied de page"
+
+#: functions.php:232
+msgid "Frische Luft, wo das Leben stattfindet"
+msgstr "De l'air frais là où la vie se déroule"
+
+#: functions.php:233
+msgid ""
+"Ob Einfamilienhaus, Mehrfamilienhaus oder Wohnanlage — dort, wo Menschen "
+"wohnen, schlafen und leben, ist Luftqualität keine Nebensache. Viele "
+"Neubauten und energetisch sanierte Gebäude sind heute so dicht, dass eine "
+"natürliche Lüftung über Fenster und Ritzen kaum mehr möglich ist. Die Folge: "
+"erhöhte CO₂-Konzentrationen, Feuchtigkeit, Schimmelgefahr und ein spürbares "
+"Nachlassen von Komfort und Wohlbefinden."
+msgstr "Maison individuelle, immeuble locatif ou complexe résidentiel — partout où l'on habite, dort et vit, la qualité de l'air n'est pas un détail. De nombreuses constructions neuves et rénovations énergétiques sont aujourd'hui si étanches qu'une ventilation naturelle par les fenêtres et les interstices n'est pratiquement plus possible. Résultat : concentrations de CO₂ élevées, humidité, risque de moisissures et baisse sensible du confort et du bien-être."
+
+#: functions.php:234
+msgid ""
+"Eine kontrollierte Wohnraumlüftung sorgt dafür, dass verbrauchte Luft "
+"zuverlässig abgeführt und gleichzeitig frische Aussenluft zugeführt wird — "
+"und das energieeffizient, dank integrierter Wärmerückgewinnung. So bleibt "
+"Wärme im Gebäude, ohne auf Frischluft zu verzichten."
+msgstr "Une ventilation contrôlée des locaux d'habitation évacue l'air vicié de manière fiable tout en amenant de l'air neuf — et ce de façon économe en énergie, grâce à la récupération de chaleur intégrée. La chaleur reste ainsi dans le bâtiment, sans renoncer à l'air frais."
+
+#: functions.php:238
+msgid "Technische Anforderungen an die Wohnraumlüftung"
+msgstr "Exigences techniques pour la ventilation des logements"
+
+#: functions.php:239
+msgid ""
+"Ein normgerechtes Lüftungskonzept für Wohngebäude sollte folgende Zielwerte "
+"sicherstellen:"
+msgstr "Un concept de ventilation conforme aux normes pour les bâtiments d'habitation doit garantir les valeurs cibles suivantes :"
+
+#: functions.php:241
+msgid "CO₂-Konzentration im Mittelwert ≤ 1.000 ppm während der Nutzung"
+msgstr "Concentration de CO₂ en moyenne ≤ 1 000 ppm pendant l'utilisation"
+
+#: functions.php:242 functions.php:292 functions.php:391 functions.php:451
+msgid "Raumtemperatur 20 bis 26 °C"
+msgstr "Température ambiante de 20 à 26 °C"
+
+#: functions.php:243 functions.php:392 functions.php:452
+msgid "Relative Luftfeuchte 30 bis 60 %"
+msgstr "Humidité relative de 30 à 60 %"
+
+#: functions.php:244
+msgid "Mittlere Luftgeschwindigkeit ≤ 0,15 m/s — kein Zugluftgefühl"
+msgstr "Vitesse d'air moyenne ≤ 0,15 m/s — aucune sensation de courant d'air"
+
+#: functions.php:245
+msgid "Schalldruckpegel ≤ 30 dB(A) in Schlaf- und Wohnräumen"
+msgstr "Niveau de pression acoustique ≤ 30 dB(A) dans les chambres et les séjours"
+
+#: functions.php:246
+msgid "Wärmerückgewinnungsgrad ≥ 75 % gemäss SIA 382/1"
+msgstr "Taux de récupération de chaleur ≥ 75 % selon SIA 382/1"
+
+#: functions.php:251
+msgid "Die Scan-Pro Lösung für Wohngebäude"
+msgstr "La solution Scan-Pro pour les bâtiments d'habitation"
+
+#: functions.php:252
+msgid ""
+"Mit unserem Sortiment an zentralen und dezentralen Lüftungsgeräten — unter "
+"anderem aus dem Hause EXHAUSTO und Aldes — decken wir alle Anforderungen "
+"moderner Wohnraumlüftung ab. Unsere Geräte mit Gegenstrom- oder "
+"Rotationstauscher erreichen Wärmerückgewinnungsgrade von bis zu 95 % und "
+"arbeiten dabei ausgesprochen leise."
+msgstr "Avec notre gamme d'appareils de ventilation centralisés et décentralisés — notamment des maisons EXHAUSTO et Aldes — nous couvrons toutes les exigences de la ventilation moderne des logements. Nos appareils à échangeur à contre-courant ou rotatif atteignent des taux de récupération de chaleur allant jusqu'à 95 % tout en restant particulièrement silencieux."
+
+#: functions.php:253
+msgid ""
+"Ob Neubau oder Sanierung, Einfamilienhaus oder grössere Überbauung — wir "
+"beraten Sie bei der Wahl des richtigen Systems und unterstützen Planer und "
+"Installateure mit technischen Unterlagen, Auslegungshilfen und direktem "
+"Fachsupport."
+msgstr "Construction neuve ou rénovation, maison individuelle ou grand ensemble — nous vous conseillons dans le choix du système adapté et accompagnons bureaux d'études et installateurs avec documentation technique, aides au dimensionnement et support spécialisé direct."
+
+#: functions.php:258 functions.php:307 functions.php:357 functions.php:407
+#: functions.php:466
+msgid "Volumenstrom"
+msgstr "Débit d'air"
+
+#: functions.php:259
+msgid "Aussenluftvolumenstrom ≥ 30 m³/h pro Person"
+msgstr "Débit d'air neuf ≥ 30 m³/h par personne"
+
+#: functions.php:262 functions.php:311 functions.php:411 functions.php:470
+msgid "Schall"
+msgstr "Acoustique"
+
+#: functions.php:263
+msgid "Schalldruckpegel ≤ 30 dB(A) in Schlafräumen"
+msgstr "Niveau de pression acoustique ≤ 30 dB(A) dans les chambres"
+
+#: functions.php:266 functions.php:365
+msgid "Wärmerückgewinnung"
+msgstr "Récupération de chaleur"
+
+#: functions.php:267
+msgid "Wirkungsgrad bis zu 95 % — Energie sparen ohne Komfortverlust"
+msgstr "Rendement jusqu'à 95 % — économiser l'énergie sans perte de confort"
+
+#: functions.php:270 functions.php:319 functions.php:369 functions.php:419
+#: functions.php:478
+msgid "Filter"
+msgstr "Filtration"
+
+#: functions.php:271 functions.php:320 functions.php:420
+msgid "Aussenluftfilter mindestens ePM1 50 % gemäss ISO 16890"
+msgstr "Filtre d'air neuf au minimum ePM1 50 % selon ISO 16890"
+
+#: functions.php:274 functions.php:323 functions.php:373 functions.php:423
+#: functions.php:482
+msgid "Regelung"
+msgstr "Régulation"
+
+#: functions.php:275
+msgid "Bedarfsorientierte Steuerung nach CO₂, Feuchte oder Präsenz"
+msgstr "Pilotage à la demande selon le CO₂, l'humidité ou la présence"
+
+#: functions.php:282
+msgid "Raumklima, das Produktivität fördert"
+msgstr "Un climat intérieur qui favorise la productivité"
+
+#: functions.php:283
+msgid ""
+"Wussten Sie, dass schlechte Raumluft die Leistungsfähigkeit von "
+"Mitarbeitenden um bis zu 15 % senken kann? In Büros, Verwaltungsgebäuden und "
+"Gewerbeflächen ist ein durchdachtes Lüftungskonzept daher keine Kostenstelle "
+"— sondern eine Investition in Produktivität, Gesundheit und Wohlbefinden."
+msgstr "Saviez-vous qu'un air intérieur de mauvaise qualité peut réduire les performances des collaborateurs jusqu'à 15 % ? Dans les bureaux, les bâtiments administratifs et les surfaces commerciales, un concept de ventilation bien pensé n'est donc pas un poste de coûts — mais un investissement dans la productivité, la santé et le bien-être."
+
+#: functions.php:284
+msgid ""
+"Moderne Bürogebäude stellen besondere Anforderungen an die Lüftungstechnik: "
+"Viele Personen auf engem Raum, hohe interne Wärmelasten durch Technik und "
+"Beleuchtung sowie immer dichtere Gebäudehüllen machen eine mechanische Be- "
+"und Entlüftung unumgänglich. Eine bedarfsgeregelte Anlage sorgt dafür, dass "
+"Frischluft genau dann zugeführt wird, wenn sie gebraucht wird — "
+"energieeffizient und ohne unnötige Geräusche."
+msgstr "Les immeubles de bureaux modernes posent des exigences particulières à la technique de ventilation : de nombreuses personnes dans un espace restreint, des charges thermiques internes élevées dues aux équipements et à l'éclairage, ainsi que des enveloppes toujours plus étanches rendent une ventilation mécanique indispensable. Une installation régulée à la demande amène l'air neuf exactement quand il est nécessaire — efficacement et sans bruit inutile."
+
+#: functions.php:288
+msgid "Technische Anforderungen an die Büro- und Gewerbelüftung"
+msgstr "Exigences techniques pour la ventilation des bureaux et commerces"
+
+#: functions.php:289
+msgid ""
+"Ein normgerechtes raumlufttechnisches Konzept sollte folgende Zielwerte "
+"sicherstellen:"
+msgstr "Un concept aéraulique conforme aux normes doit garantir les valeurs cibles suivantes :"
+
+#: functions.php:291
+msgid "CO₂-Konzentration im Mittelwert ≤ 1.000 ppm über die Nutzungsdauer"
+msgstr "Concentration de CO₂ en moyenne ≤ 1 000 ppm sur la durée d'utilisation"
+
+#: functions.php:293
+msgid "Relative Raumluftfeuchte 30 bis 60 %"
+msgstr "Humidité relative de l'air ambiant de 30 à 60 %"
+
+#: functions.php:294
+msgid "Mittlere Luftgeschwindigkeit ≤ 0,15 m/s"
+msgstr "Vitesse d'air moyenne ≤ 0,15 m/s"
+
+#: functions.php:295
+msgid ""
+"Schalldruckpegel ≤ 35 dB(A) in Einzel- und Besprechungsräumen, ≤ 45 dB(A) in "
+"Grossraumbüros"
+msgstr "Niveau de pression acoustique ≤ 35 dB(A) dans les bureaux individuels et salles de réunion, ≤ 45 dB(A) dans les bureaux paysagers"
+
+#: functions.php:300
+msgid "Die Scan-Pro Lösung für Gewerbe und Büros"
+msgstr "La solution Scan-Pro pour le commerce et les bureaux"
+
+#: functions.php:301
+msgid ""
+"Unser breites Sortiment an zentralen und semi-zentralen Lüftungsgeräten "
+"ermöglicht massgeschneiderte Lösungen für Bürogebäude jeder Grösse — vom "
+"Kleinbüro bis zum mehrgeschossigen Verwaltungsbau. Wärmerückgewinnung ist "
+"dabei selbstverständlich: Mit Wirkungsgraden von bis zu 95 % senken unsere "
+"Geräte die Betriebskosten spürbar."
+msgstr "Notre large gamme d'appareils de ventilation centralisés et semi-centralisés permet des solutions sur mesure pour des immeubles de bureaux de toute taille — du petit bureau au bâtiment administratif de plusieurs étages. La récupération de chaleur va de soi : avec des rendements atteignant 95 %, nos appareils réduisent sensiblement les coûts d'exploitation."
+
+#: functions.php:302
+msgid ""
+"Fachplaner und Installateure unterstützen wir mit technischen Unterlagen, "
+"Auslegungsprogrammen und persönlicher Beratung — von der Konzeption bis zur "
+"Inbetriebnahme."
+msgstr "Nous accompagnons bureaux d'études et installateurs avec documentation technique, logiciels de dimensionnement et conseil personnalisé — de la conception à la mise en service."
+
+#: functions.php:308 functions.php:408
+msgid "Aussenluftvolumenstrom > 25 m³/h pro Person im Raum"
+msgstr "Débit d'air neuf > 25 m³/h par personne présente"
+
+#: functions.php:312
+msgid "Schallleistungspegel ≤ 35 dB(A) für Büro- und Besprechungsräume"
+msgstr "Niveau de puissance acoustique ≤ 35 dB(A) pour bureaux et salles de réunion"
+
+#: functions.php:315 functions.php:415 functions.php:474
+msgid "Energieeffizienz"
+msgstr "Efficacité énergétique"
+
+#: functions.php:316
+msgid "Verpflichtender Einsatz von Wärmerückgewinnung gemäss SIA 382/1"
+msgstr "Recours obligatoire à la récupération de chaleur selon SIA 382/1"
+
+#: functions.php:324
+msgid "Bedarfsorientierte Einzelraumregelung nach CO₂ und Belegung"
+msgstr "Régulation pièce par pièce à la demande selon le CO₂ et l'occupation"
+
+#: functions.php:331
+msgid "Lüftungstechnik für anspruchsvolle Umgebungen"
+msgstr "Technique de ventilation pour environnements exigeants"
+
+#: functions.php:332
+msgid ""
+"In Produktionshallen, Werkstätten und Industriebetrieben entstehen täglich "
+"Herausforderungen, die gewöhnliche Lüftungsanlagen schnell an ihre Grenzen "
+"bringen: Wärme durch Maschinen und Prozesse, Staub, Dämpfe, Schadstoffe und "
+"ein hoher Personenverkehr verlangen nach robusten, leistungsstarken "
+"Lüftungslösungen."
+msgstr "Dans les halles de production, les ateliers et les entreprises industrielles, les défis quotidiens poussent rapidement les installations de ventilation ordinaires à leurs limites : chaleur dégagée par les machines et les procédés, poussières, vapeurs, polluants et forte circulation de personnes exigent des solutions robustes et performantes."
+
+#: functions.php:333
+msgid ""
+"Eine durchdachte Industrielüftung schützt die Gesundheit der Mitarbeitenden, "
+"verlängert die Lebensdauer von Maschinen und Gebäudestrukturen und hilft, "
+"Energiekosten durch intelligente Wärmerückgewinnung zu senken. Dabei muss "
+"sie den rauen Bedingungen des industriellen Alltags standhalten — "
+"zuverlässig, wartungsarm und effizient."
+msgstr "Une ventilation industrielle bien conçue protège la santé des collaborateurs, prolonge la durée de vie des machines et des structures du bâtiment et contribue à réduire les coûts énergétiques grâce à une récupération de chaleur intelligente. Elle doit pour cela résister aux conditions rudes du quotidien industriel — de manière fiable, avec peu d'entretien et beaucoup d'efficacité."
+
+#: functions.php:337
+msgid "Technische Anforderungen an die Industrielüftung"
+msgstr "Exigences techniques pour la ventilation industrielle"
+
+#: functions.php:338
+msgid ""
+"Die Auslegung richtet sich nach den spezifischen Prozessen und Emissionen im "
+"Betrieb. Folgende Richtwerte gelten als Grundlage:"
+msgstr "Le dimensionnement dépend des procédés et des émissions propres à l'entreprise. Les valeurs indicatives suivantes servent de base :"
+
+#: functions.php:340
+msgid ""
+"Ausreichende Abfuhr von Wärme, Feuchtigkeit, Staub und prozessbedingten "
+"Schadstoffen"
+msgstr "Évacuation suffisante de la chaleur, de l'humidité, des poussières et des polluants liés aux procédés"
+
+#: functions.php:341
+msgid "Raumtemperatur in Arbeitsbereichen: mindestens 15 °C, maximal 26 °C"
+msgstr "Température ambiante dans les zones de travail : au minimum 15 °C, au maximum 26 °C"
+
+#: functions.php:342
+msgid "CO₂-Konzentration ≤ 1.000 ppm in dauerhaft besetzten Zonen"
+msgstr "Concentration de CO₂ ≤ 1 000 ppm dans les zones occupées en permanence"
+
+#: functions.php:343
+msgid "Filterklasse je nach Prozess und Schadstoffart: mindestens ePM10 50 %"
+msgstr "Classe de filtration selon le procédé et le type de polluant : au minimum ePM10 50 %"
+
+#: functions.php:344
+msgid "Schalldruckpegel nach Arbeitsschutzanforderungen, je nach Nutzungszone"
+msgstr "Niveau de pression acoustique selon les exigences de protection au travail, en fonction de la zone d'utilisation"
+
+#: functions.php:345
+msgid "Wärmerückgewinnung wo prozessbedingt möglich — Einsparungen bis zu 80 %"
+msgstr "Récupération de chaleur partout où le procédé le permet — économies jusqu'à 80 %"
+
+#: functions.php:350
+msgid "Die Scan-Pro Lösung für Industrie und Gewerbe"
+msgstr "La solution Scan-Pro pour l'industrie et l'artisanat"
+
+#: functions.php:351
+msgid ""
+"Wir liefern leistungsstarke Ventilatoren, Dachventilatoren, Abluftsysteme "
+"und komplette raumlufttechnische Anlagen, die auch unter industriellen "
+"Bedingungen zuverlässig funktionieren. Unser Sortiment umfasst Geräte für "
+"die direkte Prozessabluft ebenso wie bedarfsgeregelte Gesamtlösungen für "
+"grosse Hallenflächen."
+msgstr "Nous livrons des ventilateurs performants, des ventilateurs de toiture, des systèmes d'extraction et des installations aérauliques complètes qui fonctionnent de manière fiable même en conditions industrielles. Notre gamme comprend aussi bien des appareils pour l'extraction directe des procédés que des solutions globales régulées à la demande pour de grandes surfaces de halles."
+
+#: functions.php:352
+msgid ""
+"Dank unserer langjährigen Erfahrung in der Schweizer Industrie kennen wir "
+"die besonderen Anforderungen verschiedener Branchen — von der "
+"Lebensmittelverarbeitung über den Maschinenbau bis zur Werkstatt. Wir "
+"entwickeln individuelle Lösungsansätze und stehen Planern sowie Betreibern "
+"als technischer Partner zur Seite."
+msgstr "Grâce à notre longue expérience dans l'industrie suisse, nous connaissons les exigences particulières des différentes branches — de la transformation alimentaire à la construction mécanique en passant par l'atelier. Nous développons des approches individuelles et accompagnons bureaux d'études et exploitants comme partenaire technique."
+
+#: functions.php:358
+msgid "Individuell nach Prozess, Hallengrösse und Personenbelegung"
+msgstr "Individuel selon le procédé, la taille de la halle et l'occupation"
+
+#: functions.php:361
+msgid "Robustheit"
+msgstr "Robustesse"
+
+#: functions.php:362
+msgid "Geräte für hohe Betriebsstunden, Staub und aggressive Umgebungen"
+msgstr "Appareils conçus pour de longues heures de service, la poussière et les environnements agressifs"
+
+#: functions.php:366
+msgid "Nutzung von Prozesswärme zur Senkung der Heizkosten"
+msgstr "Valorisation de la chaleur de procédé pour réduire les coûts de chauffage"
+
+#: functions.php:370
+msgid "Filterklasse je nach Schadstoff und Prozessanforderung wählbar"
+msgstr "Classe de filtration sélectionnable selon le polluant et les exigences du procédé"
+
+#: functions.php:374
+msgid ""
+"Bedarfsgerechte Steuerung nach Belegung, Temperatur und Schadstoffbelastung"
+msgstr "Pilotage à la demande selon l'occupation, la température et la charge polluante"
+
+#: functions.php:381
+msgid "Gute Luft ist die Grundlage für gutes Lernen"
+msgstr "Un bon air est la base d'un bon apprentissage"
+
+#: functions.php:382
+msgid ""
+"Klassenräume, Kitas, Aulas und Hochschulgebäude sind Orte, an denen sich "
+"viele Menschen auf engem Raum aufhalten. Ohne ausreichenden Luftwechsel "
+"steigt der CO₂-Gehalt rasch auf Werte, die Konzentration, Merkfähigkeit und "
+"Wohlbefinden spürbar beeinträchtigen. Studien belegen: Ab 1.000 ppm sinkt "
+"die kognitive Leistungsfähigkeit messbar."
+msgstr "Salles de classe, crèches, aulas et bâtiments universitaires accueillent de nombreuses personnes dans un espace restreint. Sans renouvellement d'air suffisant, le taux de CO₂ atteint rapidement des valeurs qui nuisent sensiblement à la concentration, à la mémorisation et au bien-être. Les études le confirment : au-delà de 1 000 ppm, les performances cognitives diminuent de façon mesurable."
+
+#: functions.php:383
+msgid ""
+"Gleichzeitig stellen Bildungseinrichtungen besondere Anforderungen an Lärm "
+"und Energieeffizienz: Lüftungsgeräte müssen im Unterrichtsbetrieb leise "
+"arbeiten, bedarfsgerecht reagieren und in Sanierungen wie Neubauten "
+"gleichermassen integrierbar sein. Fensterlüftung allein — abhängig von "
+"Aussentemperatur, Lärm und Wetter — reicht dafür längst nicht mehr aus."
+msgstr "Les établissements de formation posent en même temps des exigences particulières en matière de bruit et d'efficacité énergétique : les appareils de ventilation doivent fonctionner silencieusement pendant les cours, réagir à la demande et s'intégrer aussi bien dans les rénovations que dans les constructions neuves. La seule ventilation par les fenêtres — dépendante de la température extérieure, du bruit et de la météo — ne suffit plus depuis longtemps."
+
+#: functions.php:387
+msgid "Technische Anforderungen an die Schul- und Kitaslüftung"
+msgstr "Exigences techniques pour la ventilation des écoles et crèches"
+
+#: functions.php:388
+msgid ""
+"Die Auslegung richtet sich nach DIN EN 16798 sowie den schweizerischen "
+"Normen SIA 382/1 und SWKI VA104-01. Folgende Zielwerte gelten als "
+"massgeblich:"
+msgstr "Le dimensionnement suit la norme DIN EN 16798 ainsi que les normes suisses SIA 382/1 et SWKI VA104-01. Les valeurs cibles suivantes font référence :"
+
+#: functions.php:390
+msgid "CO₂-Mittelwert ≤ 1.000 ppm während der Nutzungszeit"
+msgstr "Moyenne de CO₂ ≤ 1 000 ppm pendant la durée d'utilisation"
+
+#: functions.php:393
+msgid "Mittlere Luftgeschwindigkeit ≤ 0,15 m/s — kein störendes Zugluftgefühl"
+msgstr "Vitesse d'air moyenne ≤ 0,15 m/s — aucune sensation gênante de courant d'air"
+
+#: functions.php:394
+msgid ""
+"Schalldruckpegel ≤ 35 dB(A) in Unterrichtsräumen, ≤ 40 dB(A) in Sporthallen"
+msgstr "Niveau de pression acoustique ≤ 35 dB(A) dans les salles de cours, ≤ 40 dB(A) dans les salles de sport"
+
+#: functions.php:395
+msgid "Aussenluftvolumenstrom > 25 m³/h pro Person"
+msgstr "Débit d'air neuf > 25 m³/h par personne"
+
+#: functions.php:400
+msgid "Die Scan-Pro Lösung für Schulen und Bildungsbauten"
+msgstr "La solution Scan-Pro pour les écoles et bâtiments scolaires"
+
+#: functions.php:401
+msgid ""
+"Wir bieten zentrale, semi-zentrale und dezentrale Lüftungslösungen für alle "
+"Bereiche einer Bildungseinrichtung — vom Klassenraum über die Mensa bis zur "
+"Sporthalle und den Sanitärbereichen. Unsere Geräte mit hocheffizienter "
+"Wärmerückgewinnung arbeiten leise, zuverlässig und lassen sich "
+"bedarfsgerecht nach CO₂, Belegung oder Zeitprogramm steuern."
+msgstr "Nous proposons des solutions de ventilation centralisées, semi-centralisées et décentralisées pour tous les espaces d'un établissement — de la salle de classe à la cafétéria en passant par la salle de sport et les sanitaires. Nos appareils à récupération de chaleur haute performance fonctionnent silencieusement, de manière fiable, et se pilotent à la demande selon le CO₂, l'occupation ou un programme horaire."
+
+#: functions.php:402
+msgid ""
+"Für Neubauten wie für Sanierungen stehen verschiedene Systemvarianten zur "
+"Verfügung. Planern stellen wir technische Unterlagen, Auslegungshilfen und "
+"Produktdatenblätter zur Verfügung — und beraten Sie gerne direkt bei der "
+"Systemwahl."
+msgstr "Différentes variantes de système sont disponibles aussi bien pour les constructions neuves que pour les rénovations. Nous mettons à la disposition des bureaux d'études la documentation technique, des aides au dimensionnement et des fiches produits — et vous conseillons volontiers dans le choix du système."
+
+#: functions.php:412
+msgid "≤ 35 dB(A) in Unterrichtsräumen, ≤ 40 dB(A) in Sporthallen"
+msgstr "≤ 35 dB(A) dans les salles de cours, ≤ 40 dB(A) dans les salles de sport"
+
+#: functions.php:416
+msgid "Wärmerückgewinnung verpflichtend — Wirkungsgrad bis zu 95 %"
+msgstr "Récupération de chaleur obligatoire — rendement jusqu'à 95 %"
+
+#: functions.php:424
+msgid ""
+"Bedarfsorientierte Einzelraumregelung nach CO₂, Feuchte oder Belegungsplan"
+msgstr "Régulation pièce par pièce à la demande selon le CO₂, l'humidité ou le plan d'occupation"
+
+#: functions.php:431
+msgid "Küche und Gastraum — zwei Anforderungen, eine Lösung"
+msgstr "Cuisine et salle — deux exigences, une solution"
+
+#: functions.php:432
+msgid ""
+"Wer in einer professionellen Küche arbeitet, weiss: Wenn mehrere Herdplatten "
+"laufen und der Ofen auf Hochtouren ist, verwandelt sich der Raum schnell in "
+"ein unangenehmes Arbeitsumfeld aus Hitze, Gerüchen und Wasserdampf. Was in "
+"der Küche entsteht, darf den Gastraum nicht erreichen — und doch liegen "
+"beide oft nur wenige Meter voneinander entfernt."
+msgstr "Quiconque travaille dans une cuisine professionnelle le sait : lorsque plusieurs feux tournent et que le four fonctionne à plein régime, le local se transforme vite en un environnement de travail pénible, fait de chaleur, d'odeurs et de vapeur d'eau. Ce qui naît en cuisine ne doit pas atteindre la salle — et pourtant, quelques mètres seulement les séparent souvent."
+
+#: functions.php:433
+msgid ""
+"Die Gastronomie steht täglich vor dieser doppelten Herausforderung: In der "
+"Küche braucht es eine leistungsstarke Ablufttechnik, die Hitze, Fett und "
+"Gerüche effektiv abführt. Im Gastraum hingegen sollen die Gäste bei "
+"angenehmer Temperatur und frischer Luft entspannen — unabhängig davon, wie "
+"viele Personen sich im Raum befinden. Eine optimal ausgelegte Lüftungsanlage "
+"schafft diese Balance und wird damit zu einem entscheidenden Faktor für "
+"Ihren Betriebserfolg."
+msgstr "La restauration fait face chaque jour à ce double défi : la cuisine exige une extraction puissante, capable d'évacuer efficacement chaleur, graisses et odeurs. En salle, à l'inverse, les clients doivent pouvoir se détendre à une température agréable et dans un air frais — quel que soit le nombre de personnes présentes. Une installation de ventilation bien dimensionnée crée cet équilibre et devient ainsi un facteur déterminant de la réussite de votre établissement."
+
+#: functions.php:437
+msgid "Technische Anforderungen — Küche und Gastraum"
+msgstr "Exigences techniques — cuisine et salle"
+
+#: functions.php:439
+msgid "Anforderungen für die Küche"
+msgstr "Exigences pour la cuisine"
+
+#: functions.php:441
+msgid "Wirksame Abfuhr von Feuchtigkeit, Wärme, Fett und Verbrennungsprodukten"
+msgstr "Évacuation efficace de l'humidité, de la chaleur, des graisses et des produits de combustion"
+
+#: functions.php:442
+msgid "Raumtemperatur mindestens 18 °C, maximal 26 °C"
+msgstr "Température ambiante au minimum 18 °C, au maximum 26 °C"
+
+#: functions.php:443
+msgid "Relative Luftfeuchte in der Aufenthaltszone: 55 bis 80 %"
+msgstr "Humidité relative dans la zone de séjour : de 55 à 80 %"
+
+#: functions.php:444
+msgid "Aussenluft darf die Lebensmittelqualität nicht beeinträchtigen"
+msgstr "L'air neuf ne doit pas altérer la qualité des denrées alimentaires"
+
+#: functions.php:445
+msgid "Schalldruckpegel ≤ 60 dB(A)"
+msgstr "Niveau de pression acoustique ≤ 60 dB(A)"
+
+#: functions.php:448
+msgid "Anforderungen für den Gastraum"
+msgstr "Exigences pour la salle"
+
+#: functions.php:450
+msgid "CO₂-Konzentration im Mittelwert ≤ 1.000 ppm"
+msgstr "Concentration de CO₂ en moyenne ≤ 1 000 ppm"
+
+#: functions.php:453
+msgid "Mittlere Luftgeschwindigkeit ≤ 0,15 m/s — kein Zugluftgefühl für Gäste"
+msgstr "Vitesse d'air moyenne ≤ 0,15 m/s — aucune sensation de courant d'air pour les clients"
+
+#: functions.php:454
+msgid "Schalldruckpegel ≤ 50 dB(A)"
+msgstr "Niveau de pression acoustique ≤ 50 dB(A)"
+
+#: functions.php:459
+msgid "Die Scan-Pro Lösung für die Gastronomie"
+msgstr "La solution Scan-Pro pour la restauration"
+
+#: functions.php:460
+msgid ""
+"Mit unserem Sortiment aus leistungsstarken Küchenabluftgeräten, zentralen "
+"Lüftungsanlagen und bedarfsgeregelten Systemen für den Gastraum bieten wir "
+"Ihnen aufeinander abgestimmte Gesamtlösungen. Wärmerückgewinnung ist dabei "
+"auch in der Gastronomie wirtschaftlich sinnvoll — besonders bei langen "
+"Betriebszeiten."
+msgstr "Avec notre gamme d'appareils d'extraction de cuisine performants, d'installations de ventilation centralisées et de systèmes régulés à la demande pour la salle, nous vous proposons des solutions globales parfaitement coordonnées. La récupération de chaleur reste économiquement pertinente en restauration — surtout en cas de longues plages d'exploitation."
+
+#: functions.php:461
+msgid ""
+"Unsere Fachkompetenz und die Produkttiefe unserer Partner EXHAUSTO, exodraft "
+"und Aldes ermöglichen es uns, individuelle Konzepte für Restaurant, Bar, "
+"Betriebskantine oder Hotelküche zu entwickeln. Wir unterstützen Sie von der "
+"Planung bis zur Inbetriebnahme."
+msgstr "Notre compétence technique et la profondeur de gamme de nos partenaires EXHAUSTO, exodraft et Aldes nous permettent de développer des concepts individuels pour restaurant, bar, cantine d'entreprise ou cuisine d'hôtel. Nous vous accompagnons de la planification à la mise en service."
+
+#: functions.php:467
+msgid "Aussenluftvolumenstrom > 25 m³/h pro Person im Gastraum"
+msgstr "Débit d'air neuf > 25 m³/h par personne en salle"
+
+#: functions.php:471
+msgid "≤ 60 dB(A) Küche / ≤ 50 dB(A) Gastraum"
+msgstr "≤ 60 dB(A) en cuisine / ≤ 50 dB(A) en salle"
+
+#: functions.php:475
+msgid "Wärmerückgewinnung empfohlen — wirtschaftlich ab 8h Betrieb/Tag"
+msgstr "Récupération de chaleur recommandée — rentable dès 8 h d'exploitation par jour"
+
+#: functions.php:479
+msgid "Fettfilter in der Küche, Aussenluftfilter ePM1 50 % im Gastraum"
+msgstr "Filtres à graisse en cuisine, filtre d'air neuf ePM1 50 % en salle"
+
+#: functions.php:483
+msgid "Bedarfsgerechte Steuerung nach CO₂, Personenzahl und Betriebszeiten"
+msgstr "Pilotage à la demande selon le CO₂, le nombre de personnes et les heures d'exploitation"
+
+#: functions.php:487
+msgid "Inhalt folgt in Kürze."
+msgstr "Contenu à venir prochainement."
+
+#: functions.php:682
+msgid ""
+"Scan-Pro AG ist der Schweizer Spezialist für Lüftungstechnik und "
+"Wärmerückgewinnung: Planung, Lieferung, Montage und Service von "
+"Lüftungsanlagen für Wohnen, Gewerbe, Industrie, Bildungseinrichtungen und "
+"Gastronomie."
+msgstr "Scan-Pro AG est le spécialiste suisse de la technique de ventilation et de la récupération de chaleur : étude, fourniture, montage et service d'installations de ventilation pour l'habitat, le commerce, l'industrie, les établissements scolaires et la restauration."
+
+#: functions.php:684
+msgid ""
+"Über 50 Jahre Erfahrung (seit 1975). Standort: Bahnhofstrasse 1, CH-8852 "
+"Altendorf, Schweiz. Telefon: +41 43 355 34 00. E-Mail: info@scanpro.ch. "
+"Inhaltssprache: Deutsch."
+msgstr "Plus de 50 ans d'expérience (depuis 1975). Adresse : Bahnhofstrasse 1, CH-8852 Altendorf, Suisse. Téléphone : +41 43 355 34 00. E-mail : info@scanpro.ch. Langue du contenu : français."
+
+#: functions.php:688
+msgid "Unternehmen, Geschichte und Kompetenzen seit 1975"
+msgstr "Entreprise, histoire et compétences depuis 1975"
+
+#: functions.php:689
+msgid "Ansprechpartner und Fachpersonal"
+msgstr "Interlocuteurs et personnel spécialisé"
+
+#: functions.php:690
+msgid "Übersicht der Anwendungsbereiche für Lüftungslösungen"
+msgstr "Aperçu des domaines d'application des solutions de ventilation"
+
+#: functions.php:691
+msgid "Realisierte Projekte und Referenzanlagen"
+msgstr "Projets réalisés et installations de référence"
+
+#: functions.php:692
+msgid "Fachwissen zu Lüftung, CO₂, Normen und Regelungstechnik"
+msgstr "Connaissances sur la ventilation, le CO₂, les normes et la régulation"
+
+#: functions.php:693
+msgid "Kontaktformular, Adresse und Anfahrt"
+msgstr "Formulaire de contact, adresse et accès"
+
+#: functions.php:696
+msgid "Hauptseiten"
+msgstr "Pages principales"
+
+#: functions.php:698
+msgid "Intelligente Lüftungslösungen und Wärmerückgewinnung"
+msgstr "Solutions de ventilation intelligentes et récupération de chaleur"
+
+#: functions.php:708
+msgid "Komfortlüftung und Wärmerückgewinnung für Wohnbauten"
+msgstr "Ventilation douce et récupération de chaleur pour bâtiments d'habitation"
+
+#: functions.php:709
+msgid "Lüftungslösungen für Büro-, Verkaufs- und Gewerbeflächen"
+msgstr "Solutions de ventilation pour bureaux, surfaces de vente et locaux commerciaux"
+
+#: functions.php:710
+msgid "Prozess- und Hallenlüftung für industrielle Anwendungen"
+msgstr "Ventilation de procédés et de halles pour applications industrielles"
+
+#: functions.php:711
+msgid "Schul- und Klassenzimmerlüftung mit CO₂-Regelung"
+msgstr "Ventilation des écoles et salles de classe avec régulation CO₂"
+
+#: functions.php:712
+msgid "Küchen- und Gastronomielüftung"
+msgstr "Ventilation de cuisines et de restaurants"
+
+#: functions.php:763 header.php:66
+msgid "Produkte"
+msgstr "Produits"
+
+#: functions.php:774
+msgid "CO₂-Konzentration, Luftqualität und Grenzwerte"
+msgstr "Concentration de CO₂, qualité de l'air et valeurs limites"
+
+#: functions.php:775
+msgid "Häufige Fragen zu Lüftung und Wärmerückgewinnung"
+msgstr "Questions fréquentes sur la ventilation et la récupération de chaleur"
+
+#: functions.php:776
+msgid "Fachbeiträge und Neuigkeiten"
+msgstr "Articles spécialisés et actualités"
+
+#: functions.php:777
+msgid "Normen und Vorschriften für Lüftungsanlagen in der Schweiz"
+msgstr "Normes et prescriptions pour les installations de ventilation en Suisse"
+
+#: functions.php:778
+msgid "Regelung von Luftmengen und Volumenstromregelung"
+msgstr "Régulation des débits d'air et du volume d'air"
+
+#: functions.php:790
+msgid "Aktuelle Beiträge"
+msgstr "Articles récents"
+
+#: functions.php:800 page-kontakt.php:176
+msgid "Adresse"
+msgstr "Adresse"
+
+#: functions.php:801 page-kontakt.php:111 page-kontakt.php:188
+msgid "Telefon"
+msgstr "Téléphone"
+
+#: functions.php:803
+msgid "Kontaktformular"
+msgstr "Formulaire de contact"
+
+#: header.php:19
+msgid "Sekundärnavigation"
+msgstr "Navigation secondaire"
+
+#: header.php:27
+msgid "Sprache wählen"
+msgstr "Choisir la langue"
+
+#: header.php:32
+msgid "Deutsch"
+msgstr "Deutsch"
+
+#: header.php:33
+msgid "Français"
+msgstr "Français"
+
+#: header.php:34
+msgid "English"
+msgstr "English"
+
+#: header.php:56
+msgid "Hauptnavigation"
+msgstr "Navigation principale"
+
+#: header.php:107
+msgid "Alle Produkte ansehen"
+msgstr "Voir tous les produits"
+
+#: header.php:137
+msgid "Blog"
+msgstr "Blog"
+
+#: header.php:138
+msgid "Regulierungen"
+msgstr "Réglementations"
+
+#: header.php:139 page-wissen-regelung.php:12
+msgid "Regelung von Luftmengen"
+msgstr "Régulation des débits d'air"
+
+#: header.php:165
+msgid "Menü öffnen"
+msgstr "Ouvrir le menu"
+
+#: page-einsatzbereich-single.php:25
+msgid "EINSATZBEREICHE"
+msgstr "DOMAINES D'APPLICATION"
+
+#: page-einsatzbereich-single.php:46 page-einsatzbereich-single.php:47
+msgid "Weitere Einsatzbereiche"
+msgstr "Autres domaines d'application"
+
+#: page-einsatzbereich-single.php:86
+msgid "PASSENDE PRODUKTE"
+msgstr "PRODUITS ADAPTÉS"
+
+#: page-einsatzbereich-single.php:87
+msgid "Empfohlene Produkte"
+msgstr "Produits recommandés"
+
+#: page-einsatzbereich-single.php:91 page-wissen-blog.php:61
+msgid "Zurück"
+msgstr "Précédent"
+
+#: page-einsatzbereich-single.php:119 page-wissen-blog.php:62
+msgid "Weiter"
+msgstr "Suivant"
+
+#: page-einsatzbereich-single.php:124
+msgid "Alle Produkte ansehen →"
+msgstr "Voir tous les produits →"
+
+#: page-einsatzbereich-single.php:128
+msgid "Produkte folgen in Kürze."
+msgstr "Produits disponibles prochainement."
+
+#: page-einsatzbereich-single.php:139
+msgid "Interesse an unseren Lösungen?"
+msgstr "Nos solutions vous intéressent ?"
+
+#: page-einsatzbereich-single.php:140 page-referenzen.php:416
+msgid ""
+"Kontaktieren Sie uns für eine individuelle Beratung und ein "
+"massgeschneidertes Angebot."
+msgstr "Contactez-nous pour un conseil personnalisé et une offre sur mesure."
+
+#: page-einsatzbereiche.php:13
+msgid ""
+"Effiziente Lüftungslösungen für Einfamilienhäuser, Mehrfamilienhäuser und "
+"Wohnanlagen mit hohem Komfort und niedrigem Energieverbrauch."
+msgstr "Solutions de ventilation efficaces pour maisons individuelles, immeubles locatifs et complexes résidentiels, alliant grand confort et faible consommation d'énergie."
+
+#: page-einsatzbereiche.php:18
+msgid ""
+"Massgeschneiderte Lüftungssysteme für Büros, Verkaufsflächen und gewerbliche "
+"Liegenschaften mit Anforderungen an Luftqualität und Energieeffizienz."
+msgstr "Systèmes de ventilation sur mesure pour bureaux, surfaces de vente et biens commerciaux soumis à des exigences de qualité d'air et d'efficacité énergétique."
+
+#: page-einsatzbereiche.php:23
+msgid ""
+"Robuste Lüftungs- und Absauglösungen für industrielle Umgebungen, "
+"Produktionshallen und technisch anspruchsvolle Anlagen."
+msgstr "Solutions robustes de ventilation et d'aspiration pour environnements industriels, halles de production et installations techniquement exigeantes."
+
+#: page-einsatzbereiche.php:28
+msgid ""
+"Gesunde Raumluft für Schulen, Kindergärten und Universitäten — leise, "
+"energieeffizient und wartungsarm."
+msgstr "Un air intérieur sain pour écoles, jardins d'enfants et universités — silencieux, économe en énergie et nécessitant peu d'entretien."
+
+#: page-einsatzbereiche.php:33
+msgid ""
+"Leistungsstarke Abluft- und Lüftungssysteme für Restaurants, Küchen und "
+"Gastronomiebetriebe — zuverlässig und normkonform."
+msgstr "Systèmes d'extraction et de ventilation performants pour restaurants, cuisines et établissements de restauration — fiables et conformes aux normes."
+
+#: page-einsatzbereiche.php:48
+msgid ""
+"Unsere Lüftungs- und Wärmerückgewinnungssysteme sind für eine Vielzahl von "
+"Anwendungsbereichen geeignet — vom Wohngebäude bis zur Industrieanlage."
+msgstr "Nos systèmes de ventilation et de récupération de chaleur conviennent à une grande variété de domaines d'application — du bâtiment d'habitation à l'installation industrielle."
+
+#: page-kontakt.php:28
+msgid "KONTAKT"
+msgstr "CONTACT"
+
+#: page-kontakt.php:30
+msgid "Wir freuen uns auf Ihre Anfrage"
+msgstr "Nous nous réjouissons de votre demande"
+
+#: page-kontakt.php:43
+msgid ""
+"Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden bei "
+"Ihnen."
+msgstr "Remplissez le formulaire et nous vous répondrons dans les 24 heures."
+
+#: page-kontakt.php:48
+msgid ""
+"Web3Forms Access Key fehlt — bitte SCANPRO_WEB3FORMS_KEY in functions.php "
+"setzen."
+msgstr "Clé d'accès Web3Forms manquante — veuillez définir SCANPRO_WEB3FORMS_KEY dans functions.php."
+
+#: page-kontakt.php:62
+msgid "[Scan-Pro] Neue Anfrage über das Kontaktformular"
+msgstr "[Scan-Pro] Nouvelle demande via le formulaire de contact"
+
+#: page-kontakt.php:71
+msgid "Name"
+msgstr "Nom"
+
+#: page-kontakt.php:79
+msgid "Max Mustermann"
+msgstr "Jean Dupont"
+
+#: page-kontakt.php:84
+msgid "Firma"
+msgstr "Entreprise"
+
+#: page-kontakt.php:90
+msgid "Mustermann GmbH"
+msgstr "Dupont SA"
+
+#: page-kontakt.php:98 page-kontakt.php:193
+msgid "E-Mail"
+msgstr "E-mail"
+
+#: page-kontakt.php:124
+msgid "Betreff"
+msgstr "Objet"
+
+#: page-kontakt.php:127
+msgid "Bitte wählen…"
+msgstr "Veuillez choisir…"
+
+#: page-kontakt.php:129
+msgid "Technische Frage"
+msgstr "Question technique"
+
+#: page-kontakt.php:130
+msgid "Bestellung / Lieferung"
+msgstr "Commande / livraison"
+
+#: page-kontakt.php:131
+msgid "Support / Service"
+msgstr "Support / service"
+
+#: page-kontakt.php:132
+msgid "Sonstiges"
+msgstr "Autre"
+
+#: page-kontakt.php:138
+msgid "Nachricht"
+msgstr "Message"
+
+#: page-kontakt.php:146
+msgid "Beschreiben Sie Ihr Projekt oder Ihre Anfrage…"
+msgstr "Décrivez votre projet ou votre demande…"
+
+#: page-kontakt.php:152
+msgid "Pflichtfelder"
+msgstr "Champs obligatoires"
+
+#: page-kontakt.php:156
+msgid "Anfrage senden"
+msgstr "Envoyer la demande"
+
+#: page-kontakt.php:163
+msgid "So erreichen Sie uns"
+msgstr "Comment nous joindre"
+
+#: page-kontakt.php:198
+msgid "Öffnungszeiten"
+msgstr "Heures d'ouverture"
+
+#: page-kontakt.php:200
+msgid "Montag – Freitag"
+msgstr "Lundi – vendredi"
+
+#. translators: Öffnungszeiten, Format: Vormittag / Nachmittag
+#: page-kontakt.php:202
+msgid "08:00 – 12:00 / 13:00 – 17:00"
+msgstr "08:00 – 12:00 / 13:00 – 17:00"
+
+#: page-kontakt.php:210
+msgid "Standort Scan-Pro AG auf der Karte"
+msgstr "Emplacement de Scan-Pro AG sur la carte"
+
+#: page-referenzen.php:13
+msgid "REFERENZEN"
+msgstr "RÉFÉRENCES"
+
+#: page-referenzen.php:14
+msgid "Unsere Referenzen"
+msgstr "Nos références"
+
+#: page-referenzen.php:15
+msgid ""
+"Seit über 50 Jahren vertrauen Unternehmen, Institutionen und private "
+"Bauherren in der ganzen Schweiz auf unsere Lüftungslösungen. Ein Auszug aus "
+"unserer Referenzliste."
+msgstr "Depuis plus de 50 ans, des entreprises, des institutions et des maîtres d'ouvrage privés de toute la Suisse font confiance à nos solutions de ventilation. Voici un extrait de notre liste de références."
+
+#: page-referenzen.php:24
+msgid "Alle"
+msgstr "Tous"
+
+#: page-referenzen.php:27
+msgid "Hotel & Gastronomie"
+msgstr "Hôtellerie & restauration"
+
+#: page-referenzen.php:30
+msgid "Spital & Gesundheit"
+msgstr "Hôpitaux & santé"
+
+#: page-referenzen.php:36
+msgid "Öffentliche Gebäude"
+msgstr "Bâtiments publics"
+
+#: page-referenzen.php:39
+msgid "Sport & Wellness"
+msgstr "Sport & bien-être"
+
+#: page-referenzen.php:42
+msgid "Industrie & Gewerbe"
+msgstr "Industrie & artisanat"
+
+#: page-referenzen.php:57
+msgid "Hotel, Restaurants, Bars, Camping etc."
+msgstr "Hôtels, restaurants, bars, campings, etc."
+
+#: page-referenzen.php:59
+msgid ""
+"Küchendüfte gehören nicht in die Gaststube. Gesunde, frische Luft mit "
+"angenehmer Luftfeuchtigkeit und ohne störende Gerüche lassen den Gast länger "
+"verweilen und schaffen damit mehr Umsatz. Einen Vorschlag für den Weg zur "
+"angepassten Be- und Entlüftung Ihres Lokales unterbreiten wir Ihnen gerne "
+"kostenfrei."
+msgstr "Les odeurs de cuisine n'ont pas leur place en salle. Un air sain et frais, avec une humidité agréable et sans odeurs gênantes, incite le client à rester plus longtemps — et génère ainsi davantage de chiffre d'affaires. Nous vous soumettons volontiers et gratuitement une proposition pour adapter la ventilation de votre établissement."
+
+#: page-referenzen.php:108
+msgid "Spital, Heim, Praxis, Tierheim etc."
+msgstr "Hôpitaux, EMS, cabinets, refuges pour animaux, etc."
+
+#: page-referenzen.php:110
+msgid ""
+"Eine gute Belüftung ist im Operationssaal genau so wichtig wie in der "
+"Arztpraxis, im Pflegeheim, im Spital, auf der Unfallstation oder im "
+"Tiergehege. Gefilterte Luft, praktisch geräuschlos in den Raum geführt, "
+"lässt alle aufatmen. Wir zeigen Ihnen gerne wie."
+msgstr "Une bonne ventilation est aussi importante en salle d'opération qu'au cabinet médical, en EMS, à l'hôpital, aux urgences ou dans un enclos pour animaux. Un air filtré, amené dans la pièce presque sans bruit, permet à chacun de respirer librement. Nous vous montrons volontiers comment."
+
+#: page-referenzen.php:148
+msgid "Wohnung, EFH, MFH, Mehrzweckraum etc."
+msgstr "Appartement, maison individuelle, immeuble locatif, salle polyvalente, etc."
+
+#: page-referenzen.php:150
+msgid ""
+"Im Ein- oder Mehrfamilienhaus, überall wo Menschen wohnen, arbeiten, spielen "
+"und schlafen, ist der regelmässige Luftaustausch für das Wohlbefinden und "
+"die Leistungsfähigkeit von besonderer Bedeutung. Der richtige Luftwechsel "
+"hilft Krankheiten durch Bakterienübertragung zu vermeiden. Auch bleiben "
+"Bauschäden durch Feuchtigkeit aus. Wir haben die Lösung, individuell auf Ihr "
+"Objekt abgestimmt."
+msgstr "Dans une maison individuelle comme dans un immeuble locatif, partout où l'on habite, travaille, joue et dort, un renouvellement d'air régulier revêt une importance particulière pour le bien-être et les performances. Un taux de renouvellement adapté contribue à éviter les maladies transmises par les bactéries. Les dégâts liés à l'humidité sont eux aussi écartés. Nous avons la solution, adaptée individuellement à votre objet."
+
+#: page-referenzen.php:172
+msgid "Öffentliche Gebäude, Schule, Universität etc."
+msgstr "Bâtiments publics, écoles, universités, etc."
+
+#: page-referenzen.php:174
+msgid ""
+"Nur mit genügend Sauerstoff in frischer Luft lässt sich gut studieren, "
+"regieren und trainieren. Das Be- und Entlüftungssystem Exhausto, auf jeden "
+"Bedarf individuell zugeschnitten, stellt dies sicher. Wir machen gerne einen "
+"Vorschlag für die Schritte zu Ihrer massgeschneiderten Lösung."
+msgstr "Ce n'est qu'avec suffisamment d'oxygène dans un air frais que l'on étudie, gouverne et s'entraîne bien. Le système de ventilation et d'extraction EXHAUSTO, adapté individuellement à chaque besoin, le garantit. Nous vous proposons volontiers une démarche vers votre solution sur mesure."
+
+#: page-referenzen.php:255
+msgid "Sportzentrum, Fitnessraum, Wellness, Yoga etc."
+msgstr "Centres sportifs, salles de fitness, wellness, yoga, etc."
+
+#: page-referenzen.php:257
+msgid ""
+"Ob beim Training oder beim Ausspannen, beim Intensivsport oder beim "
+"Freizeitspass — die zweckdienliche Versorgung mit frischer Luft ist überall "
+"imperativ. Unsere Geräte mit den objektbezogenen Steuerungen sorgen dafür. "
+"Wir geben gerne nähere Auskunft."
+msgstr "À l'entraînement comme à la détente, en sport intensif comme en loisir — un apport d'air frais adapté est partout impératif. Nos appareils, avec leurs régulations propres à chaque objet, s'en chargent. Nous vous renseignons volontiers plus en détail."
+
+#: page-referenzen.php:301
+msgid "Industrie/Gewerbe, Werkstatt, Büro etc."
+msgstr "Industrie / artisanat, ateliers, bureaux, etc."
+
+#: page-referenzen.php:303
+msgid ""
+"Computer und andere Maschinen in Büro und Werkstatt geben Wärme ab und "
+"sorgen, nicht nur im Sommer, für ein zu warmes Arbeitsklima. Unsere Be- und "
+"Entlüftungsgeräte mit Wärmerückgewinnung schaffen Abhilfe, helfen Energie "
+"sparen und machen das Werken zur Freude. Fragen Sie uns."
+msgstr "Les ordinateurs et autres machines, au bureau comme à l'atelier, dégagent de la chaleur et rendent le climat de travail trop chaud — et pas seulement en été. Nos appareils de ventilation et d'extraction avec récupération de chaleur y remédient, aident à économiser de l'énergie et rendent le travail agréable. Demandez-nous."
+
+#: page-referenzen.php:396
+msgid "Auszug aus unserer Referenzliste:"
+msgstr "Extrait de notre liste de références :"
+
+#: page-referenzen.php:415
+msgid "Werden Sie Teil unserer Referenzliste"
+msgstr "Rejoignez notre liste de références"
+
+#: page-team.php:15
+msgid "UNSER TEAM"
+msgstr "NOTRE ÉQUIPE"
+
+#: page-team.php:16
+msgid "Ansprechpartner"
+msgstr "Interlocuteurs"
+
+#: page-team.php:17
+msgid "Persönliche Beratung durch erfahrene Fachleute — wir sind für Sie da."
+msgstr "Un conseil personnalisé par des spécialistes expérimentés — nous sommes là pour vous."
+
+#. translators: Name eines Teammitglieds
+#: page-team.php:31 page-team.php:37 page-ueber-uns.php:154
+#: page-ueber-uns.php:164
+msgid "Mark von Borries"
+msgstr "Mark von Borries"
+
+#: page-team.php:38
+msgid "Geschäftsleitung"
+msgstr "Direction"
+
+#: page-team.php:40 page-team.php:59 page-team.php:78 page-team.php:97
+#: page-ueber-uns.php:41 page-ueber-uns.php:197
+msgid "Kontakt aufnehmen"
+msgstr "Prendre contact"
+
+#. translators: Name eines Teammitglieds
+#: page-team.php:50 page-team.php:56
+msgid "Andreas Lehmann"
+msgstr "Andreas Lehmann"
+
+#: page-team.php:57
+msgid "Technik"
+msgstr "Technique"
+
+#. translators: Name eines Teammitglieds
+#: page-team.php:69 page-team.php:75
+msgid "Iliane Kühne"
+msgstr "Iliane Kühne"
+
+#: page-team.php:76
+msgid "Administration"
+msgstr "Administration"
+
+#. translators: Name eines Teammitglieds
+#: page-team.php:88 page-team.php:94
+msgid "Priscila Kirsner"
+msgstr "Priscila Kirsner"
+
+#: page-team.php:95
+msgid "Marketing"
+msgstr "Marketing"
+
+#: page-team.php:109
+msgid "Haben Sie Fragen?"
+msgstr "Vous avez des questions ?"
+
+#: page-team.php:110
+msgid ""
+"Unser Team steht Ihnen gerne zur Verfügung — wir freuen uns auf Ihre Anfrage."
+msgstr "Notre équipe se tient volontiers à votre disposition — nous nous réjouissons de votre demande."
+
+#: page-team.php:112
+msgid "Jetzt Kontakt aufnehmen"
+msgstr "Prendre contact maintenant"
+
+#: page-ueber-uns.php:15
+msgid "ÜBER UNS"
+msgstr "À PROPOS"
+
+#: page-ueber-uns.php:17
+msgid "Ihr Schweizer Spezialist für Lüftungstechnik seit 1975"
+msgstr "Votre spécialiste suisse de la technique de ventilation depuis 1975"
+
+#: page-ueber-uns.php:27
+msgid "UNSERE GESCHICHTE"
+msgstr "NOTRE HISTOIRE"
+
+#: page-ueber-uns.php:29
+msgid "Über 50 Jahre Kompetenz in der Lüftungstechnik"
+msgstr "Plus de 50 ans de compétence en technique de ventilation"
+
+#: page-ueber-uns.php:32
+msgid ""
+"Die Scan-Pro AG wurde 1975 gegründet, um dem steigenden Bedarf an "
+"Rauchsaugern für Cheminées gerecht zu werden. Die Ölkrise der 1970er Jahre "
+"führte zu einem erheblichen Boom im Kamin- und Cheminéebau, da die Menschen "
+"aufgrund der stark steigenden Öl- und Heizkosten nach alternativen "
+"Heizmethoden suchten. Durch den Vertrieb von Rauchsaugern des dänischen "
+"Pioniers Exhausto entstand die Scan-Pro AG (<strong>Scan</strong>dinavian "
+"<strong>Pro</strong>ducts)."
+msgstr "Scan-Pro AG a été fondée en 1975 pour répondre à la demande croissante d'extracteurs de fumée pour cheminées. La crise pétrolière des années 1970 a provoqué un essor considérable de la construction de cheminées et d'âtres, les gens cherchant des méthodes de chauffage alternatives face à la forte hausse des coûts du mazout et du chauffage. C'est par la distribution des extracteurs de fumée du pionnier danois EXHAUSTO qu'est née Scan-Pro AG (<strong>Scan</strong>dinavian <strong>Pro</strong>ducts)."
+
+#: page-ueber-uns.php:35
+msgid ""
+"Angesichts der sich verschärfenden Energiekrise in Europa entwickelte "
+"EXHAUSTO die erste Generation des VEX, ein Wärmerückgewinnungsgerät, das ein "
+"energieeffizienteres Raumklima schuf als bisher mit einfachen Abluftanlagen "
+"möglich war. Die Scan-Pro AG positionierte sich im Schweizer Markt "
+"erfolgreich im Bereich Energieeffizienz und gesundes Raumklima."
+msgstr "Face à l'aggravation de la crise énergétique en Europe, EXHAUSTO a développé la première génération du VEX, un appareil à récupération de chaleur qui créait un climat intérieur plus économe en énergie que ce qui était possible jusque-là avec de simples installations d'extraction. Scan-Pro AG s'est positionnée avec succès sur le marché suisse dans les domaines de l'efficacité énergétique et de la qualité de l'air intérieur."
+
+#: page-ueber-uns.php:38
+msgid ""
+"Im Jahr 2007 wurde EXHAUSTO aufgeteilt, und die Rauchsauger wurden unter der "
+"Marke Exodraft weitergeführt. Nach über 50 Jahren bleibt unsere Kernmission "
+"für Energieeffizienz und gesunde Raumluft unverändert. Mit neuen Produkten "
+"und Technologien bieten wir unseren Kunden Innovation und Flexibilität."
+msgstr "En 2007, EXHAUSTO a été scindée et les extracteurs de fumée ont été poursuivis sous la marque Exodraft. Après plus de 50 ans, notre mission première — efficacité énergétique et air intérieur sain — reste inchangée. Avec de nouveaux produits et de nouvelles technologies, nous offrons à nos clients innovation et flexibilité."
+
+#: page-ueber-uns.php:48
+msgid "Scan-Pro — Team und Technik"
+msgstr "Scan-Pro — équipe et technique"
+
+#: page-ueber-uns.php:62
+msgid "Erste Rauchsauger"
+msgstr "Premiers extracteurs de fumée"
+
+#: page-ueber-uns.php:67
+msgid "Erster VEX (Serie VEX 1 – 5)"
+msgstr "Premier VEX (série VEX 1 – 5)"
+
+#: page-ueber-uns.php:72
+msgid "Nachfolge Serie VEX1.5 – 5.5"
+msgstr "Série suivante VEX1.5 – 5.5"
+
+#: page-ueber-uns.php:77
+msgid "Neue Generation VEX100"
+msgstr "Nouvelle génération VEX100"
+
+#: page-ueber-uns.php:82
+msgid "VEX100 mit effizienterem Gegenstromwärmetauscher"
+msgstr "VEX100 avec échangeur à contre-courant plus efficace"
+
+#: page-ueber-uns.php:111
+msgid "UNSERE WERTE"
+msgstr "NOS VALEURS"
+
+#: page-ueber-uns.php:112
+msgid "Was uns antreibt"
+msgstr "Ce qui nous anime"
+
+#: page-ueber-uns.php:116
+msgid "Qualität"
+msgstr "Qualité"
+
+#: page-ueber-uns.php:118
+msgid ""
+"Wir liefern ausschliesslich Produkte, die europäischen Qualitätsnormen "
+"entsprechen und von führenden Herstellern zertifiziert sind."
+msgstr "Nous ne livrons que des produits conformes aux normes de qualité européennes et certifiés par des fabricants de premier plan."
+
+#: page-ueber-uns.php:123
+msgid "Fachkompetenz"
+msgstr "Compétence technique"
+
+#: page-ueber-uns.php:125
+msgid ""
+"Unser Team aus erfahrenen Technikern berät Sie professionell und findet die "
+"passende Lösung für Ihr Projekt."
+msgstr "Notre équipe de techniciens expérimentés vous conseille de manière professionnelle et trouve la solution adaptée à votre projet."
+
+#: page-ueber-uns.php:130
+msgid "Zuverlässigkeit"
+msgstr "Fiabilité"
+
+#: page-ueber-uns.php:132
+msgid ""
+"Schnelle Lieferung und kompetenter technischer Support nach dem Kauf. Mehr "
+"als nur Verkaufen, bieten wir unseren Kunden technischen Dienst, Garantie-"
+"Reparaturen, Service und Geräteumrüstung."
+msgstr "Livraison rapide et support technique compétent après l'achat. Au-delà de la vente, nous offrons à nos clients un service technique, des réparations sous garantie, de l'entretien et la mise à niveau des appareils."
+
+#: page-ueber-uns.php:137
+msgid "Innovation"
+msgstr "Innovation"
+
+#: page-ueber-uns.php:139
+msgid ""
+"Indem wir aktiv an Seminaren, Messen und dem Gebäudetechnik Forum "
+"teilnehmen, entwickeln wir innovative Produkte und Lösungen, die genau auf "
+"die Bedürfnisse unserer Kunden zugeschnitten sind."
+msgstr "En participant activement à des séminaires, des salons et au Forum de la technique du bâtiment, nous développons des produits et des solutions innovants, taillés précisément sur les besoins de nos clients."
+
+#: page-ueber-uns.php:161
+msgid ""
+"Ich verwende den Begriff „Komfortlüftung“ ungern, da gesunde Raumluft ein "
+"Grundbedürfnis für die Gesundheit ist und nicht als Komfort oder Luxus "
+"betrachtet werden sollte."
+msgstr "J'utilise à contrecœur le terme « ventilation de confort », car un air intérieur sain est un besoin fondamental pour la santé et ne devrait pas être considéré comme un confort ou un luxe."
+
+#: page-ueber-uns.php:165
+msgid "Geschäftsleiter der Scan-Pro AG"
+msgstr "Directeur de Scan-Pro AG"
+
+#: page-ueber-uns.php:175
+msgid "PARTNER"
+msgstr "PARTENAIRES"
+
+#: page-ueber-uns.php:194
+msgid "Lernen Sie uns persönlich kennen"
+msgstr "Faites notre connaissance"
+
+#: page-ueber-uns.php:195
+msgid "Wir freuen uns auf Ihre Anfrage und beraten Sie gerne."
+msgstr "Nous nous réjouissons de votre demande et vous conseillons volontiers."
+
+#: page-wissen-blog.php:11 page-wissen-co2.php:11 page-wissen-faq.php:11
+#: page-wissen-regelung.php:11 page-wissen-regulierungen.php:11
+#: page-wissen.php:12
+msgid "WISSEN"
+msgstr "EXPERTISE"
+
+#: page-wissen-blog.php:12
+msgid "Blog & Aktuelles"
+msgstr "Blog & actualités"
+
+#: page-wissen-blog.php:13
+msgid ""
+"Fachartikel, Neuigkeiten und Praxistipps aus der Welt der Lüftungstechnik."
+msgstr "Articles spécialisés, actualités et conseils pratiques issus du monde de la technique de ventilation."
+
+#: page-wissen-blog.php:50
+msgid "Weiterlesen →"
+msgstr "Lire la suite →"
+
+#: page-wissen-blog.php:68
+msgid "Noch keine Beiträge vorhanden. Schauen Sie bald wieder vorbei."
+msgstr "Aucun article pour l'instant. Revenez bientôt."
+
+#: page-wissen-co2.php:12
+msgid "CO₂ in Innenräumen"
+msgstr "Le CO₂ dans les espaces intérieurs"
+
+#: page-wissen-co2.php:13
+msgid ""
+"Was CO₂ mit uns macht — und warum der Grenzwert von 1.000 ppm so "
+"entscheidend ist."
+msgstr "Ce que le CO₂ nous fait — et pourquoi la valeur limite de 1 000 ppm est si déterminante."
+
+#: page-wissen-co2.php:23
+msgid "Wie wirkt CO₂ auf den menschlichen Körper?"
+msgstr "Comment le CO₂ agit-il sur le corps humain ?"
+
+#: page-wissen-co2.php:24
+msgid ""
+"Die natürliche CO₂-Konzentration in der Aussenluft beträgt rund 400 bis 450 "
+"ppm (Teile pro Million). In Innenräumen steigt dieser Wert durch die "
+"Atemluft der anwesenden Personen kontinuierlich an — und das mit spürbaren "
+"Auswirkungen auf Konzentration, Wohlbefinden und Leistungsfähigkeit."
+msgstr "La concentration naturelle de CO₂ dans l'air extérieur est d'environ 400 à 450 ppm (parties par million). À l'intérieur, cette valeur augmente continuellement sous l'effet de la respiration des personnes présentes — avec des conséquences sensibles sur la concentration, le bien-être et les performances."
+
+#: page-wissen-co2.php:25
+msgid ""
+"CO₂ ist ein natürliches Stoffwechselprodukt des Menschen und an der "
+"Regulation von Atmung, Kreislauf und Blutgefässreaktionen beteiligt. Das "
+"venöse Blut transportiert CO₂ zur Lunge, wo es über einen Druckausgleich in "
+"die Lungenbläschen abgegeben und beim Ausatmen aus dem Körper abgeführt "
+"wird. Steigt die CO₂-Konzentration in der Raumluft, wird dieser Austausch "
+"ineffizienter."
+msgstr "Le CO₂ est un produit naturel du métabolisme humain et participe à la régulation de la respiration, de la circulation et des réactions des vaisseaux sanguins. Le sang veineux transporte le CO₂ vers les poumons, où il est libéré dans les alvéoles par équilibrage de pression puis évacué du corps lors de l'expiration. Lorsque la concentration de CO₂ dans l'air ambiant augmente, cet échange devient moins efficace."
+
+#: page-wissen-co2.php:28
+msgid "CO₂-Konzentration und ihre Wirkung"
+msgstr "Concentration de CO₂ et ses effets"
+
+#: page-wissen-co2.php:31
+msgid "400 – 800 ppm"
+msgstr "400 – 800 ppm"
+
+#: page-wissen-co2.php:32
+msgid "Aussenluftqualität — ausgezeichnetes Innenraumklima"
+msgstr "Qualité de l'air extérieur — climat intérieur excellent"
+
+#: page-wissen-co2.php:35
+msgid "800 – 1.000 ppm"
+msgstr "800 – 1 000 ppm"
+
+#: page-wissen-co2.php:36
+msgid "Akzeptabler Bereich — leichte Einschränkungen möglich"
+msgstr "Plage acceptable — légères restrictions possibles"
+
+#: page-wissen-co2.php:39
+msgid "1.000 – 1.400 ppm"
+msgstr "1 000 – 1 400 ppm"
+
+#: page-wissen-co2.php:40
+msgid "Erhöhter Wert — Konzentrationsfähigkeit sinkt messbar"
+msgstr "Valeur élevée — la capacité de concentration baisse de façon mesurable"
+
+#: page-wissen-co2.php:43
+msgid "1.400 ppm"
+msgstr "1 400 ppm"
+
+#: page-wissen-co2.php:44
+msgid "Schlechte Luftqualität — Kopfschmerzen, Müdigkeit, Leistungsabfall"
+msgstr "Mauvaise qualité de l'air — maux de tête, fatigue, baisse de performance"
+
+#: page-wissen-co2.php:49
+msgid "Warum ist der Grenzwert von 1.000 ppm so wichtig?"
+msgstr "Pourquoi la valeur limite de 1 000 ppm est-elle si importante ?"
+
+#: page-wissen-co2.php:50
+msgid ""
+"Die Schweizer Norm SIA 382/1 sowie die europäische Norm EN 16798-1 "
+"definieren 1.000 ppm CO₂ als Richtwert für eine akzeptable Raumluftqualität "
+"in Aufenthaltsräumen. Wird dieser Wert dauerhaft überschritten, sinken "
+"Konzentrationsfähigkeit und Produktivität nachweislich — mit direkten "
+"Auswirkungen auf Lernleistung, Arbeitseffizienz und Wohlbefinden."
+msgstr "La norme suisse SIA 382/1 ainsi que la norme européenne EN 16798-1 définissent 1 000 ppm de CO₂ comme valeur indicative d'une qualité d'air acceptable dans les locaux de séjour. Lorsque cette valeur est durablement dépassée, la capacité de concentration et la productivité diminuent de manière avérée — avec des effets directs sur les résultats d'apprentissage, l'efficacité au travail et le bien-être."
+
+#: page-wissen-co2.php:51
+msgid ""
+"Mit einer richtig ausgelegten und bedarfsgeregelten Lüftungsanlage lässt "
+"sich dieser Wert zuverlässig einhalten — unabhängig von der Belegungszahl "
+"oder der Jahreszeit."
+msgstr "Avec une installation de ventilation correctement dimensionnée et régulée à la demande, cette valeur peut être respectée de manière fiable — indépendamment du taux d'occupation ou de la saison."
+
+#: page-wissen-co2.php:53
+msgid "CO₂-Konzentration berechnen"
+msgstr "Calculer la concentration de CO₂"
+
+#: page-wissen-co2.php:54
+msgid ""
+"Die benötigte Frischluftzufuhr hängt von der Raumgrösse, der Personenzahl "
+"und der Nutzungsdauer ab. Als Faustregel gilt:"
+msgstr "L'apport d'air frais nécessaire dépend de la taille du local, du nombre de personnes et de la durée d'utilisation. Règle empirique :"
+
+#: page-wissen-co2.php:57
+msgid ""
+"Benötigter Aussenluftvolumenstrom = Anzahl Personen × 25–36 m³/h pro Person"
+msgstr "Débit d'air neuf nécessaire = nombre de personnes × 25–36 m³/h par personne"
+
+#: page-wissen-co2.php:58
+msgid "(Richtwert gemäss SIA 382/1 und EN 16798-1, Kategorie II)"
+msgstr "(Valeur indicative selon SIA 382/1 et EN 16798-1, catégorie II)"
+
+#: page-wissen-co2.php:61
+msgid ""
+"Für eine präzise Auslegung Ihrer Lüftungsanlage beraten wir Sie gerne "
+"persönlich. Kontaktieren Sie uns — wir berechnen den benötigten Volumenstrom "
+"für Ihr Projekt."
+msgstr "Pour un dimensionnement précis de votre installation, nous vous conseillons volontiers en personne. Contactez-nous — nous calculons le débit nécessaire pour votre projet."
+
+#: page-wissen-co2.php:63 page-wissen-regelung.php:125
+msgid "Beratung anfragen"
+msgstr "Demander un conseil"
+
+#: page-wissen-faq.php:12
+msgid "Häufig gestellte Fragen"
+msgstr "Questions fréquentes"
+
+#: page-wissen-faq.php:13
+msgid ""
+"Antworten auf die wichtigsten Fragen rund um Lüftungsanlagen, Produkte und "
+"Bestellungen."
+msgstr "Réponses aux principales questions sur les installations de ventilation, les produits et les commandes."
+
+#: page-wissen-faq.php:26
+msgid "Planung und Auslegung"
+msgstr "Étude et dimensionnement"
+
+#: page-wissen-faq.php:29
+msgid "Wie wähle ich das richtige Lüftungskonzept für mein Projekt?"
+msgstr "Comment choisir le bon concept de ventilation pour mon projet ?"
+
+#: page-wissen-faq.php:30
+msgid ""
+"Die Wahl des richtigen Systems hängt von mehreren Faktoren ab: Gebäudetyp, "
+"Nutzung, Belegungszahl, Raumgrösse und Energieziele. Zentrale Anlagen eignen "
+"sich für grössere Gebäude mit einheitlichem Lüftungsbedarf, dezentrale "
+"Lösungen bieten Flexibilität bei Sanierungen oder unterschiedlichen "
+"Nutzungszonen. Unsere Fachberater unterstützen Sie bei der Systemwahl — "
+"kontaktieren Sie uns gerne."
+msgstr "Le choix du système dépend de plusieurs facteurs : type de bâtiment, usage, nombre d'occupants, taille des locaux et objectifs énergétiques. Les installations centralisées conviennent aux bâtiments de grande taille aux besoins homogènes ; les solutions décentralisées offrent de la souplesse lors de rénovations ou pour des zones d'usage différentes. Nos conseillers techniques vous accompagnent dans le choix du système — n'hésitez pas à nous contacter."
+
+#: page-wissen-faq.php:33
+msgid "Welche Normen gelten in der Schweiz für Lüftungsanlagen?"
+msgstr "Quelles normes s'appliquent aux installations de ventilation en Suisse ?"
+
+#: page-wissen-faq.php:34
+msgid ""
+"In der Schweiz gelten primär die SIA 382/1 (Lüftungs- und Klimaanlagen), SIA "
+"382/4 (Raumklima für Personen) sowie die europäische Norm EN 16798. Für "
+"Schulen gilt zusätzlich SWKI VA104-01. Eine Übersicht finden Sie auf unserer "
+"Seite Regulierungen."
+msgstr "En Suisse s'appliquent principalement la SIA 382/1 (installations de ventilation et de climatisation), la SIA 382/4 (climat intérieur pour les personnes) ainsi que la norme européenne EN 16798. Pour les écoles s'ajoute la SWKI VA104-01. Vous trouverez un aperçu sur notre page Réglementations."
+
+#: page-wissen-faq.php:37
+msgid "Wie berechne ich den benötigten Aussenluftvolumenstrom?"
+msgstr "Comment calculer le débit d'air neuf nécessaire ?"
+
+#: page-wissen-faq.php:38
+msgid ""
+"Als Richtwert gilt: 25–36 m³/h pro Person gemäss SIA 382/1 (Kategorie II). "
+"Zusätzlich wird ein gebäudebezogener Volumenstrom je m² Nutzfläche "
+"berücksichtigt, abhängig von der Emissionsbelastung des Gebäudes. Für eine "
+"genaue Auslegung stehen wir Ihnen gerne zur Verfügung."
+msgstr "Valeur indicative : 25–36 m³/h par personne selon SIA 382/1 (catégorie II). S'y ajoute un débit lié au bâtiment par m² de surface utile, en fonction de la charge d'émissions du bâtiment. Nous restons à votre disposition pour un dimensionnement précis."
+
+#: page-wissen-faq.php:41
+msgid "Welche Regelungsvariante ist für mein Gebäude am sinnvollsten?"
+msgstr "Quelle variante de régulation convient le mieux à mon bâtiment ?"
+
+#: page-wissen-faq.php:42
+msgid ""
+"Das hängt von der Nutzungsstruktur ab. Für gleichmässig genutzte Räume "
+"genügt oft eine CAV-Regelung (Zeitprogramm). Bei wechselnder Belegung "
+"empfehlen wir DCV (bedarfsgeregelt nach CO₂ oder Präsenz), das Energie spart "
+"und die Luftqualität optimiert. Details finden Sie unter Regelung von "
+"Luftmengen."
+msgstr "Cela dépend de la structure d'utilisation. Pour des locaux utilisés de façon régulière, une régulation CAV (programme horaire) suffit souvent. En cas d'occupation variable, nous recommandons la DCV (régulation à la demande selon le CO₂ ou la présence), qui économise de l'énergie et optimise la qualité de l'air. Détails sous Régulation des débits d'air."
+
+#: page-wissen-faq.php:47
+msgid "Normen und Zertifizierungen"
+msgstr "Normes et certifications"
+
+#: page-wissen-faq.php:50
+msgid "Was bedeutet die Filternorm ISO 16890?"
+msgstr "Que signifie la norme de filtration ISO 16890 ?"
+
+#: page-wissen-faq.php:51
+msgid ""
+"ISO 16890 ersetzt die ältere EN 779 und klassifiziert Filter nach ihrer "
+"Effizienz bei der Abscheidung von Partikeln verschiedener Grösse (ePM1, "
+"ePM2,5, ePM10). Für Lüftungsanlagen in Wohn- und Bürogebäuden empfehlen wir "
+"mindestens ePM1 50 %."
+msgstr "ISO 16890 remplace l'ancienne EN 779 et classe les filtres selon leur efficacité à retenir des particules de différentes tailles (ePM1, ePM2,5, ePM10). Pour les installations de ventilation dans les bâtiments d'habitation et de bureaux, nous recommandons au minimum ePM1 50 %."
+
+#: page-wissen-faq.php:54
+msgid ""
+"Was ist die Ecodesign-Verordnung und was bedeutet sie für Lüftungsgeräte?"
+msgstr "Qu'est-ce que le règlement Ecodesign et qu'implique-t-il pour les appareils de ventilation ?"
+
+#: page-wissen-faq.php:55
+msgid ""
+"Die EU-Ecodesign-Verordnung (ErP) legt Mindestanforderungen an die "
+"Energieeffizienz von Lüftungsgeräten fest. Wohnungslüftungsgeräte müssen "
+"einen Wärmerückgewinnungsgrad von mindestens 73 % und spezifische "
+"Leistungsaufnahmen (SFP) einhalten. Alle unsere Produkte erfüllen diese "
+"Anforderungen."
+msgstr "Le règlement européen Ecodesign (ErP) fixe des exigences minimales d'efficacité énergétique pour les appareils de ventilation. Les appareils de ventilation d'habitation doivent atteindre un taux de récupération de chaleur d'au moins 73 % et respecter des puissances absorbées spécifiques (SFP). Tous nos produits satisfont à ces exigences."
+
+#: page-wissen-faq.php:58
+msgid "Müssen Lüftungsanlagen regelmässig gewartet werden?"
+msgstr "Les installations de ventilation doivent-elles être entretenues régulièrement ?"
+
+#: page-wissen-faq.php:59
+msgid ""
+"Ja. Gemäss SIA 382/1 und den Herstellervorgaben sind regelmässige "
+"Filterwechsel, Reinigungen und Funktionsprüfungen vorgeschrieben. Der "
+"Intervall richtet sich nach Gerätetyp, Filterklasse und Nutzungsintensität — "
+"in der Regel jährlich bis halbjährlich."
+msgstr "Oui. Selon la SIA 382/1 et les prescriptions des fabricants, des changements de filtres, des nettoyages et des contrôles de fonctionnement réguliers sont obligatoires. L'intervalle dépend du type d'appareil, de la classe de filtration et de l'intensité d'utilisation — en règle générale une à deux fois par an."
+
+#: page-wissen-faq.php:64
+msgid "Produkte und Bestellungen"
+msgstr "Produits et commandes"
+
+#: page-wissen-faq.php:67
+msgid "Wie kann ich ein Produkt bestellen?"
+msgstr "Comment puis-je commander un produit ?"
+
+#: page-wissen-faq.php:68
+msgid ""
+"Sie können Produkte direkt in unserem Online-Shop bestellen oder eine "
+"Anfrage über unser Kontaktformular stellen. Für grössere Projekte oder "
+"individuelle Konfigurationen empfehlen wir eine persönliche Beratung — wir "
+"erstellen Ihnen gerne ein massgeschneidertes Angebot."
+msgstr "Vous pouvez commander directement dans notre boutique en ligne ou nous adresser une demande via le formulaire de contact. Pour des projets plus importants ou des configurations particulières, nous recommandons un conseil personnalisé — nous établissons volontiers une offre sur mesure."
+
+#: page-wissen-faq.php:71
+msgid "Wie lange dauert die Lieferung?"
+msgstr "Quels sont les délais de livraison ?"
+
+#: page-wissen-faq.php:72
+msgid ""
+"Lagerware wird in der Regel innerhalb von 3–5 Werktagen geliefert. Bei "
+"Sonderkonfigurationen oder Grossgeräten kann die Lieferzeit variieren. "
+"Unsere Bestellseite gibt Ihnen aktuelle Informationen zu Verfügbarkeit und "
+"Lieferzeiten."
+msgstr "Les articles en stock sont en général livrés sous 3 à 5 jours ouvrables. Pour des configurations spéciales ou de grands appareils, le délai peut varier. Notre page de commande vous informe de la disponibilité et des délais actuels."
+
+#: page-wissen-faq.php:75
+msgid "Wo finde ich technische Unterlagen, Montageanweisungen und CAD-Daten?"
+msgstr "Où trouver la documentation technique, les instructions de montage et les données CAO ?"
+
+#: page-wissen-faq.php:76
+msgid ""
+"Technische Datenblätter, Montageanweisungen und CAD-Dateien sind auf der "
+"jeweiligen Produktseite im Shop verfügbar. Für ältere Modelle oder "
+"weiterführende Unterlagen kontaktieren Sie uns direkt."
+msgstr "Les fiches techniques, instructions de montage et fichiers CAO sont disponibles sur la page de chaque produit dans la boutique. Pour des modèles plus anciens ou des documents complémentaires, contactez-nous directement."
+
+#: page-wissen-faq.php:79
+msgid "Was tun, wenn ein Gerät zu gross für den Transportweg ist?"
+msgstr "Que faire si un appareil est trop grand pour la voie d'accès ?"
+
+#: page-wissen-faq.php:80
+msgid ""
+"Manche Geräte können in Einzelteilen angeliefert und vor Ort montiert "
+"werden. Sprechen Sie uns bei der Bestellung an — wir prüfen gemeinsam mit "
+"Ihnen die beste Lösung für Ihren Einbauort."
+msgstr "Certains appareils peuvent être livrés en éléments séparés et assemblés sur place. Parlez-nous-en lors de la commande — nous examinons avec vous la meilleure solution pour votre lieu d'installation."
+
+#: page-wissen-faq.php:106
+msgid "Ihre Frage ist nicht dabei?"
+msgstr "Votre question ne figure pas ici ?"
+
+#: page-wissen-faq.php:107
+msgid "Direkt anfragen"
+msgstr "Demander directement"
+
+#: page-wissen-regelung.php:13
+msgid ""
+"CAV, VAV, DCV oder aDCV — die richtige Regelungsvariante spart Energie und "
+"sichert optimale Luftqualität."
+msgstr "CAV, VAV, DCV ou aDCV — la bonne variante de régulation économise l'énergie et garantit une qualité d'air optimale."
+
+#: page-wissen-regelung.php:24
+msgid ""
+"In den meisten Gebäuden variiert die Raumauslastung im Tagesverlauf "
+"erheblich. Büros sind morgens teilweise leer, Sitzungszimmer werden nur "
+"stundenweise genutzt, Schulräume wechseln zwischen Vollbetrieb und "
+"Leerpausen. Eine Lüftungsanlage, die immer mit maximaler Leistung läuft, "
+"verschwendet Energie — und verursacht unnötige Kosten."
+msgstr "Dans la plupart des bâtiments, l'occupation des locaux varie fortement au cours de la journée. Les bureaux sont partiellement vides le matin, les salles de réunion ne servent que quelques heures, les salles de classe alternent entre pleine occupation et pauses. Une installation de ventilation qui fonctionne toujours à pleine puissance gaspille de l'énergie — et génère des coûts inutiles."
+
+#: page-wissen-regelung.php:27
+msgid ""
+"Die Lösung liegt in einer bedarfsgerechten Regelung. Die folgenden vier "
+"Varianten stehen zur Verfügung — sie können einzeln oder kombiniert "
+"eingesetzt werden."
+msgstr "La solution réside dans une régulation à la demande. Les quatre variantes suivantes sont disponibles — elles peuvent être utilisées seules ou combinées."
+
+#: page-wissen-regelung.php:34
+msgid "Constant Air Volume — Konstante Luftmenge"
+msgstr "Constant Air Volume — débit d'air constant"
+
+#: page-wissen-regelung.php:35
+msgid ""
+"Die einfachste Regelungsform: Die Anlage läuft nach einem festen "
+"Zeitprogramm — zum Beispiel von 07:00 bis 18:00 Uhr. Innerhalb dieser Zeiten "
+"wird eine konstante Luftmenge gefördert, unabhängig davon, wie viele "
+"Personen sich im Raum befinden."
+msgstr "La forme de régulation la plus simple : l'installation fonctionne selon un programme horaire fixe — par exemple de 07h00 à 18h00. Pendant ces plages, un débit d'air constant est assuré, indépendamment du nombre de personnes présentes."
+
+#: page-wissen-regelung.php:36
+msgid ""
+"Empfohlen für Räume mit gleichmässiger Nutzung und geringer "
+"Belegungsschwankung, z.B. Korridore, Treppenhäuser, Kopierbereiche und "
+"Sanitärräume."
+msgstr "Recommandé pour les locaux à usage régulier et à faible variation d'occupation, par ex. corridors, cages d'escalier, zones de copie et sanitaires."
+
+#: page-wissen-regelung.php:38
+msgid "Einfache Installation und Inbetriebnahme"
+msgstr "Installation et mise en service simples"
+
+#: page-wissen-regelung.php:39
+msgid "Geringe Investitionskosten"
+msgstr "Faibles coûts d'investissement"
+
+#: page-wissen-regelung.php:40
+msgid "Robust und wartungsarm"
+msgstr "Robuste et nécessitant peu d'entretien"
+
+#: page-wissen-regelung.php:43
+msgid "Keine Anpassung an tatsächliche Belegung"
+msgstr "Aucune adaptation à l'occupation réelle"
+
+#: page-wissen-regelung.php:44
+msgid "Höherer Energieverbrauch bei Unterbelegung"
+msgstr "Consommation d'énergie plus élevée en cas de sous-occupation"
+
+#: page-wissen-regelung.php:49
+msgid "Variable Air Volume — Variable Luftmenge"
+msgstr "Variable Air Volume — débit d'air variable"
+
+#: page-wissen-regelung.php:50
+msgid ""
+"Die VAV-Regelung ermöglicht das Schalten zwischen zwei Leistungsstufen: "
+"einer Mindestluftmenge und einer Maximalluftmenge. Die Umschaltung erfolgt "
+"nach Zeitprogramm oder manuell — nicht in Echtzeit nach tatsächlicher "
+"Belegung. Drucksensoren im Kanalsystem sorgen für eine gleichmässige "
+"Verteilung."
+msgstr "La régulation VAV permet de commuter entre deux niveaux de puissance : un débit minimal et un débit maximal. La commutation se fait selon un programme horaire ou manuellement — et non en temps réel selon l'occupation effective. Des capteurs de pression dans le réseau de gaines assurent une répartition homogène."
+
+#: page-wissen-regelung.php:51
+msgid ""
+"Empfohlen für Räume mit planbarer, aber wechselnder Nutzung, z.B. "
+"Sitzungszimmer mit festen Belegungszeiten oder Schulräume mit bekanntem "
+"Stundenplan."
+msgstr "Recommandé pour les locaux à usage planifiable mais variable, par ex. salles de réunion aux horaires fixes ou salles de classe à horaire connu."
+
+#: page-wissen-regelung.php:53
+msgid "Flexibler als CAV"
+msgstr "Plus souple que le CAV"
+
+#: page-wissen-regelung.php:54
+msgid "Energieeinsparung in Niedriglastzeiten"
+msgstr "Économies d'énergie en période de faible charge"
+
+#: page-wissen-regelung.php:55
+msgid "Gut planbar bei bekannten Nutzungszeiten"
+msgstr "Bien planifiable lorsque les heures d'utilisation sont connues"
+
+#: page-wissen-regelung.php:58
+msgid "Keine Reaktion auf ungeplante Belegungsänderungen"
+msgstr "Aucune réaction aux changements d'occupation imprévus"
+
+#: page-wissen-regelung.php:59
+msgid "Wochenplan muss bei Nutzungsänderungen aktualisiert werden"
+msgstr "Le programme hebdomadaire doit être mis à jour en cas de changement d'usage"
+
+#: page-wissen-regelung.php:64
+msgid "Demand-Controlled Ventilation — Bedarfsgeregelte Luftmenge"
+msgstr "Demand-Controlled Ventilation — débit d'air régulé à la demande"
+
+#: page-wissen-regelung.php:65
+msgid ""
+"DCV reagiert in Echtzeit auf die tatsächliche Raumauslastung. CO₂-Sensoren, "
+"Präsenzmelder oder Feuchtesensoren erfassen den aktuellen Lüftungsbedarf und "
+"passen den Volumenstrom stufenlos an. Das System fördert genau so viel Luft "
+"wie aktuell benötigt wird — nicht mehr und nicht weniger."
+msgstr "La DCV réagit en temps réel à l'occupation effective des locaux. Des capteurs de CO₂, des détecteurs de présence ou des capteurs d'humidité mesurent le besoin de ventilation actuel et adaptent le débit en continu. Le système délivre exactement la quantité d'air nécessaire — ni plus, ni moins."
+
+#: page-wissen-regelung.php:66
+msgid ""
+"Empfohlen für Büros, Schulen, Hotels und alle Räume mit stark schwankender, "
+"schlecht vorhersehbarer Belegung."
+msgstr "Recommandé pour les bureaux, écoles, hôtels et tous les locaux à occupation fortement variable et difficilement prévisible."
+
+#: page-wissen-regelung.php:68
+msgid "Maximale Energieeinsparung"
+msgstr "Économies d'énergie maximales"
+
+#: page-wissen-regelung.php:69
+msgid "Optimale Luftqualität zu jeder Zeit"
+msgstr "Qualité d'air optimale à tout moment"
+
+#: page-wissen-regelung.php:70
+msgid "Automatische Anpassung — kein manuelles Eingreifen nötig"
+msgstr "Adaptation automatique — aucune intervention manuelle nécessaire"
+
+#: page-wissen-regelung.php:73
+msgid "Höhere Investitionskosten durch Sensorik"
+msgstr "Coûts d'investissement plus élevés en raison des capteurs"
+
+#: page-wissen-regelung.php:74
+msgid "Regelmässige Kalibrierung der Sensoren empfohlen"
+msgstr "Étalonnage régulier des capteurs recommandé"
+
+#: page-wissen-regelung.php:79
+msgid "Adaptive Demand-Controlled Ventilation — Adaptive Druckregelung"
+msgstr "Adaptive Demand-Controlled Ventilation — régulation de pression adaptative"
+
+#: page-wissen-regelung.php:80
+msgid ""
+"Die aDCV-Technologie geht einen Schritt weiter als DCV: Sie optimiert nicht "
+"nur den Volumenstrom pro Raum, sondern senkt gleichzeitig den Anlagendruck, "
+"wenn weniger Luftleistung benötigt wird. Das Lüftungsgerät arbeitet damit "
+"immer am energetisch günstigsten Betriebspunkt — und das vollautomatisch."
+msgstr "La technologie aDCV va un pas plus loin que la DCV : elle optimise non seulement le débit par local, mais abaisse simultanément la pression de l'installation lorsque moins de puissance d'air est nécessaire. L'appareil de ventilation travaille ainsi toujours au point de fonctionnement le plus favorable sur le plan énergétique — et ce entièrement automatiquement."
+
+#: page-wissen-regelung.php:81
+msgid ""
+"Empfohlen für grössere Anlagen mit mehreren Zonen und hohem "
+"Energieeinsparpotenzial, z.B. Bürogebäude, Schulen und Gewerbeanlagen."
+msgstr "Recommandé pour les installations de grande taille à plusieurs zones et à fort potentiel d'économie, par ex. immeubles de bureaux, écoles et sites commerciaux."
+
+#: page-wissen-regelung.php:83
+msgid "Energieeinsparung bis zu 43 % gegenüber VAV mit Konstantdruck"
+msgstr "Économies d'énergie jusqu'à 43 % par rapport au VAV à pression constante"
+
+#: page-wissen-regelung.php:84
+msgid "Bis zu 19 % Einsparung gegenüber konventionellem DCV"
+msgstr "Jusqu'à 19 % d'économie par rapport à une DCV conventionnelle"
+
+#: page-wissen-regelung.php:85
+msgid "Maximaler Komfort bei minimalem Energieeinsatz"
+msgstr "Confort maximal pour une consommation d'énergie minimale"
+
+#: page-wissen-regelung.php:88
+msgid "Höchste Investitionskosten der vier Varianten"
+msgstr "Coûts d'investissement les plus élevés des quatre variantes"
+
+#: page-wissen-regelung.php:89
+msgid "Komplexere Inbetriebnahme — Fachplanung empfohlen"
+msgstr "Mise en service plus complexe — étude spécialisée recommandée"
+
+#: page-wissen-regelung.php:101
+msgid "Empfehlung:"
+msgstr "Recommandation :"
+
+#: page-wissen-regelung.php:104
+msgid "Vorteile"
+msgstr "Avantages"
+
+#: page-wissen-regelung.php:112
+msgid "Nachteile"
+msgstr "Inconvénients"
+
+#: page-wissen-regelung.php:124
+msgid "Nicht sicher, welche Regelung zu Ihrem Projekt passt?"
+msgstr "Vous ne savez pas quelle régulation convient à votre projet ?"
+
+#: page-wissen-regulierungen.php:12
+msgid "Normen und Regulierungen"
+msgstr "Normes et réglementations"
+
+#: page-wissen-regulierungen.php:13
+msgid ""
+"Ein Überblick über die massgeblichen Schweizer und europäischen Normen für "
+"die Planung und den Betrieb von Lüftungsanlagen."
+msgstr "Un aperçu des principales normes suisses et européennes pour l'étude et l'exploitation des installations de ventilation."
+
+#: page-wissen-regulierungen.php:24
+msgid ""
+"Normen und Richtlinien bilden das technische Fundament für die Planung, "
+"Auslegung und den Betrieb von Lüftungsanlagen. Sie definieren "
+"Mindestanforderungen an Luftqualität, Energieeffizienz, Schallschutz und "
+"Hygiene — und schaffen damit die Grundlage für gesunde, komfortable und "
+"wirtschaftliche Gebäude. In der Schweiz gelten neben den europäischen EN-"
+"Normen eigene SIA-Richtlinien, die in vielen Fällen weitergehende oder "
+"präzisere Anforderungen stellen."
+msgstr "Les normes et directives constituent le fondement technique de l'étude, du dimensionnement et de l'exploitation des installations de ventilation. Elles définissent des exigences minimales en matière de qualité de l'air, d'efficacité énergétique, de protection acoustique et d'hygiène — et posent ainsi les bases de bâtiments sains, confortables et économiques. En Suisse s'appliquent, en plus des normes européennes EN, des directives SIA propres, souvent plus poussées ou plus précises."
+
+#: page-wissen-regulierungen.php:31
+msgid "Lüftungs- und Klimaanlagen — Allgemeine Grundlagen und Anforderungen"
+msgstr "Installations de ventilation et de climatisation — bases générales et exigences"
+
+#: page-wissen-regulierungen.php:32
+msgid ""
+"Die zentrale Schweizer Norm für Lüftungs- und Klimaanlagen. Sie definiert "
+"Anforderungen an Raumluftqualität, thermischen Komfort, Energieeffizienz, "
+"Schallschutz und Hygiene für Neubauten und Sanierungen. Grundlage für nahezu "
+"alle Lüftungsplanungen in der Schweiz."
+msgstr "La norme suisse centrale pour les installations de ventilation et de climatisation. Elle définit les exigences de qualité de l'air intérieur, de confort thermique, d'efficacité énergétique, de protection acoustique et d'hygiène pour les constructions neuves et les rénovations. Base de presque toutes les études de ventilation en Suisse."
+
+#: page-wissen-regulierungen.php:33
+msgid "Wohn-, Büro- und Gewerbegebäude"
+msgstr "Bâtiments d'habitation, de bureaux et commerciaux"
+
+#: page-wissen-regulierungen.php:37
+msgid "Lüftungs- und Klimaanlagen — Berechnung der Kühllast"
+msgstr "Installations de ventilation et de climatisation — calcul de la charge frigorifique"
+
+#: page-wissen-regulierungen.php:38
+msgid ""
+"Ergänzung zu SIA 382/1 mit spezifischen Berechnungsmethoden für Kühllast und "
+"sommerlichen Wärmeschutz. Relevant für Gebäude mit mechanischer Kühlung oder "
+"erhöhten thermischen Lasten."
+msgstr "Complément à la SIA 382/1 avec des méthodes de calcul spécifiques pour la charge frigorifique et la protection thermique estivale. Pertinent pour les bâtiments avec refroidissement mécanique ou charges thermiques élevées."
+
+#: page-wissen-regulierungen.php:39
+msgid "Gebäude mit Kühlung oder erhöhten Wärmelasten"
+msgstr "Bâtiments avec refroidissement ou charges thermiques élevées"
+
+#: page-wissen-regulierungen.php:43
+msgid "Lüftung von Schulen und Kindergärten"
+msgstr "Ventilation des écoles et jardins d'enfants"
+
+#: page-wissen-regulierungen.php:44
+msgid ""
+"Schweizer Richtlinie speziell für Bildungsbauten. Legt Anforderungen an "
+"Luftvolumenstrom, CO₂-Grenzwerte, Schallschutz und Regelung in "
+"Klassenräumen, Turnhallen, Mensen und Sanitärbereichen fest. Empfiehlt "
+"bedarfsgeregelte Systeme (DCV)."
+msgstr "Directive suisse spécifique aux bâtiments scolaires. Elle fixe les exigences de débit d'air, de valeurs limites de CO₂, de protection acoustique et de régulation dans les salles de classe, salles de gymnastique, cantines et sanitaires. Recommande les systèmes régulés à la demande (DCV)."
+
+#: page-wissen-regulierungen.php:45
+msgid "Schulen, Kindergärten, Bildungseinrichtungen"
+msgstr "Écoles, jardins d'enfants, établissements de formation"
+
+#: page-wissen-regulierungen.php:49
+msgid ""
+"Eingangsparameter für das Innenraumklima zur Energieeffizienz von Gebäuden"
+msgstr "Paramètres d'entrée du climat intérieur pour l'efficacité énergétique des bâtiments"
+
+#: page-wissen-regulierungen.php:50
+msgid ""
+"Europäische Norm für die Auslegung von Gebäudetechnik bezüglich "
+"Innenraumklima. Definiert Kategorien (I–IV) für Raumluftqualität, Temperatur "
+"und Feuchte. In der Schweiz ergänzend zu den SIA-Normen angewendet."
+msgstr "Norme européenne pour la conception des installations techniques du bâtiment en lien avec le climat intérieur. Elle définit des catégories (I–IV) pour la qualité de l'air, la température et l'humidité. En Suisse, elle s'applique en complément des normes SIA."
+
+#: page-wissen-regulierungen.php:51
+msgid "Alle Nichtwohngebäude"
+msgstr "Tous les bâtiments non résidentiels"
+
+#: page-wissen-regulierungen.php:55
+msgid "Leistungsanforderungen an Lüftungs- und Klimaanlagen"
+msgstr "Exigences de performance des installations de ventilation et de climatisation"
+
+#: page-wissen-regulierungen.php:56
+msgid ""
+"Legt die technischen Leistungsanforderungen an raumlufttechnische Anlagen "
+"fest: Energieeffizienz, Filteranforderungen, Wärmerückgewinnung und "
+"Betriebsbedingungen. Basis für die CE-Kennzeichnung von Lüftungsgeräten."
+msgstr "Fixe les exigences techniques de performance des installations aérauliques : efficacité énergétique, exigences de filtration, récupération de chaleur et conditions d'exploitation. Base du marquage CE des appareils de ventilation."
+
+#: page-wissen-regulierungen.php:57
+msgid "Lüftungsgeräte und RLT-Anlagen"
+msgstr "Appareils de ventilation et installations aérauliques"
+
+#: page-wissen-regulierungen.php:61
+msgid "Luftfilter für die allgemeine Raumlufttechnik"
+msgstr "Filtres à air pour la ventilation générale"
+
+#: page-wissen-regulierungen.php:62
+msgid ""
+"Klassifiziert Luftfilter nach ihrer Abscheideeffizienz für Partikel "
+"unterschiedlicher Grösse: ePM1 (< 1 µm), ePM2,5 (< 2,5 µm) und ePM10 (< 10 "
+"µm). Hat die ältere EN 779 abgelöst und ermöglicht eine praxisnahe "
+"Filterwahl."
+msgstr "Classe les filtres à air selon leur efficacité de séparation pour des particules de différentes tailles : ePM1 (< 1 µm), ePM2,5 (< 2,5 µm) et ePM10 (< 10 µm). A remplacé l'ancienne EN 779 et permet un choix de filtre proche de la pratique."
+
+#: page-wissen-regulierungen.php:63
+msgid "Alle Lüftungsanlagen mit Aussenluftfilterung"
+msgstr "Toutes les installations avec filtration d'air neuf"
+
+#: page-wissen-regulierungen.php:67
+msgid "Ökodesign-Anforderungen an Lüftungsgeräte"
+msgstr "Exigences d'écoconception pour les appareils de ventilation"
+
+#: page-wissen-regulierungen.php:68
+msgid ""
+"EU-Verordnung, die Mindestanforderungen an die Energieeffizienz von "
+"Wohnungslüftungsgeräten und gewerblichen RLT-Anlagen definiert. Vorschreibt "
+"u.a. Mindest-Wärmerückgewinnungsgrade und maximale spezifische "
+"Leistungsaufnahmen (SFP). Alle Scan-Pro Produkte erfüllen diese "
+"Anforderungen."
+msgstr "Règlement européen définissant des exigences minimales d'efficacité énergétique pour les appareils de ventilation d'habitation et les installations aérauliques commerciales. Il prescrit notamment des taux minimaux de récupération de chaleur et des puissances absorbées spécifiques (SFP) maximales. Tous les produits Scan-Pro satisfont à ces exigences."
+
+#: page-wissen-regulierungen.php:69
+msgid "Alle Lüftungsgeräte für den EU-/CH-Markt"
+msgstr "Tous les appareils de ventilation pour le marché UE/CH"
+
+#: page-wissen-regulierungen.php:81
+msgid "Gilt für:"
+msgstr "S'applique à :"
+
+#: page-wissen-regulierungen.php:88
+msgid "Fragen zur normengerechten Auslegung Ihrer Anlage?"
+msgstr "Des questions sur le dimensionnement normatif de votre installation ?"
+
+#: page-wissen-regulierungen.php:89
+msgid "Fachberatung anfragen"
+msgstr "Demander un conseil spécialisé"
+
+#: page-wissen.php:13
+msgid "Fachwissen rund um Lüftungstechnik"
+msgstr "Savoir-faire en technique de ventilation"
+
+#: page-wissen.php:14
+msgid ""
+"Hier finden Sie fundierte Informationen zu CO₂, Normen, Regelungsvarianten "
+"und häufig gestellten Fragen — aufbereitet von unseren Lüftungsexperten."
+msgstr "Vous trouverez ici des informations fondées sur le CO₂, les normes, les variantes de régulation et les questions fréquentes — préparées par nos spécialistes de la ventilation."
+
+#: page-wissen.php:25
+msgid ""
+"Wie wirkt CO₂ auf den menschlichen Körper? Was sind kritische Grenzwerte und "
+"wie berechnen Sie die Konzentration in Ihrem Raum?"
+msgstr "Comment le CO₂ agit-il sur le corps humain ? Quelles sont les valeurs limites critiques et comment calculer la concentration dans votre local ?"
+
+#: page-wissen.php:30
+msgid ""
+"Antworten auf die häufigsten Fragen zu Lüftungsanlagen, Produkten, "
+"Bestellungen und technischen Anforderungen."
+msgstr "Réponses aux questions les plus fréquentes sur les installations de ventilation, les produits, les commandes et les exigences techniques."
+
+#: page-wissen.php:35
+msgid ""
+"Aktuelle Beiträge, Neuigkeiten und Fachartikel aus der Welt der "
+"Lüftungstechnik."
+msgstr "Articles récents, actualités et publications spécialisées du monde de la technique de ventilation."
+
+#: page-wissen.php:40
+msgid ""
+"Welche Schweizer und europäischen Normen gelten für Lüftungsanlagen? Ein "
+"Überblick über SIA, EN und ISO."
+msgstr "Quelles normes suisses et européennes s'appliquent aux installations de ventilation ? Un aperçu des normes SIA, EN et ISO."
+
+#: page-wissen.php:45
+msgid ""
+"CAV, VAV, DCV oder aDCV — welche Regelungsvariante passt zu Ihrem Projekt? "
+"Wir erklären die Unterschiede."
+msgstr "CAV, VAV, DCV ou aDCV — quelle variante de régulation convient à votre projet ? Nous expliquons les différences."
+
+#: page.php:14
+msgid "Brotkrümelnavigation"
+msgstr "Fil d'Ariane"
+
+#: woocommerce/archive-product.php:78
+msgid "Produktfilter"
+msgstr "Filtre de produits"
+
+#: woocommerce/archive-product.php:82
+msgid "Kategorien"
+msgstr "Catégories"
+
+#: woocommerce/single-product.php:52
+msgid "Artikelnr.:"
+msgstr "Réf. :"
+
+#: woocommerce/single-product.php:105
+msgid "Ähnliche Produkte"
+msgstr "Produits similaires"
