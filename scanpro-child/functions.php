@@ -873,3 +873,62 @@ if ( ! defined( 'SCANPRO_WEB3FORMS_KEY' ) ) {
 add_filter( 'translation_file_format', function () {
     return 'mo';
 } );
+
+/* =========================================================
+ * DIAGNÓSTICO TEMPORÁRIO 2 — que ficheiro está a ser lido
+ * REMOVER depois de resolvido.
+ * ========================================================= */
+add_action( 'wp_footer', function () {
+
+    if ( ! current_user_can( 'manage_options' ) ) {
+        return;
+    }
+
+    $probe  = 'Von der Wohnanlage bis zur Industriehalle — unsere Systeme werden in den unterschiedlichsten Bereichen eingesetzt.';
+    $result = translate( $probe, 'scanpro-child' );
+
+    // Procura recursiva por qualquer ficheiro do tema em wp-content/languages
+    $files = [];
+    $roots = [ WP_LANG_DIR, get_stylesheet_directory() . '/languages' ];
+    foreach ( $roots as $root ) {
+        if ( ! is_dir( $root ) ) {
+            continue;
+        }
+        $it = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator( $root, FilesystemIterator::SKIP_DOTS ),
+            RecursiveIteratorIterator::SELF_FIRST
+        );
+        foreach ( $it as $f ) {
+            if ( $f->isFile() && 0 === strpos( $f->getFilename(), 'scanpro-child' ) ) {
+                $files[] = $f->getPathname();
+            }
+        }
+    }
+
+    echo '<div style="position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#111;color:#0f0;'
+       . 'font:12px/1.5 monospace;padding:12px 16px;max-height:55vh;overflow:auto;">';
+    echo '<strong style="color:#fff">DIAGNOSTICO 2 — visivel so para administradores</strong><br>';
+    echo 'formato preferido: <span style="color:#ff0">'
+       . esc_html( apply_filters( 'translation_file_format', 'php', 'scanpro-child' ) ) . '</span>'
+       . '  (deve dizer "mo")<br>';
+    echo 'locale: ' . esc_html( determine_locale() )
+       . '  | textdomain: ' . ( is_textdomain_loaded( 'scanpro-child' ) ? 'carregado' : 'NAO carregado' ) . '<br>';
+    echo 'traducao aplicada: <span style="color:#ff0">' . ( $result !== $probe ? 'SIM' : 'NAO' ) . '</span>'
+       . '  | fim do texto: "' . esc_html( mb_substr( $result, -28 ) ) . '"<br><br>';
+
+    echo '<strong style="color:#fff">Ficheiros encontrados:</strong><br>';
+    if ( ! $files ) {
+        echo '(nenhum)<br>';
+    }
+    foreach ( $files as $f ) {
+        $raw  = (string) @file_get_contents( $f );
+        $has  = ( false !== strpos( $raw, 'eingesetzt. 21' ) );
+        $rel  = str_replace( WP_CONTENT_DIR, '…', $f );
+        echo esc_html( $rel )
+           . '  [' . size_format( (int) filesize( $f ) ) . ']'
+           . '  ' . esc_html( gmdate( 'd/m H:i', (int) filemtime( $f ) ) )
+           . '  contem "21": <span style="color:' . ( $has ? '#f66' : '#6f6' ) . '">'
+           . ( $has ? 'SIM' : 'nao' ) . '</span><br>';
+    }
+    echo '</div>';
+} );
