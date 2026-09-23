@@ -857,3 +857,19 @@ add_action( 'wp_mail_failed', function ( $error ) {
 if ( ! defined( 'SCANPRO_WEB3FORMS_KEY' ) ) {
     define( 'SCANPRO_WEB3FORMS_KEY', '10c92099-14a6-40d2-b3ce-060491a4f2a0' );
 }
+
+/* =========================================================
+ * Übersetzungen aus der .mo-Datei lesen, nicht aus .l10n.php
+ *
+ * Seit WordPress 6.5 werden Übersetzungen bevorzugt aus einer
+ * PHP-Datei (.l10n.php) geladen. Auf diesem Server ist OPcache aktiv:
+ * eine einmal kompilierte PHP-Datei bleibt im Speicher, auch nachdem
+ * Loco sie neu geschrieben hat. Folge: die erste Übersetzung erscheint,
+ * jede weitere Änderung nicht mehr.
+ *
+ * Die .mo-Datei ist eine reine Datendatei und wird bei jeder Änderung
+ * neu gelesen — damit wirken Änderungen sofort.
+ * ========================================================= */
+add_filter( 'translation_file_format', function () {
+    return 'mo';
+} );
