@@ -249,7 +249,7 @@ if ( ! function_exists( 'scanpro_get_einsatzbereich_content' ) ) {
 
 <div class="eb-loesung">
   <h3>' . __( 'Die Scan Pro Lösung für Wohngebäude', 'scanpro-child' ) . '</h3>
-  <p>' . __( 'Mit unserem Sortiment an zentralen und dezentralen Lüftungsgeräten — unter anderem aus dem Hause Exhausto und Aldes — decken wir alle Anforderungen moderner Wohnraumlüftung ab. Unsere Geräte mit Gegenstrom- oder Rotationstauscher erreichen Wärmerückgewinnungsgrade von bis zu 95 % und arbeiten dabei ausgesprochen leise.', 'scanpro-child' ) . '</p>
+  <p>' . __( 'Mit unserem Sortiment an zentralen und dezentralen Lüftungsgeräten — unter anderem aus dem Hause EXHAUSTO und Aldes — decken wir alle Anforderungen moderner Wohnraumlüftung ab. Unsere Geräte mit Gegenstrom- oder Rotationstauscher erreichen Wärmerückgewinnungsgrade von bis zu 95 % und arbeiten dabei ausgesprochen leise.', 'scanpro-child' ) . '</p>
   <p>' . __( 'Ob Neubau oder Sanierung, Einfamilienhaus oder grössere Überbauung — wir beraten Sie bei der Wahl des richtigen Systems und unterstützen Planer und Installateure mit technischen Unterlagen, Auslegungshilfen und direktem Fachsupport.', 'scanpro-child' ) . '</p>
 </div>
 
@@ -458,7 +458,7 @@ if ( ! function_exists( 'scanpro_get_einsatzbereich_content' ) ) {
 <div class="eb-loesung">
   <h3>' . __( 'Die Scan Pro Lösung für die Gastronomie', 'scanpro-child' ) . '</h3>
   <p>' . __( 'Mit unserem Sortiment aus leistungsstarken Küchenabluftgeräten, zentralen Lüftungsanlagen und bedarfsgeregelten Systemen für den Gastraum bieten wir Ihnen aufeinander abgestimmte Gesamtlösungen. Wärmerückgewinnung ist dabei auch in der Gastronomie wirtschaftlich sinnvoll — besonders bei langen Betriebszeiten.', 'scanpro-child' ) . '</p>
-  <p>' . __( 'Unsere Fachkompetenz und die Produkttiefe unserer Partner Exhausto, exodraft und Aldes ermöglichen es uns, individuelle Konzepte für Restaurant, Bar, Betriebskantine oder Hotelküche zu entwickeln. Wir unterstützen Sie von der Planung bis zur Inbetriebnahme.', 'scanpro-child' ) . '</p>
+  <p>' . __( 'Unsere Fachkompetenz und die Produkttiefe unserer Partner EXHAUSTO, exodraft und Aldes ermöglichen es uns, individuelle Konzepte für Restaurant, Bar, Betriebskantine oder Hotelküche zu entwickeln. Wir unterstützen Sie von der Planung bis zur Inbetriebnahme.', 'scanpro-child' ) . '</p>
 </div>
 
 <div class="eb-specs-grid">
@@ -676,10 +676,10 @@ if ( ! function_exists( 'scanpro_llms_summary' ) ) {
 if ( ! function_exists( 'scanpro_build_llms_txt' ) ) {
     function scanpro_build_llms_txt() {
 
-        $name = get_bloginfo( 'name' ) ?: 'Scan Pro AG';
+        $name = get_bloginfo( 'name' ) ?: 'Scan-Pro AG';
         $out  = '# ' . $name . "\n\n";
 
-        $out .= '> ' . __( 'Scan Pro AG ist der Schweizer Spezialist für Lüftungstechnik und Wärmerückgewinnung: Planung, Lieferung, Montage und Service von Lüftungsanlagen für Wohnen, Gewerbe, Industrie, Bildungseinrichtungen und Gastronomie.', 'scanpro-child' ) . "\n\n";
+        $out .= '> ' . __( 'Scan-Pro AG ist der Schweizer Spezialist für Lüftungstechnik und Wärmerückgewinnung: Planung, Lieferung, Montage und Service von Lüftungsanlagen für Wohnen, Gewerbe, Industrie, Bildungseinrichtungen und Gastronomie.', 'scanpro-child' ) . "\n\n";
 
         $out .= __( 'Über 50 Jahre Erfahrung (seit 1975). Standort: Bahnhofstrasse 1, CH-8852 Altendorf, Schweiz. Telefon: +41 43 355 34 00. E-Mail: info@scanpro.ch. Inhaltssprache: Deutsch.', 'scanpro-child' ) . "\n";
 
@@ -797,7 +797,7 @@ if ( ! function_exists( 'scanpro_build_llms_txt' ) ) {
 
         // --- Kontakt ---
         $out .= "\n## " . __( 'Kontakt', 'scanpro-child' ) . "\n\n";
-        $out .= '- ' . __( 'Adresse', 'scanpro-child' ) . ": Scan Pro AG, Bahnhofstrasse 1, CH-8852 Altendorf, Schweiz\n";
+        $out .= '- ' . __( 'Adresse', 'scanpro-child' ) . ": Scan-Pro AG, Bahnhofstrasse 1, CH-8852 Altendorf, Schweiz\n";
         $out .= '- ' . __( 'Telefon', 'scanpro-child' ) . ": +41 43 355 34 00\n";
         $out .= "- E-Mail: info@scanpro.ch\n";
         $out .= '- ' . __( 'Kontaktformular', 'scanpro-child' ) . ': ' . home_url( '/kontakt' ) . "\n";

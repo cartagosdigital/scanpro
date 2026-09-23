@@ -31,7 +31,7 @@
         </div>
         <div class="footer-partners-logos">
           <!-- Substituir por logos reais dos parceiros -->
-          <span class="partner-name">Exhausto</span>
+          <span class="partner-name">EXHAUSTO</span>
           <span class="partner-name">exodraft</span>
           <span class="partner-name">Thermomatic</span>
         </div>
@@ -121,7 +121,7 @@
         <address>
           <p class="footer-address">
             <span class="footer-icon" aria-hidden="true">&#9679;</span>
-            Scan Pro AG<br>
+            Scan-Pro AG<br>
             Bahnhofstrasse 1<br>
             CH-8852 Altendorf
           </p>
@@ -146,7 +146,7 @@
     <div class="container footer-bottom-inner">
       <p>
         &copy; <?php echo esc_html( date( 'Y' ) ); ?>
-        <?php _e( 'Scan Pro AG. Alle Rechte vorbehalten.', 'scanpro-child' ); ?>
+        <?php _e( 'Scan-Pro AG. Alle Rechte vorbehalten.', 'scanpro-child' ); ?>
       </p>
       <nav class="footer-legal-nav" aria-label="<?php _e( 'Rechtliche Links', 'scanpro-child' ); ?>">
         <a href="<?php echo esc_url( home_url( '/datenschutz' ) ); ?>">

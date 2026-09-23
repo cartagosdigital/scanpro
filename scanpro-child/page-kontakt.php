@@ -165,7 +165,7 @@ get_header();
           <div class="contact-info-block">
             <h3><?php _e( 'Adresse', 'scanpro-child' ); ?></h3>
             <address>
-              Scan Pro AG<br>
+              Scan-Pro AG<br>
               Bahnhofstrasse 1<br>
               CH-8852 Altendorf
             </address>
@@ -185,7 +185,7 @@ get_header();
             <h3><?php _e( 'Öffnungszeiten', 'scanpro-child' ); ?></h3>
             <p>
               <?php _e( 'Montag – Freitag', 'scanpro-child' ); ?><br>
-              08:00 – 12:00 / 13:30 – 17:00
+              08:00 – 12:00 / 13:00 – 17:00
             </p>
           </div>
 
@@ -193,7 +193,7 @@ get_header();
           <div class="contact-map">
             <iframe
               src="https://maps.google.com/maps?q=Bahnhofstrasse+1,+8852+Altendorf,+Schweiz&z=15&output=embed"
-              title="<?php esc_attr_e( 'Standort Scan Pro AG auf der Karte', 'scanpro-child' ); ?>"
+              title="<?php esc_attr_e( 'Standort Scan-Pro AG auf der Karte', 'scanpro-child' ); ?>"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               allowfullscreen

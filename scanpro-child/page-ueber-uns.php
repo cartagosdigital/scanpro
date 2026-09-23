@@ -32,10 +32,10 @@ get_header();
             <?php _e( 'Die Scan-Pro AG wurde 1975 gegründet, um dem steigenden Bedarf an Rauchsaugern für Cheminées gerecht zu werden. Die Ölkrise der 1970er Jahre führte zu einem erheblichen Boom im Kamin- und Cheminéebau, da die Menschen aufgrund der stark steigenden Öl- und Heizkosten nach alternativen Heizmethoden suchten. Durch den Vertrieb von Rauchsaugern des dänischen Pioniers Exhausto entstand die Scan-Pro AG (<strong>Scan</strong>dinavian <strong>Pro</strong>ducts).', 'scanpro-child' ); ?>
           </p>
           <p>
-            <?php _e( 'Angesichts der sich verschärfenden Energiekrise in Europa entwickelte Exhausto die erste Generation des VEX, ein Wärmerückgewinnungsgerät, das ein energieeffizienteres Raumklima schuf als bisher mit einfachen Abluftanlagen möglich war. Die Scan-Pro AG positionierte sich im Schweizer Markt erfolgreich im Bereich Energieeffizienz und gesundes Raumklima.', 'scanpro-child' ); ?>
+            <?php _e( 'Angesichts der sich verschärfenden Energiekrise in Europa entwickelte EXHAUSTO die erste Generation des VEX, ein Wärmerückgewinnungsgerät, das ein energieeffizienteres Raumklima schuf als bisher mit einfachen Abluftanlagen möglich war. Die Scan-Pro AG positionierte sich im Schweizer Markt erfolgreich im Bereich Energieeffizienz und gesundes Raumklima.', 'scanpro-child' ); ?>
           </p>
           <p>
-            <?php _e( 'Im Jahr 2007 wurde Exhausto aufgeteilt, und die Rauchsauger wurden unter der Marke Exodraft weitergeführt. Nach über 50 Jahren bleibt unsere Kernmission für Energieeffizienz und gesunde Raumluft unverändert. Mit neuen Produkten und Technologien bieten wir unseren Kunden Innovation und Flexibilität.', 'scanpro-child' ); ?>
+            <?php _e( 'Im Jahr 2007 wurde EXHAUSTO aufgeteilt, und die Rauchsauger wurden unter der Marke Exodraft weitergeführt. Nach über 50 Jahren bleibt unsere Kernmission für Energieeffizienz und gesunde Raumluft unverändert. Mit neuen Produkten und Technologien bieten wir unseren Kunden Innovation und Flexibilität.', 'scanpro-child' ); ?>
           </p>
           <a href="<?php echo esc_url( home_url( '/kontakt' ) ); ?>" class="btn btn-outline-dark">
             <?php _e( 'Kontakt aufnehmen', 'scanpro-child' ); ?>

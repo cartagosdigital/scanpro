@@ -44,7 +44,7 @@ get_header();
         </h1>
         <div class="hero-divider" aria-hidden="true"></div>
         <p>
-          <?php _e( 'Offizieller Vertriebspartner von Exhausto, exodraft und Thermomatic. Zertifizierte Systeme für Wohn-, Gewerbe- und Industriegebäude.', 'scanpro-child' ); ?>
+          <?php _e( 'Offizieller Vertriebspartner von EXHAUSTO, exodraft und Thermomatic. Zertifizierte Systeme für Wohn-, Gewerbe- und Industriegebäude.', 'scanpro-child' ); ?>
         </p>
         <div class="hero-actions">
           <a href="<?php echo esc_url( home_url( '/produkte' ) ); ?>" class="btn btn-primary">
@@ -67,7 +67,7 @@ get_header();
           <div class="stat-label"><?php _e( 'Jahre Erfahrung', 'scanpro-child' ); ?></div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">95%</div>
+          <div class="stat-number">90%</div>
           <div class="stat-label"><?php _e( 'Wärmerückgewinnung möglich', 'scanpro-child' ); ?></div>
         </div>
         <div class="stat-item">
@@ -81,44 +81,7 @@ get_header();
 </section>
 
 <!-- =============================================
-     SEÇÃO 2: ÜBER SCAN PRO (split layout)
-     ============================================= -->
-<section class="about-section">
-  <div class="container">
-    <div class="split-section">
-
-      <!-- Imagem -->
-      <div class="split-image">
-        <img
-          src="https://lp.scanpro.ch/wp-content/uploads/2026/09/VEX4000-Baustelle.png"
-          alt="<?php _e( 'Scan Pro — Lüftungstechnik Schweiz', 'scanpro-child' ); ?>"
-          loading="lazy"
-        >
-      </div>
-
-      <!-- Texto -->
-      <div class="split-text">
-        <span class="section-label"><?php _e( 'ÜBER SCAN PRO', 'scanpro-child' ); ?></span>
-        <h2 class="section-title">
-          <?php _e( 'Schweizer Spezialisten für Lüftungssysteme seit 1975', 'scanpro-child' ); ?>
-        </h2>
-        <p>
-          <?php _e( 'Seit über 50 Jahren steht die Scan-Pro AG für innovative Lüftungslösungen und höchste Fachkompetenz in der Gebäudetechnik. Als Schweizer Spezialist beliefern wir Fachpartner und Planer mit energieeffizienten, hochwertigen Produkten.', 'scanpro-child' ); ?>
-        </p>
-        <p>
-          <?php _e( 'Wir sind offizieller Vertriebspartner von Exhausto, exodraft und Thermomatic.', 'scanpro-child' ); ?>
-        </p>
-        <a href="<?php echo esc_url( home_url( '/ueber-uns' ) ); ?>" class="btn btn-outline-dark">
-          <?php _e( 'Mehr erfahren →', 'scanpro-child' ); ?>
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- =============================================
-     SEÇÃO 3: GRID DE PRODUTOS EM DESTAQUE
+     SEÇÃO 2: GRID DE PRODUTOS EM DESTAQUE
      ============================================= -->
 <section class="products-section" id="produkte">
   <div class="container">
@@ -210,7 +173,7 @@ get_header();
 </section>
 
 <!-- =============================================
-     SEÇÃO 4: PARCEIROS OFICIAIS
+     SEÇÃO 3: PARCEIROS OFICIAIS
      ============================================= -->
 <section class="partners-section">
   <div class="container">
@@ -242,7 +205,7 @@ get_header();
 </section>
 
 <!-- =============================================
-     SEÇÃO 5: EINSATZBEREICHE
+     SEÇÃO 4: EINSATZBEREICHE
      ============================================= -->
 <section class="home-einsatz-section">
   <div class="container">
@@ -289,7 +252,7 @@ get_header();
 <!-- /einsatzbereiche -->
 
 <!-- =============================================
-     SEÇÃO 6: DIFERENCIAIS (3 colunas)
+     SEÇÃO 5: DIFERENCIAIS (3 colunas)
      ============================================= -->
 <section class="features-section">
   <div class="container">
@@ -347,7 +310,44 @@ get_header();
 </section>
 
 <!-- =============================================
-     SEÇÃO 6: CTA FINAL
+     SEÇÃO 6: ÜBER SCAN PRO (split layout)
+     ============================================= -->
+<section class="about-section">
+  <div class="container">
+    <div class="split-section">
+
+      <!-- Imagem -->
+      <div class="split-image">
+        <img
+          src="https://lp.scanpro.ch/wp-content/uploads/2026/09/VEX4000-Baustelle.png"
+          alt="<?php _e( 'Scan Pro — Lüftungstechnik Schweiz', 'scanpro-child' ); ?>"
+          loading="lazy"
+        >
+      </div>
+
+      <!-- Texto -->
+      <div class="split-text">
+        <span class="section-label"><?php _e( 'ÜBER SCAN PRO', 'scanpro-child' ); ?></span>
+        <h2 class="section-title">
+          <?php _e( 'Schweizer Spezialisten für Lüftungssysteme seit 1975', 'scanpro-child' ); ?>
+        </h2>
+        <p>
+          <?php _e( 'Seit über 50 Jahren steht die Scan-Pro AG für innovative Lüftungslösungen und höchste Fachkompetenz in der Gebäudetechnik. Als Schweizer Spezialist beliefern wir Fachpartner und Planer mit energieeffizienten, hochwertigen Produkten.', 'scanpro-child' ); ?>
+        </p>
+        <p>
+          <?php _e( 'Wir sind offizieller Vertriebspartner von EXHAUSTO, exodraft und Thermomatic.', 'scanpro-child' ); ?>
+        </p>
+        <a href="<?php echo esc_url( home_url( '/ueber-uns' ) ); ?>" class="btn btn-outline-dark">
+          <?php _e( 'Mehr erfahren →', 'scanpro-child' ); ?>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     SEÇÃO 7: CTA FINAL
      ============================================= -->
 <section class="cta-section" aria-label="<?php _e( 'Kontaktaufforderung', 'scanpro-child' ); ?>">
   <div class="container cta-content">
