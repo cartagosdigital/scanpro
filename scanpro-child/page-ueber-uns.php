@@ -151,7 +151,7 @@ get_header();
         <div class="ueber-quote-photo">
           <img
             src="https://lp.scanpro.ch/wp-content/uploads/2026/08/F8860D54-D133-4841-856E-3334FF59B837.png"
-            alt="Mark von Borries"
+            alt="<?php esc_attr_e( 'Mark von Borries', 'scanpro-child' ); ?>"
             loading="lazy"
           >
         </div>
@@ -161,7 +161,7 @@ get_header();
             <p><?php _e( 'Ich verwende den Begriff „Komfortlüftung“ ungern, da gesunde Raumluft ein Grundbedürfnis für die Gesundheit ist und nicht als Komfort oder Luxus betrachtet werden sollte.', 'scanpro-child' ); ?></p>
           </blockquote>
           <cite>
-            <span class="ueber-quote-name">Mark von Borries</span>
+            <span class="ueber-quote-name"><?php _e( 'Mark von Borries', 'scanpro-child' ); ?></span>
             <span class="ueber-quote-role"><?php _e( 'Geschäftsleiter der Scan-Pro AG', 'scanpro-child' ); ?></span>
           </cite>
         </div>

@@ -29,9 +29,9 @@
           <span class="lang-arrow" aria-hidden="true">&#9660;</span>
         </button>
         <ul class="dropdown lang-dropdown">
-          <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="lang-active">Deutsch</a></li>
-          <li><a href="#">Français</a></li>
-          <li><a href="#">English</a></li>
+          <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="lang-active"><?php _e( 'Deutsch', 'scanpro-child' ); ?></a></li>
+          <li><a href="#"><?php _e( 'Français', 'scanpro-child' ); ?></a></li>
+          <li><a href="#"><?php _e( 'English', 'scanpro-child' ); ?></a></li>
         </ul>
       </div>
 

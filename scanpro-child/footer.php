@@ -31,9 +31,10 @@
         </div>
         <div class="footer-partners-logos">
           <!-- Substituir por logos reais dos parceiros -->
-          <span class="partner-name">EXHAUSTO</span>
-          <span class="partner-name">exodraft</span>
-          <span class="partner-name">Thermomatic</span>
+          <?php /* translators: Markenname des Partners — nur bei Schreibweise-Änderung anpassen */ ?>
+          <span class="partner-name"><?php _e( 'EXHAUSTO', 'scanpro-child' ); ?></span>
+          <span class="partner-name"><?php _e( 'exodraft', 'scanpro-child' ); ?></span>
+          <span class="partner-name"><?php _e( 'Thermomatic', 'scanpro-child' ); ?></span>
         </div>
       </div>
 
@@ -118,20 +119,31 @@
       <!-- Coluna 4: Contato -->
       <div class="footer-col footer-contact">
         <h4 class="footer-heading"><?php _e( 'Kontakt', 'scanpro-child' ); ?></h4>
+        <?php
+        /* translators: Telefonnummer wie angezeigt — erscheint in Fusszeile und auf der Kontaktseite */
+        $footer_phone      = __( '043 355 34 00', 'scanpro-child' );
+        /* translators: dieselbe Telefonnummer für den Anruf-Link, international und ohne Leerzeichen */
+        $footer_phone_link = __( '+41433553400', 'scanpro-child' );
+        /* translators: E-Mail-Adresse — wird als Text und als Link verwendet */
+        $footer_email      = __( 'info@scanpro.ch', 'scanpro-child' );
+        ?>
         <address>
           <p class="footer-address">
             <span class="footer-icon" aria-hidden="true">&#9679;</span>
-            Scan-Pro AG<br>
-            Bahnhofstrasse 1<br>
-            CH-8852 Altendorf
+            <?php /* translators: Firmenname in der Adresse */ ?>
+            <?php _e( 'Scan-Pro AG', 'scanpro-child' ); ?><br>
+            <?php /* translators: Strasse und Hausnummer */ ?>
+            <?php _e( 'Bahnhofstrasse 1', 'scanpro-child' ); ?><br>
+            <?php /* translators: Postleitzahl und Ort */ ?>
+            <?php _e( 'CH-8852 Altendorf', 'scanpro-child' ); ?>
           </p>
           <p>
             <span class="footer-icon" aria-hidden="true">&#9742;</span>
-            <a href="tel:+41433553400">043 355 34 00</a>
+            <a href="tel:<?php echo esc_attr( $footer_phone_link ); ?>"><?php echo esc_html( $footer_phone ); ?></a>
           </p>
           <p>
             <span class="footer-icon" aria-hidden="true">&#9993;</span>
-            <a href="mailto:info@scanpro.ch">info@scanpro.ch</a>
+            <a href="mailto:<?php echo esc_attr( $footer_email ); ?>"><?php echo esc_html( $footer_email ); ?></a>
           </p>
         </address>
         <a href="<?php echo esc_url( home_url( '/kontakt' ) ); ?>" class="btn btn-primary footer-cta-btn">

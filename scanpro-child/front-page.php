@@ -63,15 +63,18 @@ get_header();
     <div class="container">
       <div class="stats-grid">
         <div class="stat-item">
-          <div class="stat-number">+50</div>
+          <?php /* translators: Kennzahl Startseite — Jahre Erfahrung */ ?>
+          <div class="stat-number"><?php _e( '+50', 'scanpro-child' ); ?></div>
           <div class="stat-label"><?php _e( 'Jahre Erfahrung', 'scanpro-child' ); ?></div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">90%</div>
+          <?php /* translators: Kennzahl Startseite — möglicher Wärmerückgewinnungsgrad */ ?>
+          <div class="stat-number"><?php _e( '90%', 'scanpro-child' ); ?></div>
           <div class="stat-label"><?php _e( 'Wärmerückgewinnung möglich', 'scanpro-child' ); ?></div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">99,5%</div>
+          <?php /* translators: Kennzahl Startseite — Reduktion schädlicher Partikel */ ?>
+          <div class="stat-number"><?php _e( '99,5%', 'scanpro-child' ); ?></div>
           <div class="stat-label"><?php _e( 'Reduktion schädlicher Partikel', 'scanpro-child' ); ?></div>
         </div>
       </div>

@@ -162,30 +162,44 @@ get_header();
         <div class="contact-info-col">
           <h2><?php _e( 'So erreichen Sie uns', 'scanpro-child' ); ?></h2>
 
+          <?php
+          // Mesmos textos do rodapé: uma única entrada no Loco actualiza ambos.
+          /* translators: Telefonnummer wie angezeigt — erscheint in Fusszeile und auf der Kontaktseite */
+          $kontakt_phone      = __( '043 355 34 00', 'scanpro-child' );
+          /* translators: dieselbe Telefonnummer für den Anruf-Link, international und ohne Leerzeichen */
+          $kontakt_phone_link = __( '+41433553400', 'scanpro-child' );
+          /* translators: E-Mail-Adresse — wird als Text und als Link verwendet */
+          $kontakt_email      = __( 'info@scanpro.ch', 'scanpro-child' );
+          ?>
+
           <div class="contact-info-block">
             <h3><?php _e( 'Adresse', 'scanpro-child' ); ?></h3>
             <address>
-              Scan-Pro AG<br>
-              Bahnhofstrasse 1<br>
-              CH-8852 Altendorf
+              <?php /* translators: Firmenname in der Adresse */ ?>
+              <?php _e( 'Scan-Pro AG', 'scanpro-child' ); ?><br>
+              <?php /* translators: Strasse und Hausnummer */ ?>
+              <?php _e( 'Bahnhofstrasse 1', 'scanpro-child' ); ?><br>
+              <?php /* translators: Postleitzahl und Ort */ ?>
+              <?php _e( 'CH-8852 Altendorf', 'scanpro-child' ); ?>
             </address>
           </div>
 
           <div class="contact-info-block">
             <h3><?php _e( 'Telefon', 'scanpro-child' ); ?></h3>
-            <p><a href="tel:+41433553400">043 355 34 00</a></p>
+            <p><a href="tel:<?php echo esc_attr( $kontakt_phone_link ); ?>"><?php echo esc_html( $kontakt_phone ); ?></a></p>
           </div>
 
           <div class="contact-info-block">
             <h3><?php _e( 'E-Mail', 'scanpro-child' ); ?></h3>
-            <p><a href="mailto:info@scanpro.ch">info@scanpro.ch</a></p>
+            <p><a href="mailto:<?php echo esc_attr( $kontakt_email ); ?>"><?php echo esc_html( $kontakt_email ); ?></a></p>
           </div>
 
           <div class="contact-info-block">
             <h3><?php _e( 'Öffnungszeiten', 'scanpro-child' ); ?></h3>
             <p>
               <?php _e( 'Montag – Freitag', 'scanpro-child' ); ?><br>
-              08:00 – 12:00 / 13:00 – 17:00
+              <?php /* translators: Öffnungszeiten, Format: Vormittag / Nachmittag */ ?>
+              <?php _e( '08:00 – 12:00 / 13:00 – 17:00', 'scanpro-child' ); ?>
             </p>
           </div>
 

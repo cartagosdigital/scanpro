@@ -28,12 +28,13 @@ get_header();
           <div class="team-card-photo">
             <img
               src="https://lp.scanpro.ch/wp-content/uploads/2026/08/F8860D54-D133-4841-856E-3334FF59B837.png"
-              alt="Mark von Borries"
+              alt="<?php esc_attr_e( 'Mark von Borries', 'scanpro-child' ); ?>"
               loading="lazy"
             >
           </div>
           <div class="team-card-body">
-            <h2 class="team-card-name">Mark von Borries</h2>
+            <?php /* translators: Name eines Teammitglieds */ ?>
+            <h2 class="team-card-name"><?php _e( 'Mark von Borries', 'scanpro-child' ); ?></h2>
             <span class="team-card-role"><?php _e( 'Geschäftsleitung', 'scanpro-child' ); ?></span>
             <a href="mailto:info@scanpro.ch" class="team-card-contact">
               <?php _e( 'Kontakt aufnehmen', 'scanpro-child' ); ?> →
@@ -46,12 +47,13 @@ get_header();
           <div class="team-card-photo">
             <img
               src="https://lp.scanpro.ch/wp-content/uploads/2026/08/BE9D06BD-D963-4C0B-8665-8A807F8BDE33.png"
-              alt="Andreas Lehmann"
+              alt="<?php esc_attr_e( 'Andreas Lehmann', 'scanpro-child' ); ?>"
               loading="lazy"
             >
           </div>
           <div class="team-card-body">
-            <h2 class="team-card-name">Andreas Lehmann</h2>
+            <?php /* translators: Name eines Teammitglieds */ ?>
+            <h2 class="team-card-name"><?php _e( 'Andreas Lehmann', 'scanpro-child' ); ?></h2>
             <span class="team-card-role"><?php _e( 'Technik', 'scanpro-child' ); ?></span>
             <a href="mailto:info@scanpro.ch" class="team-card-contact">
               <?php _e( 'Kontakt aufnehmen', 'scanpro-child' ); ?> →
@@ -64,12 +66,13 @@ get_header();
           <div class="team-card-photo">
             <img
               src="https://lp.scanpro.ch/wp-content/uploads/2026/08/04634001-1F03-44B6-BC0C-B978E68C6941.png"
-              alt="Iliane Kühne"
+              alt="<?php esc_attr_e( 'Iliane Kühne', 'scanpro-child' ); ?>"
               loading="lazy"
             >
           </div>
           <div class="team-card-body">
-            <h2 class="team-card-name">Iliane Kühne</h2>
+            <?php /* translators: Name eines Teammitglieds */ ?>
+            <h2 class="team-card-name"><?php _e( 'Iliane Kühne', 'scanpro-child' ); ?></h2>
             <span class="team-card-role"><?php _e( 'Administration', 'scanpro-child' ); ?></span>
             <a href="mailto:info@scanpro.ch" class="team-card-contact">
               <?php _e( 'Kontakt aufnehmen', 'scanpro-child' ); ?> →
@@ -82,12 +85,13 @@ get_header();
           <div class="team-card-photo">
             <img
               src="https://lp.scanpro.ch/wp-content/uploads/2026/08/FullSizeRender.jpeg"
-              alt="Priscila Kirsner"
+              alt="<?php esc_attr_e( 'Priscila Kirsner', 'scanpro-child' ); ?>"
               loading="lazy"
             >
           </div>
           <div class="team-card-body">
-            <h2 class="team-card-name">Priscila Kirsner</h2>
+            <?php /* translators: Name eines Teammitglieds */ ?>
+            <h2 class="team-card-name"><?php _e( 'Priscila Kirsner', 'scanpro-child' ); ?></h2>
             <span class="team-card-role"><?php _e( 'Marketing', 'scanpro-child' ); ?></span>
             <a href="mailto:info@scanpro.ch" class="team-card-contact">
               <?php _e( 'Kontakt aufnehmen', 'scanpro-child' ); ?> →

@@ -28,19 +28,19 @@ get_header();
             <h3><?php _e( 'CO₂-Konzentration und ihre Wirkung', 'scanpro-child' ); ?></h3>
             <div class="co2-scale">
               <div class="co2-level co2-good">
-                <span class="co2-value">400 – 800 ppm</span>
+                <span class="co2-value"><?php _e( '400 – 800 ppm', 'scanpro-child' ); ?></span>
                 <span class="co2-label"><?php _e( 'Aussenluftqualität — ausgezeichnetes Innenraumklima', 'scanpro-child' ); ?></span>
               </div>
               <div class="co2-level co2-ok">
-                <span class="co2-value">800 – 1.000 ppm</span>
+                <span class="co2-value"><?php _e( '800 – 1.000 ppm', 'scanpro-child' ); ?></span>
                 <span class="co2-label"><?php _e( 'Akzeptabler Bereich — leichte Einschränkungen möglich', 'scanpro-child' ); ?></span>
               </div>
               <div class="co2-level co2-warn">
-                <span class="co2-value">1.000 – 1.400 ppm</span>
+                <span class="co2-value"><?php _e( '1.000 – 1.400 ppm', 'scanpro-child' ); ?></span>
                 <span class="co2-label"><?php _e( 'Erhöhter Wert — Konzentrationsfähigkeit sinkt messbar', 'scanpro-child' ); ?></span>
               </div>
               <div class="co2-level co2-bad">
-                <span class="co2-value">&gt; 1.400 ppm</span>
+                <span class="co2-value">&gt; <?php _e( '1.400 ppm', 'scanpro-child' ); ?></span>
                 <span class="co2-label"><?php _e( 'Schlechte Luftqualität — Kopfschmerzen, Müdigkeit, Leistungsabfall', 'scanpro-child' ); ?></span>
               </div>
             </div>
